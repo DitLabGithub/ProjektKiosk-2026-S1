@@ -4014,7 +4014,7 @@ MonoBehaviour:
       scoreScreenIndex: 0
     - editorIndex: 0
       speaker: 'Clerk:'
-      text: 'Hotshots! Cigarettes: 14,99 NEUR. Make the sale?'
+      text: 'Hotshots! Cigarettes: 15 NEUR. Make the sale?'
       responses:
       - responseText: Make Sale
         nextLineIndex: 8
@@ -4483,7 +4483,7 @@ MonoBehaviour:
       scoreScreenIndex: 0
     - editorIndex: 0
       speaker: 'Clerk:'
-      text: Uhuh... and what was your name again?
+      text: Uhuh... and plastic surgery too?
       responses: []
       askForID: 0
       showGoBackButton: 0
@@ -4540,7 +4540,7 @@ MonoBehaviour:
       scoreScreenIndex: 0
     - editorIndex: 0
       speaker: 'Clerk:'
-      text: "Alright man, here you go. That\u2019ll be 15,99 Neuros"
+      text: "Alright man, here you go. That\u2019ll be 16 Neuros"
       responses: []
       askForID: 0
       showGoBackButton: 0
