@@ -30,14 +30,14 @@ public class UIManager : MonoBehaviour
     private bool canClickToContinue = false;
 
     // Hardcoded multiline dialogue strings
-    private readonly string dialogue1TopText = "The year is 2030.\n The formation of the New European Union has brought upon a new information era.";
+    private readonly string dialogue1TopText = "The year is 2030.\n A new information age is upon us. With that, the rise of the New European Union.";
     private readonly string dialogue1BottomText = "Corporations and organizations harvest and control personal data in every way they can.";
 
-    private readonly string dialogue2TopText = "Everything is digitalized - even your identity.";
-    private readonly string dialogue2BottomText = "Digital ID's are offered by companies and governments.The New European Union itself has launched its new \"SSI\" ID";
+    private readonly string dialogue2TopText = "Everything is digitalized - even your identity.\n Digital ID's are offered by companies that collect data, and local governments that use them as a form of surveillance.";
+    private readonly string dialogue2BottomText = "NEU citizens have been offered a new \"SSI\" ID. \n An alternative that grants them control over their data. How this affects daily life is yet to be seen.";
 
-    private readonly string dialogue3TopText = "You work at a humble kiosk shop.\n These kiosks are one of the last few places citizens can buy what they need without companies and organizations keeping tabs on what they buy.";
-    private readonly string dialogue3BottomText = "You've just returned from your time off during the holidays.";
+    private readonly string dialogue3TopText = "You work at a humble kiosk shop.\n These kiosks are one of the last few places citizens can shop in without companies and organizations keeping tabs on what they buy.";
+    private readonly string dialogue3BottomText = "You've just returned from your time off during the holidays...";
 
     void Start()
     {
