@@ -232,5 +232,8 @@ public class ItemPickupManager : MonoBehaviour {
         UpdateCheckoutTotal();
     }
 
+    public void ReturnCarriedItemsToShelf() {
+        ReturnItemsToShelf();
+    }
 
 }

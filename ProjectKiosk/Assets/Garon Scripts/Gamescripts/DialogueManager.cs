@@ -31,7 +31,6 @@ public class DialogueManager : MonoBehaviour
         public bool askForID = false;
         public bool showGoBackButton = false;
         public int goBackTargetIndex = -1;
-
         public bool grantNameAccess = false;
         public bool grantDOBAccess = false;
         public bool grantAddressAccess = false;
@@ -253,7 +252,6 @@ public class DialogueManager : MonoBehaviour
 
         speakerText.text = line.speaker;
         dialogueText.text = line.text;
-
         if (currentScannedIDData != null)
             UpdateIDInfoPanel();
 
@@ -270,6 +268,9 @@ public class DialogueManager : MonoBehaviour
                 ShowNextLine();
             } else {
                 ShowScoreScreen(line.scoreScreenIndex);
+            }
+            if (itemPickupManager != null) {
+                itemPickupManager.ReturnCarriedItemsToShelf();
             }
             return;
         }
@@ -350,7 +351,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        // ✅ Show the go back button if it's enabled
+        // Show the go back button if it's enabled
         if (line.showGoBackButton && line.goBackTargetIndex >= 0) {
             goBackButton.gameObject.SetActive(true);
             goBackButton.onClick.RemoveAllListeners();

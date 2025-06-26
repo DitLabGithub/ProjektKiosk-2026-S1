@@ -3864,7 +3864,7 @@ MonoBehaviour:
       responses: []
       askForID: 0
       showGoBackButton: 1
-      goBackTargetIndex: 5
+      goBackTargetIndex: 27
       grantNameAccess: 0
       grantDOBAccess: 1
       grantAddressAccess: 0
@@ -3879,7 +3879,7 @@ MonoBehaviour:
       responses: []
       askForID: 0
       showGoBackButton: 1
-      goBackTargetIndex: 5
+      goBackTargetIndex: 27
       grantNameAccess: 1
       grantDOBAccess: 0
       grantAddressAccess: 0
@@ -4011,7 +4011,7 @@ MonoBehaviour:
       grantPictureAccess: 0
       disableContinueButton: 0
       endConversationHere: 1
-      scoreScreenIndex: 0
+      scoreScreenIndex: 4
     - editorIndex: 0
       speaker: 'Clerk:'
       text: 'Hotshots! Cigarettes: 15 NEUR. Make the sale?'
@@ -4079,7 +4079,90 @@ MonoBehaviour:
       scoreScreenIndex: 0
     - editorIndex: 0
       speaker: 'Customer:'
-      text: Huh, what?
+      text: Could you do me a favor and get me a pack of Hotshots? It's the cigarettes
+        with the red box.
+      responses:
+      - responseText: Could I get your basic info ?
+        nextLineIndex: 15
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: Could I get your date of birth?
+        nextLineIndex: 14
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: Could I get your postcode?
+        nextLineIndex: 28
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: I have all I need.
+        nextLineIndex: 29
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: Ohh, are you looking to send me a love letter? I'm flattered honey, but
+        I dont think you need that to sell me cigarettes.
+      responses: []
+      askForID: 0
+      showGoBackButton: 1
+      goBackTargetIndex: 27
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 1
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: 'Hotshots! Cigarettes: 14,99 NEUR. Make the sale?'
+      responses:
+      - responseText: Make Sale
+        nextLineIndex: 30
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 1
+      - responseText: Dont make sale
+        nextLineIndex: 18
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: Chat
+        nextLineIndex: 32
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: I miss when bad habits were cheaper.. Thanks, hun. Don't pick up smoking
+        if you haven't already.
       responses: []
       askForID: 0
       showGoBackButton: 0
@@ -4092,6 +4175,232 @@ MonoBehaviour:
       disableContinueButton: 0
       endConversationHere: 0
       scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: '...
+
+'
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 1
+      scoreScreenIndex: 2
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: ...
+      responses:
+      - responseText: Are you from out of town?
+        nextLineIndex: 33
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: "Wait, you don\u2019t get your ID checked?"
+        nextLineIndex: 16
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 1
+      goBackTargetIndex: 29
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "I sure am. I\u2019m taking some time away from my crummy job to see
+        the world! I\u2019m starting with backwater towns like this \u2013 the type
+        that\u2019s so unremarkable that not a lot of people would come visit."
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "Oh, no offense \u2013 places like these have the peace and quiet I so
+        desperately need."
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: None taken.
+      responses: []
+      askForID: 0
+      showGoBackButton: 1
+      goBackTargetIndex: 36
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 1
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: ...
+      responses:
+      - responseText: Are you from out of town?
+        nextLineIndex: 33
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: "Wait, you don\u2019t get your ID checked?"
+        nextLineIndex: 38
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 1
+      goBackTargetIndex: 37
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: 'Hotshots! Cigarettes: 14,99 NEUR. Make the sale?'
+      responses:
+      - responseText: Make Sale
+        nextLineIndex: 40
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 1
+      - responseText: Dont make sale
+        nextLineIndex: 18
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: Chat
+        nextLineIndex: 32
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "Ohh, you don\u2019t think I look that old, do you? How sweet of you
+        to say."
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "But really, no - my usual haunts back home already know me well, so
+        they don\u2019t even need to ask."
+      responses: []
+      askForID: 0
+      showGoBackButton: 1
+      goBackTargetIndex: 36
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 1
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: I miss when bad habits were cheaper.. Thanks, hun. Don't pick up smoking
+        if you haven't already.
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "And here\u2019s a little extra for being a sweetheart and taking the
+        time to chat with a hag like me."
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: '...
+
+'
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: -1
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 1
+      scoreScreenIndex: 1
     idPrefab: {fileID: 9214502554901828252, guid: fb6bc7aab9a43604484e3bf400d956ae, type: 3}
     npcObject: {fileID: 2141053881}
     requestedItems: 0b000000
@@ -4251,7 +4560,7 @@ MonoBehaviour:
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
       - responseText: I have all I need.
-        nextLineIndex: 37
+        nextLineIndex: 43
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
@@ -4358,21 +4667,6 @@ MonoBehaviour:
       scoreScreenIndex: 0
     - editorIndex: 0
       speaker: 'Customer:'
-      text: Huh, wha..? You already got my age, man.
-      responses: []
-      askForID: 0
-      showGoBackButton: 0
-      goBackTargetIndex: 0
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Customer:'
       text: "Look, I\u2019m in a hurry so could we just\u2026 get on with it?\r"
       responses:
       - responseText: I still need your basic info.
@@ -4436,7 +4730,7 @@ MonoBehaviour:
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
       - responseText: Sure!
-        nextLineIndex: 37
+        nextLineIndex: 42
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
@@ -4598,7 +4892,7 @@ MonoBehaviour:
       grantPictureAccess: 0
       disableContinueButton: 0
       endConversationHere: 1
-      scoreScreenIndex: 0
+      scoreScreenIndex: 7
     - editorIndex: 0
       speaker: 'Clerk:'
       text: Could I get your postcode?
@@ -4719,7 +5013,7 @@ MonoBehaviour:
       grantPictureAccess: 0
       disableContinueButton: 0
       endConversationHere: 1
-      scoreScreenIndex: 0
+      scoreScreenIndex: 5
     - editorIndex: 0
       speaker: 'Clerk:'
       text: Akira Extra 6-pack, that will be 15,99 Neuros.
@@ -4829,6 +5123,127 @@ MonoBehaviour:
       grantPictureAccess: 0
       disableContinueButton: 0
       endConversationHere: 1
+      scoreScreenIndex: 5
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: Akira Extra 6-pack, that will be 15,99 Neuros.
+      responses:
+      - responseText: Make the sale
+        nextLineIndex: 44
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 1
+      - responseText: Don't make the sale
+        nextLineIndex: 39
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: 0
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 1
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Clerk:'
+      text: "Alright man, here you go. That\u2019ll be 16 Neuros"
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: 0
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: Wait, for real?? Err, I mean, yeah. Thanks, my guy.
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: 0
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "And hey, here\u2019s a little something extra for being a chump- I mean
+        champ about it!"
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: 0
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 0
+      scoreScreenIndex: 0
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: ...
+      responses: []
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: 0
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 0
+      endConversationHere: 1
+      scoreScreenIndex: 6
+    - editorIndex: 0
+      speaker: 'Customer:'
+      text: "I\u2019m in a hurry, so could we make this quick?"
+      responses:
+      - responseText: 'Could I get your basic info? '
+        nextLineIndex: 12
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: "Could I verify you\u2019re over 18? "
+        nextLineIndex: 9
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: 'Could I get your postcode? '
+        nextLineIndex: 29
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      - responseText: I have all I need.
+        nextLineIndex: 43
+        returnAfterResponse: 0
+        activateContinueAfterChoice: 0
+        isMakeSaleResponse: 0
+      askForID: 0
+      showGoBackButton: 0
+      goBackTargetIndex: 0
+      grantNameAccess: 0
+      grantDOBAccess: 0
+      grantAddressAccess: 0
+      grantIssuerAccess: 0
+      grantPictureAccess: 0
+      disableContinueButton: 1
+      endConversationHere: 0
       scoreScreenIndex: 0
     idPrefab: {fileID: 9214502554901828252, guid: 4e63c3f47093d7645bc076fa8eda8324, type: 3}
     npcObject: {fileID: 1267035156}
@@ -8744,6 +9159,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 642716159}
     m_Modifications:
+    - target: {fileID: 2331852780005102999, guid: 6c50c96723d822144816d540cc39f97c, type: 3}
+      propertyPath: m_text
+      value: 'Tip: 20 Neuros'
+      objectReference: {fileID: 0}
     - target: {fileID: 4207553144953019181, guid: 6c50c96723d822144816d540cc39f97c, type: 3}
       propertyPath: m_Name
       value: Score-Amon_Bad
