@@ -5013,7 +5013,7 @@ MonoBehaviour:
       grantPictureAccess: 0
       disableContinueButton: 0
       endConversationHere: 1
-      scoreScreenIndex: 0
+      scoreScreenIndex: 5
     - editorIndex: 0
       speaker: 'Clerk:'
       text: Akira Extra 6-pack, that will be 15,99 Neuros.
