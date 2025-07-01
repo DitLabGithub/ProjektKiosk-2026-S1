@@ -4,20 +4,20 @@ using UnityEngine;
 
 
 public enum ItemCategory {
-    ChipsBag,
+    Chips_Bag,
     Sproingles,
-    BoxOfChocolates,
-    FamilyChips,
-    SodaCan,
-    BeerBottle,
+    Box_Of_Chocolates,
+    Family_Chips,
+    Soda_Can,
+    Beer_Bottle,
     Haynako_Beer,
     Akira_Beer,
-    WineBottle,
-    BluePortCigarettes,
-    RamboloCigarettes,
-    HotShotCigarettes,
-    DirtyMagazine,
-    NerdComics,
+    Wine_Bottle,
+    Blueport_Cigarettes,
+    Rambolo_Cigarettes,
+    HotShot_Cigarettes,
+    Dirty_Magazine,
+    Nerd_Comics,
     Package,
     Chicken_Jerky,
     Giddy_Beer,
@@ -44,20 +44,20 @@ public class ItemSlotData : MonoBehaviour {
 
     private float GetCategoryValue(ItemCategory category) {
         switch (category) {
-            case ItemCategory.ChipsBag: return 3.0f;
+            case ItemCategory.Chips_Bag: return 3.0f;
             case ItemCategory.Sproingles: return 2.5f;
-            case ItemCategory.BoxOfChocolates: return 10.0f;
-            case ItemCategory.FamilyChips: return 5.0f;
-            case ItemCategory.SodaCan: return 2.5f;
-            case ItemCategory.BeerBottle: return 3.5f;
+            case ItemCategory.Box_Of_Chocolates: return 10.0f;
+            case ItemCategory.Family_Chips: return 5.0f;
+            case ItemCategory.Soda_Can: return 2.5f;
+            case ItemCategory.Beer_Bottle: return 3.5f;
             case ItemCategory.Haynako_Beer: return 15f;
             case ItemCategory.Akira_Beer: return 16f;
-            case ItemCategory.WineBottle: return 7.5f;
-            case ItemCategory.BluePortCigarettes: return 14f;
-            case ItemCategory.RamboloCigarettes: return 16f;
-            case ItemCategory.HotShotCigarettes: return 15f;
-            case ItemCategory.DirtyMagazine: return 12f;
-            case ItemCategory.NerdComics: return 5.5f;
+            case ItemCategory.Wine_Bottle: return 7.5f;
+            case ItemCategory.Blueport_Cigarettes: return 14f;
+            case ItemCategory.Rambolo_Cigarettes: return 16f;
+            case ItemCategory.HotShot_Cigarettes: return 15f;
+            case ItemCategory.Dirty_Magazine: return 12f;
+            case ItemCategory.Nerd_Comics: return 5.5f;
             case ItemCategory.Package: return 0f;
             case ItemCategory.Chicken_Jerky: return 6f;
             case ItemCategory.Giddy_Beer: return 3f;

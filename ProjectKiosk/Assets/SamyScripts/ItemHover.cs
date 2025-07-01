@@ -8,10 +8,11 @@ public class ItemHoverDisplay : MonoBehaviour {
     private Color originalColor;
     private SpriteRenderer spriteRenderer;
 
-    public GameObject hoverTextObject; // Assign the parent GameObject (with Image + TMP) in Inspector
+    public GameObject hoverTextObject; // Parent GameObject with Image component
     private TextMeshProUGUI hoverText;
     private Image backgroundImage;
     private Coroutine typingCoroutine;
+    private RectTransform bgRect;
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -19,10 +20,12 @@ public class ItemHoverDisplay : MonoBehaviour {
 
         hoverText = hoverTextObject.GetComponentInChildren<TextMeshProUGUI>();
         backgroundImage = hoverTextObject.GetComponent<Image>();
+        bgRect = backgroundImage.GetComponent<RectTransform>();
+
         hoverTextObject.SetActive(false);
 
         if (backgroundImage != null) {
-            backgroundImage.color = new Color(0f, 0f, 0f, 0.5f); // Black with 50% opacity
+            backgroundImage.color = new Color(0f, 0f, 0f, 0.9f); //set opacity/color of text bg here
         }
     }
 
@@ -42,13 +45,35 @@ public class ItemHoverDisplay : MonoBehaviour {
 
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         hoverTextObject.SetActive(false);
+        hoverText.text = "";
+
+        if (bgRect != null) {
+            bgRect.sizeDelta = new Vector2(0f, bgRect.sizeDelta.y); // Reset width
+        }
     }
 
     IEnumerator TypeItemName(string text) {
         hoverText.text = "";
-        foreach (char letter in text) {
-            hoverText.text += letter;
-            yield return new WaitForSeconds(0.05f); // Typing speed
+
+        float padding = 0.24f;
+        hoverText.ForceMeshUpdate(); // Ensure preferredWidth is updated
+        float fullWidth = hoverText.GetPreferredValues(text).x + padding;
+        float widthPerChar = fullWidth / Mathf.Max(text.Length, 1);
+
+        for (int i = 0; i < text.Length; i++) {
+            hoverText.text += text[i];
+
+            if (bgRect != null) {
+                float currentWidth = (i + 1) * widthPerChar;
+                bgRect.sizeDelta = new Vector2(currentWidth, bgRect.sizeDelta.y);
+            }
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        // Final correction to ensure perfect width
+        if (bgRect != null) {
+            bgRect.sizeDelta = new Vector2(fullWidth, bgRect.sizeDelta.y);
         }
     }
 }
