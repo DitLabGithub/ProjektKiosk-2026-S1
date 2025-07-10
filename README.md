@@ -2,7 +2,8 @@
 These hold the project files for the project (Projekt Kiosk)
 To be able to open and build the project through webGL you will have to install the webGL platform and install the Unity version: 2022.3.58f1
 
-/\/\/\/\ PROJECTKIOSK TIPS & KNOW-HOWS /\/\/\/\
+
+/\/\/\/\ PROJECTKIOSK TIPS & KNOW-HOWS (by samy) /\/\/\/\
 
 -Entire dialogue/Narrative is handled by the DialogueManager gameobject and script(s) attached
 -ItemManager gameobj & attached scripts handle picking up items and any item interaction
@@ -56,4 +57,4 @@ scripts, then choose the item you want that sprite to be from the ItemScript ins
 -Leave slot index in ItemScript inspector as is.
 
 
-<> Congrats! You now should know what the core scripts do and how to use them. There's a bunch of smaller scripts in the game as well that all do smaller tasks, but those are simple enough. Good Luck! <>
+<> Congrats! You now should know what the core scripts do and how to use them. There's a bunch of smaller scripts in the game as well that all do smaller tasks, but those are simple enough ;) Good Luck! <>
