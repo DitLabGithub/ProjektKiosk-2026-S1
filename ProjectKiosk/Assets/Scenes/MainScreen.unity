@@ -4236,7 +4236,7 @@ MonoBehaviour:
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
       - responseText: I have all I need.
-        nextLineIndex: 43
+        nextLineIndex: 42
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
