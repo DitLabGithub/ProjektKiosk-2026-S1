@@ -2673,7 +2673,7 @@ MonoBehaviour:
     - editorIndex: 0
       speaker: 'Bossman:'
       text: "So here it is \u2013 this little sucker is called SSI. Self-Sovereign
-        Identity or something like that."
+        Identity or something like that. Go ahead and drag this over to the ID reader."
       responses: []
       askForID: 1
       showGoBackButton: 0
@@ -2720,7 +2720,7 @@ MonoBehaviour:
     - editorIndex: 0
       speaker: 'Bossman:'
       text: "Say I\u2019m a customer looking to buy some booze. You\u2019re gonna
-        check my ID like usual. Go ahead and drag this over to the ID reader."
+        check my ID like usual. "
       responses: []
       askForID: 0
       showGoBackButton: 0
@@ -5079,6 +5079,11 @@ RectTransform:
   m_AnchoredPosition: {x: 219.6, y: -71.632}
   m_SizeDelta: {x: 96.64, y: 93.265}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &788613143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6332133790401116659, guid: fe7797e5efc8eb044adb8753aa5698f6, type: 3}
+  m_PrefabInstance: {fileID: 625063228440881791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &793679923
 GameObject:
   m_ObjectHideFlags: 0
@@ -7562,12 +7567,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996206014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.14, y: -0.714, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.1399994, y: -0.434, z: 1}
   m_LocalScale: {x: 0.16113707, y: 0.16113707, z: 0.16113707}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 788613143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014933347
 GameObject:
@@ -8033,7 +8038,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6332133790401116659, guid: fe7797e5efc8eb044adb8753aa5698f6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1996206016}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe7797e5efc8eb044adb8753aa5698f6, type: 3}
 --- !u!1001 &2628996296636456157
@@ -8884,6 +8892,5 @@ SceneRoots:
   - {fileID: 432496862}
   - {fileID: 1036299949}
   - {fileID: 1323552265}
-  - {fileID: 1996206016}
   - {fileID: 810853018}
   - {fileID: 625063228440881791}
