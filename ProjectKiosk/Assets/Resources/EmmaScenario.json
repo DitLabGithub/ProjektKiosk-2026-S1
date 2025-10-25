@@ -1,0 +1,92 @@
+{
+  "customerName": "Emma",
+  "npcPrefabPath": "NPC_Prefabs/Emma",
+  "idPrefabPath": "ID_Prefabs/StandardID",
+  "idName": "Emma Smith",
+  "idDOB": "01/01/1985",
+  "idAddress": "123 SSI Way, New EU",
+  "idIssuer": "SSI Corp",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": false,
+  "idAllowPictureAccess": false,
+  "requestedItems": [],
+  "lines": [
+    {
+      "editorIndex": 0,
+      "speaker": "Emma",
+      "text": "Hey, kiddo. Hope you had a good break, cause it's gonna be a busy week for our little kiosk.",
+      "responses": []
+    },
+    {
+      "editorIndex": 1,
+      "speaker": "Emma",
+      "text": "Since you've been away, the New European Union started offering a new form of digital ID.",
+      "responses": []
+    },
+    {
+      "editorIndex": 2,
+      "speaker": "Emma",
+      "text": "As you probably guessed, this means establishments like ours are gonna have to deal with this new Digital ID.",
+      "responses": []
+    },
+    {
+      "editorIndex": 3,
+      "speaker": "Emma",
+      "text": "Don't worry, I'll walk you through how it works. So shake off that hangover for a sec and pay attention.",
+      "responses": []
+    },
+    {
+      "editorIndex": 4,
+      "speaker": "Emma",
+      "text": "[Places SSI ID on counter] So here it is - this little sucker is called SSI. Self-Sovereign Identity or something like that.",
+      "responses": []
+    },
+    {
+      "editorIndex": 5,
+      "speaker": "Emma",
+      "text": "It's supposed to give you more control over your data, so I got myself one too. You'll see what I mean in a sec.",
+      "responses": []
+    },
+    {
+      "editorIndex": 6,
+      "speaker": "Emma",
+      "text": "So, for how it works... Say I'm a customer looking to buy some booze. You're gonna check my ID like usual. Go ahead and drag this over to the ID reader.",
+      "askForID": true,
+      "responses": []
+    },
+    {
+      "editorIndex": 7,
+      "speaker": "Emma",
+      "text": "[SSI Displays on screen, pending access to info] See the interface screen? That's where you'll see the ID holder's info. You might've noticed that my info is blocked out right now.",
+      "responses": []
+    },
+    {
+      "editorIndex": 8,
+      "speaker": "Emma",
+      "text": "That's cause the ID I gave you was SSI, so you need to ask me for access to the information you need from me before you can see it. Other ID's just show you all my info like usual.",
+      "responses": [
+        {
+          "responseText": "What's that I meant by having more control of your data with SSI?",
+          "nextLineIndex": 9,
+          "returnAfterResponse": true
+        }
+      ]
+    },
+    {
+      "editorIndex": 9,
+      "speaker": "Emma",
+      "text": "It means I get to decide what you see. If you need my DOB to check my age, you ask, and I can grant access just to that field, not my address or name. It's all about selective disclosure.",
+      "responses": []
+    },
+    {
+      "editorIndex": 10,
+      "speaker": "Emma",
+      "text": "Thank You. JSON Integration works.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 0,
+      "responses": []
+    }
+  ]
+}
