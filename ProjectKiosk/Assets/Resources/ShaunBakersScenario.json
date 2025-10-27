@@ -1,0 +1,149 @@
+{
+  "customerName": "Shaun Bakers",
+  "npcPrefabPath": "NPC_Prefabs/ShaunBakers",
+  "idPrefabPath": "ID_Prefabs/ShaunBakersID",
+  "idName": "Shaun Bakers",
+  "idDOB": "Over 18",
+  "idAddress": "N/A",
+  "idIssuer": "Groningen",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": false,
+  "idAllowPictureAccess": false,
+  "requestedItems": [],
+  "lines": [
+    {
+      "editorIndex": 0,
+      "speaker": "Clerk",
+      "text": "Hello, how can I help you?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1,
+      "speaker": "Shaun Guy",
+      "text": "Hello mister. I would like to have your attention…I think what I offer will intrigue you.",
+      "responses": []
+    },
+    {
+      "editorIndex": 2,
+      "speaker": "Clerk",
+      "text": "Oh, and what is that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 3,
+      "speaker": "Shaun Guy",
+      "text": "Information…my business runs on it and I think yours will thrive from it even more.",
+      "responses": []
+    },
+    {
+      "editorIndex": 4,
+      "speaker": "Clerk",
+      "text": "I don’t think I can give you any interesting information. Just a super normal guy working at a very normal kiosk, but if you can tell me what you actually offer, maybe my boss would like to collaborate with whatever you are doing, he was mentioning some stuff recently…",
+      "responses": []
+    },
+    {
+      "editorIndex": 5,
+      "speaker": "Shaun Guy",
+      "text": "I am not so sure, unfortunately my boss is not looking for such collaboration. The business works closely with the big companies they have suffered greatly since the 12 NEU regulations on private information. Even I lost my job after the crash…So look any customer data you can give me will be very useful. This way everyone wins, what do you say?",
+      "responses": []
+    },
+    {
+      "editorIndex": 6,
+      "speaker": "Clerk",
+      "text": "Uhh...no...no thanks, I will have to pass. I don't know about my boss, and I am not going to ask him actually, but I don't like to have such dealings with people like you the more I hear the more I get the creeps....",
+      "responses": []
+    },
+    {
+      "editorIndex": 7,
+      "speaker": "Shaun Guy",
+      "text": "Look, I lost my job when NEU regulations hit. Companies only care about data now. You either sell or you starve. Who am I? A person doing his best to make a living, nothing more! I can also sell you parts for a discount, I don't make this offer to everyone....",
+      "responses": [
+        {
+          "responseText": "I will not sell my customers' data. I follow the protocol. I'm a good employee.",
+          "nextLineIndex": 8
+        },
+        {
+          "responseText": "Tell me more about this 'data business'.",
+          "nextLineIndex": 10
+        }
+      ]
+    },
+    {
+      "editorIndex": 8,
+      "speaker": "Shaun Guy",
+      "text": "Fine. You'll regret this. I'll be back soon, and I'll have a better offer for you then. Remember, money is hard now for people.",
+      "responses": []
+    },
+    {
+      "editorIndex": 9,
+      "speaker": "Clerk",
+      "text": "I followed the protocol and didn't sell to the Shady figure. I did the right thing.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 0, 
+      "responses": []
+    },
+    {
+      "editorIndex": 10,
+      "speaker": "Shaun Guy",
+      "text": "Smart choice. It's simple. You just need to give me a flash drive with the customer data when you close up. I'll give you a generous cut. Think of what you could buy with 1000 NEUR. It's easy money, kid.",
+      "responses": [
+        {
+          "responseText": "I'll sell the data. What do I need to do?",
+          "nextLineIndex": 13
+        },
+        {
+          "responseText": "No, I can't do this. I'm wasting time. Leave now.",
+          "nextLineIndex": 15
+        },
+        {
+          "responseText": "I'm interested in buying data. How much for a list of local customers?",
+          "nextLineIndex": 17
+        }
+      ]
+    },
+    {
+      "editorIndex": 13,
+      "speaker": "Clerk",
+      "text": "1000 NEUR is a lot of money. My boss won't know. I'll do it.",
+      "responses": []
+    },
+    {
+      "editorIndex": 14,
+      "speaker": "Shaun Guy",
+      "text": "Excellent! I knew you had a good head on your shoulders. I'll see you tomorrow night with the flash drive. Don't disappoint me.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 2, 
+      "responses": []
+    },
+    {
+      "editorIndex": 15,
+      "speaker": "Shaun Guy",
+      "text": "Hmph. Wasted my time. You had a chance to make a quick buck. Don't come crying to me when you can't afford rent.",
+      "responses": []
+    },
+    {
+      "editorIndex": 16,
+      "speaker": "Clerk",
+      "text": "I've spent too much time on this. I need to get back to work. At least I didn't sell anything.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 1, 
+      "responses": []
+    },
+    {
+      "editorIndex": 17,
+      "speaker": "Shaun Guy",
+      "text": "Now *that's* a business proposition! A list of local customers will cost you 500 NEUR. You'll make it back in a day. We can arrange the transfer now.",
+      "responses": []
+    },
+    {
+      "editorIndex": 18,
+      "speaker": "Clerk",
+      "text": "I'll take the list. This will be great for business, even if it feels wrong.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 3, 
+      "responses": []
+    }
+  ]
+}
