@@ -232,7 +232,8 @@
             "grantPictureAccess": false,
             "disableContinueButton": false,
             "endConversationHere": false,
-            "scoreScreenIndex": 0
+            "scoreScreenIndex": 0,
+            "nextLineIndex": 18
         },
         {
             "editorIndex": 12,

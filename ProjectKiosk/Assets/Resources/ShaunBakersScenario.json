@@ -14,135 +14,339 @@
   "requestedItems": [],
   "lines": [
     {
-      "editorIndex": 0,
+      "editorIndex": 10,
       "speaker": "Clerk",
       "text": "Hello, how can I help you?",
       "responses": []
     },
     {
-      "editorIndex": 1,
-      "speaker": "Shaun Guy",
-      "text": "Hello mister. I would like to have your attention…I think what I offer will intrigue you.",
+      "editorIndex": 20,
+      "speaker": "Shady Guy",
+      "text": "Hello mister I would like to have your attention…I think what I offer will intrigue you",
       "responses": []
     },
     {
-      "editorIndex": 2,
+      "editorIndex": 30,
       "speaker": "Clerk",
       "text": "Oh, and what is that?",
       "responses": []
     },
     {
-      "editorIndex": 3,
-      "speaker": "Shaun Guy",
-      "text": "Information…my business runs on it and I think yours will thrive from it even more.",
+      "editorIndex": 40,
+      "speaker": "Shady Guy",
+      "text": "Information…my business runs on it and I think yours will thrive from it even more",
       "responses": []
     },
     {
-      "editorIndex": 4,
+      "editorIndex": 50,
       "speaker": "Clerk",
-      "text": "I don’t think I can give you any interesting information. Just a super normal guy working at a very normal kiosk, but if you can tell me what you actually offer, maybe my boss would like to collaborate with whatever you are doing, he was mentioning some stuff recently…",
+      "text": "I don't think I can give you any interesting information. Just a super normal guy working at a very normal kiosk, but if you can tell me what you actually offer, maybe my boss would like to collaborate with whatever you are doing, he was mentioning some stuff recently…",
       "responses": []
     },
     {
-      "editorIndex": 5,
-      "speaker": "Shaun Guy",
-      "text": "I am not so sure, unfortunately my boss is not looking for such collaboration. The business works closely with the big companies they have suffered greatly since the 12 NEU regulations on private information. Even I lost my job after the crash…So look any customer data you can give me will be very useful. This way everyone wins, what do you say?",
+      "editorIndex": 60,
+      "speaker": "Shady Guy",
+      "text": "I am not so sure, unfortunately my boss is not looking for such collaboration. The business works closely with the big companies they have suffered greatly since the 12 NEU regulations on private information.\n\nEven I lost my job after the crash…\n\nSo look any customer data you can give me will be very useful. This way everyone wins, what do you say",
       "responses": []
     },
     {
-      "editorIndex": 6,
+      "editorIndex": 70,
       "speaker": "Clerk",
-      "text": "Uhh...no...no thanks, I will have to pass. I don't know about my boss, and I am not going to ask him actually, but I don't like to have such dealings with people like you the more I hear the more I get the creeps....",
+      "text": "Uhh…no….No thanks, I will have to pass. I don't know about my boss, and I am not going to ask him actually, but I don't like to have such dealings with people like you the more I hear the more I get the creeps…",
       "responses": []
     },
     {
-      "editorIndex": 7,
-      "speaker": "Shaun Guy",
-      "text": "Look, I lost my job when NEU regulations hit. Companies only care about data now. You either sell or you starve. Who am I? A person doing his best to make a living, nothing more! I can also sell you parts for a discount, I don't make this offer to everyone....",
+      "editorIndex": 80,
+      "speaker": "Shady Guy",
+      "text": "Look, I lost my job when NEU regulations hit. Companies only care about data now. You either sell or you starve",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Shady Guy",
+      "text": "Who am I? A person doing his best to make a living, nothing more! I can also sell you parts for a discount, I don't make this offer often…. ",
       "responses": [
         {
-          "responseText": "I will not sell my customers' data. I follow the protocol. I'm a good employee.",
-          "nextLineIndex": 8
+          "responseText": "No need to hear more goodbye Shady",
+          "nextLineIndex": 100
         },
         {
-          "responseText": "Tell me more about this 'data business'.",
-          "nextLineIndex": 10
+          "responseText": "Learn more",
+          "nextLineIndex": 140
         }
       ]
     },
     {
-      "editorIndex": 8,
-      "speaker": "Shaun Guy",
-      "text": "Fine. You'll regret this. I'll be back soon, and I'll have a better offer for you then. Remember, money is hard now for people.",
-      "responses": []
-    },
-    {
-      "editorIndex": 9,
+      "editorIndex": 100,
       "speaker": "Clerk",
-      "text": "I followed the protocol and didn't sell to the Shady figure. I did the right thing.",
-      "endConversationHere": true,
-      "scoreScreenIndex": 0, 
+      "text": "No need to hear more goodbye Shady",
       "responses": []
     },
     {
-      "editorIndex": 10,
-      "speaker": "Shaun Guy",
-      "text": "Smart choice. It's simple. You just need to give me a flash drive with the customer data when you close up. I'll give you a generous cut. Think of what you could buy with 1000 NEUR. It's easy money, kid.",
+      "editorIndex": 110,
+      "speaker": "Shady Guy",
+      "text": "That is not a way to speak to a customer, Cashier. You are proving nothing….just losing a very valuable offer",
+      "responses": []
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Clerk",
+      "text": "No not interested, please go away or I call the police",
+      "responses": []
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Shady Guy",
+      "text": "Piss off…",
+      "endConversationHere": false,
+      "scoreScreenIndex": 0,
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Clerk",
+      "text": "Oh yeah, you are one of those… steals data, then sells it, and acts like they are providing you a service\n\nI think you are wasting your time here and mine",
+      "responses": []
+    },
+    {
+      "editorIndex": 150,
+      "speaker": "Shady Guy",
+      "text": "That is not a way to speak to a customer cashier\nYou are proving nothing\nJust losing a very valuable offer",
+      "responses": []
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Clerk",
+      "text": "You are not a customer, all of our customers are locals you dont sound local",
+      "responses": []
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Shady Guy",
+      "text": "You are right, I don't care about the goods you have nor am I from here but how does that even matter?\nWhat if I can offer you valuable information, then my services will be of very good use to your business?\nOr vice versa",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Clerk",
+      "text": "I don't care about it. I just work here, and I only work with people who want the goods we sell, and it seems that you are not one of them",
+      "responses": []
+    },
+    {
+      "editorIndex": 190,
+      "speaker": "Shady Guy",
+      "text": "Look, cashier, we are simply providing a service for Brootle…\nA service that people don't understand is going to help them",
+      "responses": []
+    },
+    {
+      "editorIndex": 200,
+      "speaker": "Clerk",
+      "text": "Of what service can they really be? And how is that a help when you are going behind their back to learn better how to exploit them\nActually no wait, not a need to hear anything more",
+      "responses": []
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Shady Guy",
+      "text": "Well, cashier I have been trying to reason with you in a simple human way but you dont listen to reason\nHow about this then…\nMy sources….they will take your store data, including yours and then sell it\nIt is inevitable",
+      "responses": []
+    },
+    {
+      "editorIndex": 220,
+      "speaker": "Clerk",
+      "text": "Why don't you do it",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Shady Guy",
+      "text": "It is easier if you give it now also we cannot access all of it, the encryption is very secure\nThat is why we offer you a lot of money",
       "responses": [
         {
-          "responseText": "I'll sell the data. What do I need to do?",
-          "nextLineIndex": 13
+          "responseText": "Not interested",
+          "nextLineIndex": 240
         },
         {
-          "responseText": "No, I can't do this. I'm wasting time. Leave now.",
-          "nextLineIndex": 15
+          "responseText": "Sell Data",
+          "nextLineIndex": 260
         },
         {
-          "responseText": "I'm interested in buying data. How much for a list of local customers?",
-          "nextLineIndex": 17
+          "responseText": "Buy data",
+          "nextLineIndex": 380
         }
       ]
     },
     {
-      "editorIndex": 13,
+      "editorIndex": 240,
       "speaker": "Clerk",
-      "text": "1000 NEUR is a lot of money. My boss won't know. I'll do it.",
+      "text": "No, what am I doing, sorry but bye Shady",
       "responses": []
     },
     {
-      "editorIndex": 14,
-      "speaker": "Shaun Guy",
-      "text": "Excellent! I knew you had a good head on your shoulders. I'll see you tomorrow night with the flash drive. Don't disappoint me.",
+      "editorIndex": 250,
+      "speaker": "Shady Guy",
+      "text": "Here is my card. I will come back.\nYou Receive his business card",
       "endConversationHere": true,
-      "scoreScreenIndex": 2, 
+      "scoreScreenIndex": 1,
       "responses": []
     },
     {
-      "editorIndex": 15,
-      "speaker": "Shaun Guy",
-      "text": "Hmph. Wasted my time. You had a chance to make a quick buck. Don't come crying to me when you can't afford rent.",
-      "responses": []
-    },
-    {
-      "editorIndex": 16,
+      "editorIndex": 260,
       "speaker": "Clerk",
-      "text": "I've spent too much time on this. I need to get back to work. At least I didn't sell anything.",
-      "endConversationHere": true,
-      "scoreScreenIndex": 1, 
+      "text": "How much money are we talking?",
       "responses": []
     },
     {
-      "editorIndex": 17,
-      "speaker": "Shaun Guy",
-      "text": "Now *that's* a business proposition! A list of local customers will cost you 500 NEUR. You'll make it back in a day. We can arrange the transfer now.",
+      "editorIndex": 270,
+      "speaker": "Shady Guy",
+      "text": "1000 NEU on the initial data transfer of every full personal information\nThe less information, the less you have to offer, results less money",
       "responses": []
     },
     {
-      "editorIndex": 18,
+      "editorIndex": 280,
       "speaker": "Clerk",
-      "text": "I'll take the list. This will be great for business, even if it feels wrong.",
+      "text": "Whoa, that's a lot of money, man",
+      "responses": []
+    },
+    {
+      "editorIndex": 290,
+      "speaker": "Shady Guy",
+      "text": "Yes, there you see it\nYou can see why I do it, companies are obsessed with data\nThey give so much money just for a small piece  of information,\nIf I had a choice, I wouldn't do it, but it is the best a person like me and you can do",
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Clerk",
+      "text": "Yeaa… for companies, they want data that is understandable but still in a legal secure way not through some third party and most importantly without the consent of the user\nTalking about that…\nMorals man",
+      "responses": []
+    },
+    {
+      "editorIndex": 310,
+      "speaker": "Shady Guy",
+      "text": "The user has never had full consent….\nI know it is not the best thing to do, but we just get the data, it is not that accurate\nIt is still secure, we are not going to use it instead of them, we just give it to giant algorithms that will help companies",
+      "responses": []
+    },
+    {
+      "editorIndex": 320,
+      "speaker": "Clerk",
+      "text": "Don't try to make it light\nYou are doing something bad",
+      "responses": []
+    },
+    {
+      "editorIndex": 330,
+      "speaker": "Shady Guy",
+      "text": "See, I look at it this way… companies win, I win, you win, and the customer is minimally affected\nBest scenario in this age",
+      "responses": []
+    },
+    {
+      "editorIndex": 340,
+      "speaker": "Clerk",
+      "text": "Ok man, you win, fine. I will fold\nBut I need to see the money first",
+      "responses": []
+    },
+    {
+      "editorIndex": 350,
+      "speaker": "Shady Guy",
+      "text": "Here…\nNow transfer me the data quickly…",
+      "responses": []
+    },
+    {
+      "editorIndex": 360,
+      "speaker": "Clerk",
+      "text": "Uff, there you go, shady dude\nYou happy?",
+      "responses": []
+    },
+    {
+      "editorIndex": 370,
+      "speaker": "Shady Guy",
+      "text": "Of course\nWe will do more business in the future",
       "endConversationHere": true,
-      "scoreScreenIndex": 3, 
+      "scoreScreenIndex": 2,
+      "responses": []
+    },
+    {
+      "editorIndex": 380,
+      "speaker": "Clerk",
+      "text": "You know there are cameras everywhere and surveillance 24/7? The NEU is very serious about this stuff. It seems like you don't follow the news, man...\nPeople like you get bad punishment from the government forces",
+      "responses": []
+    },
+    {
+      "editorIndex": 390,
+      "speaker": "Shady Guy",
+      "text": "Well, cashier, without such a risk, there won't be a worthy reward\nBesides, do you think I will be this stupid to go to a place where they will catch me\nSurveillance is not everywhere; in remote places like these, there is still peace from all the control of the government\nIt is heaven for what we do",
+      "responses": []
+    },
+    {
+      "editorIndex": 400,
+      "speaker": "Clerk",
+      "text": "Whoa careful it is what you do but not what I do that is for sure\nEspecially in places like this, new tech is still approaching so you kinda make sense\nAnd still?",
+      "responses": []
+    },
+    {
+      "editorIndex": 410,
+      "speaker": "Shady Guy",
+      "text": "Not a problem for me, I can deal with risk\nI can teach you how to do it, but it is up to you",
+      "responses": []
+    },
+    {
+      "editorIndex": 420,
+      "speaker": "Clerk",
+      "text": "Well, it should be, for me, it is still a problem, so I will say no, easy as that",
+      "responses": []
+    },
+    {
+      "editorIndex": 430,
+      "speaker": "Shady Guy",
+      "text": "Is that your final answer?",
+      "responses": []
+    },
+    {
+      "editorIndex": 440,
+      "speaker": "Clerk",
+      "text": "What are the prices for information?",
+      "responses": []
+    },
+    {
+      "editorIndex": 450,
+      "speaker": "Shady Guy",
+      "text": "Since you are my first time customer it will be 500 NEUR but usually it is around 1000 NEUR.",
+      "responses": []
+    },
+    {
+      "editorIndex": 460,
+      "speaker": "Clerk",
+      "text": "Ah man that is a lot of money, doesnt matter it will help the business maybe this way the boss will increase my salary",
+      "responses": []
+    },
+    {
+      "editorIndex": 470,
+      "speaker": "Shady Guy",
+      "text": "You see my point now,Cashier? In this economy to be honest means being hungry",
+      "responses": []
+    },
+    {
+      "editorIndex": 480,
+      "speaker": "Clerk",
+      "text": "Yeah dude, besides that I can barely pay my rent let alone the food….It is not easy.\nThere you go give me what you have",
+      "responses": []
+    },
+    {
+      "editorIndex": 490,
+      "speaker": "Shady Guy",
+      "text": "Here, check if data is what you need, I am fair in my exchanges…",
+      "responses": []
+    },
+    {
+      "editorIndex": 500,
+      "speaker": "Clerk",
+      "text": "Yeah all good now, have more than i needed, thanks dude you saved my skin",
+      "responses": []
+    },
+    {
+      "editorIndex": 510,
+      "speaker": "Shady Guy",
+      "text": "We will do more business in the future, Mr Clerk",
+      "endConversationHere": true,
+      "scoreScreenIndex": 3,
       "responses": []
     }
   ]

@@ -325,6 +325,29 @@ public class DialogueManager : MonoBehaviour
         // We will stick to the original code's intent of simply calling HideInfo if data is null.
     }
 
+    // Helper method to convert editorIndex to actual array index
+    private int FindLineIndexByEditorIndex(int editorIndex)
+    {
+        if (currentJsonCustomer != null)
+        {
+            for (int i = 0; i < currentJsonCustomer.lines.Count; i++)
+            {
+                if (currentJsonCustomer.lines[i].editorIndex == editorIndex)
+                    return i;
+            }
+        }
+        else if (currentCustomerIndex < customers.Count)
+        {
+            for (int i = 0; i < customers[currentCustomerIndex].lines.Count; i++)
+            {
+                if (customers[currentCustomerIndex].lines[i].editorIndex == editorIndex)
+                    return i;
+            }
+        }
+        Debug.LogWarning($"Could not find line with editorIndex {editorIndex}");
+        return -1;
+    }
+
     public void NextLine()
     {
         if (waitingForAction)
@@ -473,7 +496,17 @@ public class DialogueManager : MonoBehaviour
                         if (currentResponse.returnAfterResponse)
                             dialogueReturnStack.Push(currentLineIndex);
 
-                        currentLineIndex = currentResponse.nextLineIndex;
+                        // Convert editorIndex to array index
+                        int targetIndex = FindLineIndexByEditorIndex(currentResponse.nextLineIndex);
+                        if (targetIndex >= 0)
+                        {
+                            currentLineIndex = targetIndex;
+                        }
+                        else
+                        {
+                            Debug.LogError($"Invalid nextLineIndex: {currentResponse.nextLineIndex}");
+                            return;
+                        }
                     }
                     else
                     {
@@ -502,8 +535,17 @@ public class DialogueManager : MonoBehaviour
             goBackButton.onClick.RemoveAllListeners();
             goBackButton.onClick.AddListener(() =>
             {
-                currentLineIndex = line.goBackTargetIndex;
-                ShowNextLine();
+                // Convert editorIndex to array index
+                int targetIndex = FindLineIndexByEditorIndex(line.goBackTargetIndex);
+                if (targetIndex >= 0)
+                {
+                    currentLineIndex = targetIndex;
+                    ShowNextLine();
+                }
+                else
+                {
+                    Debug.LogError($"Invalid goBackTargetIndex: {line.goBackTargetIndex}");
+                }
             });
         }
         else
