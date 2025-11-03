@@ -46,7 +46,7 @@
     {
       "editorIndex": 60,
       "speaker": "Shady Guy",
-      "text": "I am not so sure, unfortunately my boss is not looking for such collaboration. The business works closely with the big companies they have suffered greatly since the 12 NEU regulations on private information.\n\nEven I lost my job after the crash…\n\nSo look any customer data you can give me will be very useful. This way everyone wins, what do you say",
+      "text": "I am not so sure, unfortunately my associates are not looking for such collaboration. The business works closely with the big companies they have suffered greatly since the NEU regulations on private information.\n\nEven I lost my job after the crash…\n\nSo look any customer data you can give me will be very useful. This way everyone wins, what do you say",
       "responses": []
     },
     {
@@ -92,20 +92,29 @@
       "editorIndex": 120,
       "speaker": "Clerk",
       "text": "No not interested, please go away or I call the police",
-      "responses": []
+      "responses": [
+        {
+          "responseText": "Let him go away",
+          "nextLineIndex": 130
+        },
+        {
+          "responseText": "Learn more",
+          "nextLineIndex": 140
+        }
+      ]
     },
     {
       "editorIndex": 130,
       "speaker": "Shady Guy",
       "text": "Piss off…",
-      "endConversationHere": false,
+      "endConversationHere": true,
       "scoreScreenIndex": 0,
       "responses": []
     },
     {
       "editorIndex": 140,
       "speaker": "Clerk",
-      "text": "Oh yeah, you are one of those… steals data, then sells it, and acts like they are providing you a service\n\nI think you are wasting your time here and mine",
+      "text": "You are one of those… steals data, then sells it, and acts like they are providing you a service\n\nI think you are wasting your time here and mine",
       "responses": []
     },
     {
