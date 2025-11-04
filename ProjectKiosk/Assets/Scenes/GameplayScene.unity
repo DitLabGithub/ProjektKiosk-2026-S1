@@ -122,17 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &55253158 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4260335339609587559, guid: 9d90b99696ca63c4a9c11259a80b9a9a, type: 3}
-  m_PrefabInstance: {fileID: 6770590116387378381}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &59386692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,17 +2397,15 @@ MonoBehaviour:
   infoDisplay: {fileID: 937592072}
   customers: []
   jsonCustomerFileNames:
-  - ShaunBakersScenario
   - fridgy_scenario
+  - ShaunBakersScenario
   scoreScreens:
   - {fileID: 1474960500}
   - {fileID: 327348748}
   - {fileID: 490615247}
   - {fileID: 1601825649}
   endCreditScreen: {fileID: 810853016}
-  scoreContinueButtons:
-  - {fileID: 55253158}
-  - {fileID: 1864111277}
+  scoreContinueButtons: []
 --- !u!4 &756885555
 Transform:
   m_ObjectHideFlags: 0
@@ -4674,17 +4661,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1323552265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1864111277 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2768570258240168841, guid: b8c7c283f8d64a14faeee720bfc6d2cf, type: 3}
-  m_PrefabInstance: {fileID: 8306364986228145458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1902202447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 227206480415037101, guid: e641c4e9f23fc9347a3b5503b46de7a7, type: 3}

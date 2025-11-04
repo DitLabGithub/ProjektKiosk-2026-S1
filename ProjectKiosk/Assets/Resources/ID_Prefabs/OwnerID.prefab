@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7076823828228385413}
   - component: {fileID: -333591280753198792}
   m_Layer: 3
-  m_Name: SSI_Fridge
+  m_Name: OwnerID
   m_TagString: ID
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProfileImage: {fileID: 21300000, guid: 230e2f71378bd114391653c3fb999a77, type: 3}
-  Name: Fridgy
-  DOB: N/A
+  Name: Peter Cruise
+  DOB: 19/03/1993
   Address: 0404 NA
-  Issuer: Stockholm government
+  Issuer: Amsterdam
   allowDOBAccess: 0
   allowAddressAccess: 0
   allowPictureAccess: 0

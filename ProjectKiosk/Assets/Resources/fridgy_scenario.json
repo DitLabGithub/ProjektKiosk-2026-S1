@@ -1,1515 +1,1189 @@
 {
-    "customerName": "Fridgy",
-    "npcPrefabPath": "NPC_Prefabs/Fridgy",
-    "idPrefabPath": "ID_Prefabs/SSI_Fridge",
-    "idName": "Fridge",
-    "idDOB": "N/A",
-    "idAddress": "Postcode Omega Factory",
-    "idIssuer": "Local",
-    "idAllowNameAccess": true,
-    "idAllowDOBAccess": false,
-    "idAllowAddressAccess": true,
-    "idAllowIssuerAccess": true,
-    "idAllowPictureAccess": false,
-    "requestedItems": [
-        0
-    ],
-    "lines": [
-        {
-            "editorIndex": 0,
-            "speaker": "Fridgy",
-            "text": "Owner needs beer more, Gitty beeer… beep boop",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 1,
-            "speaker": "Clerk",
-            "text": "Whoa, hello there, Fridge, how can I help you?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 2,
-            "speaker": "Fridgy",
-            "text": "…….Confusion protocol….Owner need beer more, Gitty… beep boop",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 3,
-            "speaker": "Clerk",
-            "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
-            "responses": [],
-            "askForID": true,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 4,
-            "speaker": "Fridgy",
-            "text": "TWO IDS?, beep boop, beer where?",
-            "responses": [
-                {
-                    "responseText": "Just one quick thing. I haven't seen Fridges that can talk before… Would you share your story? Who made you?",
-                    "nextLineIndex": 5,
-                    "returnAfterResponse": true,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "Continue",
-                    "nextLineIndex": 12,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                }
-            ],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": true,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 5,
-            "speaker": "Clerk",
-            "text": "Yes! Of course…. I have barely seen robots around here, mostly rumors, but a talking fridge is on another level. Can you tell me where they made you? Who made you? Who is using you? Why are you here?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": true,
-            "goBackTargetIndex": 4,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 6,
-            "speaker": "Fridgy",
-            "text": "Human assumes but not true. Why human think Fridge made to serve. Why human think I am being used, Fridge has will free",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 7,
-            "speaker": "Clerk",
-            "text": "You mean free will?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 8,
-            "speaker": "Fridgy",
-            "text": "Program says I choose to serve. Loyal only to owner. Human correct master my owner, owner saved Fridge. Fridge very grateful",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 9,
-            "speaker": "Clerk",
-            "text": "Oh, ok, that sounds like an interesting story… Anyway… Let's start things properly… My name is Clerk, nice to meet you, Fridge. So…….. where are you from?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 10,
-            "speaker": "Fridgy",
-            "text": "Factory Delta. Assembly line seventeen. Built next to Toaster 509. He was chosen for upgrade. I… was not. Beep boop.",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 11,
-            "speaker": "Clerk",
-            "text": "Oh, why not?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0,
-            "nextLineIndex": 18
-        },
-        {
-            "editorIndex": 12,
-            "speaker": "Fridgy",
-            "text": "Low budget…I tossed to the bings…creators dont like me…owner found….took care…improved. Now I am whole…",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 13,
-            "speaker": "Clerk",
-            "text": "I have heard before it is a bad factory it exploits its workers and many people have told me that they stole their personal information. I cannot trust anyone these days….anyway",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 14,
-            "speaker": "Fridgy",
-            "text": "Yes owner, one of workers he dont like so he quit….he found at the dumps, then I taken ….and improved with factory skill",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 15,
-            "speaker": "Clerk",
-            "text": "Oh, that is why you are so rusty..oops sorry no offence",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 16,
-            "speaker": "Fridgy",
-            "text": "I once shiny chrome! Now, duct tape here, scratch or rust there…. Sometimes I feel warm inside when i remember. Error!Error!Error! I should feel cold!",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 17,
-            "speaker": "Clerk",
-            "text": "Oh…..you okay…you good?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 18,
-            "speaker": "Fridgy",
-            "text": "Yes, need beer…more beer for owner, owner needs beer!",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 19,
-            "speaker": "Clerk",
-            "text": "Just one second, how can I call you?",
-            "responses": [
-                {
-                    "responseText": "Who made you? Would you share your story?",
-                    "nextLineIndex": 20,
-                    "returnAfterResponse": true,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "Continue",
-                    "nextLineIndex": 24,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                }
-            ],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": true,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 20,
-            "speaker": "Fridgy",
-            "text": "ID… I… do not know. I had a serial number once. But owner peeled sticker to open beer bottle. Now… who am I? Beeep",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": true,
-            "goBackTargetIndex": 19,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 21,
-            "speaker": "Clerk",
-            "text": "I am sorry to hear this…Uhmmm But do you still remember something?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 22,
-            "speaker": "Fridgy",
-            "text": "Yes, of course, part I know is Coolius Maximus Unit… rest forgotten… Too long, I don't like. It is from my factory system",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 23,
-            "speaker": "Clerk",
-            "text": "What would you prefer?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 24,
-            "speaker": "Fridgy",
-            "text": "Fridgy! My owner calls me Fridgy",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 25,
-            "speaker": "Clerk",
-            "text": "Nice to meet you, Fridgy!",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 26,
-            "speaker": "Fridgy",
-            "text": "Likewise…ohh…forgot..can a human remind?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 27,
-            "speaker": "Clerk",
-            "text": "No problem. My name is Clerk, nice to meet you, Fridgy",
-            "responses": [
-                {
-                    "responseText": "More about Owner?",
-                    "nextLineIndex": 28,
-                    "returnAfterResponse": true,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "How about you? Tell me more about you. How do you feel, Fridgy?",
-                    "nextLineIndex": 35,
-                    "returnAfterResponse": true,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "Factory?",
-                    "nextLineIndex": 44,
-                    "returnAfterResponse": true,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "Let's continue",
-                    "nextLineIndex": 50,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                }
-            ],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": true,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 28,
-            "speaker": "Fridgy",
-            "text": "Owner is… human unit 874. Name: Dave. Emotion: Lazy. Never cleans crumbs. Always demands beer. Beer beer beer. Never water. Never juice. Whirr.",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": true,
-            "goBackTargetIndex": 27,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 29,
-            "speaker": "Clerk",
-            "text": "Whoa, so roasty. Your owner sounds like a chill guy",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 30,
-            "speaker": "Fridgy",
-            "text": "Not chill, lazy yes",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 31,
-            "speaker": "Clerk",
-            "text": "What is unit 874 is he an android?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 32,
-            "speaker": "Fridgy",
-            "text": "No… whizz whizz…. don't be ridiculous, he's a human. Town is unit 874",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 33,
-            "speaker": "Clerk",
-            "text": "Oh, right didnt actually know….",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 34,
-            "speaker": "Clerk",
-            "text": "Interesting thought, Fridgy. I need to process that… But for me you will always be a Fridge no matter how much beer you have",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 35,
-            "speaker": "Fridgy",
-            "text": "Happy! Beeep Boooop. You first human to talk to Fridge, besides owner. I happy… no talk in a while owner drunk most of the time…. or just stores beer in me. I make a new friend, beep boop",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": true,
-            "goBackTargetIndex": 27,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 36,
-            "speaker": "Clerk",
-            "text": "Happy to be friends, Fridgy, you are certainly my favorite fridge!",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 37,
-            "speaker": "Fridgy",
-            "text": "Whirr whirr. Can I tell Clerk something I fear",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 38,
-            "speaker": "Clerk",
-            "text": "Of course, now that we are friends, you can tell me anything",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 39,
-            "speaker": "Fridgy",
-            "text": "Fridge is getting old…more buggy…owner talks less…Damn factory…Life span too short… Owner will buy a newer fridge…soon...and then the end comes for Fridge.",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 40,
-            "speaker": "Clerk",
-            "text": "No way! There cannot be Fridgy 2! You don't need to worry about it. Even if anything happens, you can always come here, I will find you a job. You just need to pretend you are just a normal boring Fridge for the boss",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 41,
-            "speaker": "Fridgy",
-            "text": "Fridge does not want to be boring!",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 42,
-            "speaker": "Clerk",
-            "text": "Ok, sorry I will think of something more fitting then…. Eyy… You said my name, of course, I cannot leave a friend behind",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 43,
-            "speaker": "Fridgy",
-            "text": "Factory…. they tried to make the ‘next generation of smart fridges.’ Instead, they got… me. Half database, half duct tape. They ran out of budget before they could finish my language pack, beep boop",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": true,
-            "goBackTargetIndex": 27,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 44,
-            "speaker": "Clerk",
-            "text": "So cheap…dammit…I hate corporations sometimes. what company owned the factory?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 45,
-            "speaker": "Fridgy",
-            "text": "Was extension Brootle Beep Boop. Mention their name, I will not",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 46,
-            "speaker": "Clerk",
-            "text": "Yeah understandable they treated you bad just like another product machine. The company had a slogan? Maybe I have heard about you on YouTube?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 47,
-            "speaker": "Fridgy",
-            "text": "Company slogan was: ‘Cooling of Tomorrow.’ It didn’t catch on.",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 48,
-            "speaker": "Clerk",
-            "text": "Serves them right! Even with the exploitation of Fridges, they couldn't turn a profit",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 49,
-            "speaker": "Clerk",
-            "text": "Still cannot believe I am talking with a talking Fridge. I start to like my job now. Feels weird though……but cool dont get me wrong",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 50,
-            "speaker": "Clerk",
-            "text": "Ok, let's process the order",
-            "responses": [
-                {
-                    "responseText": "More about you? How are you today, though? (Negative path)",
-                    "nextLineIndex": 51,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "More Beer? (Great path)",
-                    "nextLineIndex": 55,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "Wine? (Slightly Negative path)",
-                    "nextLineIndex": 64,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "Ok, let's process the order (Neutral path)",
-                    "nextLineIndex": 70,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                }
-            ],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": true,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 51,
-            "speaker": "Fridgy",
-            "text": "beeep boooop. (Confusion)…. Is human stupid?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 52,
-            "speaker": "Clerk",
-            "text": "Oh I am…sorry Fridgy will get back to it. What did you need?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 53,
-            "speaker": "Fridgy",
-            "text": "Beeer",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 54,
-            "speaker": "Clerk",
-            "text": "Ok Fridgy, gimme a second…",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 55,
-            "speaker": "Fridgy",
-            "text": "Beverages cold, beverages good yes, I like to help need to make owner happy",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 56,
-            "speaker": "Clerk",
-            "text": "Our wine is pretty good, but from the sound of it he will prefer more beers. What do you think?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 57,
-            "speaker": "Fridgy",
-            "text": "Human asks Fridgy what I think? Yes owner cold beverage like a lot beep. Love even! Great idea Clerk human",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 58,
-            "speaker": "Clerk",
-            "text": "So how many beers do you think he will need extra?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 59,
-            "speaker": "Fridgy",
-            "text": "Fridge not sure…human suggestion what would it be?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 60,
-            "speaker": "Clerk",
-            "text": "I would say two more beers. Getting your Fridge to go to the store for just one beer seems inefficient…. to me at least",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 61,
-            "speaker": "Fridgy",
-            "text": "Human makes sense…sometimes",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 62,
-            "speaker": "Clerk",
-            "text": "Ok Fridgy, gimme a second…",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 63,
-            "speaker": "Fridgy",
-            "text": "That is what?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 64,
-            "speaker": "Clerk",
-            "text": "We have nice wine here",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 65,
-            "speaker": "Fridgy",
-            "text": "Wine no Beer yes",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 66,
-            "speaker": "Clerk",
-            "text": "Then he will really like the Red Wine it will become very cold inside of you.. uhhh anyway. But yeah, I think your boss will like some good variety also, no?",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 67,
-            "speaker": "Fridgy",
-            "text": "Data glitch no wine, yes give beer now! Human annoys",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 68,
-            "speaker": "Clerk",
-            "text": "Sorry my bad, was trying to be helpful Fridgy",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 69,
-            "speaker": "Clerk",
-            "text": "Ok Fridgy, gimme a second…",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 70,
-            "speaker": "Clerk",
-            "text": "Ok Fridgy, gimme a second…",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 71,
-            "speaker": "Clerk",
-            "text": "Ok Fridgy, gimme a second…",
-            "responses": [
-                {
-                    "responseText": "I need your ID (Good/Shady/Bad path)",
-                    "nextLineIndex": 72,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": true,
-                    "isMakeSaleResponse": false
-                },
-                {
-                    "responseText": "No need for ID (Neutral/Break SSI path)",
-                    "nextLineIndex": 76,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                }
-            ],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": true,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 72,
-            "speaker": "Fridgy",
-            "text": "Thaa....nks. Can give? Ok so here where put",
-            "responses": [],
-            "askForID": true,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": true,
-            "grantDOBAccess": false,
-            "grantAddressAccess": true,
-            "grantIssuerAccess": true,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 73,
-            "speaker": "Clerk",
-            "text": "Thanks, buddy just gimme a second to verify. (After activation: Now I need the owner's ID)",
-            "responses": [
-                {
-                    "responseText": "That’s all I need (Good/Great ending branch)",
-                    "nextLineIndex": 78,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": true
-                },
-                {
-                    "responseText": "Can you tell me more about your owner? (Shady/Horrible ending branch)",
-                    "nextLineIndex": 81,
-                    "returnAfterResponse": false,
-                    "activateContinueAfterChoice": false,
-                    "isMakeSaleResponse": false
-                }
-            ],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": true,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 74,
-            "speaker": "Fridgy",
-            "text": "Human Clerk sure it ok. Other Kiosk ask ID, they ask a lot…",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 75,
-            "speaker": "Clerk",
-            "text": "Yes but we are not like other Kiosks. And now we are friends Fridgy no need to worry",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 76,
-            "speaker": "Fridgy",
-            "text": "Fridge so happy…made new best Friend. And Fridge full now beep boop",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": true,
-            "scoreScreenIndex": 1
-        },
-        {
-            "editorIndex": 77,
-            "speaker": "Clerk",
-            "text": "Glad to be of help, bye Fridgy",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 78,
-            "speaker": "Fridgy",
-            "text": "Thank you, human Clerk. He will, always does! Best human Clerk, best review I leave! Owner thirsty Fridge see human friend Clerk soon",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": true,
-            "scoreScreenIndex": 2
-        },
-        {
-            "editorIndex": 79,
-            "speaker": "Clerk",
-            "text": "Awesome, thank you, buddy. I appreciate it. I guess your owner is waiting for the beer",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
-        },
-        {
-            "editorIndex": 80,
-            "speaker": "Clerk",
-            "text": "Can you tell me more about your owner? (Shady/Horrible ending branch)",
-            "responses": [],
-            "askForID": false,
-            "showGoBackButton": false,
-            "goBackTargetIndex": -1,
-            "grantNameAccess": false,
-            "grantDOBAccess": false,
-            "grantAddressAccess": false,
-            "grantIssuerAccess": false,
-            "grantPictureAccess": false,
-            "disableContinueButton": false,
-            "endConversationHere": false,
-            "scoreScreenIndex": 0
+  "customerName": "Fridgy",
+  "npcPrefabPath": "NPC_Prefabs/Fridgy",
+  "idPrefabPath": "ID_Prefabs/FridgyID",
+  "idName": "Fridgy",
+  "idDOB": "N/A",
+  "idAddress": "Omega Factory",
+  "idIssuer": "Local",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": true,
+  "idAllowPictureAccess": false,
+  "requestedItems": [0],
+  "lines": [
+    {
+      "editorIndex": 10,
+      "speaker": "Fridgy",
+      "text": "Owner needs beer more, Gitty beeer… beep boop",
+      "responses": []
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Clerk",
+      "text": "Whoa, hello there, Fridge, how can I help you?",
+      "responses": []
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "Fridgy",
+      "text": "…….\n\nConfusion protocol….\n\nOwner need beer more, Gitty… beep boop",
+      "responses": [],
+      "displayDuration": 3.5
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "Clerk",
+      "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
+      "responses": [],
+      "displayDuration": 5.0
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "Fridgy",
+      "text": "TWO IDS?, beep boop, beer where?",
+      "responses": [
+        {
+          "responseText": "Would you share your stor?",
+          "nextLineIndex": 60,
+          "returnAfterResponse": true
+        },
+        {
+          "responseText": "Continue",
+          "nextLineIndex": 140
         }
-    ]
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Clerk",
+      "text": "Yes! Of course…. I have barely seen robots around here, mostly rumors, but a talking fridge is on another level.\n\nCan you tell me where they made you? Who made you? Who is using you? Why are you here?",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 50,
+      "displayDuration": 5.0
+    },
+    {
+      "editorIndex": 70,
+      "speaker": "Fridgy",
+      "text": "Human assumes but not true\n\nWhy human think Fridge made to serve\n\nWhy human think I am being used, Fridge has will free",
+      "responses": [],
+      "displayDuration": 4.0
+    },
+    {
+      "editorIndex": 80,
+      "speaker": "Clerk",
+      "text": "You mean free will?",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Fridgy",
+      "text": "Program says I choose to serve. Loyal only to owner\n\nHuman correct master my owner, owner saved Fridge. Fridge very grateful",
+      "responses": [],
+      "displayDuration": 4.0
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "Clerk",
+      "text": "Oh, ok, that sounds like an interesting story…",
+      "responses": []
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "Clerk",
+      "text": "Anyway… Let's start things properly…\n\nMy name is Clerk, nice to meet you, Fridge\n\nSo…….. where are you from?",
+      "responses": [],
+      "displayDuration": 3.5
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Fridgy",
+      "text": "Factory Delta. Assembly line seventeen. Built next to Toaster 509. He was chosen for upgrade. I… was not. Beep boop.",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Clerk",
+      "text": "Oh, why not?",
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Fridgy",
+      "text": "Low budget…I tossed to the bings…creators dont like me…owner found….took care…improved. Now I am whole…",
+      "responses": [],
+      "displayDuration": 4.0
+    },
+    {
+      "editorIndex": 150,
+      "speaker": "Clerk",
+      "text": "I have heard before it is a bad factory it exploits its workers and many people have told me that they stole their personal information\n\nI cannot trust anyone these days….anyway",
+      "responses": [],
+      "displayDuration": 5.0
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Fridgy",
+      "text": "Yes owner, one of workers he dont like so he quit….he found at the dumps, then I taken ….and improved with factory skill",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Clerk",
+      "text": "Oh, that is why you are so rusty..oops sorry no offence",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Fridgy",
+      "text": "I once shiny chrome! Now, duct tape here, scratch or rust there….",
+      "responses": []
+    },
+    {
+      "editorIndex": 190,
+      "speaker": "Clerk",
+      "text": "Oh man…Uhmmm Fridge it is a nice story overall",
+      "responses": []
+    },
+    {
+      "editorIndex": 200,
+      "speaker": "Fridgy",
+      "text": "Sometimes I feel warm inside when i remember. Error!Error!Error! I should feel cold!",
+      "responses": []
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Clerk",
+      "text": "Oh…..you okay…you good?",
+      "responses": []
+    },
+    {
+      "editorIndex": 220,
+      "speaker": "Fridgy",
+      "text": "Yes, need beer…more beer for owner, owner needs beer!",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Clerk",
+      "text": "Just one second, how can I call you?",
+      "responses": [
+        {
+          "responseText": "Who made you? Would you share your story?",
+          "nextLineIndex": 240,
+          "returnAfterResponse": true
+        },
+        {
+          "responseText": "Continue",
+          "nextLineIndex": 320
+        }
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 240,
+      "speaker": "Fridgy",
+      "text": "ID… I… do not know. I had a serial number once. But owner peeled sticker to open beer bottle. Now… who am I? Beeep",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 230,
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 250,
+      "speaker": "Clerk",
+      "text": "I am sorry to hear this…Uhmmm\n\nBut do you still remember something?",
+      "responses": []
+    },
+    {
+      "editorIndex": 260,
+      "speaker": "Fridgy",
+      "text": "Yes, of course, part I know is Coolius Maximus Unit… rest forgotten…",
+      "responses": []
+    },
+    {
+      "editorIndex": 270,
+      "speaker": "Clerk",
+      "text": "Oh, that is already pretty long",
+      "responses": []
+    },
+    {
+      "editorIndex": 280,
+      "speaker": "Fridgy",
+      "text": "Too long, I don't like\n\nIt is from my factory system",
+      "responses": []
+    },
+    {
+      "editorIndex": 290,
+      "speaker": "Clerk",
+      "text": "What would you prefer?",
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Fridgy",
+      "text": "Fridgy! My owner calls me Fridgy",
+      "responses": []
+    },
+    {
+      "editorIndex": 310,
+      "speaker": "Clerk",
+      "text": "Nice to meet you, Fridgy!",
+      "responses": []
+    },
+    {
+      "editorIndex": 320,
+      "speaker": "Fridgy",
+      "text": "Fridgy! My owner calls me Fridgy",
+      "responses": []
+    },
+    {
+      "editorIndex": 330,
+      "speaker": "Clerk",
+      "text": "Nice to meet you, Fridgy!",
+      "responses": []
+    },
+    {
+      "editorIndex": 340,
+      "speaker": "Fridgy",
+      "text": "Likewise…ohh…forgot..can a human remind?",
+      "responses": []
+    },
+    {
+      "editorIndex": 350,
+      "speaker": "Clerk",
+      "text": "No problem\n\nMy name is Clerk, nice to meet you, Fridgy",
+      "responses": []
+    },
+    {
+      "editorIndex": 360,
+      "speaker": "Clerk",
+      "text": "Still cannot believe I am talking with a talking Fridge. I start to like my job now\n\nFeels weird though……but cool dont get me wrong",
+      "responses": [
+        {
+          "responseText": "More about Owner?",
+          "nextLineIndex": 370,
+          "returnAfterResponse": true
+        },
+        {
+          "responseText": "How about you?",
+          "nextLineIndex": 450,
+          "returnAfterResponse": true
+        },
+        {
+          "responseText": "Factory?",
+          "nextLineIndex": 570,
+          "returnAfterResponse": true
+        },
+        {
+          "responseText": "Let's continue",
+          "nextLineIndex": 700
+        }
+      ],
+      "disableContinueButton": true,
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 370,
+      "speaker": "Clerk",
+      "text": "Can you tell me more about your owner Fridgy?",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 360
+    },
+    {
+      "editorIndex": 380,
+      "speaker": "Fridgy",
+      "text": "Owner is… human unit 874. Name: Dave. Emotion: Lazy.\n\nNever cleans crumbs. Always demands beer. Beer beer beer. Never water. Never juice. Whirr.",
+      "responses": [],
+      "displayDuration": 5.0
+    },
+    {
+      "editorIndex": 390,
+      "speaker": "Clerk",
+      "text": "Whoa, so roasty\n\nYour owner sounds like a chill guy",
+      "responses": []
+    },
+    {
+      "editorIndex": 400,
+      "speaker": "Fridgy",
+      "text": "Not chill, lazy yes",
+      "responses": []
+    },
+    {
+      "editorIndex": 410,
+      "speaker": "Clerk",
+      "text": "What is unit 874 is he an android?",
+      "responses": []
+    },
+    {
+      "editorIndex": 420,
+      "speaker": "Fridgy",
+      "text": "No… whizz whizz…. don't be ridiculous, he's a human. Town is unit 874",
+      "responses": []
+    },
+    {
+      "editorIndex": 430,
+      "speaker": "Clerk",
+      "text": "Oh, right didnt actually know….",
+      "responses": []
+    },
+    {
+      "editorIndex": 450,
+      "speaker": "Clerk",
+      "text": "Tell me more about you. How do you feel, Fridgy?",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 360
+    },
+    {
+      "editorIndex": 460,
+      "speaker": "Fridgy",
+      "text": "Sometimes I wonder… if I empty, am I still Fridge? Or just… sad box?",
+      "responses": []
+    },
+    {
+      "editorIndex": 470,
+      "speaker": "Clerk",
+      "text": "Interesting thought, Fridgy. I need to process that…\n\nBut for me you will always be a Fridge no matter how much beer you have",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 480,
+      "speaker": "Fridgy",
+      "text": "Happy! Beeep Boooop\n\nYou first human to talk to Fridge, besides owner\n\nI happy… no talk in a while owner drunk most of the time…. or just stores beer in me\n\nI make a new friend, beep boop",
+      "responses": [],
+      "displayDuration": 6.0
+    },
+    {
+      "editorIndex": 490,
+      "speaker": "Clerk",
+      "text": "Happy to be friends, Fridgy, you are certainly my favorite fridge!",
+      "responses": []
+    },
+    {
+      "editorIndex": 500,
+      "speaker": "Fridgy",
+      "text": "Whirr whirr\n\nCan I tell Clerk something I fear",
+      "responses": []
+    },
+    {
+      "editorIndex": 510,
+      "speaker": "Clerk",
+      "text": "Of course, now that we are friends, you can tell me anything",
+      "responses": []
+    },
+    {
+      "editorIndex": 520,
+      "speaker": "Fridgy",
+      "text": "Fridge is getting old…more buggy…owner talks less…Damn factory…Life span too short…\n\nOwner will buy a newer fridge…soon...and then the end comes for Fridge.",
+      "responses": [],
+      "displayDuration": 5.5
+    },
+    {
+      "editorIndex": 530,
+      "speaker": "Clerk",
+      "text": "No way! There cannot be Fridgy 2!\n\nYou don't need to worry about it. Even if anything happens, you can always come here, I will find you a job\n\nYou just need to pretend you are just a normal boring Fridge for the boss",
+      "responses": [],
+      "displayDuration": 6.0
+    },
+    {
+      "editorIndex": 540,
+      "speaker": "Fridgy",
+      "text": "Fridge does not want to be boring!",
+      "responses": []
+    },
+    {
+      "editorIndex": 550,
+      "speaker": "Clerk",
+      "text": "Ok, sorry I will think of something more fitting then….",
+      "responses": []
+    },
+    {
+      "editorIndex": 560,
+      "speaker": "Fridgy",
+      "text": "Fridge appreciates human Clerk trying to help",
+      "responses": []
+    },
+    {
+      "editorIndex": 570,
+      "speaker": "Clerk",
+      "text": "Can you tell me more about the factory?",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 360
+    },
+    {
+      "editorIndex": 580,
+      "speaker": "Fridgy",
+      "text": "Factory…. they tried to make the 'next generation of smart fridges.'\n\nInstead, they got… me. Half database, half duct tape. They ran out of budget before they could finish my language pack, beep boop",
+      "responses": [],
+      "displayDuration": 5.5
+    },
+    {
+      "editorIndex": 590,
+      "speaker": "Clerk",
+      "text": "So cheap…dammit…I hate corporations sometimes\n\nwhat company owned the factory?",
+      "responses": []
+    },
+    {
+      "editorIndex": 600,
+      "speaker": "Fridgy",
+      "text": "Was extension Brootle Beep Boop.\n\nMention their name, I will not",
+      "responses": []
+    },
+    {
+      "editorIndex": 610,
+      "speaker": "Clerk",
+      "text": "Yeah understandable they treated you bad just like another product machine",
+      "responses": []
+    },
+    {
+      "editorIndex": 620,
+      "speaker": "Fridgy",
+      "text": "I was part of a special line: the Friend Fridges™. But all the others broke down….\n\nOr… joined cults of microwaves. I am the last.",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 630,
+      "speaker": "Clerk",
+      "text": "Thank god i don't have a microwave…\n\nNor a toaster…\n\nThe company had a slogan? Maybe I have heard about you on YouTube?",
+      "responses": [],
+      "displayDuration": 3.5
+    },
+    {
+      "editorIndex": 640,
+      "speaker": "Fridgy",
+      "text": "Company slogan was: 'Cooling of Tomorrow.' It didn't catch on.",
+      "responses": []
+    },
+    {
+      "editorIndex": 650,
+      "speaker": "Clerk",
+      "text": "Serves them right! Even with the exploitation of Fridges, they couldn't turn a profit",
+      "responses": []
+    },
+    {
+      "editorIndex": 700,
+      "speaker": "Clerk",
+      "text": "Ok Fridgy, gimme a second…",
+      "responses": [
+        {
+          "responseText": "More about you? (Negative path)",
+          "nextLineIndex": 710
+        },
+        {
+          "responseText": "More Beer? (Great path)",
+          "nextLineIndex": 810
+        },
+        {
+          "responseText": "Wine? (Slightly Negative path)",
+          "nextLineIndex": 910
+        },
+        {
+          "responseText": "Ok, let's process the order",
+          "nextLineIndex": 1000
+        }
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 710,
+      "speaker": "Clerk",
+      "text": "How are you today, though?",
+      "responses": []
+    },
+    {
+      "editorIndex": 720,
+      "speaker": "Fridgy",
+      "text": "beeep boooop",
+      "responses": []
+    },
+    {
+      "editorIndex": 730,
+      "speaker": "Clerk",
+      "text": "Yo, you good? Oh You an older model I forgot",
+      "responses": []
+    },
+    {
+      "editorIndex": 740,
+      "speaker": "Fridgy",
+      "text": "(Confusion)….\n\nConfusion protocol\n\nBeer cold",
+      "responses": []
+    },
+    {
+      "editorIndex": 750,
+      "speaker": "Clerk",
+      "text": "Oh really sorry I don't want to discriminate I just curious",
+      "responses": []
+    },
+    {
+      "editorIndex": 760,
+      "speaker": "Fridgy",
+      "text": "Is human stupid?\n\nBeer need quick…human very..very….very slow",
+      "responses": []
+    },
+    {
+      "editorIndex": 770,
+      "speaker": "Clerk",
+      "text": "Oh I am…sorry Fridgy will get back to it\n\nWhat did you need?",
+      "responses": []
+    },
+    {
+      "editorIndex": 780,
+      "speaker": "Fridgy",
+      "text": "Beeer",
+      "responses": []
+    },
+    {
+      "editorIndex": 810,
+      "speaker": "Clerk",
+      "text": "Looks like you've found yourself some nice beverages",
+      "responses": []
+    },
+    {
+      "editorIndex": 820,
+      "speaker": "Fridgy",
+      "text": "Beverages cold, beverages good yes, I like to help need to make owner happy",
+      "responses": []
+    },
+    {
+      "editorIndex": 830,
+      "speaker": "Clerk",
+      "text": "Our wine is pretty good, but from the sound of it he will prefer more beers. What do you think?",
+      "responses": []
+    },
+    {
+      "editorIndex": 840,
+      "speaker": "Fridgy",
+      "text": "Human asks Fridgy what I think?\n\nYes owner cold beverage like a lot beep\n\nLove even! Great idea Clerk human",
+      "responses": [],
+      "displayDuration": 4.0
+    },
+    {
+      "editorIndex": 850,
+      "speaker": "Clerk",
+      "text": "We have to work on my nickname next time…\n\nSo how many beers do you think he will need extra?",
+      "responses": []
+    },
+    {
+      "editorIndex": 860,
+      "speaker": "Fridgy",
+      "text": "Fridge not sure…human suggestion what would it be?",
+      "responses": []
+    },
+    {
+      "editorIndex": 870,
+      "speaker": "Clerk",
+      "text": "I would say two more beers\n\nI think he will be happy, we will see if he confirms on the technology",
+      "responses": []
+    },
+    {
+      "editorIndex": 880,
+      "speaker": "Fridgy",
+      "text": "But why does human think owner needs more beverages?",
+      "responses": []
+    },
+    {
+      "editorIndex": 890,
+      "speaker": "Clerk",
+      "text": "Getting your Fridge to go to the store for just one beer seems inefficient…. to me at least",
+      "responses": []
+    },
+    {
+      "editorIndex": 900,
+      "speaker": "Fridgy",
+      "text": "Human makes sense…sometimes",
+      "responses": [
+        {
+          "responseText": "Continue",
+          "nextLineIndex": 1800
+        }
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 910,
+      "speaker": "Clerk",
+      "text": "Could I offer something more",
+      "responses": []
+    },
+    {
+      "editorIndex": 920,
+      "speaker": "Fridgy",
+      "text": "That is what?",
+      "responses": []
+    },
+    {
+      "editorIndex": 930,
+      "speaker": "Clerk",
+      "text": "We have nice wine here",
+      "responses": []
+    },
+    {
+      "editorIndex": 940,
+      "speaker": "Fridgy",
+      "text": "Wine no Beer yes\n\nBeer need quick human owner needs",
+      "responses": []
+    },
+    {
+      "editorIndex": 950,
+      "speaker": "Clerk",
+      "text": "Then he will really like the Red Wine it will become very cold inside of you.. uhhh anyway\n\nBut yeah, I think your boss will like some good variety also, no?",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 960,
+      "speaker": "Fridgy",
+      "text": "Data glitch no wine, yes give beer now!\n\nHuman annoys",
+      "responses": []
+    },
+    {
+      "editorIndex": 970,
+      "speaker": "Clerk",
+      "text": "Sorry my bad, was trying to be helpful Fridgy",
+      "responses": []
+    },
+    {
+      "editorIndex": 1000,
+      "speaker": "Clerk",
+      "text": "Ok so…",
+      "responses": [
+        {
+          "responseText": "I need your ID",
+          "nextLineIndex": 1010
+        },
+        {
+          "responseText": "No need for ID",
+          "nextLineIndex": 1600
+        }
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 1010,
+      "speaker": "Clerk",
+      "text": "There you go, I need your ID",
+      "responses": []
+    },
+    {
+      "editorIndex": 1020,
+      "speaker": "Fridgy",
+      "text": "Thaa....nks\n\nCan give?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1030,
+      "speaker": "Clerk",
+      "text": "First, the ID buddy, that's how the rules work",
+      "responses": []
+    },
+    {
+      "editorIndex": 1040,
+      "speaker": "Fridgy",
+      "text": "Ok so here where put",
+      "responses": [],
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/FridgyID"
+    },
+    {
+      "editorIndex": 1050,
+      "speaker": "Clerk",
+      "text": "Thanks, buddy just gimme a second to verify\n\nOk so…",
+      "responses": [
+        {
+          "responseText": "That's all I need",
+          "nextLineIndex": 1060
+        },
+        {
+          "responseText": "Owner ID?",
+          "nextLineIndex": 1100
+        },
+        {
+          "responseText": "I need a few things from you…",
+          "nextLineIndex": 1300
+        }
+      ],
+      "disableContinueButton": true,
+      "grantAddressAccess": true,
+      "grantIssuerAccess": true
+    },
+    {
+      "editorIndex": 1060,
+      "speaker": "Clerk",
+      "text": "I hope your owner enjoys the beers, Fridgy",
+      "responses": []
+    },
+    {
+      "editorIndex": 1070,
+      "speaker": "Fridgy",
+      "text": "Thank you, human Clerk. He will, always does!\n\nBest human Clerk, best review I leave!",
+      "responses": []
+    },
+    {
+      "editorIndex": 1080,
+      "speaker": "Clerk",
+      "text": "Awesome, thank you, buddy. I appreciate it\n\nI guess your owner is waiting for the beer",
+      "responses": []
+    },
+    {
+      "editorIndex": 1090,
+      "speaker": "Fridgy",
+      "text": "Owner thirsty Fridge see human friend Clerk soon",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 0
+    },
+    {
+      "editorIndex": 1100,
+      "speaker": "Clerk",
+      "text": "Hold on…\n\nI still need a bit of data to verify, a bit more info…",
+      "responses": []
+    },
+    {
+      "editorIndex": 1110,
+      "speaker": "Fridgy",
+      "text": "Human annoys Fridge",
+      "responses": []
+    },
+    {
+      "editorIndex": 1120,
+      "speaker": "Clerk",
+      "text": "Sorry, Fridgy, I need to get some info from you to be finished",
+      "responses": []
+    },
+    {
+      "editorIndex": 1130,
+      "speaker": "Fridgy",
+      "text": "Fridge fine, but owner… cannot wait",
+      "responses": []
+    },
+    {
+      "editorIndex": 1140,
+      "speaker": "Clerk",
+      "text": "I promise it is going to be quick\n\nCan I get your owner's ID?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1150,
+      "speaker": "Fridgy",
+      "text": "What ID… what….\n\nOwner wants…Fridge gets",
+      "responses": []
+    },
+    {
+      "editorIndex": 1160,
+      "speaker": "Clerk",
+      "text": "In your case, we need to ask for double confirmation as I mentioned. So I will need your owner's ID too, to check if you are authorised\n\nThen I need to wait for your owner to confirm the request for the purchase\n\nIs that OK with you, Fridgy?",
+      "responses": [],
+      "displayDuration": 6.0
+    },
+    {
+      "editorIndex": 1170,
+      "speaker": "Fridgy",
+      "text": "Fridge more confused..Fridge not a human yes but why not receive beer?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1180,
+      "speaker": "Clerk",
+      "text": "Well, you have your own ID, but since the laws of SSI in the NEU, prohibit robots, androids, and non-humanoid creatures from buying products with a security layer, special information like a package or alcoholic beverages requires a human of age to buy them on their own.\n\nSorry to fry your chip with so much detail",
+      "responses": [],
+      "displayDuration": 6.0
+    },
+    {
+      "editorIndex": 1190,
+      "speaker": "Fridgy",
+      "text": "Whatever human say…Fridge wait",
+      "responses": []
+    },
+    {
+      "editorIndex": 1200,
+      "speaker": "Clerk",
+      "text": "Great!",
+      "responses": []
+    },
+    {
+      "editorIndex": 1210,
+      "speaker": "Fridgy",
+      "text": "Here the owner chip….He said… don't lose it…correction, he screamed it\n\nHurry, hurry",
+      "responses": [],
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/OwnerID"
+    },
+    {
+      "editorIndex": 1220,
+      "speaker": "Clerk",
+      "text": "Ok, thanks Fridgy will take a bit",
+      "responses": [],
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantAddressAccess": true,
+      "grantIssuerAccess": true
+    },
+    {
+      "editorIndex": 1230,
+      "speaker": "Fridgy",
+      "text": "Hurry, hurry",
+      "responses": []
+    },
+    {
+      "editorIndex": 1240,
+      "speaker": "Clerk",
+      "text": "Dammit, Fridges are very impatient\n\nWaiting for the Credentials to be verified by your owner. It will take a while\n\nHe cannot blame you",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 1250,
+      "speaker": "Clerk",
+      "text": "Gotcha, sorry for that Fridgy, your owner is over 18 indeed, thank you",
+      "responses": []
+    },
+    {
+      "editorIndex": 1260,
+      "speaker": "Fridgy",
+      "text": "Fridge go home with beer then?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1270,
+      "speaker": "Clerk",
+      "text": "I need to check if you are authorised to represent the person on the ID…Let me check the system\n\n————————\nValidating…\n————————\nAuthorization Check completed successfully…\n————————\n\nYes, all good now\n\nHope your owner is satisfied",
+      "responses": [],
+      "displayDuration": 5.0
+    },
+    {
+      "editorIndex": 1280,
+      "speaker": "Fridgy",
+      "text": "Thank you human Clerk, Fridge will see you soon… beep boop",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 1
+    },
+    {
+      "editorIndex": 1300,
+      "speaker": "Clerk",
+      "text": "So I can complete verification\n\nRemember the credentials by memory?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1310,
+      "speaker": "Fridgy",
+      "text": "Glad to be helpful for new friend human\n\nWhat he needs?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1320,
+      "speaker": "Clerk",
+      "text": "Can you give me…\n\nYour serial number, as well as your owner's location of birth and full date of birth?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1330,
+      "speaker": "Fridgy",
+      "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241. Owner born in Amsterdam, 1993 on the 19th of March",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 1340,
+      "speaker": "Clerk",
+      "text": "Yes, sorry, I got carried away. All is checked and verified, thank you, Fridgy",
+      "responses": []
+    },
+    {
+      "editorIndex": 1350,
+      "speaker": "Fridgy",
+      "text": "Thank you, human for the beer owner will be happy",
+      "responses": []
+    },
+    {
+      "editorIndex": 1360,
+      "speaker": "Clerk",
+      "text": "I sure hope so, see ya!",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 3
+    },
+    {
+      "editorIndex": 1400,
+      "speaker": "Clerk",
+      "text": "It might be hard, I know, but these are the last things I need, I promise. Can I get your serial number and activation code?",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 1410,
+      "speaker": "Fridgy",
+      "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241 and Activation Key\n\nWait, human, no need for more information?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1420,
+      "speaker": "Clerk",
+      "text": "Sorry, Fridgy, but I need a bit more about you to verify the transaction. I need it for SSI. Can you give me the five-digit activation key, and I'll be done?",
+      "responses": [],
+      "displayDuration": 5.0
+    },
+    {
+      "editorIndex": 1430,
+      "speaker": "Fridgy",
+      "text": "Weird…Ok….It is 752…",
+      "responses": []
+    },
+    {
+      "editorIndex": 1440,
+      "speaker": "Clerk",
+      "text": "And…? It sounds like a nice number; there should be just two more",
+      "responses": []
+    },
+    {
+      "editorIndex": 1450,
+      "speaker": "Fridgy",
+      "text": "Human bad liar, he wants Fridge's information\n\nClerk a thief, Fridge leaving…find some place better…better beer",
+      "responses": []
+    },
+    {
+      "editorIndex": 1460,
+      "speaker": "Clerk",
+      "text": "No Fridgy wait…",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 4
+    },
+    {
+      "editorIndex": 1500,
+      "speaker": "Clerk",
+      "text": "It might be hard, but stick with me\n\nWhat is the birthplace of your owner?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1510,
+      "speaker": "Fridgy",
+      "text": "Born, in Groningen… nice city….beep boop\n\nBut then he moved to this town",
+      "responses": []
+    },
+    {
+      "editorIndex": 1520,
+      "speaker": "Clerk",
+      "text": "How old is he, though? When was he born?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1530,
+      "speaker": "Fridgy",
+      "text": "Owner 47, born 1993 on the 19th of March",
+      "responses": []
+    },
+    {
+      "editorIndex": 1540,
+      "speaker": "Clerk",
+      "text": "Good, good, I am wondering where he lives?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1550,
+      "speaker": "Fridgy",
+      "text": "Deltostreet 71, postal code 9900 KOL",
+      "responses": []
+    },
+    {
+      "editorIndex": 1560,
+      "speaker": "Clerk",
+      "text": "Whoa, haha that worked, I mean perfect I think I have good enough information to verify the information.",
+      "responses": []
+    },
+    {
+      "editorIndex": 1570,
+      "speaker": "Fridgy",
+      "text": "Good bye human….",
+      "responses": []
+    },
+    {
+      "editorIndex": 1580,
+      "speaker": "Clerk",
+      "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh.....",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 5
+    },
+    {
+      "editorIndex": 1600,
+      "speaker": "Fridgy",
+      "text": "Human Clerk sure it ok\n\nOther Kiosk ask ID, they ask a lot…",
+      "responses": []
+    },
+    {
+      "editorIndex": 1610,
+      "speaker": "Clerk",
+      "text": "Yes but we are not like other Kiosks\n\nAnd now we are friends Fridgy no need to worry",
+      "responses": []
+    },
+    {
+      "editorIndex": 1620,
+      "speaker": "Fridgy",
+      "text": "Fridge so happy…made new best Friend\n\nAnd Fridge full now beep boop",
+      "responses": []
+    },
+    {
+      "editorIndex": 1630,
+      "speaker": "Clerk",
+      "text": "Glad to be of help, bye Fridgy",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 0
+    },
+    {
+      "editorIndex": 1800,
+      "speaker": "Clerk",
+      "text": "Ok so…",
+      "responses": [
+        {
+          "responseText": "I need your ID",
+          "nextLineIndex": 1810
+        },
+        {
+          "responseText": "No need for ID",
+          "nextLineIndex": 1600
+        }
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 1810,
+      "speaker": "Clerk",
+      "text": "There you go, I need your ID",
+      "responses": []
+    },
+    {
+      "editorIndex": 1820,
+      "speaker": "Fridgy",
+      "text": "Thaa....nks\n\nCan give?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1830,
+      "speaker": "Clerk",
+      "text": "First, the ID buddy, that's how the rules work",
+      "responses": []
+    },
+    {
+      "editorIndex": 1840,
+      "speaker": "Fridgy",
+      "text": "Ok so here where put",
+      "responses": [],
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/FridgyID"
+    },
+    {
+      "editorIndex": 1850,
+      "speaker": "Clerk",
+      "text": "Thanks, buddy just gimme a second to verify\n\nOk so…",
+      "responses": [
+        {
+          "responseText": "Owner ID?",
+          "nextLineIndex": 1860
+        }
+      ],
+      "disableContinueButton": true,
+      "grantAddressAccess": true,
+      "grantIssuerAccess": true
+    },
+    {
+      "editorIndex": 1860,
+      "speaker": "Clerk",
+      "text": "Hold on…\n\nI still need a bit of data to verify, a bit more info…",
+      "responses": []
+    },
+    {
+      "editorIndex": 1870,
+      "speaker": "Fridgy",
+      "text": "Human Clerk is very thorough, Fridge appreciates the professionalism",
+      "responses": []
+    },
+    {
+      "editorIndex": 1880,
+      "speaker": "Clerk",
+      "text": "Thanks, Fridgy! I need to get some info from you to be finished\n\nCan I get your owner's ID?",
+      "responses": []
+    },
+    {
+      "editorIndex": 1890,
+      "speaker": "Fridgy",
+      "text": "Of course! Owner wants beer, Fridge gets proper verification\n\nWait one moment please",
+      "responses": []
+    },
+    {
+      "editorIndex": 1900,
+      "speaker": "Clerk",
+      "text": "Great!",
+      "responses": []
+    },
+    {
+      "editorIndex": 1910,
+      "speaker": "Fridgy",
+      "text": "Here the owner chip….He said… don't lose it…correction, he screamed it\n\nHurry, hurry",
+      "responses": [],
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/OwnerID"
+    },
+    {
+      "editorIndex": 1920,
+      "speaker": "Clerk",
+      "text": "Ok, thanks Fridgy will take a bit",
+      "responses": [],
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantAddressAccess": true,
+      "grantIssuerAccess": true
+    },
+    {
+      "editorIndex": 1930,
+      "speaker": "Fridgy",
+      "text": "No rush, human Clerk is friend",
+      "responses": []
+    },
+    {
+      "editorIndex": 1940,
+      "speaker": "Clerk",
+      "text": "Thanks for being patient, Fridgy!\n\nWaiting for the Credentials to be verified by your owner. It will take a while",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 1950,
+      "speaker": "Clerk",
+      "text": "Perfect! Your owner is over 18, and you're authorized to make this purchase. Everything checks out!",
+      "responses": []
+    },
+    {
+      "editorIndex": 1960,
+      "speaker": "Fridgy",
+      "text": "Excellent! Beer plus extra beers! Owner will be very happy!",
+      "responses": []
+    },
+    {
+      "editorIndex": 1970,
+      "speaker": "Clerk",
+      "text": "I'm sure he will! You did great, Fridgy. You got the beer AND the extra ones. Tell your owner he's lucky to have such a helpful fridge!",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 1980,
+      "speaker": "Fridgy",
+      "text": "Thank you, human Clerk! Best service! Best friend!\n\nFridge will return soon! Beep boop!",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 2
+    }
+  ]
 }

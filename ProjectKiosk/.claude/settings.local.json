@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/salma/Downloads/**)",
+      "Bash(dir:*)",
+      "Bash(del fridgy_scenario.json)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

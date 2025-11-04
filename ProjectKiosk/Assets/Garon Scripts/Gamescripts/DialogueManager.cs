@@ -40,6 +40,10 @@ public class DialogueManager : MonoBehaviour
         public bool grantPictureAccess = false;
         public bool disableContinueButton = false;
 
+        // NEW FIELDS for Fridgy scenario
+        public string idPrefabToSpawn = ""; // Specific ID prefab path (e.g., "ID_Prefabs/FridgyID" or "ID_Prefabs/OwnerID")
+        public float displayDuration = 0f;  // Duration in seconds to wait before showing Continue button (0 = show immediately)
+
         public bool endConversationHere = false;
         public int scoreScreenIndex = 0;
 
@@ -90,7 +94,8 @@ public class DialogueManager : MonoBehaviour
     public List<GameObject> scoreScreens = new();
     public GameObject endCreditScreen;
 
-    public List<Button> scoreContinueButtons;
+    [Header("DEPRECATED - No longer needed, buttons are auto-detected")]
+    public List<Button> scoreContinueButtons; // OLD: Manually assigned buttons (not used anymore)
 
     private int currentCustomerIndex = 0;
     private int currentLineIndex = 0;
@@ -107,6 +112,11 @@ public class DialogueManager : MonoBehaviour
     public bool AllowwIssuerAccess { get; private set; }
 
     private bool waitingForAction = false;  // pause dialogue waiting for ID scan
+
+    // Typewriter effect
+    private Coroutine currentTypewriterCoroutine;
+    private bool isTyping = false;
+    private string currentFullText = ""; // Store full text for skip functionality
 
 
     private System.Collections.IEnumerator ReturnToPreviousSlideAfterDelay(float delay)
@@ -141,21 +151,86 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // NEW: Coroutine to show Continue button after a delay
+    private System.Collections.IEnumerator ShowContinueButtonAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        continueButton.gameObject.SetActive(true);
+    }
+
+    // NEW: Typewriter effect coroutine
+    private System.Collections.IEnumerator TypewriterEffect(string fullText, float duration, bool showContinueAfter)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+
+        // Calculate delay per character based on duration
+        float delayPerChar = duration / fullText.Length;
+
+        // Type out each character
+        for (int i = 0; i < fullText.Length; i++)
+        {
+            dialogueText.text += fullText[i];
+            yield return new WaitForSeconds(delayPerChar);
+        }
+
+        isTyping = false;
+        currentFullText = ""; // Clear stored text after completion
+
+        // Show Continue button after typing is complete
+        if (showContinueAfter)
+        {
+            continueButton.gameObject.SetActive(true);
+        }
+    }
+
 
 
     void Start()
     {
         continueButton.onClick.AddListener(NextLine);
-        foreach (var button in scoreContinueButtons)
-        {
-            if (button != null)
-                button.onClick.AddListener(OnScoreContinue);
-        }
-        continueButton.gameObject.SetActive(false);
+
+        // IMPROVED: Automatically find and setup Continue buttons in each score screen
         foreach (var screen in scoreScreens)
         {
-            if (screen != null) screen.SetActive(false);
+            if (screen != null)
+            {
+                screen.SetActive(false);
+
+                // Find the Continue button within this score screen
+                // First try to find a button with "Continue" in its name
+                Button continueBtn = null;
+                Button[] buttons = screen.GetComponentsInChildren<Button>(true);
+
+                foreach (Button btn in buttons)
+                {
+                    if (btn.gameObject.name.ToLower().Contains("continue"))
+                    {
+                        continueBtn = btn;
+                        break;
+                    }
+                }
+
+                // If no "Continue" named button found, use the first button
+                if (continueBtn == null && buttons.Length > 0)
+                {
+                    continueBtn = buttons[0];
+                }
+
+                if (continueBtn != null)
+                {
+                    // Remove any existing listeners to avoid duplicates
+                    continueBtn.onClick.RemoveAllListeners();
+                    continueBtn.onClick.AddListener(OnScoreContinue);
+                }
+                else
+                {
+                    Debug.LogWarning($"Score screen '{screen.name}' is missing a Continue button!");
+                }
+            }
         }
+
+        continueButton.gameObject.SetActive(false);
         ClearDialogueUI();
 
         // NEW LOGIC: Force start if using only JSON customers
@@ -317,12 +392,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentScannedIDData == null || infoDisplay == null)
         {
-            infoDisplay.HideInfo();
+            if (infoDisplay != null)
+                infoDisplay.HideInfo();
             return;
         }
-        // NOTE: The original UpdateInfo call is removed to fix the compilation error.
-        // The display logic should be handled by IDInfoDisplay.cs, which we don't have.
-        // We will stick to the original code's intent of simply calling HideInfo if data is null.
+
+        // Display ID information based on access permissions
+        string displayName = currentScannedIDData.allowNameAccess ? currentScannedIDData.Name : "";
+        string displayDOB = currentScannedIDData.allowDOBAccess ? currentScannedIDData.DOB : "";
+        string displayAddress = currentScannedIDData.allowAddressAccess ? currentScannedIDData.Address : "";
+        string displayIssuer = currentScannedIDData.allowIssuerAccess ? currentScannedIDData.Issuer : "";
+        Sprite displayImage = currentScannedIDData.allowPictureAccess ? currentScannedIDData.ProfileImage : null;
+
+        infoDisplay.ShowInfo(displayName, displayDOB, displayAddress, displayIssuer, displayImage);
     }
 
     // Helper method to convert editorIndex to actual array index
@@ -350,6 +432,23 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
+        // If currently typing, complete the text immediately and show Continue button
+        if (isTyping)
+        {
+            if (currentTypewriterCoroutine != null)
+            {
+                StopCoroutine(currentTypewriterCoroutine);
+                currentTypewriterCoroutine = null;
+            }
+            isTyping = false;
+            // Show the complete text
+            dialogueText.text = currentFullText;
+            currentFullText = "";
+            // Show Continue button
+            continueButton.gameObject.SetActive(true);
+            return;
+        }
+
         if (waitingForAction)
         {
             dialogueText.text = "Please complete the required action.";
@@ -401,6 +500,8 @@ public class DialogueManager : MonoBehaviour
                     grantIssuerAccess = jsonLineData.grantIssuerAccess,
                     grantPictureAccess = jsonLineData.grantPictureAccess,
                     disableContinueButton = jsonLineData.disableContinueButton,
+                    idPrefabToSpawn = jsonLineData.idPrefabToSpawn,
+                    displayDuration = jsonLineData.displayDuration,
                     endConversationHere = jsonLineData.endConversationHere,
                     scoreScreenIndex = jsonLineData.scoreScreenIndex
                 };
@@ -522,7 +623,9 @@ public class DialogueManager : MonoBehaviour
         {
             choicePanel.SetActive(false);
 
-            if (!line.disableContinueButton)
+            // Only show Continue button here if NOT using typewriter effect
+            // (typewriter effect handles showing the button after typing completes)
+            if (!line.disableContinueButton && line.displayDuration <= 0)
             {
                 continueButton.gameObject.SetActive(true);
             }
@@ -569,7 +672,30 @@ public class DialogueManager : MonoBehaviour
 
         // 7. Update UI Text
         speakerText.text = line.speaker;
-        dialogueText.text = line.text;
+
+        // Stop any existing typewriter effect
+        if (currentTypewriterCoroutine != null)
+        {
+            StopCoroutine(currentTypewriterCoroutine);
+            currentTypewriterCoroutine = null;
+            isTyping = false;
+        }
+
+        // Use typewriter effect if displayDuration is set, otherwise show text immediately
+        if (line.displayDuration > 0 && !line.disableContinueButton)
+        {
+            // Store full text for skip functionality
+            currentFullText = line.text;
+            // Start typewriter effect - Continue button will show after typing completes
+            currentTypewriterCoroutine = StartCoroutine(TypewriterEffect(line.text, line.displayDuration, true));
+        }
+        else
+        {
+            // Show text immediately
+            dialogueText.text = line.text;
+            currentFullText = "";
+        }
+
         if (currentScannedIDData != null)
             UpdateIDInfoPanel();
 
@@ -580,7 +706,11 @@ public class DialogueManager : MonoBehaviour
             continueButton.gameObject.SetActive(false);
             if (isJsonCustomer)
             {
-                SpawnIDFromJSON(currentJsonCustomer);
+                // Use line-specific ID prefab if specified, otherwise fall back to customer default
+                string idPath = string.IsNullOrEmpty(line.idPrefabToSpawn)
+                    ? currentJsonCustomer.idPrefabPath
+                    : line.idPrefabToSpawn;
+                SpawnIDFromJSON(idPath);
             }
             else
             {
@@ -658,9 +788,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void SpawnIDFromJSON(CustomerScenarioData customerData)
+    void SpawnIDFromJSON(string idPrefabPath)
     {
-        if (string.IsNullOrEmpty(customerData.idPrefabPath) || idSpawnLocation == null)
+        if (string.IsNullOrEmpty(idPrefabPath) || idSpawnLocation == null)
         {
             Debug.LogWarning("Missing ID prefab path or spawn point for JSON customer.");
             return;
@@ -671,10 +801,10 @@ public class DialogueManager : MonoBehaviour
             Destroy(currentIDInstance);
         }
 
-        GameObject idPrefab = Resources.Load<GameObject>(customerData.idPrefabPath);
+        GameObject idPrefab = Resources.Load<GameObject>(idPrefabPath);
         if (idPrefab == null)
         {
-            Debug.LogError($"ID Prefab not found at path: {customerData.idPrefabPath}");
+            Debug.LogError($"ID Prefab not found at path: {idPrefabPath}");
             return;
         }
 
@@ -685,23 +815,26 @@ public class DialogueManager : MonoBehaviour
             rect.anchoredPosition = Vector2.zero;
         }
 
-        // IMPORTANT: We need to inject the ID data into the spawned ID prefab
-        CustomerID customerIDComponent = currentIDInstance.GetComponent<CustomerID>();
-        if (customerIDComponent != null)
+        // IMPORTANT: Check if this is the default customer ID, if so, inject the customer's ID data
+        // Otherwise, use the prefab's own data (for scenarios with multiple different IDs like Fridgy)
+        if (currentJsonCustomer != null && idPrefabPath == currentJsonCustomer.idPrefabPath)
         {
-            // The JSON data structure is designed to hold the ID data directly
-            // We need to manually transfer the data from the JSON object to the CustomerID component
-            // Note: Sprite ProfileImage cannot be set from JSON string, it must be part of the prefab setup
-            customerIDComponent.Name = customerData.idName;
-            customerIDComponent.DOB = customerData.idDOB;
-            customerIDComponent.Address = customerData.idAddress;
-            customerIDComponent.Issuer = customerData.idIssuer;
-            customerIDComponent.allowNameAccess = customerData.idAllowNameAccess;
-            customerIDComponent.allowDOBAccess = customerData.idAllowDOBAccess;
-            customerIDComponent.allowAddressAccess = customerData.idAllowAddressAccess;
-            customerIDComponent.allowIssuerAccess = customerData.idAllowIssuerAccess;
-            customerIDComponent.allowPictureAccess = customerData.idAllowPictureAccess;
+            CustomerID customerIDComponent = currentIDInstance.GetComponent<CustomerID>();
+            if (customerIDComponent != null)
+            {
+                // This is the default customer ID, so inject data from the JSON
+                customerIDComponent.Name = currentJsonCustomer.idName;
+                customerIDComponent.DOB = currentJsonCustomer.idDOB;
+                customerIDComponent.Address = currentJsonCustomer.idAddress;
+                customerIDComponent.Issuer = currentJsonCustomer.idIssuer;
+                customerIDComponent.allowNameAccess = currentJsonCustomer.idAllowNameAccess;
+                customerIDComponent.allowDOBAccess = currentJsonCustomer.idAllowDOBAccess;
+                customerIDComponent.allowAddressAccess = currentJsonCustomer.idAllowAddressAccess;
+                customerIDComponent.allowIssuerAccess = currentJsonCustomer.idAllowIssuerAccess;
+                customerIDComponent.allowPictureAccess = currentJsonCustomer.idAllowPictureAccess;
+            }
         }
+        // If it's a different ID prefab (like OwnerID when FridgyID is default), the prefab's own data will be used
     }
 
     void ResetDialogueState()

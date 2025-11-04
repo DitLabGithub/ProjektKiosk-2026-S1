@@ -37,6 +37,10 @@ public class DialogueLineData
 
     public bool disableContinueButton = false;
 
+    // NEW FIELDS for Fridgy scenario
+    public string idPrefabToSpawn = ""; // Specific ID prefab path (e.g., "ID_Prefabs/FridgyID" or "ID_Prefabs/OwnerID")
+    public float displayDuration = 0f;  // Duration in seconds to wait before showing Continue button (0 = show immediately)
+
     // Conversation End
     public bool endConversationHere = false;
     public int scoreScreenIndex = 0;
