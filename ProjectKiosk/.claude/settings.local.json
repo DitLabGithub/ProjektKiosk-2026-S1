@@ -3,7 +3,10 @@
     "allow": [
       "Read(//c/Users/salma/Downloads/**)",
       "Bash(dir:*)",
-      "Bash(del fridgy_scenario.json)"
+      "Bash(del fridgy_scenario.json)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []
