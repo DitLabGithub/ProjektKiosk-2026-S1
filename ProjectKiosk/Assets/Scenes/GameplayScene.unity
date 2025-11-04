@@ -2397,8 +2397,8 @@ MonoBehaviour:
   infoDisplay: {fileID: 937592072}
   customers: []
   jsonCustomerFileNames:
-  - fridgy_scenario
   - ShaunBakersScenario
+  - fridgy_scenario
   scoreScreens:
   - {fileID: 1474960500}
   - {fileID: 327348748}
