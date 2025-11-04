@@ -17,20 +17,25 @@
       "editorIndex": 10,
       "speaker": "Fridgy",
       "text": "Owner needs beer more, Gitty beeer… beep boop",
-      "responses": []
+      "responses": [],
+      "displayDuration": 2.5,
+      "autoAdvanceToNext": true
     },
     {
       "editorIndex": 20,
       "speaker": "Clerk",
       "text": "Whoa, hello there, Fridge, how can I help you?",
-      "responses": []
+      "responses": [],
+      "displayDuration": 3.0,
+      "autoAdvanceToNext": true
     },
     {
       "editorIndex": 30,
       "speaker": "Fridgy",
       "text": "…….\n\nConfusion protocol….\n\nOwner need beer more, Gitty… beep boop",
       "responses": [],
-      "displayDuration": 3.5
+      "displayDuration": 3.5,
+      "autoAdvanceToNext": false
     },
     {
       "editorIndex": 40,
@@ -96,27 +101,32 @@
       "speaker": "Clerk",
       "text": "Anyway… Let's start things properly…\n\nMy name is Clerk, nice to meet you, Fridge\n\nSo…….. where are you from?",
       "responses": [],
-      "displayDuration": 3.5
+      "displayDuration": 3.5,
+      "autoAdvanceToNext": true
     },
     {
       "editorIndex": 120,
       "speaker": "Fridgy",
       "text": "Factory Delta. Assembly line seventeen. Built next to Toaster 509. He was chosen for upgrade. I… was not. Beep boop.",
       "responses": [],
-      "displayDuration": 4.5
+      "displayDuration": 4.5,
+      "autoAdvanceToNext": true
     },
     {
       "editorIndex": 130,
       "speaker": "Clerk",
       "text": "Oh, why not?",
-      "responses": []
+      "responses": [],
+      "displayDuration": 2.0,
+      "autoAdvanceToNext": true
     },
     {
       "editorIndex": 140,
       "speaker": "Fridgy",
       "text": "Low budget…I tossed to the bings…creators dont like me…owner found….took care…improved. Now I am whole…",
       "responses": [],
-      "displayDuration": 4.0
+      "displayDuration": 4.0,
+      "autoAdvanceToNext": false
     },
     {
       "editorIndex": 150,

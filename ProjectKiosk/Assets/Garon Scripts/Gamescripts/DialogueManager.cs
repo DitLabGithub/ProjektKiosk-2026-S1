@@ -43,6 +43,7 @@ public class DialogueManager : MonoBehaviour
         // NEW FIELDS for Fridgy scenario
         public string idPrefabToSpawn = ""; // Specific ID prefab path (e.g., "ID_Prefabs/FridgyID" or "ID_Prefabs/OwnerID")
         public float displayDuration = 0f;  // Duration in seconds to wait before showing Continue button (0 = show immediately)
+        public bool autoAdvanceToNext = false; // If true, automatically advance to next line after displayDuration (no Continue button)
 
         public bool endConversationHere = false;
         public int scoreScreenIndex = 0;
@@ -158,8 +159,8 @@ public class DialogueManager : MonoBehaviour
         continueButton.gameObject.SetActive(true);
     }
 
-    // NEW: Typewriter effect coroutine
-    private System.Collections.IEnumerator TypewriterEffect(string fullText, float duration, bool showContinueAfter)
+    // NEW: Typewriter effect coroutine with auto-advance support
+    private System.Collections.IEnumerator TypewriterEffect(string fullText, float duration, bool showContinueAfter, bool autoAdvance = false)
     {
         isTyping = true;
         dialogueText.text = "";
@@ -177,9 +178,16 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
         currentFullText = ""; // Clear stored text after completion
 
-        // Show Continue button after typing is complete
-        if (showContinueAfter)
+        // If auto-advance is enabled, automatically go to next line
+        if (autoAdvance)
         {
+            // Text stays visible briefly, then advances automatically
+            currentLineIndex++;
+            ShowNextLine();
+        }
+        else if (showContinueAfter)
+        {
+            // Show Continue button after typing is complete
             continueButton.gameObject.SetActive(true);
         }
     }
@@ -502,6 +510,7 @@ public class DialogueManager : MonoBehaviour
                     disableContinueButton = jsonLineData.disableContinueButton,
                     idPrefabToSpawn = jsonLineData.idPrefabToSpawn,
                     displayDuration = jsonLineData.displayDuration,
+                    autoAdvanceToNext = jsonLineData.autoAdvanceToNext,
                     endConversationHere = jsonLineData.endConversationHere,
                     scoreScreenIndex = jsonLineData.scoreScreenIndex
                 };
@@ -686,8 +695,9 @@ public class DialogueManager : MonoBehaviour
         {
             // Store full text for skip functionality
             currentFullText = line.text;
-            // Start typewriter effect - Continue button will show after typing completes
-            currentTypewriterCoroutine = StartCoroutine(TypewriterEffect(line.text, line.displayDuration, true));
+            // Start typewriter effect with auto-advance if specified
+            bool showContinue = !line.autoAdvanceToNext; // Only show Continue button if NOT auto-advancing
+            currentTypewriterCoroutine = StartCoroutine(TypewriterEffect(line.text, line.displayDuration, showContinue, line.autoAdvanceToNext));
         }
         else
         {
