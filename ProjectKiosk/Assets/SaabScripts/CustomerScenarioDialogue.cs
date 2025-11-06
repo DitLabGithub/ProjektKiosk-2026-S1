@@ -42,6 +42,11 @@ public class DialogueLineData
     public float displayDuration = 0f;  // Duration in seconds to wait before showing Continue button (0 = show immediately)
     public bool autoAdvanceToNext = false; // If true, automatically advance to next line after displayDuration (no Continue button)
 
+    // Business Card System
+    public bool showBusinessCard = false; // If true, spawn business card image
+    public string businessCardImagePath = ""; // Path to card image in Resources (e.g., "Cards/ShadyCard")
+    public bool waitForCardDismissal = false; // If true, wait for player to click card before ending/continuing
+
     // Conversation End
     public bool endConversationHere = false;
     public int scoreScreenIndex = 0;

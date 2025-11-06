@@ -45,6 +45,11 @@ public class DialogueManager : MonoBehaviour
         public float displayDuration = 0f;  // Duration in seconds to wait before showing Continue button (0 = show immediately)
         public bool autoAdvanceToNext = false; // If true, automatically advance to next line after displayDuration (no Continue button)
 
+        // Business Card System
+        public bool showBusinessCard = false;
+        public string businessCardImagePath = "";
+        public bool waitForCardDismissal = false;
+
         public bool endConversationHere = false;
         public int scoreScreenIndex = 0;
 
@@ -82,6 +87,10 @@ public class DialogueManager : MonoBehaviour
     public Transform idSpawnLocation;
 
     public IDInfoDisplay infoDisplay;
+
+    [Header("Business Card System")]
+    public GameObject businessCardPanel; // Panel to display business card
+    public UnityEngine.UI.Image businessCardImage; // Image component for the card
 
     [Header("Dialogue Data")]
     public List<CustomerDialogue> customers = new();
@@ -192,6 +201,47 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // Business Card Display Methods
+    void ShowBusinessCard(string imagePath)
+    {
+        if (businessCardPanel == null || businessCardImage == null)
+        {
+            Debug.LogWarning("Business card UI not set up properly!");
+            return;
+        }
+
+        // Load the card image from Resources
+        Sprite cardSprite = Resources.Load<Sprite>(imagePath);
+        if (cardSprite == null)
+        {
+            Debug.LogError($"Business card image not found at path: {imagePath}");
+            return;
+        }
+
+        businessCardImage.sprite = cardSprite;
+
+        // Ensure the image is fully opaque
+        Color imageColor = businessCardImage.color;
+        imageColor.a = 1f;
+        businessCardImage.color = imageColor;
+
+        // Ensure CanvasGroup is fully opaque if it exists
+        CanvasGroup canvasGroup = businessCardPanel.GetComponent<CanvasGroup>();
+        if (canvasGroup != null)
+        {
+            canvasGroup.alpha = 1f;
+        }
+
+        businessCardPanel.SetActive(true);
+    }
+
+    void HideBusinessCard()
+    {
+        if (businessCardPanel != null)
+        {
+            businessCardPanel.SetActive(false);
+        }
+    }
 
 
     void Start()
@@ -240,6 +290,12 @@ public class DialogueManager : MonoBehaviour
 
         continueButton.gameObject.SetActive(false);
         ClearDialogueUI();
+
+        // Business Card System Setup
+        if (businessCardPanel != null)
+        {
+            businessCardPanel.SetActive(false);
+        }
 
         // NEW LOGIC: Force start if using only JSON customers
         if (customers.Count == 0 && jsonCustomerFileNames.Count > 0)
@@ -463,6 +519,34 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
+        // Check if current line has a business card and should end conversation
+        bool shouldEndAfterCard = false;
+        int endScoreIndex = 0;
+
+        if (currentJsonCustomer != null && currentLineIndex < currentJsonCustomer.lines.Count)
+        {
+            var currentLine = currentJsonCustomer.lines[currentLineIndex];
+            if (currentLine.showBusinessCard && currentLine.endConversationHere)
+            {
+                shouldEndAfterCard = true;
+                endScoreIndex = currentLine.scoreScreenIndex;
+            }
+        }
+
+        // Hide business card if it's showing
+        HideBusinessCard();
+
+        // If the line had a card and should end, show score screen now
+        if (shouldEndAfterCard)
+        {
+            ShowScoreScreen(endScoreIndex);
+            if (itemPickupManager != null)
+            {
+                itemPickupManager.ReturnCarriedItemsToShelf();
+            }
+            return;
+        }
+
         if (currentScannedIDData != null)
             UpdateIDInfoPanel();
 
@@ -511,6 +595,9 @@ public class DialogueManager : MonoBehaviour
                     idPrefabToSpawn = jsonLineData.idPrefabToSpawn,
                     displayDuration = jsonLineData.displayDuration,
                     autoAdvanceToNext = jsonLineData.autoAdvanceToNext,
+                    showBusinessCard = jsonLineData.showBusinessCard,
+                    businessCardImagePath = jsonLineData.businessCardImagePath,
+                    waitForCardDismissal = jsonLineData.waitForCardDismissal,
                     endConversationHere = jsonLineData.endConversationHere,
                     scoreScreenIndex = jsonLineData.scoreScreenIndex
                 };
@@ -709,7 +796,14 @@ public class DialogueManager : MonoBehaviour
         if (currentScannedIDData != null)
             UpdateIDInfoPanel();
 
-        // 8. Handle ID request
+        // 8. Handle Business Card Display
+        if (line.showBusinessCard && !string.IsNullOrEmpty(line.businessCardImagePath))
+        {
+            ShowBusinessCard(line.businessCardImagePath);
+            // Don't block the Continue button - let player dismiss card by clicking Continue
+        }
+
+        // 9. Handle ID request
         if (line.askForID)
         {
             waitingForAction = true;
@@ -729,8 +823,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // 9. Handle end of conversation
-        if (line.endConversationHere)
+        // 10. Handle end of conversation (only if NOT showing a business card)
+        if (line.endConversationHere && !line.showBusinessCard)
         {
             if (dialogueReturnStack.Count > 0)
             {
@@ -759,6 +853,9 @@ public class DialogueManager : MonoBehaviour
 
     void ShowScoreScreen(int screenIndex = 0)
     {
+        // Hide business card to prevent it from carrying over
+        HideBusinessCard();
+
         foreach (var screen in scoreScreens)
         {
             if (screen != null) screen.SetActive(false);
@@ -872,6 +969,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         choicePanel.SetActive(false);
         infoDisplay.HideInfo();
+        HideBusinessCard(); // Hide card when clearing UI
     }
 
     private List<ItemCategory> GetItemCategoriesInCheckout()

@@ -384,6 +384,8 @@
       "editorIndex": 510,
       "speaker": "Shady Guy",
       "text": "We will do more business in the future, Mr Clerk",
+      "businessCardImagePath": "Cards/ShadyCard",
+      "showBusinessCard": true,
       "endConversationHere": true,
       "scoreScreenIndex": 3,
       "responses": []
