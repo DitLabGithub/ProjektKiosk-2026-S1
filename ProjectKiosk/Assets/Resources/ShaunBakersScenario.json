@@ -112,7 +112,25 @@
     {
       "editorIndex": 130,
       "speaker": "Shady Guy",
+      "text": "Here is something from me...",
+      "responses": []
+    },
+    {
+      "editorIndex": 131,
+      "speaker": "Clerk",
       "text": "Piss off…",
+      "responses": []
+    },
+    {
+      "editorIndex": 132,
+      "speaker": "Shady Guy",
+      "text": "It doesnt end here,cashier...",
+      "responses": []
+    },
+    {
+      "editorIndex": 132,
+      "speaker": "Clerk",
+      "text": "Damn scary...",
       "endConversationHere": true,
       "scoreScreenIndex": 0,
       "responses": []
