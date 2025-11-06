@@ -305,31 +305,37 @@
     {
       "editorIndex": 380,
       "speaker": "Clerk",
-      "text": "You know there are cameras everywhere and surveillance 24/7? The NEU is very serious about this stuff. It seems like you don't follow the news, man...\nPeople like you get bad punishment from the government forces",
+      "text": "You know there are cameras everywhere and surveillance 24/7? The NEU is very serious about this stuff. It seems like you don't follow the news, man...People like you get bad punishment from the government forces",
       "responses": []
     },
     {
       "editorIndex": 390,
       "speaker": "Shady Guy",
-      "text": "Well, cashier, without such a risk, there won't be a worthy reward\nBesides, do you think I will be this stupid to go to a place where they will catch me\nSurveillance is not everywhere; in remote places like these, there is still peace from all the control of the government\nIt is heaven for what we do",
+      "text": "Well, cashier, without such a risk, there won't be a worthy reward.Besides, do you think I will be this stupid to go to a place with a high risk to be caught.\nSurveillance is not everywhere; in remote places like these, there is still peace from all the control of the government\nIt is heaven for what we do...",
       "responses": []
     },
     {
       "editorIndex": 400,
       "speaker": "Clerk",
-      "text": "Whoa careful it is what you do but not what I do that is for sure\nEspecially in places like this, new tech is still approaching so you kinda make sense\nAnd still?",
+      "text": "Whoa careful it is what you do but not what I do that is for sure.Especially in places like this, new tech is still approaching so unfortunetely I have to agree with you.",
+      "responses": []
+    },
+    {
+      "editorIndex": 401,
+      "speaker": "Clerk",
+      "text": "But still?",
       "responses": []
     },
     {
       "editorIndex": 410,
       "speaker": "Shady Guy",
-      "text": "Not a problem for me, I can deal with risk\nI can teach you how to do it, but it is up to you",
+      "text": "Not a problem for me, I can deal with risk when the reward is wroth it.I can teach you how to do it, but it is up to you",
       "responses": []
     },
     {
       "editorIndex": 420,
       "speaker": "Clerk",
-      "text": "Well, it should be, for me, it is still a problem, so I will say no, easy as that",
+      "text": "For me, it is still a problem but I will say yes.",
       "responses": []
     },
     {
@@ -341,7 +347,7 @@
     {
       "editorIndex": 440,
       "speaker": "Clerk",
-      "text": "What are the prices for information?",
+      "text": "Yes, what are the prices for information?",
       "responses": []
     },
     {
@@ -353,19 +359,25 @@
     {
       "editorIndex": 460,
       "speaker": "Clerk",
-      "text": "Ah man that is a lot of money, doesnt matter it will help the business maybe this way the boss will increase my salary",
+      "text": "Ah man that is a lot of money still, doesnt matter it will help the business hopefully this way the boss will increase my salary",
       "responses": []
     },
     {
       "editorIndex": 470,
       "speaker": "Shady Guy",
-      "text": "You see my point now,Cashier? In this economy to be honest means being hungry",
+      "text": "I send information to improve your business, you dont need to worry about promotion anymore.",
+      "responses": []
+    },
+    {
+      "editorIndex": 471,
+      "speaker": "Shady Guy",
+      "text": "You got my point now, cashier? In this economy to be honest means being hungry.",
       "responses": []
     },
     {
       "editorIndex": 480,
       "speaker": "Clerk",
-      "text": "Yeah dude, besides that I can barely pay my rent let alone the food….It is not easy.\nThere you go give me what you have",
+      "text": "Yeah dude, besides that I can barely pay my rent let alone the food….It is not easy.There you go give me what you have and lets be done...",
       "responses": []
     },
     {
@@ -377,16 +389,24 @@
     {
       "editorIndex": 500,
       "speaker": "Clerk",
-      "text": "Yeah all good now, have more than i needed, thanks dude you saved my skin",
+      "text": "Appreciate it, yeah seems all good now, thanks dude you saved my skin, business is not doing so well...",
       "responses": []
     },
     {
       "editorIndex": 510,
       "speaker": "Shady Guy",
       "text": "We will do more business in the future, Mr Clerk",
+      "responses": []
+    },
+    {
+      "editorIndex": 511,
+      "speaker": "Clerk",
+      "text": "Sure...",
       "endConversationHere": true,
       "scoreScreenIndex": 3,
       "responses": []
     }
+
+
   ]
 }
