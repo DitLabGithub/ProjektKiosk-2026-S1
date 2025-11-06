@@ -2929,6 +2929,8 @@ MonoBehaviour:
   responseButtonContainer: {fileID: 1474134394}
   idSpawnLocation: {fileID: 1270989553}
   infoDisplay: {fileID: 937592072}
+  businessCardPanel: {fileID: 0}
+  businessCardImage: {fileID: 0}
   customers:
   - name: Hoss Lerman
     lines:
@@ -2946,6 +2948,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -2962,6 +2970,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -2978,6 +2992,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -2994,6 +3014,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3010,6 +3036,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3026,6 +3058,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3041,6 +3079,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3057,6 +3101,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3073,6 +3123,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3088,6 +3144,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3105,6 +3167,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3120,6 +3188,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3135,6 +3209,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3143,7 +3223,7 @@ MonoBehaviour:
         and age verification."
       responses:
       - responseText: Could I get your basic info and verify you're over 18?
-        nextLineIndex: 20
+        nextLineIndex: 14
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
@@ -3156,96 +3236,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Bossman:'
-      text: You didn't get all the data you need yet, dummy.
-      responses: []
-      askForID: 0
-      showGoBackButton: 1
-      goBackTargetIndex: -1
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Bossman:'
-      text: done
-      responses: []
-      askForID: 0
-      showGoBackButton: 0
-      goBackTargetIndex: -1
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Bossman:'
-      text: done
-      responses: []
-      askForID: 0
-      showGoBackButton: 0
-      goBackTargetIndex: -1
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Bossman:'
-      text: done
-      responses: []
-      askForID: 0
-      showGoBackButton: 0
-      goBackTargetIndex: -1
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Bossman:'
-      text: done
-      responses: []
-      askForID: 0
-      showGoBackButton: 0
-      goBackTargetIndex: -1
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
-      endConversationHere: 0
-      scoreScreenIndex: 0
-    - editorIndex: 0
-      speaker: 'Bossman:'
-      text: done
-      responses: []
-      askForID: 0
-      showGoBackButton: 0
-      goBackTargetIndex: -1
-      grantNameAccess: 0
-      grantDOBAccess: 0
-      grantAddressAccess: 0
-      grantIssuerAccess: 0
-      grantPictureAccess: 0
-      disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3261,6 +3257,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3277,6 +3279,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 1
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3292,6 +3300,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3300,7 +3314,7 @@ MonoBehaviour:
         Giddy\u2019s, then put it in the bagging area and make the sale."
       responses:
       - responseText: Make the sale
-        nextLineIndex: 24
+        nextLineIndex: 18
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 1
@@ -3313,6 +3327,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3328,6 +3348,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3345,6 +3371,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3352,17 +3384,17 @@ MonoBehaviour:
       text: Everything clear?
       responses:
       - responseText: Why SSI?
-        nextLineIndex: 27
+        nextLineIndex: 22
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
       - responseText: Walk me through it again?
-        nextLineIndex: 31
+        nextLineIndex: 26
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
       - responseText: Yep, I'm good to go boss.
-        nextLineIndex: 36
+        nextLineIndex: 31
         returnAfterResponse: 0
         activateContinueAfterChoice: 0
         isMakeSaleResponse: 0
@@ -3375,6 +3407,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3390,6 +3428,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3406,6 +3450,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3423,6 +3473,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3431,14 +3487,20 @@ MonoBehaviour:
         the better.
       responses: []
       askForID: 0
-      showGoBackButton: 1
-      goBackTargetIndex: 26
+      showGoBackButton: 0
+      goBackTargetIndex: 0
       grantNameAccess: 0
       grantDOBAccess: 0
       grantAddressAccess: 0
       grantIssuerAccess: 0
       grantPictureAccess: 0
-      disableContinueButton: 1
+      disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3454,6 +3516,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3470,6 +3538,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3486,6 +3560,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3502,6 +3582,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3509,14 +3595,20 @@ MonoBehaviour:
       text: Geez, kid. Did you party your brains out or something?
       responses: []
       askForID: 0
-      showGoBackButton: 1
-      goBackTargetIndex: 26
+      showGoBackButton: 0
+      goBackTargetIndex: 0
       grantNameAccess: 0
       grantDOBAccess: 0
       grantAddressAccess: 0
       grantIssuerAccess: 0
       grantPictureAccess: 0
-      disableContinueButton: 1
+      disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3532,6 +3624,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3548,6 +3646,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3564,6 +3668,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3579,6 +3689,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 0
     idPrefab: {fileID: 9214502554901828252, guid: 95b751a919db057448a86ed290d66533, type: 3}
@@ -3599,6 +3715,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3614,6 +3736,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3640,6 +3768,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3655,6 +3789,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3670,6 +3810,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3706,6 +3852,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3736,6 +3888,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3761,6 +3919,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3777,6 +3941,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3794,6 +3964,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 3
     - editorIndex: 0
@@ -3811,6 +3987,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3827,6 +4009,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3842,6 +4030,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3858,6 +4052,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3873,6 +4073,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3888,6 +4094,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 1
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3904,6 +4116,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3920,6 +4138,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3935,6 +4159,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3952,6 +4182,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3967,6 +4203,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3982,6 +4224,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3997,6 +4245,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4012,6 +4266,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 4
     - editorIndex: 0
@@ -4037,6 +4297,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4052,6 +4318,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4077,6 +4349,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4113,6 +4391,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4129,6 +4413,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4159,6 +4449,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4175,6 +4471,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4192,6 +4494,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 2
     - editorIndex: 0
@@ -4217,6 +4525,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4234,6 +4548,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4250,6 +4570,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4265,6 +4591,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4290,6 +4622,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4320,6 +4658,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4336,6 +4680,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4352,6 +4702,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4368,6 +4724,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4384,6 +4746,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4401,6 +4769,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 1
     idPrefab: {fileID: 9214502554901828252, guid: fb6bc7aab9a43604484e3bf400d956ae, type: 3}
@@ -4421,6 +4795,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4436,6 +4816,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4451,6 +4837,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4466,6 +4858,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4481,6 +4879,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4507,6 +4911,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4524,6 +4934,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4540,6 +4956,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4575,6 +4997,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4590,6 +5018,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4605,6 +5039,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4620,6 +5060,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4635,6 +5081,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4650,6 +5102,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4665,6 +5123,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4690,6 +5154,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4705,6 +5175,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4720,6 +5196,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4745,6 +5227,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 1
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4760,6 +5248,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4775,6 +5269,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4790,6 +5290,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4805,6 +5311,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4832,6 +5344,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4847,6 +5365,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4862,6 +5386,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4878,6 +5408,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4893,6 +5429,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 7
     - editorIndex: 0
@@ -4908,6 +5450,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4923,6 +5471,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4938,6 +5492,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4953,6 +5513,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4968,6 +5534,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4983,6 +5555,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4999,6 +5577,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5014,6 +5598,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 5
     - editorIndex: 0
@@ -5039,6 +5629,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5064,6 +5660,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5079,6 +5681,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5094,6 +5702,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5109,6 +5723,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5124,6 +5744,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 5
     - editorIndex: 0
@@ -5149,6 +5775,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5164,6 +5796,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5179,6 +5817,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5195,6 +5839,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5210,6 +5860,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 0
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 1
       scoreScreenIndex: 6
     - editorIndex: 0
@@ -5245,6 +5901,12 @@ MonoBehaviour:
       grantIssuerAccess: 0
       grantPictureAccess: 0
       disableContinueButton: 1
+      idPrefabToSpawn: 
+      displayDuration: 0
+      autoAdvanceToNext: 0
+      showBusinessCard: 0
+      businessCardImagePath: 
+      waitForCardDismissal: 0
       endConversationHere: 0
       scoreScreenIndex: 0
     idPrefab: {fileID: 9214502554901828252, guid: 4e63c3f47093d7645bc076fa8eda8324, type: 3}

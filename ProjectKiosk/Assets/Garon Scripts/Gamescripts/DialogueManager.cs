@@ -693,16 +693,25 @@ public class DialogueManager : MonoBehaviour
                         if (currentResponse.returnAfterResponse)
                             dialogueReturnStack.Push(currentLineIndex);
 
-                        // Convert editorIndex to array index
-                        int targetIndex = FindLineIndexByEditorIndex(currentResponse.nextLineIndex);
-                        if (targetIndex >= 0)
+                        // For JSON scenarios: convert editorIndex to array index
+                        // For old scenarios: use nextLineIndex directly as array index
+                        if (isJsonCustomer)
                         {
-                            currentLineIndex = targetIndex;
+                            int targetIndex = FindLineIndexByEditorIndex(currentResponse.nextLineIndex);
+                            if (targetIndex >= 0)
+                            {
+                                currentLineIndex = targetIndex;
+                            }
+                            else
+                            {
+                                Debug.LogError($"Invalid nextLineIndex (editorIndex): {currentResponse.nextLineIndex}");
+                                return;
+                            }
                         }
                         else
                         {
-                            Debug.LogError($"Invalid nextLineIndex: {currentResponse.nextLineIndex}");
-                            return;
+                            // Old system uses direct array indices
+                            currentLineIndex = currentResponse.nextLineIndex;
                         }
                     }
                     else
@@ -734,16 +743,26 @@ public class DialogueManager : MonoBehaviour
             goBackButton.onClick.RemoveAllListeners();
             goBackButton.onClick.AddListener(() =>
             {
-                // Convert editorIndex to array index
-                int targetIndex = FindLineIndexByEditorIndex(line.goBackTargetIndex);
-                if (targetIndex >= 0)
+                // For JSON scenarios: convert editorIndex to array index
+                // For old scenarios: use goBackTargetIndex directly as array index
+                if (isJsonCustomer)
                 {
-                    currentLineIndex = targetIndex;
-                    ShowNextLine();
+                    int targetIndex = FindLineIndexByEditorIndex(line.goBackTargetIndex);
+                    if (targetIndex >= 0)
+                    {
+                        currentLineIndex = targetIndex;
+                        ShowNextLine();
+                    }
+                    else
+                    {
+                        Debug.LogError($"Invalid goBackTargetIndex (editorIndex): {line.goBackTargetIndex}");
+                    }
                 }
                 else
                 {
-                    Debug.LogError($"Invalid goBackTargetIndex: {line.goBackTargetIndex}");
+                    // Old system uses direct array indices
+                    currentLineIndex = line.goBackTargetIndex;
+                    ShowNextLine();
                 }
             });
         }
