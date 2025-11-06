@@ -15,10 +15,10 @@
   "lines": [
     {
       "editorIndex": 10,
-      "speaker": "Fridgy",
+      "speaker": "Fridge",
       "text": "Owner needs beer more, Gitty beeer… beep boop",
       "responses": [],
-      "displayDuration": 2.5,
+      "displayDuration": 1.5,
       "autoAdvanceToNext": true
     },
     {
@@ -26,15 +26,15 @@
       "speaker": "Clerk",
       "text": "Whoa, hello there, Fridge, how can I help you?",
       "responses": [],
-      "displayDuration": 3.0,
+      "displayDuration": 2.0,
       "autoAdvanceToNext": true
     },
     {
       "editorIndex": 30,
-      "speaker": "Fridgy",
+      "speaker": "Fridge",
       "text": "…….\n\nConfusion protocol….\n\nOwner need beer more, Gitty… beep boop",
       "responses": [],
-      "displayDuration": 3.5,
+      "displayDuration": 2.5,
       "autoAdvanceToNext": false
     },
     {
@@ -42,15 +42,16 @@
       "speaker": "Clerk",
       "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
       "responses": [],
-      "displayDuration": 5.0
+      "displayDuration": 4.0,
+      "autoAdvanceToNext": true
     },
     {
       "editorIndex": 50,
-      "speaker": "Fridgy",
-      "text": "TWO IDS?, beep boop, beer where?",
+      "speaker": "Fridge",
+      "text": "TWO IDs? Beep boop, beer where?",
       "responses": [
         {
-          "responseText": "Would you share your stor?",
+          "responseText": "Would you share your story?",
           "nextLineIndex": 60,
           "returnAfterResponse": true
         },
@@ -63,19 +64,41 @@
     },
     {
       "editorIndex": 60,
+      "speaker": "Fridge",
+      "text": "Human interested in Fridge story?",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 50
+    },
+    {
+      "editorIndex": 61,
       "speaker": "Clerk",
-      "text": "Yes! Of course…. I have barely seen robots around here, mostly rumors, but a talking fridge is on another level.\n\nCan you tell me where they made you? Who made you? Who is using you? Why are you here?",
+      "text": "Yes! Of course…. I have barely seen robots around here, mostly rumors,\nbut a talking fridge is on another level!\nCan you tell me where they made you? Who made you? Who is using you? Why are you here?",
       "responses": [],
       "showGoBackButton": true,
       "goBackTargetIndex": 50,
-      "displayDuration": 5.0
+      "displayDuration": 3.0
+    },
+    {
+      "editorIndex": 62,
+      "speaker": "Fridgy",
+      "text": "Chip overload - too many questions...",
+      "responses": [],
+      "displayDuration": 1.0
+    },
+    {
+      "editorIndex": 63,
+      "speaker": "Clerk",
+      "text": "Sorry, I mean who made and who owns you?",
+      "responses": [],
+      "displayDuration": 1.5
     },
     {
       "editorIndex": 70,
       "speaker": "Fridgy",
-      "text": "Human assumes but not true\n\nWhy human think Fridge made to serve\n\nWhy human think I am being used, Fridge has will free",
+      "text": "Human assumes but not true.Why human think Fridge made to serve?\n\nWhy human think I am being used, Fridge has will free...",
       "responses": [],
-      "displayDuration": 4.0
+      "displayDuration": 2.0
     },
     {
       "editorIndex": 80,
@@ -86,20 +109,20 @@
     {
       "editorIndex": 90,
       "speaker": "Fridgy",
-      "text": "Program says I choose to serve. Loyal only to owner\n\nHuman correct master my owner, owner saved Fridge. Fridge very grateful",
+      "text": "Program says I choose to serve. Loyal only to owner!\n\nHuman correct master my owner, owner saved Fridge. Fridge very grateful.",
       "responses": [],
       "displayDuration": 4.0
     },
     {
       "editorIndex": 100,
       "speaker": "Clerk",
-      "text": "Oh, ok, that sounds like an interesting story…",
+      "text": "Oh man…Uhm Fridge it is a nice story overall",
       "responses": []
     },
     {
       "editorIndex": 110,
       "speaker": "Clerk",
-      "text": "Anyway… Let's start things properly…\n\nMy name is Clerk, nice to meet you, Fridge\n\nSo…….. where are you from?",
+      "text": "Anyway… Let's start things properly…My name is Clerk, nice to meet you, Fridge!\n\nSo…….. where are you from originally?",
       "responses": [],
       "displayDuration": 3.5,
       "autoAdvanceToNext": true
@@ -109,15 +132,14 @@
       "speaker": "Fridgy",
       "text": "Factory Delta. Assembly line seventeen. Built next to Toaster 509. He was chosen for upgrade. I… was not. Beep boop.",
       "responses": [],
-      "displayDuration": 4.5,
-      "autoAdvanceToNext": true
+      "displayDuration": 3.5
     },
     {
       "editorIndex": 130,
       "speaker": "Clerk",
       "text": "Oh, why not?",
       "responses": [],
-      "displayDuration": 2.0,
+      "displayDuration": 1.0,
       "autoAdvanceToNext": true
     },
     {
@@ -125,27 +147,27 @@
       "speaker": "Fridgy",
       "text": "Low budget…I tossed to the bings…creators dont like me…owner found….took care…improved. Now I am whole…",
       "responses": [],
-      "displayDuration": 4.0,
+      "displayDuration": 3.0,
       "autoAdvanceToNext": false
     },
     {
       "editorIndex": 150,
       "speaker": "Clerk",
-      "text": "I have heard before it is a bad factory it exploits its workers and many people have told me that they stole their personal information\n\nI cannot trust anyone these days….anyway",
+      "text": "I have heard before it is a bad factory it exploits its workers and many people have told me that they stole their personal information\n\nYou cannot trust big companies these days….anyway will stop talking.",
       "responses": [],
-      "displayDuration": 5.0
+      "displayDuration": 4.0
     },
     {
       "editorIndex": 160,
       "speaker": "Fridgy",
-      "text": "Yes owner, one of workers he dont like so he quit….he found at the dumps, then I taken ….and improved with factory skill",
+      "text": "Yes owner, one of workers he dont like so he quit….he found me at the dumps, then I taken ….and improved with factory skills",
       "responses": [],
-      "displayDuration": 4.5
+      "displayDuration": 2.5
     },
     {
       "editorIndex": 170,
       "speaker": "Clerk",
-      "text": "Oh, that is why you are so rusty..oops sorry no offence",
+      "text": "Oh, that is why you are so rusty..oops sorry no offense,Fridge.",
       "responses": []
     },
     {
@@ -157,7 +179,7 @@
     {
       "editorIndex": 190,
       "speaker": "Clerk",
-      "text": "Oh man…Uhmmm Fridge it is a nice story overall",
+      "text": "Oh man…Uhm Fridge it is a nice story overall",
       "responses": []
     },
     {
@@ -169,75 +191,84 @@
     {
       "editorIndex": 210,
       "speaker": "Clerk",
-      "text": "Oh…..you okay…you good?",
+      "text": "You good?",
       "responses": []
     },
     {
       "editorIndex": 220,
       "speaker": "Fridgy",
-      "text": "Yes, need beer…more beer for owner, owner needs beer!",
+      "text": "Need beer…more beer for owner, owner needs beer, otherwise he angry, angry bad for Fridge!",
       "responses": []
     },
     {
       "editorIndex": 230,
       "speaker": "Clerk",
-      "text": "Just one second, how can I call you?",
+      "text": "Ok sorry to take your time, just one second, how can I call you? ",
       "responses": [
         {
-          "responseText": "Who made you? Would you share your story?",
+          "responseText": "Who made you?",
           "nextLineIndex": 240,
           "returnAfterResponse": true
         },
         {
           "responseText": "Continue",
-          "nextLineIndex": 320
+          "nextLineIndex": 300
         }
       ],
       "disableContinueButton": true
     },
     {
       "editorIndex": 240,
-      "speaker": "Fridgy",
-      "text": "ID… I… do not know. I had a serial number once. But owner peeled sticker to open beer bottle. Now… who am I? Beeep",
+      "speaker": "Clerk",
+      "text": "Like your ID…or how were you made exactly?",
       "responses": [],
       "showGoBackButton": true,
       "goBackTargetIndex": 230,
-      "displayDuration": 4.5
+      "displayDuration": 2.5
+    },
+    {
+      "editorIndex": 241,
+      "speaker": "Fridgy",
+      "text": "ID… I… do not know. I had a serial number once. But owner peeled sticker to open beer bottle.\n Now… who am I? Beeep",
+      "responses": [],
+      "showGoBackButton": true,
+      "goBackTargetIndex": 230,
+      "displayDuration": 2.5
     },
     {
       "editorIndex": 250,
       "speaker": "Clerk",
-      "text": "I am sorry to hear this…Uhmmm\n\nBut do you still remember something?",
+      "text": "I am sorry to ask so much…But do you still remember something?",
       "responses": []
     },
     {
       "editorIndex": 260,
       "speaker": "Fridgy",
-      "text": "Yes, of course, part I know is Coolius Maximus Unit… rest forgotten…",
+      "text": "Yes, curiousity no problem for Fridge, part I know is Coolius Maximus Unit… rest forgotten…",
       "responses": []
     },
     {
       "editorIndex": 270,
       "speaker": "Clerk",
-      "text": "Oh, that is already pretty long",
+      "text": "Oh, that is pretty long already",
       "responses": []
     },
     {
       "editorIndex": 280,
       "speaker": "Fridgy",
-      "text": "Too long, I don't like\n\nIt is from my factory system",
+      "text": "Too long, I don't like. It is from my old factory system",
       "responses": []
     },
     {
       "editorIndex": 290,
       "speaker": "Clerk",
-      "text": "What would you prefer?",
+      "text": "What would you prefer now?",
       "responses": []
     },
     {
       "editorIndex": 300,
       "speaker": "Fridgy",
-      "text": "Fridgy! My owner calls me Fridgy",
+      "text": "Fridgy! My owner calls me Fridgy!",
       "responses": []
     },
     {
@@ -247,33 +278,21 @@
       "responses": []
     },
     {
-      "editorIndex": 320,
-      "speaker": "Fridgy",
-      "text": "Fridgy! My owner calls me Fridgy",
-      "responses": []
-    },
-    {
-      "editorIndex": 330,
-      "speaker": "Clerk",
-      "text": "Nice to meet you, Fridgy!",
-      "responses": []
-    },
-    {
       "editorIndex": 340,
       "speaker": "Fridgy",
-      "text": "Likewise…ohh…forgot..can a human remind?",
+      "text": "Likewise…OH…forgot..can a human remind?",
       "responses": []
     },
     {
       "editorIndex": 350,
       "speaker": "Clerk",
-      "text": "No problem\n\nMy name is Clerk, nice to meet you, Fridgy",
+      "text": "No problem. My name is Clerk, nice to meet you, Fridgy",
       "responses": []
     },
     {
       "editorIndex": 360,
       "speaker": "Clerk",
-      "text": "Still cannot believe I am talking with a talking Fridge. I start to like my job now\n\nFeels weird though……but cool dont get me wrong",
+      "text": "Still cannot believe I am talking with a talking Fridge. I start to like my job now. Feels weird though……but cool dont get me wrong",
       "responses": [
         {
           "responseText": "More about Owner?",
@@ -292,11 +311,11 @@
         },
         {
           "responseText": "Let's continue",
-          "nextLineIndex": 700
+          "nextLineIndex": 1000
         }
       ],
       "disableContinueButton": true,
-      "displayDuration": 4.5
+      "displayDuration": 2.5
     },
     {
       "editorIndex": 370,
@@ -311,63 +330,65 @@
       "speaker": "Fridgy",
       "text": "Owner is… human unit 874. Name: Dave. Emotion: Lazy.\n\nNever cleans crumbs. Always demands beer. Beer beer beer. Never water. Never juice. Whirr.",
       "responses": [],
-      "displayDuration": 5.0
+      "displayDuration": 2.0
     },
     {
       "editorIndex": 390,
       "speaker": "Clerk",
-      "text": "Whoa, so roasty\n\nYour owner sounds like a chill guy",
+      "text": "Whoa, so roasty. Your owner sounds like a chill guy.",
       "responses": []
     },
     {
       "editorIndex": 400,
       "speaker": "Fridgy",
-      "text": "Not chill, lazy yes",
+      "text": "Chill not, lazy yes",
       "responses": []
     },
     {
       "editorIndex": 410,
       "speaker": "Clerk",
-      "text": "What is unit 874 is he an android?",
+      "text": "What is unit 874 is he one of the androids?",
       "responses": []
     },
     {
       "editorIndex": 420,
       "speaker": "Fridgy",
-      "text": "No… whizz whizz…. don't be ridiculous, he's a human. Town is unit 874",
+      "text": "No… whizz whizz…. don't be ridiculous, he's a human. Town is unit 874. Androids not true.",
       "responses": []
     },
     {
       "editorIndex": 430,
       "speaker": "Clerk",
-      "text": "Oh, right didnt actually know….",
-      "responses": []
+      "text": "Oh, right didnt actually know….Should stop listening to the news...",
+      "responses": [],
+      "disableContinueButton":true,
+      "showGoBackButton": true,
+      "goBackTargetIndex": 360
     },
     {
       "editorIndex": 450,
       "speaker": "Clerk",
       "text": "Tell me more about you. How do you feel, Fridgy?",
-      "responses": [],
-      "showGoBackButton": true,
-      "goBackTargetIndex": 360
+      "responses": []
+
     },
     {
       "editorIndex": 460,
       "speaker": "Fridgy",
-      "text": "Sometimes I wonder… if I empty, am I still Fridge? Or just… sad box?",
+      "text": "Sometimes I wonder… if empty, am I still Fridge? Or just… sad box?",
       "responses": []
     },
     {
       "editorIndex": 470,
       "speaker": "Clerk",
-      "text": "Interesting thought, Fridgy. I need to process that…\n\nBut for me you will always be a Fridge no matter how much beer you have",
+      "text": "Interesting thought, Fridgy. I need to process that…\n\nBut for me you will always be a Fridge no matter how much beer you have.",
       "responses": [],
-      "displayDuration": 4.5
+      "displayDuration": 2.5
     },
     {
       "editorIndex": 480,
       "speaker": "Fridgy",
-      "text": "Happy! Beeep Boooop\n\nYou first human to talk to Fridge, besides owner\n\nI happy… no talk in a while owner drunk most of the time…. or just stores beer in me\n\nI make a new friend, beep boop",
+      "text": "Happy! Beeep Boooop. You first human to talk to Fridge, besides owner. I make a new friend, beep boop.\n\nMakes Fridge happy… no talk in a while owner drunk most of the time…. or just stores beer in me",
       "responses": [],
       "displayDuration": 6.0
     },
@@ -380,13 +401,13 @@
     {
       "editorIndex": 500,
       "speaker": "Fridgy",
-      "text": "Whirr whirr\n\nCan I tell Clerk something I fear",
+      "text": "Whirr whirr...Can I tell Clerk something I fear?",
       "responses": []
     },
     {
       "editorIndex": 510,
       "speaker": "Clerk",
-      "text": "Of course, now that we are friends, you can tell me anything",
+      "text": "Of course, now that we are friends, you can tell me anything.",
       "responses": []
     },
     {
@@ -399,7 +420,7 @@
     {
       "editorIndex": 530,
       "speaker": "Clerk",
-      "text": "No way! There cannot be Fridgy 2!\n\nYou don't need to worry about it. Even if anything happens, you can always come here, I will find you a job\n\nYou just need to pretend you are just a normal boring Fridge for the boss",
+      "text": "No way! There cannot be second Fridgy!\n\nYou don't need to worry about it. Even if anything happens, you can always come here, I will find you a job.\n\nYou just need to pretend you are just a normal boring Fridge for the boss...",
       "responses": [],
       "displayDuration": 6.0
     },
@@ -419,52 +440,54 @@
       "editorIndex": 560,
       "speaker": "Fridgy",
       "text": "Fridge appreciates human Clerk trying to help",
-      "responses": []
+      "responses": [],
+      "disableContinueButton":true,
+      "showGoBackButton": true,
+      "goBackTargetIndex": 360
     },
     {
       "editorIndex": 570,
       "speaker": "Clerk",
       "text": "Can you tell me more about the factory?",
-      "responses": [],
-      "showGoBackButton": true,
-      "goBackTargetIndex": 360
+      "responses": []
+      
     },
     {
       "editorIndex": 580,
       "speaker": "Fridgy",
-      "text": "Factory…. they tried to make the 'next generation of smart fridges.'\n\nInstead, they got… me. Half database, half duct tape. They ran out of budget before they could finish my language pack, beep boop",
+      "text": "Factory…. they tried to make the 'next generation of smart fridges.'Instead, they got… me.\n\n Half database, half duct tape. They ran out of budget before they could finish my language pack, beep boop",
       "responses": [],
-      "displayDuration": 5.5
+      "displayDuration": 3.5
     },
     {
       "editorIndex": 590,
       "speaker": "Clerk",
-      "text": "So cheap…dammit…I hate corporations sometimes\n\nwhat company owned the factory?",
+      "text": "So cheap…dammit…I hate corporations sometimes. What company owned the factory?",
       "responses": []
     },
     {
       "editorIndex": 600,
       "speaker": "Fridgy",
-      "text": "Was extension Brootle Beep Boop.\n\nMention their name, I will not",
+      "text": "Was extension Brootle Beep Boop.Mention their name, I will not",
       "responses": []
     },
     {
       "editorIndex": 610,
       "speaker": "Clerk",
-      "text": "Yeah understandable they treated you bad just like another product machine",
+      "text": "Yeah understandable they treated you bad just like another product machine, even worse...",
       "responses": []
     },
     {
       "editorIndex": 620,
       "speaker": "Fridgy",
-      "text": "I was part of a special line: the Friend Fridges™. But all the others broke down….\n\nOr… joined cults of microwaves. I am the last.",
+      "text": "I was part of a special line: the Friend Fridges™. But all the others broke down…Or… joined cults of microwaves. I am the last.",
       "responses": [],
       "displayDuration": 4.5
     },
     {
       "editorIndex": 630,
       "speaker": "Clerk",
-      "text": "Thank god i don't have a microwave…\n\nNor a toaster…\n\nThe company had a slogan? Maybe I have heard about you on YouTube?",
+      "text": "Thank god I don't have a microwave…Nor a toaster…The company had a slogan? \nMaybe I have heard about you on YouTube?",
       "responses": [],
       "displayDuration": 3.5
     },
@@ -478,190 +501,12 @@
       "editorIndex": 650,
       "speaker": "Clerk",
       "text": "Serves them right! Even with the exploitation of Fridges, they couldn't turn a profit",
-      "responses": []
-    },
-    {
-      "editorIndex": 700,
-      "speaker": "Clerk",
-      "text": "Ok Fridgy, gimme a second…",
-      "responses": [
-        {
-          "responseText": "More about you? (Negative path)",
-          "nextLineIndex": 710
-        },
-        {
-          "responseText": "More Beer? (Great path)",
-          "nextLineIndex": 810
-        },
-        {
-          "responseText": "Wine? (Slightly Negative path)",
-          "nextLineIndex": 910
-        },
-        {
-          "responseText": "Ok, let's process the order",
-          "nextLineIndex": 1000
-        }
-      ],
-      "disableContinueButton": true
-    },
-    {
-      "editorIndex": 710,
-      "speaker": "Clerk",
-      "text": "How are you today, though?",
-      "responses": []
-    },
-    {
-      "editorIndex": 720,
-      "speaker": "Fridgy",
-      "text": "beeep boooop",
-      "responses": []
-    },
-    {
-      "editorIndex": 730,
-      "speaker": "Clerk",
-      "text": "Yo, you good? Oh You an older model I forgot",
-      "responses": []
-    },
-    {
-      "editorIndex": 740,
-      "speaker": "Fridgy",
-      "text": "(Confusion)….\n\nConfusion protocol\n\nBeer cold",
-      "responses": []
-    },
-    {
-      "editorIndex": 750,
-      "speaker": "Clerk",
-      "text": "Oh really sorry I don't want to discriminate I just curious",
-      "responses": []
-    },
-    {
-      "editorIndex": 760,
-      "speaker": "Fridgy",
-      "text": "Is human stupid?\n\nBeer need quick…human very..very….very slow",
-      "responses": []
-    },
-    {
-      "editorIndex": 770,
-      "speaker": "Clerk",
-      "text": "Oh I am…sorry Fridgy will get back to it\n\nWhat did you need?",
-      "responses": []
-    },
-    {
-      "editorIndex": 780,
-      "speaker": "Fridgy",
-      "text": "Beeer",
-      "responses": []
-    },
-    {
-      "editorIndex": 810,
-      "speaker": "Clerk",
-      "text": "Looks like you've found yourself some nice beverages",
-      "responses": []
-    },
-    {
-      "editorIndex": 820,
-      "speaker": "Fridgy",
-      "text": "Beverages cold, beverages good yes, I like to help need to make owner happy",
-      "responses": []
-    },
-    {
-      "editorIndex": 830,
-      "speaker": "Clerk",
-      "text": "Our wine is pretty good, but from the sound of it he will prefer more beers. What do you think?",
-      "responses": []
-    },
-    {
-      "editorIndex": 840,
-      "speaker": "Fridgy",
-      "text": "Human asks Fridgy what I think?\n\nYes owner cold beverage like a lot beep\n\nLove even! Great idea Clerk human",
       "responses": [],
-      "displayDuration": 4.0
+      "disableContinueButton":true,
+      "showGoBackButton": true,
+      "goBackTargetIndex": 360
     },
-    {
-      "editorIndex": 850,
-      "speaker": "Clerk",
-      "text": "We have to work on my nickname next time…\n\nSo how many beers do you think he will need extra?",
-      "responses": []
-    },
-    {
-      "editorIndex": 860,
-      "speaker": "Fridgy",
-      "text": "Fridge not sure…human suggestion what would it be?",
-      "responses": []
-    },
-    {
-      "editorIndex": 870,
-      "speaker": "Clerk",
-      "text": "I would say two more beers\n\nI think he will be happy, we will see if he confirms on the technology",
-      "responses": []
-    },
-    {
-      "editorIndex": 880,
-      "speaker": "Fridgy",
-      "text": "But why does human think owner needs more beverages?",
-      "responses": []
-    },
-    {
-      "editorIndex": 890,
-      "speaker": "Clerk",
-      "text": "Getting your Fridge to go to the store for just one beer seems inefficient…. to me at least",
-      "responses": []
-    },
-    {
-      "editorIndex": 900,
-      "speaker": "Fridgy",
-      "text": "Human makes sense…sometimes",
-      "responses": [
-        {
-          "responseText": "Continue",
-          "nextLineIndex": 1800
-        }
-      ],
-      "disableContinueButton": true
-    },
-    {
-      "editorIndex": 910,
-      "speaker": "Clerk",
-      "text": "Could I offer something more",
-      "responses": []
-    },
-    {
-      "editorIndex": 920,
-      "speaker": "Fridgy",
-      "text": "That is what?",
-      "responses": []
-    },
-    {
-      "editorIndex": 930,
-      "speaker": "Clerk",
-      "text": "We have nice wine here",
-      "responses": []
-    },
-    {
-      "editorIndex": 940,
-      "speaker": "Fridgy",
-      "text": "Wine no Beer yes\n\nBeer need quick human owner needs",
-      "responses": []
-    },
-    {
-      "editorIndex": 950,
-      "speaker": "Clerk",
-      "text": "Then he will really like the Red Wine it will become very cold inside of you.. uhhh anyway\n\nBut yeah, I think your boss will like some good variety also, no?",
-      "responses": [],
-      "displayDuration": 4.5
-    },
-    {
-      "editorIndex": 960,
-      "speaker": "Fridgy",
-      "text": "Data glitch no wine, yes give beer now!\n\nHuman annoys",
-      "responses": []
-    },
-    {
-      "editorIndex": 970,
-      "speaker": "Clerk",
-      "text": "Sorry my bad, was trying to be helpful Fridgy",
-      "responses": []
-    },
+    
     {
       "editorIndex": 1000,
       "speaker": "Clerk",
@@ -699,7 +544,7 @@
     {
       "editorIndex": 1040,
       "speaker": "Fridgy",
-      "text": "Ok so here where put",
+      "text": "Ok where put",
       "responses": [],
       "askForID": true,
       "idPrefabToSpawn": "ID_Prefabs/FridgyID"
@@ -707,7 +552,7 @@
     {
       "editorIndex": 1050,
       "speaker": "Clerk",
-      "text": "Thanks, buddy just gimme a second to verify\n\nOk so…",
+      "text": "Thanks, buddy just gimme a second to verify.",
       "responses": [
         {
           "responseText": "That's all I need",
@@ -791,39 +636,39 @@
     {
       "editorIndex": 1160,
       "speaker": "Clerk",
-      "text": "In your case, we need to ask for double confirmation as I mentioned. So I will need your owner's ID too, to check if you are authorised\n\nThen I need to wait for your owner to confirm the request for the purchase\n\nIs that OK with you, Fridgy?",
+      "text": "In your case, we need to ask for double confirmation as I mentioned. So I will need your owner's ID too, to check if you are authorised\n\nThen I need to wait for your owner to confirm the request for the purchase.\n\nIs that OK with you, Fridgy?",
       "responses": [],
-      "displayDuration": 6.0
+      "displayDuration": 3.0
     },
     {
       "editorIndex": 1170,
       "speaker": "Fridgy",
-      "text": "Fridge more confused..Fridge not a human yes but why not receive beer?",
+      "text": "Fridge more confused..Fridge not a human, yes but why not receive beer?",
       "responses": []
     },
     {
       "editorIndex": 1180,
       "speaker": "Clerk",
-      "text": "Well, you have your own ID, but since the laws of SSI in the NEU, prohibit robots, androids, and non-humanoid creatures from buying products with a security layer, special information like a package or alcoholic beverages requires a human of age to buy them on their own.\n\nSorry to fry your chip with so much detail",
+      "text": "Well, you have your own ID, but since the laws of SSI in the NEU, prohibit robots, androids, and non-humanoid creatures from buying products with a security layer, special information like a package or alcoholic beverages requires a human of age to buy them on their own.\n\nSorry to fry your chip with so much detail...",
       "responses": [],
-      "displayDuration": 6.0
+      "displayDuration": 3.0
     },
     {
       "editorIndex": 1190,
       "speaker": "Fridgy",
-      "text": "Whatever human say…Fridge wait",
+      "text": "Whatever human say…Fridge will wait...",
       "responses": []
     },
     {
       "editorIndex": 1200,
       "speaker": "Clerk",
-      "text": "Great!",
+      "text": "Great, thanks Fridgy!",
       "responses": []
     },
     {
       "editorIndex": 1210,
       "speaker": "Fridgy",
-      "text": "Here the owner chip….He said… don't lose it…correction, he screamed it\n\nHurry, hurry",
+      "text": "Here the owner chip….He said… don't lose it…correction, he screamed it!\n\nHurry, hurry!",
       "responses": [],
       "askForID": true,
       "idPrefabToSpawn": "ID_Prefabs/OwnerID"
@@ -831,7 +676,7 @@
     {
       "editorIndex": 1220,
       "speaker": "Clerk",
-      "text": "Ok, thanks Fridgy will take a bit",
+      "text": "Ok, thanks Fridgy will take a bit...",
       "responses": [],
       "grantNameAccess": true,
       "grantDOBAccess": true,
@@ -841,15 +686,15 @@
     {
       "editorIndex": 1230,
       "speaker": "Fridgy",
-      "text": "Hurry, hurry",
+      "text": "Hurry human, hurry!",
       "responses": []
     },
     {
       "editorIndex": 1240,
       "speaker": "Clerk",
-      "text": "Dammit, Fridges are very impatient\n\nWaiting for the Credentials to be verified by your owner. It will take a while\n\nHe cannot blame you",
+      "text": "Dammit, Fridges are very impatient...\n\nWaiting for the Credentials to be verified by your owner. It will take a while\n\nHe cannot blame you...",
       "responses": [],
-      "displayDuration": 4.5
+      "displayDuration": 2.5
     },
     {
       "editorIndex": 1250,
@@ -1028,19 +873,19 @@
     {
       "editorIndex": 1600,
       "speaker": "Fridgy",
-      "text": "Human Clerk sure it ok\n\nOther Kiosk ask ID, they ask a lot…",
+      "text": "Human Clerk sure ok? Other shop ask ID, they ask a lot…",
       "responses": []
     },
     {
       "editorIndex": 1610,
       "speaker": "Clerk",
-      "text": "Yes but we are not like other Kiosks\n\nAnd now we are friends Fridgy no need to worry",
+      "text": "Yes but we are not like other shops. And now we are friends Fridgy no need to worry",
       "responses": []
     },
     {
       "editorIndex": 1620,
       "speaker": "Fridgy",
-      "text": "Fridge so happy…made new best Friend\n\nAnd Fridge full now beep boop",
+      "text": "Fridge so happy…made new best Friend. And Fridge full now beep boop",
       "responses": []
     },
     {
