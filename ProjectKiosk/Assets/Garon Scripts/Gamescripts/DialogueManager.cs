@@ -96,9 +96,13 @@ public class DialogueManager : MonoBehaviour
     public List<CustomerDialogue> customers = new();
 
     [Header("JSON Dialogue Data")]
-    public List<string> jsonCustomerFileNames = new();
+    public List<string> jsonCustomerFileNames = new(); // DEPRECATED: Use ScenarioManager instead
     private CustomerScenarioData currentJsonCustomer;
     private GameObject currentJsonNpcObject; // New field to track the instantiated NPC object
+    private string currentJsonScenarioFilename; // Track current scenario filename for completion notification
+
+    [Header("Scenario Management")]
+    public ScenarioManager scenarioManager; // Reference to ScenarioManager for shuffling
 
     [Header("UI Panels")]
     public List<GameObject> scoreScreens = new();
@@ -297,8 +301,11 @@ public class DialogueManager : MonoBehaviour
             businessCardPanel.SetActive(false);
         }
 
-        // NEW LOGIC: Force start if using only JSON customers
-        if (customers.Count == 0 && jsonCustomerFileNames.Count > 0)
+        // NEW LOGIC: Force start if using only JSON customers (via ScenarioManager or legacy list)
+        bool useScenarioManager = scenarioManager != null && scenarioManager.HasMoreScenarios();
+        bool useLegacyList = customers.Count == 0 && jsonCustomerFileNames.Count > 0;
+
+        if (useScenarioManager || useLegacyList)
         {
             // Set the index to the one before the first customer, so OnScoreContinue() advances to the first one (index 0).
             currentCustomerIndex = -1;
@@ -361,6 +368,12 @@ public class DialogueManager : MonoBehaviour
         }
         ResetDialogueState();
 
+        // Notify ScenarioManager that the previous scenario is complete
+        if (!string.IsNullOrEmpty(currentJsonScenarioFilename) && scenarioManager != null)
+        {
+            scenarioManager.OnScenarioComplete(currentJsonScenarioFilename);
+        }
+
         // Index of the customer that was just on screen (before increment)
         int previousCustomerIndex = currentCustomerIndex;
 
@@ -383,7 +396,9 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        int totalCustomers = customers.Count + jsonCustomerFileNames.Count;
+        // Determine if we should use ScenarioManager or legacy list
+        bool useScenarioManager = scenarioManager != null;
+        int totalCustomers = customers.Count + (useScenarioManager ? scenarioManager.GetTotalScenarioCount() : jsonCustomerFileNames.Count);
 
         if (currentCustomerIndex < totalCustomers)
         {
@@ -395,15 +410,29 @@ public class DialogueManager : MonoBehaviour
                     customers[currentCustomerIndex].npcObject.SetActive(true);
                 }
                 currentJsonCustomer = null; // Ensure JSON data is cleared
+                currentJsonScenarioFilename = ""; // Clear scenario filename
                 ShowNextLine();
             }
             else
             {
-                // New JSON Customer Logic (Emma and beyond)
-                int jsonIndex = currentCustomerIndex - customers.Count;
-                string filename = jsonCustomerFileNames[jsonIndex];
+                // New JSON Customer Logic - Use ScenarioManager if available
+                string filename;
 
+                if (useScenarioManager && scenarioManager.HasMoreScenarios())
+                {
+                    // Use ScenarioManager for shuffled/queued scenarios
+                    filename = scenarioManager.GetNextScenarioFilename();
+                }
+                else
+                {
+                    // Fallback to legacy list
+                    int jsonIndex = currentCustomerIndex - customers.Count;
+                    filename = jsonCustomerFileNames[jsonIndex];
+                }
+
+                currentJsonScenarioFilename = filename; // Track current scenario
                 currentJsonCustomer = LoadCustomerFromJSON(filename);
+
                 if (currentJsonCustomer != null)
                 {
                     // Instantiate NPC Prefab
