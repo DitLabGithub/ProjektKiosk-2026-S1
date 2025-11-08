@@ -42,7 +42,7 @@
       "speaker": "Clerk",
       "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
       "responses": [],
-      "displayDuration": 4.0,
+      "displayDuration": 2.0,
       "autoAdvanceToNext": true
     },
     {
@@ -77,7 +77,7 @@
       "responses": [],
       "showGoBackButton": true,
       "goBackTargetIndex": 50,
-      "displayDuration": 3.0
+      "displayDuration": 1.0
     },
     {
       "editorIndex": 62,
@@ -206,7 +206,7 @@
       "text": "Ok sorry to take your time, just one second, how can I call you? ",
       "responses": [
         {
-          "responseText": "Who made you?",
+          "responseText": "More Context?",
           "nextLineIndex": 240,
           "returnAfterResponse": true
         },
@@ -223,17 +223,17 @@
       "text": "Like your ID…or how were you made exactly?",
       "responses": [],
       "showGoBackButton": true,
-      "goBackTargetIndex": 230,
-      "displayDuration": 2.5
+      "goBackTargetIndex": 230
+      
     },
     {
       "editorIndex": 241,
       "speaker": "Fridgy",
-      "text": "ID… I… do not know. I had a serial number once. But owner peeled sticker to open beer bottle.\n Now… who am I? Beeep",
+      "text": "ID… I… do not know. I had a serial number once. But owner peeled sticker to open beer bottle.\nNow… who am I? Beeep",
       "responses": [],
       "showGoBackButton": true,
       "goBackTargetIndex": 230,
-      "displayDuration": 2.5
+      "displayDuration": 1.5
     },
     {
       "editorIndex": 250,
@@ -256,7 +256,7 @@
     {
       "editorIndex": 280,
       "speaker": "Fridgy",
-      "text": "Too long, I don't like. It is from my old factory system",
+      "text": "Too long, I don't like. Old factory system",
       "responses": []
     },
     {
@@ -286,16 +286,16 @@
     {
       "editorIndex": 350,
       "speaker": "Clerk",
-      "text": "No problem. My name is Clerk, nice to meet you, Fridgy",
+      "text": "No problem. My name is Clerk, nice to meet you, Fridgy!",
       "responses": []
     },
     {
       "editorIndex": 360,
       "speaker": "Clerk",
-      "text": "Still cannot believe I am talking with a talking Fridge. I start to like my job now. Feels weird though……but cool dont get me wrong",
+      "text": "Still cannot believe I am talking with a talking Fridge. I start to like my job now. Feels weird though……but cool dont get me wrong!",
       "responses": [
         {
-          "responseText": "More about Owner?",
+          "responseText": "Owner?",
           "nextLineIndex": 370,
           "returnAfterResponse": true
         },
@@ -388,9 +388,9 @@
     {
       "editorIndex": 480,
       "speaker": "Fridgy",
-      "text": "Happy! Beeep Boooop. You first human to talk to Fridge, besides owner. I make a new friend, beep boop.\n\nMakes Fridge happy… no talk in a while owner drunk most of the time…. or just stores beer in me",
-      "responses": [],
-      "displayDuration": 6.0
+      "text": "Happy! Beeep Boooop. You first human to talk to Fridge, besides owner. I make a new friend, beep boop.\n\nMakes Fridge happy… no talk in a while owner drunk most of the time…. or just stores beer in me...",
+      "responses": []
+      
     },
     {
       "editorIndex": 490,
@@ -563,7 +563,7 @@
           "nextLineIndex": 1100
         },
         {
-          "responseText": "I need a few things from you…",
+          "responseText": "Shady…",
           "nextLineIndex": 1300
         }
       ],
@@ -711,9 +711,139 @@
     {
       "editorIndex": 1270,
       "speaker": "Clerk",
-      "text": "I need to check if you are authorised to represent the person on the ID…Let me check the system\n\n————————\nValidating…\n————————\nAuthorization Check completed successfully…\n————————\n\nYes, all good now\n\nHope your owner is satisfied",
+      "text": "I need to check if you are authorised to represent the person on the ID…Let me check the system\n\n————————\nValidating…\n————————\nAuthorization Check completed successfully…\n————————",
       "responses": [],
-      "displayDuration": 5.0
+      "displayDuration": 1.5
+    },
+    {
+      "editorIndex": 1271,
+      "speaker": "Clerk",
+      "text": "Yes, all good now!",
+      "responses": [
+        {
+          "responseText": "More Beer?",
+          "nextLineIndex": 810
+        },
+        {
+          "responseText": "Wine?",
+          "nextLineIndex": 910
+        },
+        {
+          "responseText": "Ok, goodbye Fridgy",
+          "nextLineIndex": 1000
+        }
+      ],
+      "displayDuration": 1.5
+    },
+    {
+      "editorIndex": 810,
+      "speaker": "Clerk",
+      "text": "Looks like you've found yourself some nice beverages",
+      "responses": []
+    },
+    {
+      "editorIndex": 820,
+      "speaker": "Fridgy",
+      "text": "Beverages cold, beverages good yes, I like to help need to make owner happy",
+      "responses": []
+    },
+    {
+      "editorIndex": 830,
+      "speaker": "Clerk",
+      "text": "Our wine is pretty good, but from the sound of it he will prefer more beers. What do you think?",
+      "responses": []
+    },
+    {
+      "editorIndex": 840,
+      "speaker": "Fridgy",
+      "text": "Human asks Fridgy what I think?\n\nYes owner cold beverage like a lot beep\n\nLove even! Great idea Clerk human",
+      "responses": [],
+      "displayDuration": 4.0
+    },
+    {
+      "editorIndex": 850,
+      "speaker": "Clerk",
+      "text": "We have to work on my nickname next time…\n\nSo how many beers do you think he will need extra?",
+      "responses": []
+    },
+    {
+      "editorIndex": 860,
+      "speaker": "Fridgy",
+      "text": "Fridge not sure…human suggestion what would it be?",
+      "responses": []
+    },
+    {
+      "editorIndex": 870,
+      "speaker": "Clerk",
+      "text": "I would say two more beers\n\nI think he will be happy, we will see if he confirms on the technology",
+      "responses": []
+    },
+    {
+      "editorIndex": 880,
+      "speaker": "Fridgy",
+      "text": "But why does human think owner needs more beverages?",
+      "responses": []
+    },
+    {
+      "editorIndex": 890,
+      "speaker": "Clerk",
+      "text": "Getting your Fridge to go to the store for just one beer seems inefficient…. to me at least",
+      "responses": []
+    },
+    {
+      "editorIndex": 900,
+      "speaker": "Fridgy",
+      "text": "Human makes sense…sometimes",
+      "responses": [
+        {
+          "responseText": "Continue",
+          "nextLineIndex": 1800
+        }
+      ],
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 910,
+      "speaker": "Clerk",
+      "text": "Could I offer something more",
+      "responses": []
+    },
+    {
+      "editorIndex": 920,
+      "speaker": "Fridgy",
+      "text": "That is what?",
+      "responses": []
+    },
+    {
+      "editorIndex": 930,
+      "speaker": "Clerk",
+      "text": "We have nice wine here",
+      "responses": []
+    },
+    {
+      "editorIndex": 940,
+      "speaker": "Fridgy",
+      "text": "Wine no Beer yes\n\nBeer need quick human owner needs",
+      "responses": []
+    },
+    {
+      "editorIndex": 950,
+      "speaker": "Clerk",
+      "text": "Then he will really like the Red Wine it will become very cold inside of you.. uhhh anyway\n\nBut yeah, I think your boss will like some good variety also, no?",
+      "responses": [],
+      "displayDuration": 4.5
+    },
+    {
+      "editorIndex": 960,
+      "speaker": "Fridgy",
+      "text": "Data glitch no wine, yes give beer now!\n\nHuman annoys",
+      "responses": []
+    },
+    {
+      "editorIndex": 970,
+      "speaker": "Clerk",
+      "text": "Sorry my bad, was trying to be helpful Fridgy",
+      "responses": []
     },
     {
       "editorIndex": 1280,
@@ -726,32 +856,45 @@
     {
       "editorIndex": 1300,
       "speaker": "Clerk",
-      "text": "So I can complete verification\n\nRemember the credentials by memory?",
+      "text": "To complete verification...Remember the credentials by memory?",
       "responses": []
     },
     {
       "editorIndex": 1310,
       "speaker": "Fridgy",
-      "text": "Glad to be helpful for new friend human\n\nWhat he needs?",
+      "text": "Glad to be helpful for new friend human...He needs what?",
       "responses": []
     },
     {
       "editorIndex": 1320,
       "speaker": "Clerk",
-      "text": "Can you give me…\n\nYour serial number, as well as your owner's location of birth and full date of birth?",
+      "text": "Can you give me:\n\nYour serial number, as well as your owner's location of birth and full date of birth?",
       "responses": []
     },
     {
       "editorIndex": 1330,
       "speaker": "Fridgy",
-      "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241. Owner born in Amsterdam, 1993 on the 19th of March",
-      "responses": [],
-      "displayDuration": 4.5
+      "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241. Owner born in Amsterdam, 1993 on the 19th of March.",
+      "responses": [
+        {
+          "responseText": "That's all I need",
+          "nextLineIndex": 1340
+        },
+        {
+          "responseText": "More Fridgy ID",
+          "nextLineIndex": 1400
+        },
+        {
+          "responseText": "More Owner ID",
+          "nextLineIndex": 1500
+        }
+      ]
+      
     },
     {
       "editorIndex": 1340,
       "speaker": "Clerk",
-      "text": "Yes, sorry, I got carried away. All is checked and verified, thank you, Fridgy",
+      "text": "Yes, sorry, I got carried away. All is checked and verified, thank you, Fridgy!",
       "responses": []
     },
     {
@@ -773,14 +916,9 @@
       "speaker": "Clerk",
       "text": "It might be hard, I know, but these are the last things I need, I promise. Can I get your serial number and activation code?",
       "responses": [],
-      "displayDuration": 4.5
+      "displayDuration": 1.5
     },
-    {
-      "editorIndex": 1410,
-      "speaker": "Fridgy",
-      "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241 and Activation Key\n\nWait, human, no need for more information?",
-      "responses": []
-    },
+    
     {
       "editorIndex": 1420,
       "speaker": "Clerk",
@@ -797,13 +935,13 @@
     {
       "editorIndex": 1440,
       "speaker": "Clerk",
-      "text": "And…? It sounds like a nice number; there should be just two more",
+      "text": "And…? It sounds like a nice number; There should be just two more...",
       "responses": []
     },
     {
       "editorIndex": 1450,
       "speaker": "Fridgy",
-      "text": "Human bad liar, he wants Fridge's information\n\nClerk a thief, Fridge leaving…find some place better…better beer",
+      "text": "Human bad liar, he wants Fridge's information\n\nClerk a thief, Fridge leaving…find some place better…better beer, better friend.",
       "responses": []
     },
     {
@@ -812,7 +950,7 @@
       "text": "No Fridgy wait…",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 4
+      "scoreScreenIndex": 3
     },
     {
       "editorIndex": 1500,
@@ -823,7 +961,7 @@
     {
       "editorIndex": 1510,
       "speaker": "Fridgy",
-      "text": "Born, in Groningen… nice city….beep boop\n\nBut then he moved to this town",
+      "text": "Born, in Groningen…nice city….beep boop\n\nBut then he moved to this town",
       "responses": []
     },
     {
@@ -868,7 +1006,7 @@
       "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh.....",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 5
+      "scoreScreenIndex": 3
     },
     {
       "editorIndex": 1600,
