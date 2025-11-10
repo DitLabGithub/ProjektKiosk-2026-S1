@@ -730,10 +730,18 @@
         },
         {
           "responseText": "Ok, goodbye Fridgy",
-          "nextLineIndex": 1000
+          "nextLineIndex": 809
         }
       ],
       "displayDuration": 1.5
+    },
+    {
+      "editorIndex": 809,
+      "speaker": "Clerk",
+      "text": "Bye!",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 3
     },
     {
       "editorIndex": 810,
@@ -794,13 +802,9 @@
       "editorIndex": 900,
       "speaker": "Fridgy",
       "text": "Human makes sense…sometimes",
-      "responses": [
-        {
-          "responseText": "Continue",
-          "nextLineIndex": 1800
-        }
-      ],
-      "disableContinueButton": true
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 3
     },
     {
       "editorIndex": 910,
@@ -823,7 +827,7 @@
     {
       "editorIndex": 940,
       "speaker": "Fridgy",
-      "text": "Wine no Beer yes\n\nBeer need quick human owner needs",
+      "text": "Wine no Beer yes\n\nBeer need quick... human owner needs",
       "responses": []
     },
     {
@@ -843,8 +847,11 @@
       "editorIndex": 970,
       "speaker": "Clerk",
       "text": "Sorry my bad, was trying to be helpful Fridgy",
-      "responses": []
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 3
     },
+
     {
       "editorIndex": 1280,
       "speaker": "Fridgy",
