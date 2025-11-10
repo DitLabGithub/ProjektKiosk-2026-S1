@@ -6,7 +6,8 @@
       "Bash(del fridgy_scenario.json)",
       "Bash(git checkout:*)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

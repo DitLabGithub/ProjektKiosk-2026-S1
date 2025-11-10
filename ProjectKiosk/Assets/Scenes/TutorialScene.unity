@@ -5912,8 +5912,8 @@ MonoBehaviour:
     idPrefab: {fileID: 9214502554901828252, guid: 4e63c3f47093d7645bc076fa8eda8324, type: 3}
     npcObject: {fileID: 1267035156}
     requestedItems: 07000000
-  jsonCustomerFileNames:
-  - EmmaScenario
+  jsonCustomerFileNames: []
+  scenarioManager: {fileID: 0}
   scoreScreens:
   - {fileID: 420377666}
   - {fileID: 1902202446}

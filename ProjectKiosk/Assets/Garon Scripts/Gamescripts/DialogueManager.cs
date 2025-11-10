@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -474,9 +475,20 @@ public class DialogueManager : MonoBehaviour
         else
         {
             // End of all customers
-            dialogueText.text = "All customers served!";
-            speakerText.text = "";
-            endCreditScreen.gameObject.SetActive(true);
+            string currentSceneName = SceneManager.GetActiveScene().name;
+
+            if (currentSceneName == "TutorialScene")
+            {
+                // Tutorial is complete, transition to gameplay scene
+                SceneManager.LoadScene("GameplayScene");
+            }
+            else
+            {
+                // In gameplay scene, show end credits
+                dialogueText.text = "All customers served!";
+                speakerText.text = "";
+                endCreditScreen.gameObject.SetActive(true);
+            }
         }
     }
 
