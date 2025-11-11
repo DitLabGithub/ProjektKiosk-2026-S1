@@ -11,7 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": false,
-  "requestedItems": [5],
+  "requestedItems": [7],
   "lines": [
     {
       "editorIndex": 10,
@@ -42,7 +42,7 @@
       "speaker": "Clerk",
       "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
       "responses": [],
-      "displayDuration": 2.0,
+      "displayDuration": 4.0,
       "autoAdvanceToNext": true
     },
     {
