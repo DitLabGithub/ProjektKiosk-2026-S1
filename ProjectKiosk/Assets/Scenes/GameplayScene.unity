@@ -2541,18 +2541,8 @@ MonoBehaviour:
   businessCardPanel: {fileID: 730580228}
   businessCardImage: {fileID: 730580231}
   customers: []
-<<<<<<< HEAD
   jsonCustomerFileNames: []
   scenarioManager: {fileID: 489185439}
-=======
-  jsonCustomerFileNames:
-  - fridgy_scenario
-  - ShaunBakersScenario
->>>>>>> PeterNEWtest
-=======
-  jsonCustomerFileNames: []
-  scenarioManager: {fileID: 489185439}
->>>>>>> 4a3f31293fae2e7a7c4db88ee4a92fe1d9a60d1a
   scoreScreens:
   - {fileID: 1474960500}
   - {fileID: 327348748}
