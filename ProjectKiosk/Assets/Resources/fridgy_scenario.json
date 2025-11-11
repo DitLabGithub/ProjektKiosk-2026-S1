@@ -595,7 +595,7 @@
       "text": "Owner thirsty Fridge see human friend Clerk soon",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 0
+      "scoreScreenIndex": 6
     },
     {
       "editorIndex": 1100,
@@ -733,7 +733,7 @@
           "nextLineIndex": 809
         }
       ],
-      "displayDuration": 1.5
+      "disableContinueButton": true
     },
     {
       "editorIndex": 809,
@@ -741,7 +741,7 @@
       "text": "Bye!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 4
     },
     {
       "editorIndex": 810,
@@ -804,7 +804,7 @@
       "text": "Human makes sense…sometimes",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 5
     },
     {
       "editorIndex": 910,
@@ -849,7 +849,7 @@
       "text": "Sorry my bad, was trying to be helpful Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 8
     },
 
     {
@@ -858,7 +858,7 @@
       "text": "Thank you human Clerk, Fridge will see you soon… beep boop",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 1
+      "scoreScreenIndex": 4
     },
     {
       "editorIndex": 1300,
@@ -907,7 +907,7 @@
     {
       "editorIndex": 1350,
       "speaker": "Fridgy",
-      "text": "Thank you, human for the beer owner will be happy",
+      "text": "Thank you, human friend for the beer, owner will be happy!",
       "responses": []
     },
     {
@@ -916,7 +916,7 @@
       "text": "I sure hope so, see ya!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 7
     },
     {
       "editorIndex": 1400,
@@ -957,7 +957,7 @@
       "text": "No Fridgy wait…",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 8
     },
     {
       "editorIndex": 1500,
@@ -1013,7 +1013,7 @@
       "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh.....",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 9
     },
     {
       "editorIndex": 1600,
@@ -1039,7 +1039,7 @@
       "text": "Glad to be of help, bye Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 0
+      "scoreScreenIndex": 6
     },
     {
       "editorIndex": 1800,
@@ -1183,7 +1183,7 @@
       "text": "Thank you, human Clerk! Best service! Best friend!\n\nFridge will return soon! Beep boop!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 2
+      "scoreScreenIndex": 5
     }
   ]
 }
