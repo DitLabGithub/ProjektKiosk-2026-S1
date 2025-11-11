@@ -157,7 +157,7 @@ public class UIManager : MonoBehaviour
     IEnumerator FadeOutAndLoadScene()
     {
         yield return fadeController.FadeIn(1f);
-        SceneManager.LoadScene("TutorialScene"); //going to tutorial scene
+        SceneManager.LoadScene("GameplayScene"); //TESTING: Skip tutorial, go directly to gameplay
     }
 
     public void ExitGame()
