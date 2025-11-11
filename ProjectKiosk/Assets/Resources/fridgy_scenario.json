@@ -11,7 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": false,
-  "requestedItems": [0],
+  "requestedItems": [7],
   "lines": [
     {
       "editorIndex": 10,
@@ -42,7 +42,7 @@
       "speaker": "Clerk",
       "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
       "responses": [],
-      "displayDuration": 2.0,
+      "displayDuration": 4.0,
       "autoAdvanceToNext": true
     },
     {
@@ -517,8 +517,9 @@
           "nextLineIndex": 1010
         },
         {
-          "responseText": "No need for ID",
-          "nextLineIndex": 1600
+          "responseText": "Make Sale (No ID)",
+          "nextLineIndex": 1600,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true
@@ -555,8 +556,9 @@
       "text": "Thanks, buddy just gimme a second to verify.",
       "responses": [
         {
-          "responseText": "That's all I need",
-          "nextLineIndex": 1060
+          "responseText": "Make Sale",
+          "nextLineIndex": 1060,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "Owner ID?",
@@ -721,19 +723,24 @@
       "text": "Yes, all good now!",
       "responses": [
         {
-          "responseText": "More Beer?",
-          "nextLineIndex": 810
-        },
-        {
-          "responseText": "Wine?",
-          "nextLineIndex": 910
-        },
-        {
-          "responseText": "Ok, goodbye Fridgy",
-          "nextLineIndex": 809
+          "responseText": "Make Sale",
+          "nextLineIndex": 1280,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true
+    },
+    {
+      "editorIndex": 807,
+      "speaker": "Fridgy",
+      "text": "Beverages cold, beverages good yes, human than..ks",
+      "responses": []
+    },
+    {
+      "editorIndex": 808,
+      "speaker": "Clerk",
+      "text": "You're welcome, Fridgy!",
+      "responses": []
     },
     {
       "editorIndex": 809,
@@ -884,8 +891,9 @@
       "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241. Owner born in Amsterdam, 1993 on the 19th of March.",
       "responses": [
         {
-          "responseText": "That's all I need",
-          "nextLineIndex": 1340
+          "responseText": "Make Sale",
+          "nextLineIndex": 1340,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "More Fridgy ID",
@@ -895,8 +903,8 @@
           "responseText": "More Owner ID",
           "nextLineIndex": 1500
         }
-      ]
-      
+      ],
+      "disableContinueButton": true
     },
     {
       "editorIndex": 1340,
@@ -1089,8 +1097,9 @@
       "text": "Thanks, buddy just gimme a second to verify\n\nOk so…",
       "responses": [
         {
-          "responseText": "Owner ID?",
-          "nextLineIndex": 1860
+          "responseText": "Make Sale",
+          "nextLineIndex": 1860,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true,
