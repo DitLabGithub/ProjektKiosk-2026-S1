@@ -11,7 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": false,
-  "requestedItems": [0],
+  "requestedItems": [5],
   "lines": [
     {
       "editorIndex": 10,
@@ -518,7 +518,8 @@
         },
         {
           "responseText": "No need for ID",
-          "nextLineIndex": 1600
+          "nextLineIndex": 1600,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true
@@ -556,7 +557,8 @@
       "responses": [
         {
           "responseText": "That's all I need",
-          "nextLineIndex": 1060
+          "nextLineIndex": 1060,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "Owner ID?",
@@ -722,15 +724,18 @@
       "responses": [
         {
           "responseText": "More Beer?",
-          "nextLineIndex": 810
+          "nextLineIndex": 810,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "Wine?",
-          "nextLineIndex": 910
+          "nextLineIndex": 910,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "Ok, goodbye Fridgy",
-          "nextLineIndex": 809
+          "nextLineIndex": 809,
+          "isMakeSaleResponse": true
         }
       ],
       "displayDuration": 1.5
@@ -885,7 +890,8 @@
       "responses": [
         {
           "responseText": "That's all I need",
-          "nextLineIndex": 1340
+          "nextLineIndex": 1340,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "More Fridgy ID",
@@ -896,7 +902,7 @@
           "nextLineIndex": 1500
         }
       ]
-      
+
     },
     {
       "editorIndex": 1340,
@@ -1090,7 +1096,8 @@
       "responses": [
         {
           "responseText": "Owner ID?",
-          "nextLineIndex": 1860
+          "nextLineIndex": 1860,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true,
