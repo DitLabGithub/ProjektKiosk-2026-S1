@@ -7,7 +7,9 @@
       "Bash(git checkout:*)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(git merge:*)",
+      "Bash(git diff:*)"
     ],
     "deny": [],
     "ask": []
