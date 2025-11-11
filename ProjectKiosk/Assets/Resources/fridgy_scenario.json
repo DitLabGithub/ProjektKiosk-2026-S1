@@ -517,7 +517,7 @@
           "nextLineIndex": 1010
         },
         {
-          "responseText": "No need for ID",
+          "responseText": "Make Sale (No ID)",
           "nextLineIndex": 1600,
           "isMakeSaleResponse": true
         }
@@ -556,7 +556,7 @@
       "text": "Thanks, buddy just gimme a second to verify.",
       "responses": [
         {
-          "responseText": "That's all I need",
+          "responseText": "Make Sale",
           "nextLineIndex": 1060,
           "isMakeSaleResponse": true
         },
@@ -723,21 +723,12 @@
       "text": "Yes, all good now!",
       "responses": [
         {
-          "responseText": "More Beer?",
-          "nextLineIndex": 810,
-          "isMakeSaleResponse": true
-        },
-        {
-          "responseText": "Wine?",
-          "nextLineIndex": 910,
-          "isMakeSaleResponse": true
-        },
-        {
-          "responseText": "Ok, goodbye Fridgy",
-          "nextLineIndex": 809,
+          "responseText": "Make Sale",
+          "nextLineIndex": 1280,
           "isMakeSaleResponse": true
         }
       ],
+      "disableContinueButton": true,
       "displayDuration": 1.5
     },
     {
@@ -889,7 +880,7 @@
       "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241. Owner born in Amsterdam, 1993 on the 19th of March.",
       "responses": [
         {
-          "responseText": "That's all I need",
+          "responseText": "Make Sale",
           "nextLineIndex": 1340,
           "isMakeSaleResponse": true
         },
@@ -901,8 +892,8 @@
           "responseText": "More Owner ID",
           "nextLineIndex": 1500
         }
-      ]
-
+      ],
+      "disableContinueButton": true
     },
     {
       "editorIndex": 1340,
@@ -1095,7 +1086,7 @@
       "text": "Thanks, buddy just gimme a second to verify\n\nOk so…",
       "responses": [
         {
-          "responseText": "Owner ID?",
+          "responseText": "Make Sale",
           "nextLineIndex": 1860,
           "isMakeSaleResponse": true
         }
