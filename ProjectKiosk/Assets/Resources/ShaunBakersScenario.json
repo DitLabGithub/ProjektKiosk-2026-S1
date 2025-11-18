@@ -134,7 +134,7 @@
       "speaker": "Clerk",
       "text": "Damn scary...",
       "endConversationHere": true,
-      "scoreScreenIndex": 10,
+      "scoreScreenIndex": 6,
       "responses": []
     },
     {
@@ -236,7 +236,7 @@
       "speaker": "Clerk",
       "text": "Thanks... I guess. Well...that was scary.",
       "endConversationHere": true,
-      "scoreScreenIndex": 11,
+      "scoreScreenIndex": 7,
       "responses": []
     },
     {
@@ -324,7 +324,7 @@
       "speaker": "Shady Guy",
       "text": "Of course I am. We will do more business in the future",
       "endConversationHere": true,
-      "scoreScreenIndex": 12,
+      "scoreScreenIndex": 8,
       "responses": []
     },
     {
@@ -430,7 +430,7 @@
       "speaker": "Clerk",
       "text": "Sure...",
       "endConversationHere": true,
-      "scoreScreenIndex": 13,
+      "scoreScreenIndex": 9,
       "responses": []
     }
 

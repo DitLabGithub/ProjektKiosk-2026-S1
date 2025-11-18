@@ -3209,13 +3209,6 @@ MonoBehaviour:
   customers: []
   jsonCustomerFileNames: []
   scenarioManager: {fileID: 489185439}
-<<<<<<< HEAD
-=======
-  jsonCustomerFileNames: []
-  scenarioManager: {fileID: 489185439}
->>>>>>> 4a3f31293fae2e7a7c4db88ee4a92fe1d9a60d1a
-=======
->>>>>>> Development
   scoreScreens:
   - {fileID: 1489077995}
   - {fileID: 784602824}
