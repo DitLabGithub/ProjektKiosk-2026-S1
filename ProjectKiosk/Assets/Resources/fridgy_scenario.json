@@ -11,7 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": false,
-  "requestedItems": [0],
+  "requestedItems": [7],
   "lines": [
     {
       "editorIndex": 10,
@@ -42,7 +42,7 @@
       "speaker": "Clerk",
       "text": "Yes, I got it, Fridge. I first need ID, though. Since you cannot buy beer legally, I need you and your owner to verify that he is over 18, and that you have the authorization.",
       "responses": [],
-      "displayDuration": 2.0,
+      "displayDuration": 4.0,
       "autoAdvanceToNext": true
     },
     {
@@ -517,8 +517,9 @@
           "nextLineIndex": 1010
         },
         {
-          "responseText": "No need for ID",
-          "nextLineIndex": 1600
+          "responseText": "Make Sale (No ID)",
+          "nextLineIndex": 1600,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true
@@ -555,8 +556,9 @@
       "text": "Thanks, buddy just gimme a second to verify.",
       "responses": [
         {
-          "responseText": "That's all I need",
-          "nextLineIndex": 1060
+          "responseText": "Make Sale",
+          "nextLineIndex": 1060,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "Owner ID?",
@@ -595,7 +597,7 @@
       "text": "Owner thirsty Fridge see human friend Clerk soon",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 0
+      "scoreScreenIndex": 6
     },
     {
       "editorIndex": 1100,
@@ -721,19 +723,24 @@
       "text": "Yes, all good now!",
       "responses": [
         {
-          "responseText": "More Beer?",
-          "nextLineIndex": 810
-        },
-        {
-          "responseText": "Wine?",
-          "nextLineIndex": 910
-        },
-        {
-          "responseText": "Ok, goodbye Fridgy",
-          "nextLineIndex": 809
+          "responseText": "Make Sale",
+          "nextLineIndex": 1280,
+          "isMakeSaleResponse": true
         }
       ],
-      "displayDuration": 1.5
+      "disableContinueButton": true
+    },
+    {
+      "editorIndex": 807,
+      "speaker": "Fridgy",
+      "text": "Beverages cold, beverages good yes, human than..ks",
+      "responses": []
+    },
+    {
+      "editorIndex": 808,
+      "speaker": "Clerk",
+      "text": "You're welcome, Fridgy!",
+      "responses": []
     },
     {
       "editorIndex": 809,
@@ -741,7 +748,7 @@
       "text": "Bye!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 4
     },
     {
       "editorIndex": 810,
@@ -804,7 +811,7 @@
       "text": "Human makes sense…sometimes",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 5
     },
     {
       "editorIndex": 910,
@@ -849,7 +856,7 @@
       "text": "Sorry my bad, was trying to be helpful Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 8
     },
 
     {
@@ -858,7 +865,7 @@
       "text": "Thank you human Clerk, Fridge will see you soon… beep boop",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 1
+      "scoreScreenIndex": 4
     },
     {
       "editorIndex": 1300,
@@ -884,8 +891,9 @@
       "text": "Serial number 56 - 3rd generation Operation Code 5678-7699-2241. Owner born in Amsterdam, 1993 on the 19th of March.",
       "responses": [
         {
-          "responseText": "That's all I need",
-          "nextLineIndex": 1340
+          "responseText": "Make Sale",
+          "nextLineIndex": 1340,
+          "isMakeSaleResponse": true
         },
         {
           "responseText": "More Fridgy ID",
@@ -895,8 +903,8 @@
           "responseText": "More Owner ID",
           "nextLineIndex": 1500
         }
-      ]
-      
+      ],
+      "disableContinueButton": true
     },
     {
       "editorIndex": 1340,
@@ -907,7 +915,7 @@
     {
       "editorIndex": 1350,
       "speaker": "Fridgy",
-      "text": "Thank you, human for the beer owner will be happy",
+      "text": "Thank you, human friend for the beer, owner will be happy!",
       "responses": []
     },
     {
@@ -916,7 +924,7 @@
       "text": "I sure hope so, see ya!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 7
     },
     {
       "editorIndex": 1400,
@@ -957,7 +965,7 @@
       "text": "No Fridgy wait…",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 8
     },
     {
       "editorIndex": 1500,
@@ -1013,7 +1021,7 @@
       "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh.....",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 3
+      "scoreScreenIndex": 9
     },
     {
       "editorIndex": 1600,
@@ -1039,7 +1047,7 @@
       "text": "Glad to be of help, bye Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 0
+      "scoreScreenIndex": 6
     },
     {
       "editorIndex": 1800,
@@ -1089,8 +1097,9 @@
       "text": "Thanks, buddy just gimme a second to verify\n\nOk so…",
       "responses": [
         {
-          "responseText": "Owner ID?",
-          "nextLineIndex": 1860
+          "responseText": "Make Sale",
+          "nextLineIndex": 1860,
+          "isMakeSaleResponse": true
         }
       ],
       "disableContinueButton": true,
@@ -1183,7 +1192,7 @@
       "text": "Thank you, human Clerk! Best service! Best friend!\n\nFridge will return soon! Beep boop!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 2
+      "scoreScreenIndex": 5
     }
   ]
 }

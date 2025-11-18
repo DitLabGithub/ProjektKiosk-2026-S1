@@ -51,6 +51,9 @@ public class DialogueManager : MonoBehaviour
         public string businessCardImagePath = "";
         public bool waitForCardDismissal = false;
 
+        // NPC Sprite Change System
+        public string npcSprite = "";
+
         public bool endConversationHere = false;
         public int scoreScreenIndex = 0;
 
@@ -245,6 +248,53 @@ public class DialogueManager : MonoBehaviour
         if (businessCardPanel != null)
         {
             businessCardPanel.SetActive(false);
+        }
+    }
+
+    // NPC Sprite Change Method
+    void ChangeNPCSprite(string spritePath)
+    {
+        if (string.IsNullOrEmpty(spritePath))
+            return;
+
+        // Load sprite from Resources/NPC_Sprites/
+        Sprite newSprite = Resources.Load<Sprite>($"NPC_Sprites/{spritePath}");
+        if (newSprite == null)
+        {
+            Debug.LogError($"NPC Sprite not found at path: NPC_Sprites/{spritePath}");
+            return;
+        }
+
+        // Get the Image component from the current NPC object
+        UnityEngine.UI.Image npcImage = null;
+
+        // Try JSON customer first
+        if (currentJsonNpcObject != null)
+        {
+            npcImage = currentJsonNpcObject.GetComponent<UnityEngine.UI.Image>();
+            if (npcImage == null)
+            {
+                // If not on root, try to find it in children
+                npcImage = currentJsonNpcObject.GetComponentInChildren<UnityEngine.UI.Image>();
+            }
+        }
+        // Then try old customer system
+        else if (currentCustomerIndex < customers.Count && customers[currentCustomerIndex].npcObject != null)
+        {
+            npcImage = customers[currentCustomerIndex].npcObject.GetComponent<UnityEngine.UI.Image>();
+            if (npcImage == null)
+            {
+                npcImage = customers[currentCustomerIndex].npcObject.GetComponentInChildren<UnityEngine.UI.Image>();
+            }
+        }
+
+        if (npcImage != null)
+        {
+            npcImage.sprite = newSprite;
+        }
+        else
+        {
+            Debug.LogWarning("Could not find Image component on NPC object to change sprite.");
         }
     }
 
@@ -639,6 +689,7 @@ public class DialogueManager : MonoBehaviour
                     showBusinessCard = jsonLineData.showBusinessCard,
                     businessCardImagePath = jsonLineData.businessCardImagePath,
                     waitForCardDismissal = jsonLineData.waitForCardDismissal,
+                    npcSprite = jsonLineData.npcSprite,
                     endConversationHere = jsonLineData.endConversationHere,
                     scoreScreenIndex = jsonLineData.scoreScreenIndex
                 };
@@ -861,6 +912,12 @@ public class DialogueManager : MonoBehaviour
         {
             ShowBusinessCard(line.businessCardImagePath);
             // Don't block the Continue button - let player dismiss card by clicking Continue
+        }
+
+        // 8.5. Handle NPC Sprite Change
+        if (!string.IsNullOrEmpty(line.npcSprite))
+        {
+            ChangeNPCSprite(line.npcSprite);
         }
 
         // 9. Handle ID request
