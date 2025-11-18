@@ -47,6 +47,9 @@ public class DialogueLineData
     public string businessCardImagePath = ""; // Path to card image in Resources (e.g., "Cards/ShadyCard")
     public bool waitForCardDismissal = false; // If true, wait for player to click card before ending/continuing
 
+    // NPC Sprite Change System
+    public string npcSprite = ""; // Path to sprite in Resources/NPC_Sprites (e.g., "ShaunBaker_Angry")
+
     // Conversation End
     public bool endConversationHere = false;
     public int scoreScreenIndex = 0;

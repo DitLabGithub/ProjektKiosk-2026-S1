@@ -17,6 +17,7 @@
       "editorIndex": 10,
       "speaker": "Clerk",
       "text": "Hello, how can I help you?",
+      "npcSprite": "ShaunBaker_Normal",
       "responses": []
     },
     {
@@ -119,6 +120,7 @@
       "editorIndex": 131,
       "speaker": "Clerk",
       "text": "Piss off…",
+      "npcSprite": "ShaunBaker_Angry",
       "responses": []
     },
     {
@@ -151,6 +153,7 @@
       "editorIndex": 160,
       "speaker": "Clerk",
       "text": "...\nYou are not a customer, all of our customers are locals you dont sound local",
+      "npcSprite": "ShaunBaker_Angry",
       "responses": []
     },
     {
@@ -175,6 +178,7 @@
       "editorIndex": 200,
       "speaker": "Clerk",
       "text": "Of what service can they really be? And how is that a help when you are going behind their back to learn better how the big companies can exploit them even more? Actually no wait, not a need to hear anything more from you.",
+      "npcSprite": "ShaunBaker_Normal",
       "responses": []
     },
     {
@@ -212,6 +216,7 @@
       "editorIndex": 240,
       "speaker": "Clerk",
       "text": "No, what am I doing, I am falling for cheap manipulation, not today Shady...",
+      "npcSprite": "ShaunBaker_Angry",
       "responses": []
     },
     {
@@ -286,12 +291,14 @@
       "editorIndex": 340,
       "speaker": "Clerk",
       "text": "Best scenario in this age...Bullshit...You are lying to yourself to feel less worthless.",
+      "npcSprite": "ShaunBaker_Angry",
       "responses": []
     },
     {
       "editorIndex": 341,
       "speaker": "Clerk",
       "text": "But ok man, you win, fine. I will fold. But I need to see the money first...",
+      "npcSprite": "ShaunBaker_Normal",
       "responses": []
     },
     {
