@@ -15,6 +15,10 @@ public class CustomerData
     public bool allowIssuerAccess = false;
     public bool allowPictureAccess = false;
 
+    // Authorization fields (for Owner IDs)
+    public bool isAuthorizationID = false;
+    public string authorizationStatus = "Pending";
+
     // Constructor to copy data from CustomerID prefab component
     public CustomerData(CustomerID id)
     {
@@ -29,5 +33,9 @@ public class CustomerData
         allowAddressAccess = id.allowAddressAccess;
         allowIssuerAccess = id.allowIssuerAccess;
         allowPictureAccess = id.allowPictureAccess;
+
+        // Copy authorization fields
+        isAuthorizationID = id.isAuthorizationID;
+        authorizationStatus = id.authorizationStatus;
     }
 }

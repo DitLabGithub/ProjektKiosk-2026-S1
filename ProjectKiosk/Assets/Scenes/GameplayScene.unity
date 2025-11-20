@@ -6979,7 +6979,8 @@ PrefabInstance:
       value: Wares Shelf
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2547115131221540469, guid: 262089b7e111c074bb1e591b657427a5, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8359600106613632688, guid: 262089b7e111c074bb1e591b657427a5, type: 3}
       insertIndex: -1

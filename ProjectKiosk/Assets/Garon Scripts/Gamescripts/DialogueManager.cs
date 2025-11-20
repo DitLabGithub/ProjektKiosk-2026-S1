@@ -404,12 +404,48 @@ public class DialogueManager : MonoBehaviour
 
         UpdateIDInfoPanel();
 
+        // Check if this is an Authorization ID
+        AuthorizationID authID = scannedID.GetComponent<AuthorizationID>();
+        if (authID != null)
+        {
+            // Authorization ID detected - start authorization process
+            Debug.Log("Authorization ID detected. Starting authorization process...");
+
+            // Subscribe to authorization completion event
+            authID.OnAuthorizationCompleted += OnAuthorizationComplete;
+
+            // Start the authorization loading
+            authID.StartAuthorization();
+
+            // Do NOT show Continue button yet - wait for authorization to complete
+            dialogueText.text = "Verifying authorization...";
+        }
+        else
+        {
+            // Regular ID - show Continue button immediately
+            if (!choicePanel.activeSelf)
+            {
+                continueButton.gameObject.SetActive(true);
+            }
+
+            dialogueText.text = "ID scanned. Thank you!";
+        }
+    }
+
+    private void OnAuthorizationComplete()
+    {
+        Debug.Log("Authorization complete! Updating UI and enabling Continue button.");
+
+        // Update the ID info panel to show "Authorized" status
+        UpdateIDInfoPanel();
+
+        // Now show the Continue button
         if (!choicePanel.activeSelf)
         {
             continueButton.gameObject.SetActive(true);
         }
 
-        dialogueText.text = "ID scanned. Thank you!";
+        dialogueText.text = "Authorization verified. Thank you!";
     }
     void OnScoreContinue()
     {
@@ -559,7 +595,19 @@ public class DialogueManager : MonoBehaviour
         string displayIssuer = currentScannedIDData.allowIssuerAccess ? currentScannedIDData.Issuer : "";
         Sprite displayImage = currentScannedIDData.allowPictureAccess ? currentScannedIDData.ProfileImage : null;
 
-        infoDisplay.ShowInfo(displayName, displayDOB, displayAddress, displayIssuer, displayImage);
+        // Check if this is an Authorization ID and get the current authorization status
+        bool isAuthID = currentScannedIDData.isAuthorizationID;
+        string authStatus = currentScannedIDData.authorizationStatus;
+
+        // Use the appropriate ShowInfo overload
+        if (isAuthID)
+        {
+            infoDisplay.ShowInfo(displayName, displayDOB, displayAddress, displayIssuer, displayImage, true, authStatus);
+        }
+        else
+        {
+            infoDisplay.ShowInfo(displayName, displayDOB, displayAddress, displayIssuer, displayImage);
+        }
     }
 
     // Helper method to convert editorIndex to actual array index
