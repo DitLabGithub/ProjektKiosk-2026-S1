@@ -1,24 +1,16 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
+/// <summary>
+/// Component for IDs that require authorization (like Owner ID).
+/// Has NO UI references - delegates to AuthorizationUIManager.
+/// </summary>
 public class AuthorizationID : MonoBehaviour
 {
-    [Header("Authorization Settings")]
-    [Tooltip("Duration of the authorization loading process in seconds")]
+    [Header("Settings")]
+    [Tooltip("Duration of the authorization process in seconds")]
     public float loadingDuration = 5f;
 
-    [Header("UI References")]
-    [Tooltip("Loading bar UI element (Image with fillAmount or Slider)")]
-    public Image loadingBar;
-
-    [Tooltip("Checkmark icon that appears when authorized")]
-    public GameObject checkmarkIcon;
-
-    [Tooltip("Optional loading text (e.g., 'Verifying Authorization...')")]
-    public TMPro.TextMeshProUGUI loadingText;
-
-    [Header("Status")]
+    [Header("Status (Read-Only)")]
     public AuthorizationStatus status = AuthorizationStatus.Pending;
 
     // Events for DialogueManager to subscribe to
@@ -32,7 +24,7 @@ public class AuthorizationID : MonoBehaviour
         Pending,
         Loading,
         Authorized,
-        Denied  // For future use
+        Denied
     }
 
     void Awake()
@@ -41,46 +33,23 @@ public class AuthorizationID : MonoBehaviour
 
         if (customerID == null)
         {
-            Debug.LogError("[AuthorizationID] ERROR: CustomerID component NOT FOUND on this GameObject!");
+            Debug.LogError("[AuthorizationID] ERROR: CustomerID component NOT FOUND!");
         }
         else
         {
-            Debug.Log("[AuthorizationID] CustomerID component found successfully");
+            Debug.Log("[AuthorizationID] CustomerID component found");
         }
 
-        // Debug: Log what references we have
-        Debug.Log($"[AuthorizationID] Awake - LoadingBar: {(loadingBar != null ? "ASSIGNED ✓" : "NULL ✗")}");
-        Debug.Log($"[AuthorizationID] Awake - Checkmark: {(checkmarkIcon != null ? "ASSIGNED ✓" : "NULL ✗")}");
-        Debug.Log($"[AuthorizationID] Awake - LoadingText: {(loadingText != null ? "ASSIGNED ✓" : "NULL (optional)")}");
-
-        // Hide UI elements initially
-        if (loadingBar != null)
+        // Mark as authorization ID
+        if (customerID != null)
         {
-            loadingBar.fillAmount = 0f;
-            loadingBar.gameObject.SetActive(false);
-            Debug.Log("[AuthorizationID] Loading bar initialized and hidden");
+            customerID.isAuthorizationID = true;
+            customerID.authorizationStatus = "Pending";
         }
-        else
-        {
-            Debug.LogWarning("[AuthorizationID] WARNING: Loading bar is NOT assigned in Inspector!");
-        }
-
-        if (checkmarkIcon != null)
-        {
-            checkmarkIcon.SetActive(false);
-            Debug.Log("[AuthorizationID] Checkmark initialized and hidden");
-        }
-        else
-        {
-            Debug.LogWarning("[AuthorizationID] WARNING: Checkmark is NOT assigned in Inspector!");
-        }
-
-        if (loadingText != null)
-            loadingText.gameObject.SetActive(false);
     }
 
     /// <summary>
-    /// Starts the authorization process with loading animation
+    /// Starts the authorization process
     /// </summary>
     public void StartAuthorization()
     {
@@ -88,118 +57,64 @@ public class AuthorizationID : MonoBehaviour
 
         if (status == AuthorizationStatus.Loading || status == AuthorizationStatus.Authorized)
         {
-            Debug.LogWarning($"[AuthorizationID] Authorization already in progress or completed! Status: {status}");
+            Debug.LogWarning($"[AuthorizationID] Already {status}! Ignoring.");
             return;
         }
 
-        Debug.Log("[AuthorizationID] Starting authorization coroutine...");
-        StartCoroutine(AuthorizationLoadingCoroutine());
-    }
+        // Check if UIManager exists
+        if (AuthorizationUIManager.Instance == null)
+        {
+            Debug.LogError("[AuthorizationID] ERROR: AuthorizationUIManager.Instance is NULL! Cannot show authorization UI!");
+            Debug.LogError("[AuthorizationID] Make sure AuthorizationUIManager component exists in the scene!");
 
-    private IEnumerator AuthorizationLoadingCoroutine()
-    {
-        Debug.Log("[AuthorizationID] Coroutine started!");
+            // Still complete the authorization (just without UI)
+            CompleteAuthorization();
+            return;
+        }
+
         status = AuthorizationStatus.Loading;
 
-        // Update CustomerID authorization status
+        // Update CustomerID status
         if (customerID != null)
         {
-            customerID.isAuthorizationID = true;
             customerID.authorizationStatus = "Verifying...";
             Debug.Log("[AuthorizationID] CustomerID status updated to 'Verifying...'");
         }
 
-        // Show loading UI
-        if (loadingBar != null)
-        {
-            loadingBar.gameObject.SetActive(true);
-            loadingBar.fillAmount = 0f;
-            Debug.Log("[AuthorizationID] Loading bar activated and set to 0");
-        }
-        else
-        {
-            Debug.LogError("[AuthorizationID] ERROR: LoadingBar is NULL! Cannot show loading animation!");
-        }
-
-        if (loadingText != null)
-        {
-            loadingText.gameObject.SetActive(true);
-            loadingText.text = "Verifying Authorization...";
-            Debug.Log("[AuthorizationID] Loading text shown");
-        }
-
-        // Notify DialogueManager that authorization started
+        // Notify that authorization started
         Debug.Log("[AuthorizationID] Invoking OnAuthorizationStarted event...");
         OnAuthorizationStarted?.Invoke();
 
-        // Animate loading bar over the specified duration
-        Debug.Log($"[AuthorizationID] Starting {loadingDuration}s loading animation...");
-        float elapsed = 0f;
-        while (elapsed < loadingDuration)
-        {
-            elapsed += Time.deltaTime;
-            float progress = elapsed / loadingDuration;
+        // Tell UI Manager to show authorization UI
+        Debug.Log("[AuthorizationID] Calling AuthorizationUIManager.StartAuthorization()...");
+        AuthorizationUIManager.Instance.StartAuthorization(OnAuthorizationAnimationComplete);
+    }
 
-            if (loadingBar != null)
-            {
-                loadingBar.fillAmount = progress;
-            }
-
-            yield return null;
-        }
-
-        Debug.Log("[AuthorizationID] Loading animation complete!");
-
-        // Ensure loading bar is fully filled
-        if (loadingBar != null)
-        {
-            loadingBar.fillAmount = 1f;
-        }
-
-        // Wait a brief moment for visual feedback
-        yield return new WaitForSeconds(0.3f);
-
-        // Hide loading elements
-        if (loadingBar != null)
-        {
-            loadingBar.gameObject.SetActive(false);
-            Debug.Log("[AuthorizationID] Loading bar hidden");
-        }
-
-        if (loadingText != null)
-        {
-            loadingText.gameObject.SetActive(false);
-        }
-
-        // Show checkmark and mark as authorized
-        Debug.Log("[AuthorizationID] Calling CompleteAuthorization()...");
+    /// <summary>
+    /// Called when the UI animation completes
+    /// </summary>
+    private void OnAuthorizationAnimationComplete()
+    {
+        Debug.Log("[AuthorizationID] UI animation complete, finalizing authorization...");
         CompleteAuthorization();
     }
 
+    /// <summary>
+    /// Marks authorization as complete
+    /// </summary>
     private void CompleteAuthorization()
     {
         Debug.Log("[AuthorizationID] ===== CompleteAuthorization() called! =====");
         status = AuthorizationStatus.Authorized;
 
-        // Update CustomerID authorization status
+        // Update CustomerID status
         if (customerID != null)
         {
             customerID.authorizationStatus = "Authorized ✓";
             Debug.Log("[AuthorizationID] CustomerID status updated to 'Authorized ✓'");
         }
 
-        // Show checkmark
-        if (checkmarkIcon != null)
-        {
-            checkmarkIcon.SetActive(true);
-            Debug.Log("[AuthorizationID] Checkmark icon ACTIVATED!");
-        }
-        else
-        {
-            Debug.LogError("[AuthorizationID] ERROR: Checkmark icon is NULL! Cannot show checkmark!");
-        }
-
-        // Notify DialogueManager that authorization is complete
+        // Notify that authorization is complete
         Debug.Log("[AuthorizationID] Invoking OnAuthorizationCompleted event...");
         OnAuthorizationCompleted?.Invoke();
 
@@ -207,7 +122,7 @@ public class AuthorizationID : MonoBehaviour
     }
 
     /// <summary>
-    /// Resets the authorization state (useful for testing or reuse)
+    /// Resets the authorization state
     /// </summary>
     public void ResetAuthorization()
     {
@@ -218,21 +133,7 @@ public class AuthorizationID : MonoBehaviour
             customerID.authorizationStatus = "Pending";
         }
 
-        if (loadingBar != null)
-        {
-            loadingBar.fillAmount = 0f;
-            loadingBar.gameObject.SetActive(false);
-        }
-
-        if (checkmarkIcon != null)
-        {
-            checkmarkIcon.SetActive(false);
-        }
-
-        if (loadingText != null)
-        {
-            loadingText.gameObject.SetActive(false);
-        }
+        Debug.Log("[AuthorizationID] Authorization reset");
     }
 
     /// <summary>

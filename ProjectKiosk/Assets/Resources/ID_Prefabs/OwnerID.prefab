@@ -502,9 +502,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0479960955372f24c81b94f25abce57d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   loadingDuration: 5
-  loadingBar: {fileID: 3598000119697438579}
-  checkmarkIcon: {fileID: 5432822983751614790}
-  loadingText: {fileID: 0}
   status: 0

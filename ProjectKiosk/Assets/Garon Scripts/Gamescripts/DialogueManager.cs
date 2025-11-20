@@ -414,7 +414,7 @@ public class DialogueManager : MonoBehaviour
             // Subscribe to authorization completion event
             authID.OnAuthorizationCompleted += OnAuthorizationComplete;
 
-            // Start the authorization loading
+            // Start the authorization loading (UI is handled by AuthorizationUIManager)
             authID.StartAuthorization();
 
             // Do NOT show Continue button yet - wait for authorization to complete
