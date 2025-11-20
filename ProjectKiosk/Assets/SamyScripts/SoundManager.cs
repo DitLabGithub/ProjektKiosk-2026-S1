@@ -49,7 +49,7 @@ public class SoundManager : MonoBehaviour {
     }
     public void PlayIDScanned()
     {
-        sfxSource.PlayOneShot(idScanned, 1f); // these sounds are loud as shit bruv
+        sfxSource.PlayOneShot(idScanned, 0.3f); // these sounds are loud as shit bruv
     }
     public void PlayContinueButtonClick()
     {
