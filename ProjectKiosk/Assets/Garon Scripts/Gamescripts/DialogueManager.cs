@@ -54,6 +54,10 @@ public class DialogueManager : MonoBehaviour
         // NPC Sprite Change System
         public string npcSprite = "";
 
+        // Voice-Over System
+        public AudioClip voiceOverClip;
+        public string voiceOverPath = ""; // Path to load voice-over from Resources folder (e.g., "VoiceOvers/ShaunBaker_Line1")
+
         public bool endConversationHere = false;
         public int scoreScreenIndex = 0;
 
@@ -80,6 +84,8 @@ public class DialogueManager : MonoBehaviour
     public AudioClip saleSuccessClip;
     public AudioClip saleRejectedClip;
 
+    [Header("Voice-Over Audio")]
+    public AudioSource voiceOverSource;
 
     [Header("UI References")]
     public TextMeshProUGUI speakerText;
@@ -299,8 +305,44 @@ public class DialogueManager : MonoBehaviour
     }
 
 
+    private void EnsureVoiceOverSource()
+    {
+        // Check if voiceOverSource is null, destroyed, or disabled
+        if (voiceOverSource == null || !voiceOverSource.enabled)
+        {
+            // Try to find existing AudioSource on this GameObject or children
+            AudioSource[] sources = GetComponentsInChildren<AudioSource>(true);
+
+            // Look for one that's specifically for voice-overs (not used by other systems)
+            foreach (var source in sources)
+            {
+                // Skip if it's used by SoundManager
+                if (source.gameObject.name.ToLower().Contains("voiceover") ||
+                    source.gameObject.name.ToLower().Contains("voice"))
+                {
+                    voiceOverSource = source;
+                    voiceOverSource.enabled = true;
+                    Debug.Log("Found and enabled existing voiceOverSource");
+                    return;
+                }
+            }
+
+            // If no suitable AudioSource found, create one
+            GameObject voiceOverObj = new GameObject("VoiceOverSource");
+            voiceOverObj.transform.SetParent(this.transform);
+            voiceOverSource = voiceOverObj.AddComponent<AudioSource>();
+            voiceOverSource.playOnAwake = false;
+            voiceOverSource.loop = false;
+            voiceOverSource.volume = 1.0f;
+            Debug.Log("Created new voiceOverSource AudioSource");
+        }
+    }
+
     void Start()
     {
+        // Ensure voiceOverSource is valid and enabled
+        EnsureVoiceOverSource();
+
         continueButton.onClick.AddListener(NextLine);
 
         // IMPROVED: Automatically find and setup Continue buttons in each score screen
@@ -738,6 +780,7 @@ public class DialogueManager : MonoBehaviour
                     businessCardImagePath = jsonLineData.businessCardImagePath,
                     waitForCardDismissal = jsonLineData.waitForCardDismissal,
                     npcSprite = jsonLineData.npcSprite,
+                    voiceOverPath = jsonLineData.voiceOverPath,
                     endConversationHere = jsonLineData.endConversationHere,
                     scoreScreenIndex = jsonLineData.scoreScreenIndex
                 };
@@ -927,6 +970,33 @@ public class DialogueManager : MonoBehaviour
 
         // 7. Update UI Text
         speakerText.text = line.speaker;
+
+        // Play voice-over if available
+        // Ensure voiceOverSource is valid before using it
+        EnsureVoiceOverSource();
+
+        if (voiceOverSource != null && voiceOverSource.enabled)
+        {
+            AudioClip clipToPlay = line.voiceOverClip;
+
+            // If no clip is assigned but a path is provided, try loading from Resources
+            if (clipToPlay == null && !string.IsNullOrEmpty(line.voiceOverPath))
+            {
+                clipToPlay = Resources.Load<AudioClip>(line.voiceOverPath);
+                if (clipToPlay == null)
+                {
+                    Debug.LogWarning($"Voice-over not found at path: {line.voiceOverPath}");
+                }
+            }
+
+            // Play the clip if we have one
+            if (clipToPlay != null)
+            {
+                voiceOverSource.Stop(); // Stop any currently playing voice-over
+                voiceOverSource.PlayOneShot(clipToPlay);
+                Debug.Log($"Playing voice-over: {line.voiceOverPath ?? "assigned clip"}");
+            }
+        }
 
         // Stop any existing typewriter effect
         if (currentTypewriterCoroutine != null)

@@ -50,6 +50,9 @@ public class DialogueLineData
     // NPC Sprite Change System
     public string npcSprite = ""; // Path to sprite in Resources/NPC_Sprites (e.g., "ShaunBaker_Angry")
 
+    // Voice-Over System
+    public string voiceOverPath = ""; // Path to load voice-over from Resources folder (e.g., "VoiceOvers/ShaunBaker_Line1")
+
     // Conversation End
     public bool endConversationHere = false;
     public int scoreScreenIndex = 0;
