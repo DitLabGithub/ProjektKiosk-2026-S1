@@ -7,18 +7,19 @@ public class IDScanner : MonoBehaviour
     private bool hasScanned = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        soundManager.PlayIDScanned();
-
         //if (hasScanned) return;
 
         CustomerID customerID = other.GetComponent<CustomerID>();
         if (customerID != null)
         {
+            if (soundManager != null) {
+                soundManager.PlayIDScanned();
+            }
+
             hasScanned = true;
             dialogueManager.OnIDScanned(customerID);
+            Destroy(customerID.gameObject);
         }
-
-        Destroy(customerID.gameObject);
     }
 
     public void ResetScanner()

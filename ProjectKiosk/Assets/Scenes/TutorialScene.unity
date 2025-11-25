@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1323552264}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlayContinueButtonClick
         m_Mode: 1
@@ -1280,7 +1280,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1323552264}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlayPlaceSound
         m_Mode: 1
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 756885554}
-  soundManager: {fileID: 1323552264}
+  soundManager: {fileID: 0}
 --- !u!1 &453516300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1323552264}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlayContinueButtonClick
         m_Mode: 1
@@ -2087,6 +2087,190 @@ MonoBehaviour:
   - {x: -20, y: 0, z: -10}
   - {x: 0, y: 0, z: -10}
   - {x: 20, y: 0, z: -10}
+--- !u!1 &533880589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533880591}
+  - component: {fileID: 533880590}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &533880590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533880589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f476ac330e3c74bb1124a8018862a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSource: {fileID: 1557329183}
+  bgMusicSource: {fileID: 556247064}
+  walkSound: {fileID: 8300000, guid: 760868f8087dd5f42adf665cc434f88a, type: 3}
+  pickupSound: {fileID: 8300000, guid: 90fe22a13c142a2479de21b360d66405, type: 3}
+  placeSound: {fileID: 8300000, guid: dc9105006d1aaf94ab05cb193d64f22c, type: 3}
+  buttonSellSound: {fileID: 8300000, guid: 261c97d953fe77b459ce3957038a9b36, type: 3}
+  pickupFailSound: {fileID: 8300000, guid: 5795c8516fccae141aeeb3662f9bcc5b, type: 3}
+  idScanned: {fileID: 8300000, guid: 8aaf6a330dec6fc4aba966d44bcab9dc, type: 3}
+  mainBackgroundMusic: {fileID: 8300000, guid: 3e7ea0d581002d645b4c043abe06ad70, type: 3}
+  continueButtonClick: {fileID: 8300000, guid: 34a026f9c2f175147ab5edc6207b5eef, type: 3}
+--- !u!4 &533880591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533880589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.90282005, y: 2.6769192, z: -0.014665349}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1557329184}
+  - {fileID: 556247065}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &556247063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556247065}
+  - component: {fileID: 556247064}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &556247064
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556247063}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &556247065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556247063}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 533880591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &559914385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +3138,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -2976,6 +3161,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -2998,6 +3184,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3020,6 +3207,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3042,6 +3230,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3064,6 +3253,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3085,6 +3275,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3107,6 +3298,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3129,6 +3321,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3150,6 +3343,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3173,6 +3367,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3194,6 +3389,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3215,6 +3411,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3242,6 +3439,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3263,6 +3461,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3285,6 +3484,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3306,6 +3506,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3333,6 +3534,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3354,6 +3556,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3377,6 +3580,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3413,6 +3617,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3434,6 +3639,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3456,6 +3662,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3479,6 +3686,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3501,6 +3709,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3522,6 +3731,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3544,6 +3754,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3566,6 +3777,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3588,6 +3800,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3609,6 +3822,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3630,6 +3844,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3652,6 +3867,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3674,6 +3890,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3695,6 +3912,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 0
     idPrefab: {fileID: 9214502554901828252, guid: 95b751a919db057448a86ed290d66533, type: 3}
@@ -3721,6 +3939,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3742,6 +3961,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3774,6 +3994,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3795,6 +4016,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3816,6 +4038,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3858,6 +4081,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3894,6 +4118,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3925,6 +4150,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3947,6 +4173,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -3970,6 +4197,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 3
     - editorIndex: 0
@@ -3993,6 +4221,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4015,6 +4244,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4036,6 +4266,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4058,6 +4289,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4079,6 +4311,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4100,6 +4333,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4122,6 +4356,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4144,6 +4379,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4165,6 +4401,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4188,6 +4425,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4209,6 +4447,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4230,6 +4469,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4251,6 +4491,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4272,6 +4513,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 4
     - editorIndex: 0
@@ -4303,6 +4545,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4324,6 +4567,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4355,6 +4599,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4397,6 +4642,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4419,6 +4665,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4455,6 +4702,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4477,6 +4725,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4500,6 +4749,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 2
     - editorIndex: 0
@@ -4531,6 +4781,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4554,6 +4805,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4576,6 +4828,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4597,6 +4850,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4628,6 +4882,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4664,6 +4919,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4686,6 +4942,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4708,6 +4965,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4730,6 +4988,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4752,6 +5011,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4775,6 +5035,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 1
     idPrefab: {fileID: 9214502554901828252, guid: fb6bc7aab9a43604484e3bf400d956ae, type: 3}
@@ -4801,6 +5062,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4822,6 +5084,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4843,6 +5106,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4864,6 +5128,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4885,6 +5150,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4917,6 +5183,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4940,6 +5207,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -4962,6 +5230,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5003,6 +5272,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5024,6 +5294,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5045,6 +5316,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5066,6 +5338,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5087,6 +5360,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5108,6 +5382,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5129,6 +5404,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5160,6 +5436,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5181,6 +5458,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5202,6 +5480,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5233,6 +5512,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5254,6 +5534,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5275,6 +5556,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5296,6 +5578,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5317,6 +5600,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5350,6 +5634,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5371,6 +5656,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5392,6 +5678,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5414,6 +5701,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5435,6 +5723,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 7
     - editorIndex: 0
@@ -5456,6 +5745,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5477,6 +5767,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5498,6 +5789,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5519,6 +5811,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5540,6 +5833,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5561,6 +5855,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5583,6 +5878,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5604,6 +5900,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 5
     - editorIndex: 0
@@ -5635,6 +5932,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5666,6 +5964,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5687,6 +5986,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5708,6 +6008,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5729,6 +6030,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5750,6 +6052,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 5
     - editorIndex: 0
@@ -5781,6 +6084,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5802,6 +6106,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5823,6 +6128,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5845,6 +6151,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     - editorIndex: 0
@@ -5866,6 +6173,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 1
       scoreScreenIndex: 6
     - editorIndex: 0
@@ -5907,6 +6215,7 @@ MonoBehaviour:
       showBusinessCard: 0
       businessCardImagePath: 
       waitForCardDismissal: 0
+      npcSprite: 
       endConversationHere: 0
       scoreScreenIndex: 0
     idPrefab: {fileID: 9214502554901828252, guid: 4e63c3f47093d7645bc076fa8eda8324, type: 3}
@@ -7110,134 +7419,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131733328}
   m_CullTransparentMesh: 1
---- !u!1 &1178168987
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1178168989}
-  - component: {fileID: 1178168988}
-  m_Layer: 0
-  m_Name: BackgroundMusic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1178168988
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178168987}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1178168989
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178168987}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1323552265}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267035156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7671,62 +7852,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1323552263
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1323552265}
-  - component: {fileID: 1323552264}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1323552264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323552263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f476ac330e3c74bb1124a8018862a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sfxSource: {fileID: 1818124082}
-  bgMusicSource: {fileID: 1178168988}
-  walkSound: {fileID: 8300000, guid: 760868f8087dd5f42adf665cc434f88a, type: 3}
-  pickupSound: {fileID: 8300000, guid: 90fe22a13c142a2479de21b360d66405, type: 3}
-  placeSound: {fileID: 8300000, guid: dc9105006d1aaf94ab05cb193d64f22c, type: 3}
-  buttonSellSound: {fileID: 8300000, guid: 261c97d953fe77b459ce3957038a9b36, type: 3}
-  pickupFailSound: {fileID: 8300000, guid: 5795c8516fccae141aeeb3662f9bcc5b, type: 3}
-  idScanned: {fileID: 8300000, guid: 8aaf6a330dec6fc4aba966d44bcab9dc, type: 3}
-  mainBackgroundMusic: {fileID: 8300000, guid: 3e7ea0d581002d645b4c043abe06ad70, type: 3}
-  continueButtonClick: {fileID: 8300000, guid: 34a026f9c2f175147ab5edc6207b5eef, type: 3}
---- !u!4 &1323552265
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323552263}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.90282005, y: 2.6769192, z: -0.014665349}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1818124083}
-  - {fileID: 1178168989}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1394335535
 GameObject:
   m_ObjectHideFlags: 0
@@ -8015,7 +8140,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 5
+  m_Spacing: 250
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -8113,6 +8238,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 362419052776984024, guid: c4622c8df0ff87244b2eee73fd9ded4b, type: 3}
   m_PrefabInstance: {fileID: 1488775537}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1557329182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557329184}
+  - component: {fileID: 1557329183}
+  m_Layer: 0
+  m_Name: SoundFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1557329183
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557329182}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1557329184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557329182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 533880591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1573952309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8900,134 +9153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1818124081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1818124083}
-  - component: {fileID: 1818124082}
-  m_Layer: 0
-  m_Name: SoundFX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &1818124082
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818124081}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &1818124083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818124081}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1323552265}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902202446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3585582859566505569, guid: e641c4e9f23fc9347a3b5503b46de7a7, type: 3}
@@ -10599,7 +10724,7 @@ SceneRoots:
   - {fileID: 756885555}
   - {fileID: 432496862}
   - {fileID: 1036299949}
-  - {fileID: 1323552265}
   - {fileID: 1996206016}
   - {fileID: 810853018}
   - {fileID: 732294777}
+  - {fileID: 533880591}
