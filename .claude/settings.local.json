@@ -5,7 +5,10 @@
       "Bash(ipconfig:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nAdd WebGL build for GitHub Pages deployment\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git diff:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
