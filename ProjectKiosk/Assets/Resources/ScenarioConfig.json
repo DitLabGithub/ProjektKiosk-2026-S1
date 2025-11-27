@@ -2,13 +2,8 @@
   "shuffleEnabled": true,
   "scenarios": [
     {
-      "filename": "fridgy_scenario",
-      "displayName": "Fridgy",
-      "followUpScenario": ""
-    },
-    {
-      "filename": "ShaunBakersScenario",
-      "displayName": "Shady Guy",
+      "filename": "PoliceGuyScenario",
+      "displayName": "Police Guy",
       "followUpScenario": ""
     }
   ]
