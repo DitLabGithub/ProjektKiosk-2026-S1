@@ -1,0 +1,259 @@
+{
+  "customerName": "Hoss Lerman",
+  "npcPrefabPath": "NPC_Prefabs/HossLerman",
+  "idPrefabPath": "ID_Prefabs/HossLermanID",
+  "idName": "Hoss Lerman",
+  "idDOB": "Over 18",
+  "idAddress": "Local Address",
+  "idIssuer": "NEU ID",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": false,
+  "idAllowPictureAccess": false,
+  "requestedItems": [5],
+  "lines": [
+    {
+      "editorIndex": 10,
+      "speaker": "Bossman:",
+      "text": "Hey, kiddo. Hope you had a good break, cause it's gonna be a busy week for our little kiosk.",
+      "responses": []
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Bossman:",
+      "text": "Since you've been away, the New European Union started offering a new form of digital ID.",
+      "responses": []
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "Bossman:",
+      "text": "As you probably guessed, this means establishments like ours are gonna have to deal with this new Digital ID.",
+      "responses": []
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "Bosssman:",
+      "text": "Don't worry, I'll walk you through how it works. So shake off that hangover for a sec and pay attention.",
+      "responses": []
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "Bossman:",
+      "text": "So here it is – this little sucker is called SSI. Self-Sovereign Identity or something like that.",
+      "askForID": true,
+      "responses": []
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Bossman:",
+      "text": "It's supposed to give you more control over your data, so I got myself one too. You'll see what I mean in a sec.",
+      "responses": []
+    },
+    {
+      "editorIndex": 70,
+      "speaker": "Bossman:",
+      "text": "So, for how it works…",
+      "responses": []
+    },
+    {
+      "editorIndex": 80,
+      "speaker": "Bossman:",
+      "text": "Say I'm a customer looking to buy some booze. You're gonna check my ID like usual. Go ahead and drag this over to the ID reader.",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Bossman:",
+      "text": "See the interface screen? That's where you'll see the ID holder's info.",
+      "responses": []
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "Bossman:",
+      "text": "You might've noticed that my info is blocked out right now.",
+      "responses": []
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "Bossman:",
+      "text": "That's cause the ID I gave you was SSI, so you need to ask me for access to the information you need from me before you can see it. Other ID's just show you all my info like usual.",
+      "responses": []
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Bossman:",
+      "text": "That's what I meant by having more control of your data with SSI.",
+      "responses": []
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Bossman:",
+      "text": "Anywho…",
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Bossman:",
+      "text": "Since I'm asking for booze, go ahead and ask me for my basic information and age verification.",
+      "responses": [
+        {
+          "responseText": "Could I get your basic info and verify you're over 18?",
+          "nextLineIndex": 150
+        }
+      ]
+    },
+    {
+      "editorIndex": 150,
+      "speaker": "Clerk:",
+      "text": "Could I get your basic info and verify you're over 18?",
+      "responses": []
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Bossman:",
+      "text": "Good, here you go. Maybe don't ask for everything in one go next time, people don't like being rushed around here.",
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true,
+      "responses": []
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Clerk:",
+      "text": "Sure thing, boss.",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Bossman:",
+      "text": "Great, now head over to the shelves on your right and get me a can of Giddy's, then put it in the bagging area and make the sale.",
+      "disableContinueButton": true,
+      "responses": [
+        {
+          "responseText": "Make the sale",
+          "nextLineIndex": 190,
+          "isMakeSaleResponse": true
+        }
+      ]
+    },
+    {
+      "editorIndex": 190,
+      "speaker": "Bossman:",
+      "text": "Cheers. Simple as.",
+      "responses": []
+    },
+    {
+      "editorIndex": 200,
+      "speaker": "Bossman:",
+      "text": "Remember: only request for info you need. Customers using SSI are probably the sort that like their privacy, so they wouldn't like if you asked them where they live if they're buying a brew.",
+      "responses": []
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Bossman:",
+      "text": "Everything clear?",
+      "disableContinueButton": true,
+      "responses": [
+        {
+          "responseText": "Why SSI?",
+          "nextLineIndex": 220
+        },
+        {
+          "responseText": "Walk me through it again?",
+          "nextLineIndex": 270
+        },
+        {
+          "responseText": "Yep, I'm good to go boss.",
+          "nextLineIndex": 320
+        }
+      ]
+    },
+    {
+      "editorIndex": 220,
+      "speaker": "Clerk:",
+      "text": "Why did you wanna switch to SSI, anyway?",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Bossman:",
+      "text": "I like my privacy, and a lot of our customers come to little kiosks like ours for the same reason.",
+      "responses": []
+    },
+    {
+      "editorIndex": 240,
+      "speaker": "Bossman:",
+      "text": "Franchise stores nowadays tell other companies what people buy so they can sell them more stuff, and government ID's can take a while to fetch even your basic info.",
+      "responses": []
+    },
+    {
+      "editorIndex": 250,
+      "speaker": "Bossman:",
+      "text": "As for me, the harder it is for others to snoop on me and my business, the better.",
+      "responses": []
+    },
+    {
+      "editorIndex": 270,
+      "speaker": "Clerk:",
+      "text": "I uhh, could use another rundown.",
+      "responses": []
+    },
+    {
+      "editorIndex": 280,
+      "speaker": "Bossman:",
+      "text": "If the customer asks for something like liquor, cigarettes, or a package, you gotta check their ID's.",
+      "responses": []
+    },
+    {
+      "editorIndex": 290,
+      "speaker": "Bossman:",
+      "text": "Ask for their ID's, scan that ID, and if it's an SSI, ask for access to the info you need.",
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Bossman:",
+      "text": "If their info checks out, you can go over to the wares shelf and get what they want. Put that in the bagging area, and then make the sale.",
+      "responses": []
+    },
+    {
+      "editorIndex": 310,
+      "speaker": "Bossman:",
+      "text": "Geez, kid. Did you party your brains out or something?",
+      "responses": []
+    },
+    {
+      "editorIndex": 320,
+      "speaker": "Clerk:",
+      "text": "Yep, I'm good to go, boss.",
+      "responses": []
+    },
+    {
+      "editorIndex": 330,
+      "speaker": "Bossman:",
+      "text": "Great. Just so you know, customers are starting to leave reviews on the service they get here.",
+      "responses": []
+    },
+    {
+      "editorIndex": 340,
+      "speaker": "Bossman:",
+      "text": "So be sure to make them feel welcome. Give 'em a little small talk. If they leave you a tip, feel free to keep 'em. Good luck!",
+      "responses": []
+    },
+    {
+      "editorIndex": 350,
+      "speaker": "Bossman:",
+      "text": "...",
+      "responses": []
+    },
+    {
+      "editorIndex": 360,
+      "speaker": "Bossman:",
+      "text": "...",
+      "endConversationHere": true,
+      "scoreScreenIndex": 0,
+      "responses": []
+    }
+  ]
+}
