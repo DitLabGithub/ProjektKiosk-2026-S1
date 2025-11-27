@@ -5,6 +5,12 @@
       "filename": "PoliceGuyScenario",
       "displayName": "Police Guy",
       "followUpScenario": ""
+    },
+    {
+      "filename": "PoliceGuy2Scenario",
+      "displayName": "Police Guy",
+      "followUpScenario": ""
     }
+    
   ]
 }

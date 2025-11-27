@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3446359110227655448}
   - component: {fileID: 5053225762081697446}
   m_Layer: 5
-  m_Name: PoliceGuy
+  m_Name: PoliceGuy2Scenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,8 +39,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 1}
-  m_SizeDelta: {x: 10, y: 8.6}
+  m_AnchoredPosition: {x: 0.49, y: 1}
+  m_SizeDelta: {x: 11, y: 7.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6044039912985664431
 CanvasRenderer:
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7b1c369b1a101584a9cec8d03162c5fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 647428ee59788d847939f1ae22b630dc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
