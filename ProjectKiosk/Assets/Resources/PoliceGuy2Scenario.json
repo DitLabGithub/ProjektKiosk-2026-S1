@@ -27,7 +27,7 @@
     {
       "editorIndex": 20,
       "speaker": "Clerk",
-      "text": "Officer Beige. Back so soon? To what do I owe the visit I thought the research had concluded?",
+      "text": "Officer Beige. Back so soon? To what do I owe the visit? I thought the research was concluded?",
       "responses": []
     },
     {
@@ -58,7 +58,9 @@
       "editorIndex": 70,
       "speaker": "Larry Beige",
       "text": "Very well…of course",
-      "responses": []
+      "responses": [],
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/PoliceGuy"
     },
     {
       "editorIndex": 80,
@@ -100,19 +102,13 @@
     {
       "editorIndex": 130,
       "speaker": "Larry Beige",
-      "text": "This is the wrong question to ask Mr Clerk. You are not worried who is the shady figure, you are worried about the discovery of your compliance",
+      "text": "This is the wrong question to ask clerk. You are not worried who is the source of information, you are worried about the discovery of your compliance",
       "responses": []
     },
     {
       "editorIndex": 140,
       "speaker": "Clerk",
       "text": "Come on man, dont twist things, It was just some innocent question.",
-      "responses": []
-    },
-    {
-      "editorIndex": 150,
-      "speaker": "Clerk",
-      "text": "Who told you that?",
       "responses": []
     },
     {
@@ -124,7 +120,7 @@
     {
       "editorIndex": 170,
       "speaker": "Clerk",
-      "text": "What but how?",
+      "text": "Ho...What? I don't know him",
       "responses": []
     },
     {

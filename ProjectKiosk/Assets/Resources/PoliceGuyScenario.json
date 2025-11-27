@@ -12,13 +12,13 @@
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": true,
   "requestedItems": [
-    "pack of hotshots",
+    "Hotshots",
     "Chicken Jerky"
   ],
   "lines": [
     {
       "editorIndex": 10,
-      "speaker": "Unknown Man",
+      "speaker": "Unknown",
       "text": "Hello there, could i get a pack of hotshots and… I would also like Chicken Jerky, thank you.",
       "npcSprite": "PoliceGuy",
       "responses": []
@@ -32,28 +32,34 @@
     {
       "editorIndex": 30,
       "speaker": "Clerk",
-      "text": "Here are your items.",
+      "text": "...",
       "responses": [
         {
-          "responseText": "1. No need for ID (Branch 1)",
-          "nextLineIndex": 40
+          "responseText": "No need for ID",
+          "nextLineIndex": 39
         },
         {
-          "responseText": "2. Can I check your ID (Branch 2)",
+          "responseText": "Can I check your ID?",
           "nextLineIndex": 100
         }
       ]
     },
     {
+      "editorIndex": 39,
+      "speaker": "Unknown ",
+      "text": "You sure buddy?",
+      "responses": []
+    },
+    {
       "editorIndex": 40,
       "speaker": "Clerk",
-      "text": "Ya ya no problem",
+      "text": "Ya, ya, no problem.",
       "responses": []
     },
     {
       "editorIndex": 50,
-      "speaker": "Unknown Man",
-      "text": "Oh nice I always hate when they waste my time with checking IDs",
+      "speaker": "Unknown",
+      "text": "Oh, nice I always hate when they waste my time with checking IDs",
       "responses": []
     },
     {
@@ -71,7 +77,7 @@
     {
       "editorIndex": 80,
       "speaker": "Clerk",
-      "text": "Ohh",
+      "text": "Ohh...",
       "responses": []
     },
     {
@@ -88,7 +94,7 @@
     {
       "editorIndex": 100,
       "speaker": "Unknown Man",
-      "text": "Ah can we skip this part, I hate the process. I don't look old enough for you?",
+      "text": "Ah can we skip this part, I hate the process. I don't look old enough for you? My name is Larry Beige and I am 32...",
       "responses": []
     },
     {
@@ -100,13 +106,15 @@
     {
       "editorIndex": 120,
       "speaker": "Clerk",
-      "text": "Can I check your ID",
+      "text": "So, can I check your ID?",
       "responses": []
     },
     {
       "editorIndex": 130,
-      "speaker": "Unknown Man",
+      "speaker": "Larry Beige",
       "text": "Mhm…explained like this sounds reasonable. Sorry, here you go",
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/PoliceGuy",
       "responses": []
     },
     {
@@ -133,14 +141,20 @@
       "text": "Also you mind if I smoke one here real quick?",
       "responses": [
         {
-          "responseText": "1. No can you please go away I have to sell to others (Rebellious)",
+          "responseText": "Go away",
           "nextLineIndex": 180
         },
         {
-          "responseText": "2. Go ahead. As long as there is no one else here. Company is always welcomed. (Continue)",
+          "responseText": "Go ahead.",
           "nextLineIndex": 210
         }
       ]
+    },
+    {
+      "editorIndex": 179,
+      "speaker": "Clerk",
+      "text": "No, can you please go away I have to sell to others?",
+      "responses": []
     },
     {
       "editorIndex": 180,
@@ -162,11 +176,11 @@
       "text": "Is that a problem for you?",
       "responses": [
         {
-          "responseText": "1. No can you please go away I have to sell to others (Rebellious)",
+          "responseText": " No can you please go away I have to sell to others (Rebellious)",
           "nextLineIndex": 180
         },
         {
-          "responseText": "2. Go ahead. As long as there is no one else here. Company is always welcomed. (Continue)",
+          "responseText": " Go ahead. As long as there is no one else here. Company is always welcomed. (Continue)",
           "nextLineIndex": 210
         }
       ]
@@ -174,7 +188,7 @@
     {
       "editorIndex": 210,
       "speaker": "Clerk",
-      "text": "Go ahead. As long as there is no one else here. Company is always welcomed.",
+      "text": "As long as there is no one else here. Company is always welcomed.",
       "responses": []
     },
     {
@@ -297,11 +311,11 @@
       "text": "I have heard some shady dealings, nothing too major but I would like more",
       "responses": [
         {
-          "responseText": "1. I haven't done anything. But can you tell me more?",
+          "responseText": "I haven't done anything. But can you tell me more?",
           "nextLineIndex": 420
         },
         {
-          "responseText": "2. Make a joke",
+          "responseText": " Make a joke",
           "nextLineIndex": 540
         },
         {
