@@ -1,0 +1,524 @@
+{
+  "customerName": "Larry Beige",
+  "npcPrefabPath": "NPC_Prefabs/PoliceGuy",
+  "idPrefabPath": "ID_Prefabs/PoliceGuy",
+  "idName": "Larry Beige",
+  "idDOB": "Over 18",
+  "idAddress": "N/A",
+  "idIssuer": "Police Department",
+  "idAllowNameAccess": true,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": true,
+  "idAllowPictureAccess": true,
+  "requestedItems": [
+    "Hotshots",
+    "Chicken Jerky"
+  ],
+  "lines": [
+    {
+      "editorIndex": 10,
+      "speaker": "Unknown",
+      "text": "Hello there, could i get a pack of hotshots and… I would also like Chicken Jerky, thank you.",
+      "npcSprite": "PoliceGuy",
+      "responses": []
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Clerk",
+      "text": "Hello man, gimme a second ...",
+      "responses": []
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "Clerk",
+      "text": "...",
+      "responses": [
+        {
+          "responseText": "No need for ID",
+          "nextLineIndex": 39
+        },
+        {
+          "responseText": "Can I check your ID?",
+          "nextLineIndex": 100
+        }
+      ]
+    },
+    {
+      "editorIndex": 39,
+      "speaker": "Unknown ",
+      "text": "You sure buddy?",
+      "responses": []
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "Clerk",
+      "text": "Ya, ya, no problem.",
+      "responses": []
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "Unknown",
+      "text": "Oh, nice I always hate when they waste my time with checking IDs",
+      "responses": []
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Clerk",
+      "text": "Ha, Yes! I give the customer what they really want without making the wait.",
+      "responses": []
+    },
+    {
+      "editorIndex": 70,
+      "speaker": "Unknown Man",
+      "text": "Thanks buddy. A thing that I need to warn you about is that I am a police officer. My name is Larry Baige",
+      "responses": []
+    },
+    {
+      "editorIndex": 80,
+      "speaker": "Clerk",
+      "text": "Ohh...",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Larry Beige",
+      "text": "Is that a problem for you?",
+      "responses": [
+        {
+          "responseText": "Of course not...just surprising",
+          "nextLineIndex": 200
+        }
+      ]
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "Unknown Man",
+      "text": "Ah can we skip this part, I hate the process. I don't look old enough for you? My name is Larry Beige and I am 32...",
+      "responses": []
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "Clerk",
+      "text": "No it is not that, but there are rules and I have to enforce them, otherwise if I let you go I might let others go without ID as well, you know how it goes",
+      "responses": []
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Clerk",
+      "text": "So, can I check your ID?",
+      "responses": []
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Larry Beige",
+      "text": "Mhm…explained like this sounds reasonable. Sorry, here you go",
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/PoliceGuy",
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Clerk",
+      "text": "All good now..wait…. You are a police officer?",
+      "responses": []
+    },
+    {
+      "editorIndex": 150,
+      "speaker": "Larry Beige",
+      "text": "Yes, is that a problem for you?",
+      "responses": []
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Clerk",
+      "text": "No, of course not",
+      "responses": []
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Larry Beige",
+      "text": "Also you mind if I smoke one here real quick?",
+      "responses": [
+        {
+          "responseText": "Go away",
+          "nextLineIndex": 180
+        },
+        {
+          "responseText": "Go ahead.",
+          "nextLineIndex": 210
+        }
+      ]
+    },
+    {
+      "editorIndex": 179,
+      "speaker": "Clerk",
+      "text": "No, can you please go away I have to sell to others?",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Larry Beige",
+      "text": "You are making a mistake kid. So far you have been loving your guiltiness to me, it doesn't look good for you. You came here to inspect me not to buy…",
+      "responses": []
+    },
+    {
+      "editorIndex": 190,
+      "speaker": "Larry Beige",
+      "text": "I will be back kid, you will get what you deserve",
+      "endConversationHere": true,
+      "scoreScreenIndex": 6,
+      "responses": []
+    },
+    {
+      "editorIndex": 200,
+      "speaker": "Larry Beige",
+      "text": "Is that a problem for you?",
+      "responses": [
+        {
+          "responseText": " No can you please go away I have to sell to others (Rebellious)",
+          "nextLineIndex": 180
+        },
+        {
+          "responseText": " Go ahead. As long as there is no one else here. Company is always welcomed. (Continue)",
+          "nextLineIndex": 210
+        }
+      ]
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Clerk",
+      "text": "As long as there is no one else here. Company is always welcomed.",
+      "responses": []
+    },
+    {
+      "editorIndex": 220,
+      "speaker": "Larry Beige",
+      "text": "You mentioned that SSI is pretty new for you, but I wonder how so it has been out for quite a while?",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Clerk",
+      "text": "Well I just came back from vacation, it was quite long",
+      "responses": []
+    },
+    {
+      "editorIndex": 240,
+      "speaker": "Larry Beige",
+      "text": "That sounds nice, I really need to travel somewhere, where were you?",
+      "responses": []
+    },
+    {
+      "editorIndex": 250,
+      "speaker": "Clerk",
+      "text": "I was to the Eastern part of the Union. Very beautiful place but they didn't have SSI and I think still haven't integrated it there. Their technology is quite old…",
+      "responses": []
+    },
+    {
+      "editorIndex": 260,
+      "speaker": "Larry Beige",
+      "text": "OK…that makes sense now, yes the project is in full scale only in our region, there are a few tweaks to be made. Do you think it is fair for it to be enforced in full force since it is so new?",
+      "responses": []
+    },
+    {
+      "editorIndex": 270,
+      "speaker": "Clerk",
+      "text": "I can't really say for now I haven't had any issues with it, the system operates very smoothly",
+      "responses": []
+    },
+    {
+      "editorIndex": 280,
+      "speaker": "Larry Beige",
+      "text": "Hmmm is that so….I have heard about some shady figures walking around the town.",
+      "responses": []
+    },
+    {
+      "editorIndex": 290,
+      "speaker": "Clerk",
+      "text": "Shady how? What do they do?",
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Larry Beige",
+      "text": "Smart question… Sorry I didn't catch your name?",
+      "responses": []
+    },
+    {
+      "editorIndex": 310,
+      "speaker": "Clerk",
+      "text": "My name is Clerk. Nice to meet you….Larry…Larry Beige. Cool name.",
+      "responses": []
+    },
+    {
+      "editorIndex": 320,
+      "speaker": "Larry Beige",
+      "text": "You dont have to lie..",
+      "responses": []
+    },
+    {
+      "editorIndex": 330,
+      "speaker": "Clerk",
+      "text": "….",
+      "responses": []
+    },
+    {
+      "editorIndex": 340,
+      "speaker": "Larry Beige",
+      "text": "I am kidding HAHA… Anyway nice to meet you Clerk, you seem like a good kid that is why I am telling you this. There are guys that steal data",
+      "responses": []
+    },
+    {
+      "editorIndex": 350,
+      "speaker": "Clerk",
+      "text": "How do they do that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 360,
+      "speaker": "Larry Beige",
+      "text": "They cannot pass through the security so their only way is getting the information from a person that has it already in their device",
+      "responses": []
+    },
+    {
+      "editorIndex": 370,
+      "speaker": "Clerk",
+      "text": "So they ask people for their information and then steal it for their use",
+      "responses": []
+    },
+    {
+      "editorIndex": 380,
+      "speaker": "Larry Beige",
+      "text": "Most of the time to sell it for money for the big companies outside our Union, Yes exactly! But not only…You see Clerk that would be impractical",
+      "responses": []
+    },
+    {
+      "editorIndex": 390,
+      "speaker": "Clerk",
+      "text": "And why is that? If I was a criminal that would be probably my strategy, sounds simple",
+      "responses": []
+    },
+    {
+      "editorIndex": 400,
+      "speaker": "Larry Beige",
+      "text": "You sound like a bad criminal Clerk. As you mention it is simple yes, but not easy.",
+      "responses": []
+    },
+    {
+      "editorIndex": 410,
+      "speaker": "Larry Beige",
+      "text": "I have heard some shady dealings, nothing too major but I would like more",
+      "responses": [
+        {
+          "responseText": "I haven't done anything. But can you tell me more?",
+          "nextLineIndex": 420
+        },
+        {
+          "responseText": " Make a joke",
+          "nextLineIndex": 540
+        },
+        {
+          "responseText": "3. What exactly have you heard?",
+          "nextLineIndex": 660
+        }
+      ]
+    },
+    {
+      "editorIndex": 420,
+      "speaker": "Clerk",
+      "text": "But can you tell me more?",
+      "responses": []
+    },
+    {
+      "editorIndex": 430,
+      "speaker": "Larry Beige",
+      "text": "Interesting… I have heard some shady dealings, nothing too major but I would like more",
+      "responses": []
+    },
+    {
+      "editorIndex": 440,
+      "speaker": "Clerk",
+      "text": "Are the shady dealings related to my store",
+      "responses": []
+    },
+    {
+      "editorIndex": 450,
+      "speaker": "Larry Beige",
+      "text": "Yes indeed. Yours is not the only one but you are first on the list",
+      "responses": []
+    },
+    {
+      "editorIndex": 460,
+      "speaker": "Clerk",
+      "text": "Wait are there other Kiosks related",
+      "responses": []
+    },
+    {
+      "editorIndex": 470,
+      "speaker": "Larry Beige",
+      "text": "Yes all 5 in fact. Oh I didnt even know we did have that many. This town is small but it has been a mess lately, there are a lot of figures that are trying to steal data and use it to their advantage",
+      "responses": []
+    },
+    {
+      "editorIndex": 480,
+      "speaker": "Clerk",
+      "text": "Sounds rough, please tell me how can I help",
+      "responses": []
+    },
+    {
+      "editorIndex": 490,
+      "speaker": "Larry Beige",
+      "text": "My head has been a mess lately as well. I cannot see the big picture, can you tell me anything you heard?",
+      "responses": []
+    },
+    {
+      "editorIndex": 500,
+      "speaker": "Clerk",
+      "text": "I only had one encounter. There was a shady guy that came to the Kiosk and demanded information. I didn't get a lot of information because I immediately send him away.",
+      "responses": []
+    },
+    {
+      "editorIndex": 510,
+      "speaker": "Larry Beige",
+      "text": "He didn't mention anything? Or anything you noticed?",
+      "responses": []
+    },
+    {
+      "editorIndex": 520,
+      "speaker": "Clerk",
+      "text": "He had a white coat and faces was a bit hidden hard to see him well. What I remember is he offered 1000 NEUROS",
+      "responses": []
+    },
+    {
+      "editorIndex": 530,
+      "speaker": "Larry Beige",
+      "text": "That is a sizable reward why did you turn it down?",
+      "responses": [
+        {
+          "responseText": "I am not mad, the money is good but the crimes I commit are way higher.",
+          "nextLineIndex": 700
+        }
+      ]
+    },
+    {
+      "editorIndex": 540,
+      "speaker": "Clerk",
+      "text": "Make a joke",
+      "responses": []
+    },
+    {
+      "editorIndex": 550,
+      "speaker": "Larry Beige",
+      "text": "Interesting… I have heard some shady dealings, nothing too major but I would like more",
+      "responses": []
+    },
+    {
+      "editorIndex": 560,
+      "speaker": "Clerk",
+      "text": "Are the shady dealings related to my store",
+      "responses": []
+    },
+    {
+      "editorIndex": 570,
+      "speaker": "Larry Beige",
+      "text": "Yes indeed. Yours is not the only one but you are first on the list",
+      "responses": []
+    },
+    {
+      "editorIndex": 580,
+      "speaker": "Clerk",
+      "text": "Wait are there other Kiosks related",
+      "responses": []
+    },
+    {
+      "editorIndex": 590,
+      "speaker": "Larry Beige",
+      "text": "Yes all 5 in fact. Oh I didnt even know we did have that many. This town is small but it has been a mess lately, there are a lot of figures that are trying to steal data and use it to their advantage",
+      "responses": []
+    },
+    {
+      "editorIndex": 600,
+      "speaker": "Clerk",
+      "text": "Sounds rough, please tell me how can I help",
+      "responses": []
+    },
+    {
+      "editorIndex": 610,
+      "speaker": "Larry Beige",
+      "text": "My head has been a mess lately as well. I cannot see the big picture, can you tell me anything you heard?",
+      "responses": []
+    },
+    {
+      "editorIndex": 620,
+      "speaker": "Clerk",
+      "text": "You know, if I ever quit this job, I think I’ll become a police officer. Seems like the only job with more paperwork than mine.",
+      "responses": []
+    },
+    {
+      "editorIndex": 630,
+      "speaker": "Larry Beige",
+      "text": "HAHAHA…Well said clerk. I like You. But let’s not get off track, tell me.",
+      "responses": []
+    },
+    {
+      "editorIndex": 640,
+      "speaker": "Clerk",
+      "text": "I only had one encounter. There was a shady guy that came to the Kiosk and demanded information. I didn't get a lot of information because I immediately send him away. He had a white coat and faces was a bit hidden hard to see him well. What I remember is he offered 1000 NEUROS",
+      "responses": []
+    },
+    {
+      "editorIndex": 650,
+      "speaker": "Larry Beige",
+      "text": "That is a sizable reward why did you turn it down?",
+      "responses": [
+        {
+          "responseText": "I am not mad, the money is good but the crimes I commit are way higher.",
+          "nextLineIndex": 710
+        }
+      ]
+    },
+    {
+      "editorIndex": 660,
+      "speaker": "Clerk",
+      "text": "What exactly have you heard?",
+      "responses": []
+    },
+    {
+      "editorIndex": 670,
+      "speaker": "Larry Beige",
+      "text": "Careful now kid, normally people just deny",
+      "responses": []
+    },
+    {
+      "editorIndex": 680,
+      "speaker": "Clerk",
+      "text": "Denying does not prove innocent, nor asking questions disprove it. I just want to understand the situation",
+      "responses": []
+    },
+    {
+      "editorIndex": 690,
+      "speaker": "Larry Beige",
+      "text": "Well listen then, word has it that there has been data leaks, which is normal. But also that someone is selling the data. That is a bit more curious.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 4,
+      "responses": []
+    },
+    {
+      "editorIndex": 700,
+      "speaker": "Larry Beige",
+      "text": "Well said Cashier, thank you. I think I have concluded my research for today. The investigation will continue. I will be back… if needed…",
+      "endConversationHere": true,
+      "scoreScreenIndex": 2,
+      "responses": []
+    },
+    {
+      "editorIndex": 710,
+      "speaker": "Larry Beige",
+      "text": "Well said Cashier, thank you. You made things easier I have concluded my research! The investigation is concluded…",
+      "endConversationHere": true,
+      "scoreScreenIndex": 1,
+      "responses": []
+    }
+  ]
+}

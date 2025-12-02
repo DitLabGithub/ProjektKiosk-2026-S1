@@ -1,0 +1,153 @@
+{
+  "customerName": "Larry Beige",
+  "npcPrefabPath": "NPC_Prefabs/PoliceGuy2",
+  "idPrefabPath": "ID_Prefabs/PoliceGuy2",
+  "idName": "Larry Beige",
+  "idDOB": "Over 18",
+  "idAddress": "N/A",
+  "idIssuer": "Police Department",
+  "idAllowNameAccess": true,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": true,
+  "idAllowPictureAccess": true,
+  "requestedItems": [
+    "pack of hotshots",
+    "Sprongles"
+
+  ],
+  "lines": [
+   {
+      "editorIndex": 10,
+      "speaker": "Larry Beige",
+      "text": "Afternoon, Clerk.",
+      "npcSprite": "PoliceGuy2",
+      "responses": []
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Clerk",
+      "text": "Officer Beige. Back so soon? To what do I owe the visit? I thought the research was concluded?",
+      "responses": []
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "Larry Beige",
+      "text": "Can’t I just come to buy stuff from the nearest Kiosk shop, why the prejudice.",
+      "responses": []
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "Clerk",
+      "text": "No, I am sorry if I sound annoyed I was just surprised. Most people just go to the big stores like HyperMart.",
+      "responses": []
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "Larry Beige",
+      "text": "Their mistake. I would like the usual Hotshots and Chicken Jerky. Or not, today I would like Sprongles.",
+      "responses": []
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Clerk",
+      "text": "Could I have your ID card as usual, cannot make exceptions…",
+      "responses": []
+    },
+    {
+      "editorIndex": 70,
+      "speaker": "Larry Beige",
+      "text": "Very well…of course",
+      "responses": [],
+      "askForID": true,
+      "idPrefabToSpawn": "ID_Prefabs/PoliceGuy"
+    },
+    {
+      "editorIndex": 80,
+      "speaker": "Larry Beige",
+      "text": "Thank you, clerk. Always by the book. And now for your information the investigation is never truly done, always someone to catch down the line…",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Clerk",
+      "text": "So you were here for the research!",
+      "responses": []
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "Larry Beige",
+      "text": "You have to calm down, clerk. Without being guilty it wont be a problem anyway right?",
+      "responses": []
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "Clerk",
+      "text": "Of course…but it is just…",
+      "responses": []
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Larry Beige",
+      "text": "Mhmm interesting. I heard there have been many irregularities and all point to your small Kiosk",
+      "responses": [
+
+           {
+          "responseText": "Who told you that?",
+          "nextLineIndex": 130
+           }
+
+      ]
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Larry Beige",
+      "text": "This is the wrong question to ask clerk. You are not worried who is the source of information, you are worried about the discovery of your compliance",
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Clerk",
+      "text": "Come on man, dont twist things, It was just some innocent question.",
+      "responses": []
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Larry Beige",
+      "text": "I know about your connection with the Shady figure named Shaun Bakers. Or at least that is one of the ways he is known as.",
+      "responses": []
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Clerk",
+      "text": "Ho...What? I don't know him",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Larry Beige",
+      "text": "HA…the mask fell off very quickly, cashier. I wanted to assess for myself if the information was correct. But because of your actions there is no more doubt. Thank you for your valuable cooperation on the investigation. You made my job way easier.",
+      "responses": []
+    },
+    {
+      "editorIndex": 190,
+      "speaker": "Clerk",
+      "text": "No…no wait there is misunderstanding",
+      "responses": []
+    },
+    {
+      "editorIndex": 200,
+      "speaker": "Larry Beige",
+      "text": "I will stop you spilling more lies…you are arrested",
+      "responses": []
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Clerk",
+      "text": "Fuck",
+      "endConversationHere": true,
+      "scoreScreenIndex": 5,
+      "responses": []
+    }
+  ]
+}
