@@ -2961,7 +2961,7 @@ MonoBehaviour:
   jsonCustomerFileNames:
   - HossScenario
   - RobinScenario
-  - AmonScenario
+  - ShaunBakersScenario
   scenarioManager: {fileID: 0}
   scoreScreens:
   - {fileID: 420377666}

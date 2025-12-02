@@ -19,6 +19,9 @@ public class DialogueManager : MonoBehaviour
         public bool activateContinueAfterChoice = false;
 
         public bool isMakeSaleResponse = false;
+
+        // Score System
+        public int scoreValue = 0; // Points to add to morality score when this response is chosen
     }
 
 
@@ -527,9 +530,13 @@ public class DialogueManager : MonoBehaviour
 
         // Determine if we should use ScenarioManager or legacy list
         bool useScenarioManager = scenarioManager != null;
-        int totalCustomers = customers.Count + (useScenarioManager ? scenarioManager.GetTotalScenarioCount() : jsonCustomerFileNames.Count);
 
-        if (currentCustomerIndex < totalCustomers)
+        // Check if there are more scenarios to play (includes dynamically injected police scenarios)
+        bool hasMoreScenarios = (currentCustomerIndex < customers.Count) ||
+                                (useScenarioManager && scenarioManager.HasMoreScenarios()) ||
+                                (!useScenarioManager && currentCustomerIndex < customers.Count + jsonCustomerFileNames.Count);
+
+        if (hasMoreScenarios)
         {
             if (currentCustomerIndex < customers.Count)
             {
@@ -595,7 +602,17 @@ public class DialogueManager : MonoBehaviour
                 else
                 {
                     Debug.LogError($"Failed to load customer from JSON file: {filename}. Ending sequence.");
-                    currentCustomerIndex = totalCustomers; // Skip to end
+                    // Clear the scenario queue to force game end
+                    if (useScenarioManager && scenarioManager != null)
+                    {
+                        // ScenarioManager will return false for HasMoreScenarios() when queue is empty
+                        // For now, just set a high index to skip to end
+                        currentCustomerIndex = 9999;
+                    }
+                    else
+                    {
+                        currentCustomerIndex = customers.Count + jsonCustomerFileNames.Count;
+                    }
                     OnScoreContinue(); // Re-call to show end screen
                 }
             }
@@ -762,7 +779,8 @@ public class DialogueManager : MonoBehaviour
                         nextLineIndex = r.nextLineIndex,
                         returnAfterResponse = r.returnAfterResponse,
                         activateContinueAfterChoice = r.activateContinueAfterChoice,
-                        isMakeSaleResponse = r.isMakeSaleResponse
+                        isMakeSaleResponse = r.isMakeSaleResponse,
+                        scoreValue = r.scoreValue // Copy score value from JSON data
                     }).ToList(),
                     askForID = jsonLineData.askForID,
                     showGoBackButton = jsonLineData.showGoBackButton,
@@ -871,6 +889,13 @@ public class DialogueManager : MonoBehaviour
 
                     chosenResponses[currentLineIndex].Add(responseIndex);
 
+                    // Score System: Add points if this response has a scoreValue
+                    if (currentResponse.scoreValue > 0 && ScoreManager.Instance != null)
+                    {
+                        ScoreManager.Instance.AddScore(currentResponse.scoreValue);
+                        Debug.Log($"[DialogueManager] Added {currentResponse.scoreValue} points for response: '{currentResponse.responseText}'");
+                    }
+
                     if (currentResponse.nextLineIndex >= 0)
                     {
                         if (currentResponse.returnAfterResponse)
@@ -894,7 +919,7 @@ public class DialogueManager : MonoBehaviour
                         else
                         {
                             // Old system uses direct array indices
-                            currentLineIndex = currentResponse.nextLineIndex;
+                            //currentLineIndex = currentResponse.nextLineIndex;
                         }
                     }
                     else

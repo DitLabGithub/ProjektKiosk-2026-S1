@@ -214,7 +214,8 @@
         {
           "responseText": "Make the sale",
           "nextLineIndex": 260,
-          "isMakeSaleResponse": true
+          "isMakeSaleResponse": true,
+          "scoreValue": 30
         },
         {
           "responseText": "Don't make the sale",

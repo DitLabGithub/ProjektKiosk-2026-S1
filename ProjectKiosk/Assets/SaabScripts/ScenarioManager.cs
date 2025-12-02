@@ -31,6 +31,37 @@ public class ScenarioManager : MonoBehaviour
         InitializeScenarioQueue();
     }
 
+    private void Start()
+    {
+        // Try to subscribe to score threshold events
+        SubscribeToScoreManager();
+    }
+
+    private void SubscribeToScoreManager()
+    {
+        // Subscribe to score threshold events for police scenario injection
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.OnPoliceThresholdReached += OnPoliceThresholdReached;
+            Debug.Log("[ScenarioManager] Successfully subscribed to police threshold events");
+        }
+        else
+        {
+            Debug.LogWarning("[ScenarioManager] ScoreManager.Instance is null! Will retry...");
+            // Retry after a short delay if ScoreManager isn't ready yet
+            Invoke(nameof(SubscribeToScoreManager), 0.1f);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from events to prevent memory leaks
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.OnPoliceThresholdReached -= OnPoliceThresholdReached;
+        }
+    }
+
     private void LoadConfig()
     {
         TextAsset configAsset = Resources.Load<TextAsset>("ScenarioConfig");
@@ -153,5 +184,33 @@ public class ScenarioManager : MonoBehaviour
     public int GetRemainingScenarioCount()
     {
         return scenarioQueue.Count;
+    }
+
+    /// <summary>
+    /// Called when a police scenario threshold is reached. Injects the police scenario to play next.
+    /// </summary>
+    private void OnPoliceThresholdReached(ScoreManager.PoliceScenarioThreshold policeScenario)
+    {
+        if (string.IsNullOrEmpty(policeScenario.jsonFileName))
+        {
+            Debug.LogWarning($"[ScenarioManager] Police scenario '{policeScenario.scenarioName}' has no JSON filename!");
+            return;
+        }
+
+        Debug.Log($"[ScenarioManager] Injecting police scenario: {policeScenario.jsonFileName} (Threshold: {policeScenario.scoreThreshold})");
+
+        // Insert police scenario at the front of the queue so it plays immediately after current scenario
+        Queue<string> tempQueue = new Queue<string>();
+        tempQueue.Enqueue(policeScenario.jsonFileName);
+
+        // Add remaining scenarios after the police scenario
+        while (scenarioQueue.Count > 0)
+        {
+            tempQueue.Enqueue(scenarioQueue.Dequeue());
+        }
+
+        scenarioQueue = tempQueue;
+
+        Debug.Log($"[ScenarioManager] Police scenario queued. Next scenario will be: {policeScenario.jsonFileName}");
     }
 }

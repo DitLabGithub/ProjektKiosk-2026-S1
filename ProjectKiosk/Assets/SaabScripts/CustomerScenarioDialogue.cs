@@ -12,6 +12,9 @@ public class DialogueResponseData
     public bool returnAfterResponse = false;
     public bool activateContinueAfterChoice = false;
     public bool isMakeSaleResponse = false;
+
+    // Score System - corruption points awarded when this response is chosen
+    public int scoreValue = 0;
 }
 
 [Serializable]

@@ -57,7 +57,8 @@
         },
         {
           "responseText": "Continue",
-          "nextLineIndex": 140
+          "nextLineIndex": 140,
+          "scoreValue": 15
         }
       ],
       "disableContinueButton": true
