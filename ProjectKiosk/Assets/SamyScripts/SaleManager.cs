@@ -16,6 +16,12 @@ public class SaleManager : MonoBehaviour {
     }
 
     public void AttemptSale() {
+        // Play button click sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayButtonSellSound();
+        }
+
         if (currentNPC == null || itemPickupManager == null) {
             Debug.LogWarning("Missing references in SaleManager.");
             return;

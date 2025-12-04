@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour {
     [Header("Audio Sources")]
     public AudioSource sfxSource;
     public AudioSource bgMusicSource;
+    public AudioSource buttonClickSource; // Dedicated for instant button feedback
 
     [Header("Audio Clips")]
     public AudioClip walkSound;
@@ -17,6 +18,7 @@ public class SoundManager : MonoBehaviour {
     public AudioClip idScanned;
     public AudioClip mainBackgroundMusic;
     public AudioClip continueButtonClick;
+    public AudioClip genericButtonClick; // For all other buttons
 
 
     private void Awake() {
@@ -26,8 +28,17 @@ public class SoundManager : MonoBehaviour {
         } else {
             Destroy(gameObject);
         }
-        PlayKioskBackgroundMusic();
 
+        // Configure button click source for instant, responsive playback
+        if (buttonClickSource != null)
+        {
+            buttonClickSource.priority = 0; // Highest priority (0-255, lower = higher priority)
+            buttonClickSource.volume = 1f;
+            buttonClickSource.spatialBlend = 0f; // 2D sound
+            buttonClickSource.playOnAwake = false;
+        }
+
+        PlayKioskBackgroundMusic();
     }
 
     public void PlaySound(AudioClip clip) {
@@ -49,8 +60,8 @@ public class SoundManager : MonoBehaviour {
     }
     public void PlayPlaceSound() => PlaySound(placeSound);
     public void PlayButtonSellSound() {
-        if (sfxSource != null && buttonSellSound != null) {
-            sfxSource.PlayOneShot(buttonSellSound, 1f); // these sounds are loud as shit bruv
+        if (buttonClickSource != null && buttonSellSound != null) {
+            buttonClickSource.PlayOneShot(buttonSellSound, 1f);
         }
     }
     public void PlayIDScanned()
@@ -61,8 +72,14 @@ public class SoundManager : MonoBehaviour {
     }
     public void PlayContinueButtonClick()
     {
-        if (sfxSource != null && continueButtonClick != null) {
-            sfxSource.PlayOneShot(continueButtonClick, 1f); // these sounds are loud as shit bruv
+        if (buttonClickSource != null && continueButtonClick != null) {
+            buttonClickSource.PlayOneShot(continueButtonClick, 1f);
+        }
+    }
+    public void PlayGenericButtonClick()
+    {
+        if (buttonClickSource != null && genericButtonClick != null) {
+            buttonClickSource.PlayOneShot(genericButtonClick, 1f);
         }
     }
     public void PlayKioskBackgroundMusic()

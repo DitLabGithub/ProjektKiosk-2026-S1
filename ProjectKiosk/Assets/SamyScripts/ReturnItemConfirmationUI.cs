@@ -18,11 +18,21 @@ public class ReturnItemConfirmationUI : MonoBehaviour {
         popupPanel.SetActive(false);
 
         yesButton.onClick.AddListener(() => {
+            // Play button click sound
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayGenericButtonClick();
+            }
             popupPanel.SetActive(false);
             onConfirmCallback?.Invoke();
         });
 
         noButton.onClick.AddListener(() => {
+            // Play button click sound
+            if (SoundManager.Instance != null)
+            {
+                SoundManager.Instance.PlayGenericButtonClick();
+            }
             popupPanel.SetActive(false);
         });
     }

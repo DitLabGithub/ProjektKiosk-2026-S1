@@ -77,10 +77,16 @@ public class UIManager : MonoBehaviour
 
     public void StartGame()
     {
+        // Play button click sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayGenericButtonClick();
+        }
+
         startScreen.SetActive(false);
         currentDialogueIndex = 1;
         StartCoroutine(ShowDialogueSequence(currentDialogueIndex));
-       
+
     }
 
     IEnumerator ShowDialogueSequence(int dialogueNumber)
@@ -162,6 +168,12 @@ public class UIManager : MonoBehaviour
 
     public void ExitGame()
     {
+        // Play button click sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayGenericButtonClick();
+        }
+
         Application.Quit();
     }
 }
