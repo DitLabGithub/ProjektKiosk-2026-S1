@@ -89,15 +89,15 @@
       "text": "I have a friend that has a talking fridge. I am certain his fridge is spying on him, too many red flags raised.",
       "responses": [
         {
-          "responseText": "1. Who is that friend can you tell more (Branch 1)",
+          "responseText": "Tell me more",
           "nextLineIndex": 130
         },
         {
-          "responseText": "2. That is bollocks (Branch 2)",
+          "responseText": "That is bollocks",
           "nextLineIndex": 200
         },
         {
-          "responseText": "3. Continue (Branch 3)",
+          "responseText": "Continue ",
           "nextLineIndex": 300
         }
       ]
@@ -312,15 +312,15 @@
       "text": "I selling him data that is how I make my money. You can too",
       "responses": [
         {
-          "responseText": "1. Reject to hear more - Done (Professional/Good Outcome)",
+          "responseText": "Go away",
           "nextLineIndex": 500
         },
         {
-          "responseText": "2. Listen more (Casual/Neutral or Conspiracy Heavy/Bad Outcome)",
+          "responseText": "Listen more",
           "nextLineIndex": 600
         },
         {
-          "responseText": "3. Suggest more of what you hear, give him more material to talk about (Shady Outcome)",
+          "responseText": "Shady",
           "nextLineIndex": 700
         }
       ]
@@ -363,15 +363,15 @@
       "text": "Listen I yapped quite a lot but I will tell you something important to me and it is my cause. This world is going to shit and I will fix it. It needs change and I will bring it…",
       "responses": [
         {
-          "responseText": "1. Reject, send away (Casual/Neutral Outcome)",
+          "responseText": "Reject, send away",
           "nextLineIndex": 610
         },
         {
-          "responseText": "2. Learn more (Conspiracy Heavy/Bad Outcome)",
+          "responseText": "Learn more",
           "nextLineIndex": 650
         },
         {
-          "responseText": "3. I need some of your information (Shady Outcome)",
+          "responseText": "I need your information",
           "nextLineIndex": 700
         }
       ]
