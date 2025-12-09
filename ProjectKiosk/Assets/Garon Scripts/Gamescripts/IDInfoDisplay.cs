@@ -41,11 +41,11 @@ public class IDInfoDisplay : MonoBehaviour
         nameText.text = string.IsNullOrEmpty(name) ? "[Access Denied]" : name;
         dobText.text = string.IsNullOrEmpty(dob) ? "[Access Denied]" : dob;
 
-        // For Authorization IDs, show "Authorization: [Status]" instead of Address
+        // For Authorization IDs, don't show authorization status text (user request)
         if (isAuthorizationID)
         {
-            string displayStatus = string.IsNullOrEmpty(authorizationStatus) ? "Pending" : authorizationStatus;
-            addressText.text = $"Authorization: {displayStatus}";
+            // Authorization status removed - loading bar and checkmark show status instead
+            addressText.text = string.IsNullOrEmpty(address) ? "[Access Denied]" : address;
         }
         else
         {

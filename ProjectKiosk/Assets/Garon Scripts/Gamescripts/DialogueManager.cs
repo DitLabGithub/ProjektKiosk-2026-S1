@@ -190,6 +190,7 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
+        Debug.Log($"[DialogueManager] TypewriterEffect started. Text length: {fullText.Length}, Duration: {duration}s, isTyping: {isTyping}");
 
         // Calculate delay per character based on duration
         float delayPerChar = duration / fullText.Length;
@@ -197,6 +198,13 @@ public class DialogueManager : MonoBehaviour
         // Type out each character
         for (int i = 0; i < fullText.Length; i++)
         {
+            // Check if typing was interrupted (by click or skip)
+            if (!isTyping)
+            {
+                // Typing was interrupted, exit early
+                yield break;
+            }
+
             dialogueText.text += fullText[i];
             yield return new WaitForSeconds(delayPerChar);
         }
@@ -410,6 +418,37 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        // Click anywhere on screen (or press Space) to skip typewriter effect
+        if (isTyping && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            Debug.Log("[DialogueManager] Click detected while typing. Pointer over UI: " + UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject());
+
+            // Skip regardless of pointer position (simplified check)
+            SkipTypewriterEffect();
+        }
+    }
+
+    private void SkipTypewriterEffect()
+    {
+        Debug.Log("[DialogueManager] SkipTypewriterEffect called. Full text: " + currentFullText);
+
+        if (currentTypewriterCoroutine != null)
+        {
+            StopCoroutine(currentTypewriterCoroutine);
+            currentTypewriterCoroutine = null;
+        }
+        isTyping = false;
+        // Show the complete text
+        dialogueText.text = currentFullText;
+        currentFullText = "";
+        // Show Continue button
+        continueButton.gameObject.SetActive(true);
+
+        Debug.Log("[DialogueManager] Skip complete. Text should now be visible.");
+    }
+
     public void StartDialogue()
     {
         if (!dialogueStarted)
@@ -463,7 +502,8 @@ public class DialogueManager : MonoBehaviour
             authID.StartAuthorization();
 
             // Do NOT show Continue button yet - wait for authorization to complete
-            dialogueText.text = "Verifying authorization...";
+            // Text removed per user request - authorization UI shows loading bar only
+            // dialogueText.text = "Verifying authorization...";
         }
         else
         {
@@ -490,15 +530,36 @@ public class DialogueManager : MonoBehaviour
             continueButton.gameObject.SetActive(true);
         }
 
-        dialogueText.text = "Authorization verified. Thank you!";
+        // Text removed per user request - authorization UI shows checkmark only
+        // dialogueText.text = "Authorization verified. Thank you!";
     }
     void OnScoreContinue()
     {
+        // Play button click sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayContinueButtonClick();
+        }
+
         foreach (var screen in scoreScreens)
         {
             if (screen != null) screen.SetActive(false);
         }
         ResetDialogueState();
+
+        // Check if the scenario that just finished was the Police Arrest scenario
+        // If so, END THE GAME (don't continue to more scenarios)
+        if (!string.IsNullOrEmpty(currentJsonScenarioFilename) &&
+            currentJsonScenarioFilename == "PoliceGuy2Scenario")
+        {
+            Debug.Log("[DialogueManager] Police Arrest scenario completed. Game Over - showing end credits.");
+
+            // Show game over / end credits
+            dialogueText.text = "Game Over - You were arrested.";
+            speakerText.text = "";
+            endCreditScreen.gameObject.SetActive(true);
+            return; // Exit method - do NOT continue to next scenario
+        }
 
         // Notify ScenarioManager that the previous scenario is complete
         if (!string.IsNullOrEmpty(currentJsonScenarioFilename) && scenarioManager != null)
@@ -694,6 +755,12 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
+        // Play button click sound
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayContinueButtonClick();
+        }
+
         // If currently typing, complete the text immediately and show Continue button
         if (isTyping)
         {
@@ -859,6 +926,12 @@ public class DialogueManager : MonoBehaviour
 
                 buttonComponent.onClick.AddListener(() =>
                 {
+                    // Play button click sound
+                    if (SoundManager.Instance != null)
+                    {
+                        SoundManager.Instance.PlayGenericButtonClick();
+                    }
+
                     // Determine customer data source again inside the listener
                     List<ItemCategory> currentRequestedItems = isJsonCustomer ? currentJsonCustomer.requestedItems : customers[currentCustomerIndex].requestedItems;
                     var currentResponse = isJsonCustomer ? line.responses[responseIndex] : customers[currentCustomerIndex].lines[currentLineIndex].responses[responseIndex];
@@ -951,6 +1024,12 @@ public class DialogueManager : MonoBehaviour
             goBackButton.onClick.RemoveAllListeners();
             goBackButton.onClick.AddListener(() =>
             {
+                // Play button click sound
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlayGenericButtonClick();
+                }
+
                 // For JSON scenarios: convert editorIndex to array index
                 // For old scenarios: use goBackTargetIndex directly as array index
                 if (isJsonCustomer)
@@ -1116,6 +1195,12 @@ public class DialogueManager : MonoBehaviour
         // Hide business card to prevent it from carrying over
         HideBusinessCard();
 
+        // Hide authorization UI (checkmark and loading bar) when scenario ends
+        if (AuthorizationUIManager.Instance != null)
+        {
+            AuthorizationUIManager.Instance.HideAll();
+        }
+
         foreach (var screen in scoreScreens)
         {
             if (screen != null) screen.SetActive(false);
@@ -1213,6 +1298,12 @@ public class DialogueManager : MonoBehaviour
         AllowPictureAccess = false;
         infoDisplay.HideInfo();
         waitingForAction = false;
+
+        // Hide authorization UI when resetting for new scenario
+        if (AuthorizationUIManager.Instance != null)
+        {
+            AuthorizationUIManager.Instance.HideAll();
+        }
     }
 
     void ClearResponses()

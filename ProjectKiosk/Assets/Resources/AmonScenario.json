@@ -11,7 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": false,
   "idAllowPictureAccess": false,
-  "requestedItems": [7],
+  "requestedItems": [8],
   "lines": [
     {
       "editorIndex": 10,
@@ -92,7 +92,7 @@
         },
         {
           "responseText": "I have all I need.",
-          "nextLineIndex": 440
+          "nextLineIndex": 400
         }
       ]
     },

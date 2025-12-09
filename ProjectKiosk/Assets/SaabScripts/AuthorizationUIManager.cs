@@ -121,12 +121,15 @@ public class AuthorizationUIManager : MonoBehaviour
             yield break;
         }
 
+        // Text removed per user request - keep loading bar and checkmark only
+        /*
         if (loadingText != null)
         {
             loadingText.gameObject.SetActive(true);
             loadingText.text = "Verifying Authorization...";
             Debug.Log("[AuthorizationUIManager] Loading text shown");
         }
+        */
 
         // Animate loading bar
         Debug.Log($"[AuthorizationUIManager] Starting {loadingDuration}s animation...");

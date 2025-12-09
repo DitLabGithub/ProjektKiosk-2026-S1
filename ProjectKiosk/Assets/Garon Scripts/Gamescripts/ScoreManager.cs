@@ -64,10 +64,18 @@ public class ScoreManager : MonoBehaviour
         // Sort police scenarios by threshold for proper triggering order
         policeScenarios.Sort((a, b) => a.scoreThreshold.CompareTo(b.scoreThreshold));
 
-        Debug.Log($"[ScoreManager] Initialized with {policeScenarios.Count} police scenarios:");
+        Debug.Log($"[ScoreManager] ===== SCORE SYSTEM INITIALIZED =====");
+        Debug.Log($"[ScoreManager] Current Score: {currentScore}/{maxScore}");
+        Debug.Log($"[ScoreManager] Police scenarios configured: {policeScenarios.Count}");
         foreach (var scenario in policeScenarios)
         {
-            Debug.Log($"  - {scenario.scenarioName} @ {scenario.scoreThreshold} points → {scenario.jsonFileName}");
+            Debug.Log($"  ✓ {scenario.scenarioName} @ {scenario.scoreThreshold} points → {scenario.jsonFileName}");
+
+            // Validate threshold is positive
+            if (scenario.scoreThreshold <= 0)
+            {
+                Debug.LogWarning($"  ⚠️ WARNING: '{scenario.scenarioName}' has invalid threshold ({scenario.scoreThreshold})! Should be > 0");
+            }
         }
 
         // Initialize UI
@@ -112,15 +120,20 @@ public class ScoreManager : MonoBehaviour
     /// </summary>
     private void CheckThresholds(int previousScore, int newScore)
     {
+        Debug.Log($"[ScoreManager] CheckThresholds: {previousScore} → {newScore}");
+
         foreach (var policeScenario in policeScenarios)
         {
             // Check if this scenario hasn't been triggered yet and threshold was crossed
-            if (!policeScenario.triggered &&
-                previousScore < policeScenario.scoreThreshold &&
-                newScore >= policeScenario.scoreThreshold)
+            bool notTriggeredYet = !policeScenario.triggered;
+            bool wasBelow = previousScore < policeScenario.scoreThreshold;
+            bool isNowAbove = newScore >= policeScenario.scoreThreshold;
+
+            if (notTriggeredYet && wasBelow && isNowAbove)
             {
                 policeScenario.triggered = true;
-                Debug.Log($"[ScoreManager] '{policeScenario.scenarioName}' threshold reached at {policeScenario.scoreThreshold} points!");
+                Debug.Log($"[ScoreManager] 🚨 POLICE TRIGGER: '{policeScenario.scenarioName}' @ {policeScenario.scoreThreshold} points!");
+                Debug.Log($"[ScoreManager]   → Injecting scenario: {policeScenario.jsonFileName}");
 
                 // Notify ScenarioManager to inject this police scenario
                 OnPoliceThresholdReached?.Invoke(policeScenario);

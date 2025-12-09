@@ -1667,7 +1667,7 @@ MonoBehaviour:
   checkoutDropZone: {fileID: 1036299949}
   totalFunds: 0
   fundsText: {fileID: 1576533766}
-  returnConfirmationUI: {fileID: 0}
+  returnConfirmationUI: {fileID: 432496864}
 --- !u!4 &432496862
 Transform:
   m_ObjectHideFlags: 0
@@ -2662,7 +2662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 183.9, y: 270.3}
+  m_AnchoredPosition: {x: 183.9, y: 267}
   m_SizeDelta: {x: 195.4, y: 319.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559914387
@@ -5134,6 +5134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfxSource: {fileID: 905444748}
   bgMusicSource: {fileID: 56102039}
+  buttonClickSource: {fileID: 0}
   walkSound: {fileID: 8300000, guid: 760868f8087dd5f42adf665cc434f88a, type: 3}
   pickupSound: {fileID: 8300000, guid: 90fe22a13c142a2479de21b360d66405, type: 3}
   placeSound: {fileID: 8300000, guid: dc9105006d1aaf94ab05cb193d64f22c, type: 3}
@@ -5142,6 +5143,7 @@ MonoBehaviour:
   idScanned: {fileID: 8300000, guid: 8aaf6a330dec6fc4aba966d44bcab9dc, type: 3}
   mainBackgroundMusic: {fileID: 8300000, guid: 3e7ea0d581002d645b4c043abe06ad70, type: 3}
   continueButtonClick: {fileID: 8300000, guid: 34a026f9c2f175147ab5edc6207b5eef, type: 3}
+  genericButtonClick: {fileID: 8300000, guid: 34a026f9c2f175147ab5edc6207b5eef, type: 3}
 --- !u!4 &1228683110
 Transform:
   m_ObjectHideFlags: 0
