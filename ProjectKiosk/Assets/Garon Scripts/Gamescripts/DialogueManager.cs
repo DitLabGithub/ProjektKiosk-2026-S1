@@ -502,7 +502,8 @@ public class DialogueManager : MonoBehaviour
             authID.StartAuthorization();
 
             // Do NOT show Continue button yet - wait for authorization to complete
-            dialogueText.text = "Verifying authorization...";
+            // Text removed per user request - authorization UI shows loading bar only
+            // dialogueText.text = "Verifying authorization...";
         }
         else
         {
@@ -529,7 +530,8 @@ public class DialogueManager : MonoBehaviour
             continueButton.gameObject.SetActive(true);
         }
 
-        dialogueText.text = "Authorization verified. Thank you!";
+        // Text removed per user request - authorization UI shows checkmark only
+        // dialogueText.text = "Authorization verified. Thank you!";
     }
     void OnScoreContinue()
     {
@@ -1193,6 +1195,12 @@ public class DialogueManager : MonoBehaviour
         // Hide business card to prevent it from carrying over
         HideBusinessCard();
 
+        // Hide authorization UI (checkmark and loading bar) when scenario ends
+        if (AuthorizationUIManager.Instance != null)
+        {
+            AuthorizationUIManager.Instance.HideAll();
+        }
+
         foreach (var screen in scoreScreens)
         {
             if (screen != null) screen.SetActive(false);
@@ -1290,6 +1298,12 @@ public class DialogueManager : MonoBehaviour
         AllowPictureAccess = false;
         infoDisplay.HideInfo();
         waitingForAction = false;
+
+        // Hide authorization UI when resetting for new scenario
+        if (AuthorizationUIManager.Instance != null)
+        {
+            AuthorizationUIManager.Instance.HideAll();
+        }
     }
 
     void ClearResponses()
