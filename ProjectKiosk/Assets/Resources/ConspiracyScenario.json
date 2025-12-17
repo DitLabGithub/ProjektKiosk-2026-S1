@@ -44,13 +44,13 @@
     {
       "editorIndex": 50,
       "speaker": "Theorist",
-      "text": "With onion of course! What they are not your favorite… weird anyway",
+      "text": "With onion of course! What they are not your favorite? Weird guy...",
       "responses": []
     },
     {
       "editorIndex": 60,
       "speaker": "Clerk",
-      "text": "Cool so then lets proceed to the purchase",
+      "text": "Cool, so then lets proceed to the purchase",
       "responses": []
     },
     {
@@ -62,25 +62,25 @@
     {
       "editorIndex": 80,
       "speaker": "Theorist",
-      "text": "Nice thanks dude small companies like you still dont scam people too much with the prices. Now the situation is so bad the monopolies they try to squeeze every cent they can from the customer",
+      "text": "Nice, thanks dude. At least small shops like yours aren’t bleeding people dry yet. The monopolies… man, they try to suck every last cent they can out of us.",
       "responses": []
     },
     {
       "editorIndex": 90,
       "speaker": "Clerk",
-      "text": "Yeah I agree thank god for my owner having a shop like this is not easy",
+      "text": "I have to agree. Happy my owner still has this shop, it is not so easy these days...",
       "responses": []
     },
     {
       "editorIndex": 100,
       "speaker": "Theorist",
-      "text": "Yes especially when they make your appliances spy on you",
+      "text": "Yes, especially when they make your appliances spy on you!",
       "responses": []
     },
     {
       "editorIndex": 110,
       "speaker": "Clerk",
-      "text": "What why do you think that? That sounds crazy",
+      "text": "Wait,what... why do you think that?",
       "responses": []
     },
     {
@@ -89,7 +89,7 @@
       "text": "I have a friend that has a talking fridge. I am certain his fridge is spying on him, too many red flags raised.",
       "responses": [
         {
-          "responseText": "Tell me more",
+          "responseText": "Friend?",
           "nextLineIndex": 130
         },
         {
@@ -105,13 +105,13 @@
     {
       "editorIndex": 130,
       "speaker": "Clerk",
-      "text": "Who is that friend can you tell more?",
+      "text": "Who is that friend of yours, can you tell me more?",
       "responses": []
     },
     {
       "editorIndex": 140,
       "speaker": "Theorist",
-      "text": "My guy, the beer belly guy. He is funny, always talking with his fridge and chuggin beers.",
+      "text": "My guy, the beer belly guy? He is funny, always talking with his fridge and chuggin beers.",
       "responses": []
     },
     {
@@ -121,29 +121,79 @@
       "responses": []
     },
     {
+      "editorIndex": 151,
+      "speaker": "Theorist",
+      "text": "No clue he is weird, like many other people these days…",
+      "responses": []
+    },
+    {
+      "editorIndex": 152,
+      "speaker": "Clerk",
+      "text": "Ironic...",
+      "responses": []
+    },
+    {
+      "editorIndex": 153,
+      "speaker": "Theorist",
+      "text": "What?",
+      "responses": []
+    },
+    {
+      "editorIndex": 154,
+      "speaker": "Theorist",
+      "text": "Anyway...\nHe was kicked out of the local factory for stealing the materials.",
+      "responses": []
+    },
+    {
+      "editorIndex": 155,
+      "speaker": "Clerk",
+      "text": "Oh, he made the talking Fridge with those materials?",
+      "responses": []
+    },
+    {
+      "editorIndex": 156,
+      "speaker": "Theorist",
+      "text": "No, I helped him make it. He is an idiot. I am the brains behind the operation.",
+      "responses": []
+    },
+    {
+      "editorIndex": 157,
+      "speaker": "Clerk",
+      "text": "Ok, that is curious…But how does he live and buy beer if he is unemployed?",
+      "responses": []
+    },
+    {
       "editorIndex": 160,
       "speaker": "Theorist",
-      "text": "No, I helped him make it. He is an idiot I am the brains behind the operation.",
+      "text": "I have no idea, when I ask him he always avoids the question. That is why so many red flags get raised",
       "responses": []
     },
     {
       "editorIndex": 170,
       "speaker": "Clerk",
-      "text": "Ok, that is curious…",
+      "text": "I have so many questions how is that related to the conspiracy?",
       "responses": []
     },
     {
       "editorIndex": 180,
       "speaker": "Theorist",
-      "text": "But he wanted the Fridge to warship him so I helped him create fake memories",
+      "text": "Well first of all, he wanted the Fridge to worship him so I helped him create fake memories. But the fridge still doesn't like him, only obeys him, which is fine.\n And then doesn't buy him the right beer and always wants to buy him more, making his alcoholism worse.",
       "responses": []
     },
     {
-      "editorIndex": 190,
+      "editorIndex": 181,
       "speaker": "Clerk",
-      "text": "Ok that is interesting but I have work to do",
-      "nextLineIndex": 300
+      "text": "Wow, I wouldn't expect that. Your theory is still insane.\nBut why don't you make one yourself?" ,
+      "responses": []
     },
+    {
+      "editorIndex": 182,
+      "speaker": "Theorist",
+      "text": "A servant is useless for me when I can do everything better myself, only my friend is lazy and crazy enough to need one…",
+      "nextLineIndex": 300,
+      "responses": []
+    },
+    
     {
       "editorIndex": 200,
       "speaker": "Clerk",
@@ -153,67 +203,80 @@
     {
       "editorIndex": 210,
       "speaker": "Theorist",
-      "text": "What do you mean man, dont make mad I can disprove you fast. Oh and how is that? Because I am smarter yo. But also I have facts, I have researched everything, I don't waste my time selling groceries",
+      "text": "What do you mean man, dont make me mad I can disprove you fast.",
       "responses": []
     },
     {
+      "editorIndex": 211,
+      "speaker": "Clerk",
+      "text": "Oh and how is that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 212,
+      "speaker": "Theorist",
+      "text": "Well, I am smarter. But also I have researched everything, I don't waste my time selling groceries",
+      "responses": []
+    },
+
+    {
       "editorIndex": 220,
       "speaker": "Clerk",
-      "text": "Dude…",
+      "text": "…",
       "responses": []
     },
     {
       "editorIndex": 230,
+      "speaker": "Clerk",
+      "text": "You have a big mouth…",
+      "responses": []
+    },
+    {
+      "editorIndex": 231,
       "speaker": "Theorist",
-      "text": "You have a big mouth you know that… Yeah, so? I can afford it due to the experience I have as a professional",
+      "text": "Yeah, so? I can afford it due to the experience I have",
       "responses": []
     },
     {
       "editorIndex": 240,
       "speaker": "Clerk",
-      "text": "Professional in what?",
+      "text": "Experience?",
       "responses": []
     },
     {
       "editorIndex": 250,
       "speaker": "Theorist",
-      "text": "Professional at not being a sheep. I confirm what the government denies. Can you relate? Didn’t think so",
+      "text": "In not being a sheep. I confirm what the government denies. Can you relate? Didn’t think so",
       "responses": []
     },
     {
       "editorIndex": 260,
       "speaker": "Clerk",
-      "text": "Breath in breath out",
+      "text": "Oh my god this kid, I am done.",
       "responses": []
-    },
-    {
-      "editorIndex": 270,
-      "speaker": "Theorist",
-      "text": "What? No not to you, nevermind",
-      "nextLineIndex": 300
     },
     {
       "editorIndex": 300,
       "speaker": "Clerk",
-      "text": "Ok that is interesting but I have work to do",
+      "text": "Ok, anyway that is interesting but I have work to do",
       "responses": []
     },
     {
       "editorIndex": 310,
       "speaker": "Theorist",
-      "text": "Oh you just reminded me I need to pick up a package for him, my friend",
+      "text": "Oh you just reminded me I need to pick up a package for him, my beer belly friend. It should be delivered to here",
       "responses": []
     },
     {
       "editorIndex": 320,
       "speaker": "Clerk",
-      "text": "For the beer guy, with the talking fridge you mean?",
+      "text": "For the guy, with the talking fridge you mean?",
       "responses": []
     },
     {
       "editorIndex": 330,
       "speaker": "Theorist",
-      "text": "Yes, yes exactly, he is a bit lazy but I gotta be a good friend right? Right?",
+      "text": "Yes, exactly, he is a bit lazy but I gotta be a good friend, right? ",
       "responses": []
     },
     {
