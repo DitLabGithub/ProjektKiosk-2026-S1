@@ -1,0 +1,533 @@
+{
+  "customerName": "Theorist",
+  "npcPrefabPath": "NPC_Prefabs/ConspiracyGuy",
+  "idPrefabPath": "ID_Prefabs/ConspiracyTheoristID",
+  "idName": "Unknown User",
+  "idDOB": "Over 18",
+  "idAddress": "N/A",
+  "idIssuer": "Amsterdam",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": true,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": true,
+  "idAllowPictureAccess": false,
+  "requestedItems": [
+    "chicken jerky",
+    "sproingles"
+  ],
+  "lines": [
+    {
+      "editorIndex": 10,
+      "speaker": "Theorist",
+      "text": "Psff hello cashier, how is the job going, don’t worry I know it is horrible",
+      "npcSprite": "ConspiracyGuy",
+      "responses": []
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Clerk",
+      "text": "What do you want?",
+      "responses": []
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "Theorist",
+      "text": "Could you grab me a pack of chicken jerky and sproingles but the better ones really have strong craving dont judge..",
+      "responses": []
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "Clerk",
+      "text": "Sure just which sprongles…",
+      "responses": []
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "Theorist",
+      "text": "With onion of course! What they are not your favorite? Weird guy...",
+      "responses": []
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Clerk",
+      "text": "Cool, so then lets proceed to the purchase",
+      "responses": []
+    },
+    {
+      "editorIndex": 70,
+      "speaker": "Clerk",
+      "text": "There you go it will be 9 NEUROS",
+      "responses": []
+    },
+    {
+      "editorIndex": 80,
+      "speaker": "Theorist",
+      "text": "Nice, thanks dude. At least small shops like yours aren’t bleeding people dry yet. The monopolies… man, they try to suck every last cent they can out of us.",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Clerk",
+      "text": "I have to agree. Happy my owner still has this shop, it is not so easy these days...",
+      "responses": []
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "Theorist",
+      "text": "Yes, especially when they make your appliances spy on you!",
+      "responses": []
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "Clerk",
+      "text": "Wait,what... why do you think that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Theorist",
+      "text": "I have a friend that has a talking fridge. I am certain his fridge is spying on him, too many red flags raised.",
+      "responses": [
+        {
+          "responseText": "Friend?",
+          "nextLineIndex": 130
+        },
+        {
+          "responseText": "That is bollocks",
+          "nextLineIndex": 200
+        },
+        {
+          "responseText": "Continue ",
+          "nextLineIndex": 300
+        }
+      ]
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Clerk",
+      "text": "Who is that friend of yours, can you tell me more?",
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Theorist",
+      "text": "My guy, the beer belly guy? He is funny, always talking with his fridge and chuggin beers.",
+      "responses": []
+    },
+    {
+      "editorIndex": 150,
+      "speaker": "Clerk",
+      "text": "Why does he have a talking Fridge?",
+      "responses": []
+    },
+    {
+      "editorIndex": 151,
+      "speaker": "Theorist",
+      "text": "No clue he is weird, like many other people these days…",
+      "responses": []
+    },
+    {
+      "editorIndex": 152,
+      "speaker": "Clerk",
+      "text": "Ironic...",
+      "responses": []
+    },
+    {
+      "editorIndex": 153,
+      "speaker": "Theorist",
+      "text": "What?",
+      "responses": []
+    },
+    {
+      "editorIndex": 154,
+      "speaker": "Theorist",
+      "text": "Anyway...\nHe was kicked out of the local factory for stealing the materials.",
+      "responses": []
+    },
+    {
+      "editorIndex": 155,
+      "speaker": "Clerk",
+      "text": "Oh, he made the talking Fridge with those materials?",
+      "responses": []
+    },
+    {
+      "editorIndex": 156,
+      "speaker": "Theorist",
+      "text": "No, I helped him make it. He is an idiot. I am the brains behind the operation.",
+      "responses": []
+    },
+    {
+      "editorIndex": 157,
+      "speaker": "Clerk",
+      "text": "Ok, that is curious…But how does he live and buy beer if he is unemployed?",
+      "responses": []
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Theorist",
+      "text": "I have no idea, when I ask him he always avoids the question. That is why so many red flags get raised",
+      "responses": []
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Clerk",
+      "text": "I have so many questions how is that related to the conspiracy?",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Theorist",
+      "text": "Well first of all, he wanted the Fridge to worship him so I helped him create fake memories. But the fridge still doesn't like him, only obeys him, which is fine.\n And then doesn't buy him the right beer and always wants to buy him more, making his alcoholism worse.",
+      "responses": []
+    },
+    {
+      "editorIndex": 181,
+      "speaker": "Clerk",
+      "text": "Wow, I wouldn't expect that. Your theory is still insane.\nBut why don't you make one yourself?" ,
+      "responses": []
+    },
+    {
+      "editorIndex": 182,
+      "speaker": "Theorist",
+      "text": "A servant is useless for me when I can do everything better myself, only my friend is lazy and crazy enough to need one…",
+      "nextLineIndex": 300,
+      "responses": []
+    },
+    
+    {
+      "editorIndex": 200,
+      "speaker": "Clerk",
+      "text": "That is bollocks",
+      "responses": []
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Theorist",
+      "text": "What do you mean man, dont make me mad I can disprove you fast.",
+      "responses": []
+    },
+    {
+      "editorIndex": 211,
+      "speaker": "Clerk",
+      "text": "Oh and how is that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 212,
+      "speaker": "Theorist",
+      "text": "Well, I am smarter. But also I have researched everything, I don't waste my time selling groceries",
+      "responses": []
+    },
+
+    {
+      "editorIndex": 220,
+      "speaker": "Clerk",
+      "text": "…",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Clerk",
+      "text": "You have a big mouth…",
+      "responses": []
+    },
+    {
+      "editorIndex": 231,
+      "speaker": "Theorist",
+      "text": "Yeah, so? I can afford it due to the experience I have",
+      "responses": []
+    },
+    {
+      "editorIndex": 240,
+      "speaker": "Clerk",
+      "text": "Experience?",
+      "responses": []
+    },
+    {
+      "editorIndex": 250,
+      "speaker": "Theorist",
+      "text": "In not being a sheep. I confirm what the government denies. Can you relate? Didn’t think so",
+      "responses": []
+    },
+    {
+      "editorIndex": 260,
+      "speaker": "Clerk",
+      "text": "Oh my god this kid, I am done.",
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Clerk",
+      "text": "Ok, anyway that is interesting but I have work to do",
+      "responses": []
+    },
+    {
+      "editorIndex": 310,
+      "speaker": "Theorist",
+      "text": "Oh you just reminded me I need to pick up a package for him, my beer belly friend. It should be delivered to here",
+      "responses": []
+    },
+    {
+      "editorIndex": 320,
+      "speaker": "Clerk",
+      "text": "For the guy, with the talking fridge you mean?",
+      "responses": []
+    },
+    {
+      "editorIndex": 330,
+      "speaker": "Theorist",
+      "text": "Yes, exactly, he is a bit lazy but I gotta be a good friend, right? ",
+      "responses": []
+    },
+    {
+      "editorIndex": 340,
+      "speaker": "Clerk",
+      "text": "Sounds good but I need your ID card and then his",
+      "responses": []
+    },
+    {
+      "editorIndex": 350,
+      "speaker": "Theorist",
+      "text": "Oh wow no it is not going to be needed it is on my name so you will need only my credentials, am I wrong?",
+      "responses": []
+    },
+    {
+      "editorIndex": 360,
+      "speaker": "Clerk",
+      "text": "Right…You are correct",
+      "responses": []
+    },
+    {
+      "editorIndex": 370,
+      "speaker": "Theorist",
+      "text": "What how don't you know this stuff? It is the first thing you got to learn, even I know it",
+      "responses": []
+    },
+    {
+      "editorIndex": 380,
+      "speaker": "Clerk",
+      "text": "I know it man… just please give me your ID so I can verify",
+      "responses": []
+    },
+    {
+      "editorIndex": 390,
+      "speaker": "Theorist",
+      "text": "Here mate be careful with that thing",
+      "responses": []
+    },
+    {
+      "editorIndex": 400,
+      "speaker": "Clerk",
+      "text": "Cool just give me a second… Yes, it is verified you can have your package",
+      "responses": []
+    },
+    {
+      "editorIndex": 410,
+      "speaker": "Theorist",
+      "text": "Thanks man for the package. You seem pretty down to earth I feel like I can tell you about a business I do maybe you would like to join",
+      "responses": []
+    },
+    {
+      "editorIndex": 420,
+      "speaker": "Clerk",
+      "text": "Sure sounds good, I really wanted to start something on my own, need some more cash",
+      "responses": []
+    },
+    {
+      "editorIndex": 430,
+      "speaker": "Theorist",
+      "text": "Perfect, exactly you make a lot of it with my business plan",
+      "responses": []
+    },
+    {
+      "editorIndex": 440,
+      "speaker": "Clerk",
+      "text": "What is it about?",
+      "responses": []
+    },
+    {
+      "editorIndex": 450,
+      "speaker": "Theorist",
+      "text": "I can connect you with my business partner, you might know him as well",
+      "responses": []
+    },
+    {
+      "editorIndex": 460,
+      "speaker": "Clerk",
+      "text": "What is his name?",
+      "responses": []
+    },
+    {
+      "editorIndex": 470,
+      "speaker": "Theorist",
+      "text": "Well that is the thing, he doesn't like to share many things about himself, he is running away from the government",
+      "responses": []
+    },
+    {
+      "editorIndex": 480,
+      "speaker": "Clerk",
+      "text": "Why what has he done? And why do you work with him?",
+      "responses": []
+    },
+    {
+      "editorIndex": 490,
+      "speaker": "Theorist",
+      "text": "I selling him data that is how I make my money. You can too",
+      "responses": [
+        {
+          "responseText": "Go away",
+          "nextLineIndex": 500
+        },
+        {
+          "responseText": "Listen more",
+          "nextLineIndex": 600
+        },
+        {
+          "responseText": "Shady",
+          "nextLineIndex": 700
+        }
+      ]
+    },
+    {
+      "editorIndex": 500,
+      "speaker": "Clerk",
+      "text": "Alright buddy that’s it I am done with listening more",
+      "responses": []
+    },
+    {
+      "editorIndex": 510,
+      "speaker": "Theorist",
+      "text": "What but I was just getting to the offer remember, right?",
+      "responses": []
+    },
+    {
+      "editorIndex": 520,
+      "speaker": "Clerk",
+      "text": "No I am not interest and I don't want to hear you speak anymore",
+      "responses": []
+    },
+    {
+      "editorIndex": 530,
+      "speaker": "Theorist",
+      "text": "You are losing man, big time, big money. That is what I call a loser",
+      "responses": []
+    },
+    {
+      "editorIndex": 540,
+      "speaker": "Clerk",
+      "text": "What the hell was that...",
+      "endConversationHere": true,
+      "scoreScreenIndex": 1,
+      "responses": []
+    },
+    {
+      "editorIndex": 600,
+      "speaker": "Theorist",
+      "text": "Listen I yapped quite a lot but I will tell you something important to me and it is my cause. This world is going to shit and I will fix it. It needs change and I will bring it…",
+      "responses": [
+        {
+          "responseText": "Reject, send away",
+          "nextLineIndex": 610
+        },
+        {
+          "responseText": "Learn more",
+          "nextLineIndex": 650
+        },
+        {
+          "responseText": "I need your information",
+          "nextLineIndex": 700
+        }
+      ]
+    },
+    {
+      "editorIndex": 610,
+      "speaker": "Clerk",
+      "text": "Ok come dude that is too much",
+      "responses": []
+    },
+    {
+      "editorIndex": 620,
+      "speaker": "Theorist",
+      "text": "What no come on man listen to me…please. I will make you regret your words…",
+      "responses": []
+    },
+    {
+      "editorIndex": 630,
+      "speaker": "Clerk",
+      "text": "No enough of your crazy talk bye. Pss…so scared",
+      "endConversationHere": true,
+      "scoreScreenIndex": 2,
+      "responses": []
+    },
+    {
+      "editorIndex": 650,
+      "speaker": "Clerk",
+      "text": "Come on, man. That’s total BS. I don’t believe a word of that.",
+      "responses": []
+    },
+    {
+      "editorIndex": 660,
+      "speaker": "Theorist",
+      "text": "What do you mean you don’t believe it? Don’t make me mad, man — I can disprove you fast. Because I’m smarter, yo. Simple as that.",
+      "responses": []
+    },
+    {
+      "editorIndex": 670,
+      "speaker": "Clerk",
+      "text": "Sure you are. Anything else? You have a big mouth, you know that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 680,
+      "speaker": "Theorist",
+      "text": "Yeah — I’ve got FACTS. I research stuff. I don’t waste my life selling groceries to zombies.",
+      "responses": []
+    },
+    {
+      "editorIndex": 690,
+      "speaker": "Clerk",
+      "text": "Dude… Alright genius, how old are you again? deep breath… Okay. It wasn’t for you, man.",
+      "responses": []
+    },
+    {
+      "editorIndex": 695,
+      "speaker": "Theorist",
+      "text": "You’re actually one of those “facts don’t matter” people, huh? You’re part of the problem, clerk-man. I’d have to defend myself with knowledge. Dangerous knowledge.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 3,
+      "responses": []
+    },
+    {
+      "editorIndex": 700,
+      "speaker": "Clerk",
+      "text": "Ah you know what you remind me that I need to check something. Can I access a bit more data from you?",
+      "responses": []
+    },
+    {
+      "editorIndex": 710,
+      "speaker": "Theorist",
+      "text": "Yeah sure man I trust you",
+      "responses": []
+    },
+    {
+      "editorIndex": 720,
+      "speaker": "Clerk",
+      "text": "Thank you, business partner. Mmmm and…here…we…go. Perfect all good now in the system you made me a lot…I mean, made my life way easier",
+      "responses": []
+    },
+    {
+      "editorIndex": 730,
+      "speaker": "Theorist",
+      "text": "Of course man, we will keep in touch, Think about what we talked today, they are important things!",
+      "responses": []
+    },
+    {
+      "editorIndex": 740,
+      "speaker": "Clerk",
+      "text": "For sure bye! Loser…",
+      "endConversationHere": true,
+      "scoreScreenIndex": 4,
+      "responses": []
+    }
+  ]
+}

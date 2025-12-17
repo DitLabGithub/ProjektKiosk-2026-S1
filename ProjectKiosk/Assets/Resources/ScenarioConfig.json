@@ -1,15 +1,14 @@
 {
   "shuffleEnabled": true,
   "scenarios": [
+    
+   
     {
-      "filename": "fridgy_scenario",
-      "displayName": "Fridgy",
-      "followUpScenario": ""
-    },
-    {
-      "filename": "AmonScenario",
-      "displayName": "Sussy Amon",
+      "filename": "ConspiracyScenario",
+      "displayName": "Conspiracy Guy",
       "followUpScenario": ""
     }
+    
+
   ]
 }
