@@ -1,0 +1,400 @@
+{
+  "customerName": "Larry Beige",
+  "npcPrefabPath": "NPC_Prefabs/LarryBeige",
+  "idPrefabPath": "ID_Prefabs/LarryBeigeID",
+  "idName": "Larry Beige",
+  "idDOB": "N/A",
+  "idAddress": "N/A",
+  "idIssuer": "Police Department",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": false,
+  "idAllowPictureAccess": false,
+  "requestedItems": [],
+  "lines": [
+    {
+      "editorIndex": 10,
+      "speaker": "Larry Beige",
+      "text": "Hello again cashier, how are you doing",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line1",
+      "responses": []
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Clerk",
+      "text": "Hello mr police man, nice to meet you again",
+      "voiceOverPath": "VoiceOvers/Clerk_Line2",
+      "responses": []
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "Larry Beige",
+      "text": "Please just call me Larry",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line3",
+      "responses": []
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "Clerk",
+      "text": "Alright, Larry. What would you like this time?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line4",
+      "responses": []
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "Larry Beige",
+      "text": "Actually I haven't came here to buy anything",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line5",
+      "responses": []
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Clerk",
+      "text": "Oh, no then why?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line6",
+      "responses": []
+    },
+    {
+      "editorIndex": 70,
+      "speaker": "Clerk",
+      "text": "To chat with me?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line7",
+      "responses": []
+    },
+    {
+      "editorIndex": 80,
+      "speaker": "Larry Beige",
+      "text": "Yes, something like this. See I was just promoted to lead investigator and I am responsible for this town security.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line8",
+      "responses": []
+    },
+    {
+      "editorIndex": 90,
+      "speaker": "Clerk",
+      "text": "That is great congrats!",
+      "voiceOverPath": "VoiceOvers/Clerk_Line9",
+      "responses": []
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "Larry Beige",
+      "text": "Thank you clerk, but that also means I need to carry the investigations myself, we are very understaffed, which complicates everything. That is why there has been a surge of crime recently in this town.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line10",
+      "responses": []
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "Clerk",
+      "text": "Oh, yes that explains the news… Everyone in the town is worried, there is too much crime.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line11",
+      "responses": []
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Larry Beige",
+      "text": "Exactly which is why I cannot let it continue anymore. The previous administration let it happen for too long. Not under me, rules are now different.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line12",
+      "responses": []
+    },
+    {
+      "editorIndex": 130,
+      "speaker": "Clerk",
+      "text": "Understandable. And it is great what you are doing, I will help in any way possible.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line13",
+      "responses": []
+    },
+    {
+      "editorIndex": 140,
+      "speaker": "Clerk",
+      "text": "But I have to ask why are you here?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line14",
+      "responses": []
+    },
+    {
+      "editorIndex": 150,
+      "speaker": "Larry Beige",
+      "text": "Well, you see clerk, I was recently promoted to this position, so I didn't have time to look in depth in this particular case but…",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line15",
+      "responses": []
+    },
+    {
+      "editorIndex": 160,
+      "speaker": "Larry Beige",
+      "text": "Your shop was in the middle of all data breaches in the town.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line16",
+      "responses": []
+    },
+    {
+      "editorIndex": 170,
+      "speaker": "Clerk",
+      "text": "What?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line17",
+      "responses": []
+    },
+    {
+      "editorIndex": 180,
+      "speaker": "Larry Beige",
+      "text": "All the suspicious activities in the town are revolving around here. Could you care to explain how that is possible, all the facts are pointing me to here.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line18",
+      "responses": []
+    },
+    {
+      "editorIndex": 190,
+      "speaker": "Clerk",
+      "text": "No but that is not possible, there has to been a mistake!",
+      "voiceOverPath": "VoiceOvers/Clerk_Line19",
+      "responses": []
+    },
+    {
+      "editorIndex": 200,
+      "speaker": "Larry Beige",
+      "text": "I can’t still say for sure but maybe you have something to tell me?",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line20",
+      "responses": [
+        {
+          "responseText": "I can explain everything/Mention Shady - Neutral",
+          "nextLineIndex": 210
+        },
+        {
+          "responseText": "Deny - You have come here to interrogate me? - Very Bad",
+          "nextLineIndex": 300
+        },
+        {
+          "responseText": "Say Nothing - Good(for now)",
+          "nextLineIndex": 400
+        }
+      ]
+    },
+    {
+      "editorIndex": 210,
+      "speaker": "Larry Beige",
+      "text": "I am all ears, I would like to hear your side of the story",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line21",
+      "responses": []
+    },
+    {
+      "editorIndex": 220,
+      "speaker": "Clerk",
+      "text": "I can explain everything! I only had one encounter.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line22",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Larry Beige",
+      "text": "Yes come on tell me more. The more you speak the better for you and town",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line23",
+      "responses": []
+    },
+    {
+      "editorIndex": 240,
+      "speaker": "Clerk",
+      "text": "There was a shady guy that came to the Kiosk and demanded information. I didn't get a lot of information because I immediately sent him away.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line24",
+      "responses": []
+    },
+    {
+      "editorIndex": 250,
+      "speaker": "Larry Beige",
+      "text": "He didn't mention anything? Or anything you noticed?",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line25",
+      "responses": []
+    },
+    {
+      "editorIndex": 260,
+      "speaker": "Clerk",
+      "text": "He had a white coat and his face was a bit hidden so it was hard to see him well. What I remember is he offered 1000 NEUROS",
+      "voiceOverPath": "VoiceOvers/Clerk_Line26",
+      "responses": []
+    },
+    {
+      "editorIndex": 270,
+      "speaker": "Larry Beige",
+      "text": "That is a sizable reward why did you turn it down?",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line27",
+      "responses": []
+    },
+    {
+      "editorIndex": 280,
+      "speaker": "Clerk",
+      "text": "I am not mad, the money is good but the crimes I commit are way higher.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line28",
+      "responses": []
+    },
+    {
+      "editorIndex": 281,
+      "speaker": "Larry Beige",
+      "text": "Well said Cashier, that will certainly help.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line28_1",
+      "responses": []
+    },
+    {
+      "editorIndex": 282,
+      "speaker": "Clerk",
+      "text": "So that was it for now?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line28_2",
+      "responses": []
+    },
+    {
+      "editorIndex": 283,
+      "speaker": "Larry Beige",
+      "text": "I certainly cannot conclude anything with this information but I have my suspicions",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line28_3",
+      "responses": []
+    },
+    {
+      "editorIndex": 284,
+      "speaker": "Clerk",
+      "text": "I will report anything out of the ordinary I see, I promise!",
+      "voiceOverPath": "VoiceOvers/Clerk_Line28_4",
+      "responses": []
+    },
+    {
+      "editorIndex": 285,
+      "speaker": "Larry Beige",
+      "text": "I trust you on that kid. Shall see you soon, take care",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line28_5",
+      "endConversationHere": true,
+      "scoreScreenIndex": 2,
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Clerk",
+      "text": "I don’t want to answer such questions, I am innocent. I have the right to stay silent… And this is not a good look for you… You have come here to interrogate me?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line30",
+      "responses": []
+    },
+    {
+      "editorIndex": 310,
+      "speaker": "Larry Beige",
+      "text": "You are annoying me, clerk.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line31",
+      "responses": []
+    },
+    {
+      "editorIndex": 320,
+      "speaker": "Clerk",
+      "text": "I am so sorry, I didn’t want to sound rude.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line32",
+      "responses": []
+    },
+    {
+      "editorIndex": 330,
+      "speaker": "Larry Beige",
+      "text": "It doesn't matter anymore, it is too late and you are delaying the investigation. I cannot allow that. I will issue you a fine",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line33",
+      "responses": []
+    },
+    {
+      "editorIndex": 340,
+      "speaker": "Clerk",
+      "text": "WHAT, no please…",
+      "voiceOverPath": "VoiceOvers/Clerk_Line34",
+      "responses": []
+    },
+    {
+      "editorIndex": 350,
+      "speaker": "Larry Beige",
+      "text": "200 NEUROS, may that be a lesson for you..",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line35",
+      "responses": []
+    },
+    {
+      "editorIndex": 360,
+      "speaker": "Clerk",
+      "text": "I am sorry, please I will do what you want!",
+      "voiceOverPath": "VoiceOvers/Clerk_Line36",
+      "responses": []
+    },
+    {
+      "editorIndex": 370,
+      "speaker": "Larry Beige",
+      "text": "As I said too late for that. Watch it next time, I don’t be stupid",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line37",
+      "responses": []
+    },
+    {
+      "editorIndex": 380,
+      "speaker": "Clerk",
+      "text": "I understand, it won’t happen again.",
+      "voiceOverPath": "VoiceOvers/Clerk_Line38",
+      "responses": []
+    },
+    {
+      "editorIndex": 390,
+      "speaker": "Larry Beige",
+      "text": "It better not, see you soon",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line39",
+      "endConversationHere": true,
+      "scoreScreenIndex": 3,
+      "responses": []
+    },
+    {
+      "editorIndex": 400,
+      "speaker": "Larry Beige",
+      "text": "You sure that you know nothing about the illegal dealings of data around this town, your shop seems to pop up every single time",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line40",
+      "responses": []
+    },
+    {
+      "editorIndex": 410,
+      "speaker": "Clerk",
+      "text": "I know nothing. Yes, there probably has been a mistake",
+      "voiceOverPath": "VoiceOvers/Clerk_Line41",
+      "responses": []
+    },
+    {
+      "editorIndex": 420,
+      "speaker": "Larry Beige",
+      "text": "A mistake is one thing but your shop seems to be in the middle of these deals",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line42",
+      "responses": []
+    },
+    {
+      "editorIndex": 430,
+      "speaker": "Clerk",
+      "text": "What deals are you talking about? Stealing data? As I said there is nothing I know…",
+      "voiceOverPath": "VoiceOvers/Clerk_Line43",
+      "responses": []
+    },
+    {
+      "editorIndex": 440,
+      "speaker": "Larry Beige",
+      "text": "Well for now my hands seem to be tied, I don't have the evidence to prove or disprove your innocence.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line44",
+      "responses": []
+    },
+    {
+      "editorIndex": 450,
+      "speaker": "Clerk",
+      "text": "I will be awaiting a new return to help the investigation. I would like to catch criminals as much as you…",
+      "voiceOverPath": "VoiceOvers/Clerk_Line45",
+      "responses": []
+    },
+    {
+      "editorIndex": 460,
+      "speaker": "Larry Beige",
+      "text": "I don’t doubt that even a single bit…",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line46",
+      "responses": []
+    },
+    {
+      "editorIndex": 470,
+      "speaker": "Larry Beige",
+      "text": "I will be going take care and make sure to keep an eye out",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line47",
+      "responses": []
+    },
+    {
+      "editorIndex": 480,
+      "speaker": "Clerk",
+      "text": "Will do sir! Take care",
+      "voiceOverPath": "VoiceOvers/Clerk_Line48",
+      "endConversationHere": true,
+      "scoreScreenIndex": 1,
+      "responses": []
+    }
+  ]
+}
