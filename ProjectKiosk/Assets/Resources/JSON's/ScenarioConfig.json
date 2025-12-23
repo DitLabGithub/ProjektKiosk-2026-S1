@@ -1,0 +1,51 @@
+{
+  "shuffleEnabled": true,
+  "scenarios": [
+  
+    {
+      "filename": "ConspiracyGuy_Scenario",
+      "displayName": "Conspiracy Guy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "Fridgy_Scenario",
+      "displayName": "Fridgy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "ShadyGuy_Intro_Scenario",
+      "displayName": "Shady Guy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "PoliceGuy_Intro_Scenario",
+      "displayName": "Police Guy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "PoliceGuy_Warning_Scenario",
+      "displayName": "Police Guy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "PoliceGuy_Arrest_Scenario",
+      "displayName": "Police Guy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "Amon_Scenario",
+      "displayName": "Amon",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "Hoss_Scenario",
+      "displayName": "Hoss",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "Robin_Scenario",
+      "displayName": "Robin",
+      "followUpScenario": ""
+    }
+  ]
+}

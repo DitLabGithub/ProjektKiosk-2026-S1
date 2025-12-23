@@ -1,6 +1,6 @@
 {
   "customerName": "Theorist",
-  "npcPrefabPath": "NPC_Prefabs/ConspiracyGuy",
+  "npcPrefabPath": "NPC_Prefabs/ConspiracyGuy_Scenario",
   "idPrefabPath": "ID_Prefabs/ConspiracyTheoristID",
   "idName": "Unknown User",
   "idDOB": "Over 18",
