@@ -1,6 +1,6 @@
 {
   "customerName": "Theorist",
-  "npcPrefabPath": "NPC_Prefabs/ConspiracyGuy_Scenario",
+  "npcPrefabPath": "NPC_Prefabs/ConspiracyGuy",
   "idPrefabPath": "ID_Prefabs/ConspiracyTheoristID",
   "idName": "Unknown User",
   "idDOB": "Over 18",
@@ -380,11 +380,13 @@
         },
         {
           "responseText": "Listen more",
-          "nextLineIndex": 600
+          "nextLineIndex": 600,
+          "scoreValue": 5
         },
         {
           "responseText": "Shady",
-          "nextLineIndex": 700
+          "nextLineIndex": 700,
+          "scoreValue": 15
         }
       ]
     },
@@ -431,11 +433,13 @@
         },
         {
           "responseText": "Learn more",
-          "nextLineIndex": 650
+          "nextLineIndex": 650,
+          "scoreValue": 10
         },
         {
           "responseText": "I need your information",
-          "nextLineIndex": 700
+          "nextLineIndex": 700,
+          "scoreValue": 10
         }
       ]
     },

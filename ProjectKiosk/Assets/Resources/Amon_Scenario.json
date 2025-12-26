@@ -55,7 +55,8 @@
         },
         {
           "responseText": "Sure! ",
-          "nextLineIndex": 380
+          "nextLineIndex": 380,
+          "scoreValue": 15
         }
       ]
     },
@@ -88,7 +89,8 @@
         },
         {
           "responseText": "Could I get your postcode? ",
-          "nextLineIndex": 300
+          "nextLineIndex": 300,
+          "scoreValue": 3
         },
         {
           "responseText": "I have all I need.",
@@ -177,7 +179,8 @@
         },
         {
           "responseText": "Sure!",
-          "nextLineIndex": 430
+          "nextLineIndex": 430,
+          "scoreValue": 12
         }
       ]
     },
@@ -312,7 +315,8 @@
         {
           "responseText": "Make the sale",
           "nextLineIndex": 260,
-          "isMakeSaleResponse": true
+          "isMakeSaleResponse": true,
+          "scoreValue": 8
         },
         {
           "responseText": "Don't make the sale",

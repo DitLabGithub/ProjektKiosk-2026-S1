@@ -1084,14 +1084,14 @@ public class DialogueManager : MonoBehaviour
             AudioClip clipToPlay = line.voiceOverClip;
 
             // If no clip is assigned but a path is provided, try loading from Resources
-            if (clipToPlay == null && !string.IsNullOrEmpty(line.voiceOverPath))
+            /*if (clipToPlay == null && !string.IsNullOrEmpty(line.voiceOverPath))
             {
-                clipToPlay = Resources.Load<AudioClip>(line.voiceOverPath);
-                if (clipToPlay == null)
-                {
+                //clipToPlay = Resources.Load<AudioClip>(line.voiceOverPath);
+                //if (clipToPlay == null)
+                /*{
                     Debug.LogWarning($"Voice-over not found at path: {line.voiceOverPath}");
                 }
-            }
+            }*/
 
             // Play the clip if we have one
             if (clipToPlay != null)

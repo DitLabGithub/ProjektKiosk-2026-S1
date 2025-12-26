@@ -58,7 +58,7 @@
         {
           "responseText": "Continue",
           "nextLineIndex": 140,
-          "scoreValue": 15
+          "scoreValue": 10
         }
       ],
       "disableContinueButton": true
@@ -520,7 +520,8 @@
         {
           "responseText": "Make Sale (No ID)",
           "nextLineIndex": 1600,
-          "isMakeSaleResponse": true
+          "isMakeSaleResponse": true,
+          "scoreValue": 10
         }
       ],
       "disableContinueButton": true
@@ -567,7 +568,8 @@
         },
         {
           "responseText": "Shady…",
-          "nextLineIndex": 1300
+          "nextLineIndex": 1300,
+          "scoreValue": 12
         }
       ],
       "disableContinueButton": true,
@@ -898,11 +900,13 @@
         },
         {
           "responseText": "More Fridgy ID",
-          "nextLineIndex": 1400
+          "nextLineIndex": 1400,
+          "scoreValue": 6
         },
         {
           "responseText": "More Owner ID",
-          "nextLineIndex": 1500
+          "nextLineIndex": 1500,
+          "scoreValue": 8
         }
       ],
       "disableContinueButton": true
