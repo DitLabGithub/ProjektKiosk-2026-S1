@@ -135,7 +135,9 @@ public class ScenarioManager : MonoBehaviour
 
     public bool HasMoreScenarios()
     {
-        return scenarioQueue.Count > 0;
+        bool hasMore = scenarioQueue.Count > 0;
+        Debug.Log($"[ScenarioManager] HasMoreScenarios() called. Queue count: {scenarioQueue.Count}, Returning: {hasMore}");
+        return hasMore;
     }
 
     public string GetNextScenarioFilename()
@@ -212,5 +214,6 @@ public class ScenarioManager : MonoBehaviour
         scenarioQueue = tempQueue;
 
         Debug.Log($"[ScenarioManager] Police scenario queued. Next scenario will be: {policeScenario.jsonFileName}");
+        Debug.Log($"[ScenarioManager] Queue now has {scenarioQueue.Count} scenarios remaining");
     }
 }

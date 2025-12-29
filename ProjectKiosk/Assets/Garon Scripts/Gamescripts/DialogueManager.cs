@@ -550,7 +550,7 @@ public class DialogueManager : MonoBehaviour
         // Check if the scenario that just finished was the Police Arrest scenario
         // If so, END THE GAME (don't continue to more scenarios)
         if (!string.IsNullOrEmpty(currentJsonScenarioFilename) &&
-            currentJsonScenarioFilename == "PoliceGuy2Scenario")
+            currentJsonScenarioFilename == "PoliceGuy_Arrest_Scenario")
         {
             Debug.Log("[DialogueManager] Police Arrest scenario completed. Game Over - showing end credits.");
 
@@ -597,6 +597,12 @@ public class DialogueManager : MonoBehaviour
                                 (useScenarioManager && scenarioManager.HasMoreScenarios()) ||
                                 (!useScenarioManager && currentCustomerIndex < customers.Count + jsonCustomerFileNames.Count);
 
+        Debug.Log($"[DialogueManager] OnScoreContinue - Checking for more scenarios:");
+        Debug.Log($"  useScenarioManager: {useScenarioManager}");
+        Debug.Log($"  scenarioManager.HasMoreScenarios(): {(useScenarioManager ? scenarioManager.HasMoreScenarios().ToString() : "N/A")}");
+        Debug.Log($"  scenarioManager.GetRemainingScenarioCount(): {(useScenarioManager ? scenarioManager.GetRemainingScenarioCount().ToString() : "N/A")}");
+        Debug.Log($"  hasMoreScenarios: {hasMoreScenarios}");
+
         if (hasMoreScenarios)
         {
             if (currentCustomerIndex < customers.Count)
@@ -628,6 +634,7 @@ public class DialogueManager : MonoBehaviour
                 }
 
                 currentJsonScenarioFilename = filename; // Track current scenario
+                Debug.Log($"[DialogueManager] Loading scenario: {filename}");
                 currentJsonCustomer = LoadCustomerFromJSON(filename);
 
                 if (currentJsonCustomer != null)

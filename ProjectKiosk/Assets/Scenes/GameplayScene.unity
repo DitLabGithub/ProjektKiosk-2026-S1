@@ -8838,11 +8838,11 @@ MonoBehaviour:
   policeScenarios:
   - scenarioName: Police Warning Visit
     scoreThreshold: 50
-    jsonFileName: JSON's/PoliceGuy_Warning_Scenario
+    jsonFileName: PoliceGuy_Warning_Scenario
     triggered: 0
   - scenarioName: Police Arrest
-    scoreThreshold: 70
-    jsonFileName: JSON's/PoliceGuy_Arrest_Scenario
+    scoreThreshold: 80
+    jsonFileName: PoliceGuy_Arrest_Scenario
     triggered: 0
 --- !u!4 &1934233170
 Transform:

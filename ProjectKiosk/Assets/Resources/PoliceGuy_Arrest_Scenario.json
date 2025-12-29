@@ -1,7 +1,7 @@
 {
   "customerName": "Larry Beige",
   "npcPrefabPath": "NPC_Prefabs/PoliceGuy2",
-  "idPrefabPath": "ID_Prefabs/PoliceGuy2",
+  "idPrefabPath": "ID_Prefabs/PoliceGuy",
   "idName": "Larry Beige",
   "idDOB": "Over 18",
   "idAddress": "N/A",
