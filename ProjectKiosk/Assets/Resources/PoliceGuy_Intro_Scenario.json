@@ -1,22 +1,22 @@
 {
   "customerName": "Larry Beige",
-  "npcPrefabPath": "NPC_Prefabs/PoliceGuy_Intro_Scenario",
-  "idPrefabPath": "ID_Prefabs/LarryBeigeID",
+  "npcPrefabPath": "NPC_Prefabs/PoliceGuy2",
+  "idPrefabPath": "ID_Prefabs/PoliceGuy2",
   "idName": "Larry Beige",
-  "idDOB": "31",
+  "idDOB": "Over 18",
   "idAddress": "N/A",
   "idIssuer": "Police Department",
-  "idAllowNameAccess": false,
+  "idAllowNameAccess": true,
   "idAllowDOBAccess": false,
   "idAllowAddressAccess": false,
-  "idAllowIssuerAccess": false,
-  "idAllowPictureAccess": false,
-  "requestedItems": ["Hotshots", "Chicken Jerky"],
+  "idAllowIssuerAccess": true,
+  "idAllowPictureAccess": true,
   "lines": [
     {
       "editorIndex": 10,
       "speaker": "Larry Beige",
       "text": "Hello, nice to meet you. I am Beige, Larry Beige.",
+      "npcSprite": "PoliceGuy2",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_10",
       "responses": []
     },
@@ -30,7 +30,7 @@
     {
       "editorIndex": 30,
       "speaker": "Larry Beige",
-      "text": "The local police officer? Yes indeed, in the flesh. Have you heard about me?",
+      "text": "The local police officer? Yes indeed, in the flesh. You heard about me?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_30",
       "responses": []
     },
@@ -44,14 +44,14 @@
     {
       "editorIndex": 50,
       "speaker": "Larry Beige",
-      "text": "Thank you for nice words, clerk, I just want to get quick things before I return to work.",
+      "text": "Thank you for the nice words, clerk, I just want to get quick things before I return to work.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_50",
       "responses": []
     },
     {
       "editorIndex": 60,
       "speaker": "Clerk",
-      "text": "I see why you came here, we don't have the biggest variety, it is hard to stock when the big companies get all the goods at good prices, we are left with scraps and recently profits are running low…",
+      "text": "Ah makes sense, we don't have the biggest variety, it is hard to stock when the big companies get all the goods at good prices, we are left with scraps and recently profits are running low…",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_60",
       "responses": []
     },
@@ -65,14 +65,14 @@
     {
       "editorIndex": 80,
       "speaker": "Clerk",
-      "text": "Oh thank you Larry, he has his moments, what would you like to get?",
+      "text": "He has his moments but thank you, what would you like to get?",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_80",
       "responses": []
     },
     {
       "editorIndex": 90,
       "speaker": "Larry Beige",
-      "text": "Could I get a pack of hotshots… And I would also like Chicken Jerky, thank you.",
+      "text": "Could I get a pack of hotshots… And I would also like Chicken Jerky, please.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_90",
       "responses": []
     },
@@ -83,15 +83,11 @@
       "voiceOverPath": "VoiceOvers/Clerk_Intro_100",
       "responses": [
         {
-          "responseText": "Skip ID Check (Minor Mistake/Bad Outcome)",
+          "responseText": "No ID Check",
           "nextLineIndex": 110
         },
         {
-          "responseText": "Ask to Skip ID Check (Branch 2)",
-          "nextLineIndex": 300
-        },
-        {
-          "responseText": "Check ID (Perfect Compliance)",
+          "responseText": "Check ID",
           "nextLineIndex": 500
         }
       ]
@@ -114,15 +110,22 @@
     {
       "editorIndex": 130,
       "speaker": "Larry Beige",
-      "text": "Oh nice I always hate when they waste my time with checking IDs",
+      "text": "Ok interesting choice…",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_130",
       "responses": []
     },
     {
       "editorIndex": 140,
       "speaker": "Clerk",
-      "text": "Ha, Yes! I give the customer what they really want without making the wait.",
+      "text": "I give the customer what they really want without making them wait.",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_140",
+      "responses": []
+    },
+     {
+      "editorIndex": 141,
+      "speaker": "Clerk",
+      "text": "There you go ",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_160",
       "responses": []
     },
     {
@@ -132,13 +135,7 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_150",
       "responses": []
     },
-    {
-      "editorIndex": 160,
-      "speaker": "Clerk",
-      "text": "There you go (Brings goods)",
-      "voiceOverPath": "VoiceOvers/Clerk_Intro_160",
-      "responses": []
-    },
+   
     {
       "editorIndex": 170,
       "speaker": "Larry Beige",
@@ -146,11 +143,11 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_170",
       "responses": [
         {
-          "responseText": "Reject Smoking (Bad Outcome)",
+          "responseText": "No, go away ",
           "nextLineIndex": 180
         },
         {
-          "responseText": "Allow Smoking (Minor Mistake Outcome)",
+          "responseText": "Yes of course ",
           "nextLineIndex": 240
         }
       ]
@@ -166,7 +163,7 @@
     {
       "editorIndex": 190,
       "speaker": "Larry Beige",
-      "text": "What the hell is this, It is going to be real quick",
+      "text": "What but there is no one, It is going to be real quick",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_190",
       "responses": []
     },
@@ -194,13 +191,19 @@
     {
       "editorIndex": 230,
       "speaker": "Larry Beige",
-      "text": "I wanted to just sit and chat for a bit, but now I have more questions. If I get the case, I will be back for more questions. You did well clerk, now you are on my radar…",
+      "text": "I wanted to just sit and chat for a bit, but now I have more questions. If I get the case, I will be back for more questions. Well done clerk, now you are on my radar…",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_230",
+      "responses": []
+    },
+    {
+      "editorIndex": 231,
+      "speaker": "Larry Beige",
+      "text": "Good luck, kid" ,
+      "voiceOverPath": "VoiceOvers/LarryBeige_Intro_231",
       "endConversationHere": true,
       "scoreScreenIndex": 4,
       "responses": []
     },
-    
     {
       "editorIndex": 240,
       "speaker": "Clerk",
@@ -225,7 +228,7 @@
     {
       "editorIndex": 270,
       "speaker": "Larry Beige",
-      "text": "Catching criminals! HA, but not really. There have been mostly cyber crimes recently, I am still preparing my documents.",
+      "text": "Catching criminals! HA, but not really. There have been mostly cyber crimes nowadays, I am still preparing my documents.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_270",
       "responses": []
     },
@@ -239,15 +242,15 @@
     {
       "editorIndex": 290,
       "speaker": "Larry Beige",
-      "text": "Legally no I need to have special clearance for it. And I need to get the official course on SSI to be considered eligible. Now clerk, I have a question why didn't you check my ID and follow the SSI procedure. You know this is not legally correct?",
+      "text": "Legally no I need to have special clearance for it. And I need to get the official course on SSI to be considered eligible, to question people on the rules. Now clerk, I have a question why didn't you check my ID and follow the SSI procedure. You know this is not legally correct?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_290",
       "responses": [
         {
-          "responseText": "Sorry (Minor Mistake Outcome)",
+          "responseText": "Sorry",
           "nextLineIndex": 600
         },
         {
-          "responseText": "Shady (Shady Outcome)",
+          "responseText": "Shady",
           "nextLineIndex": 700
         }
       ]
@@ -260,16 +263,23 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_300",
       "responses": [
         {
-          "responseText": "Agree with him (Bad Outcome)",
-          "nextLineIndex": 110
+          "responseText": "Agree with him",
+          "nextLineIndex": 309
         },
         {
-          "responseText": "Explain SSI rules (Perfect Compliance)",
+          "responseText": "Explain SSI rules",
           "nextLineIndex": 310
         }
       ]
     },
-    
+    {
+      "editorIndex": 309,
+      "speaker": "Clerk",
+      "text": "Yeah makes sense actually SSI is not that important",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_310",
+      "nextLineIndex": 110,
+      "responses": []
+    },
     {
       "editorIndex": 310,
       "speaker": "Clerk",
@@ -287,29 +297,29 @@
     {
       "editorIndex": 330,
       "speaker": "Clerk",
-      "text": "Good thing I pay attention to SSI then, ok all good now! (ID Verified)",
+      "text": "Good thing I pay attention to SSI then, ok all good now!",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_330",
       "responses": []
     },
     {
       "editorIndex": 340,
       "speaker": "Clerk",
-      "text": "There you go (Brings goods)",
+      "text": "There you go",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_340",
       "responses": []
     },
     {
       "editorIndex": 350,
       "speaker": "Larry Beige",
-      "text": "Also you mind if I smoke one here real quick?",
+      "text": "Also you mind if I smoke one here, real quick?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_350",
       "responses": [
         {
-          "responseText": "Accept (Great/Good/Shady Outcome)",
+          "responseText": "Accept",
           "nextLineIndex": 360
         },
         {
-          "responseText": "Reject (Bad Outcome)",
+          "responseText": "Reject",
           "nextLineIndex": 180
         }
       ]
@@ -357,15 +367,15 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_410",
       "responses": [
         {
-          "responseText": "More (Great Outcome)",
+          "responseText": "More",
           "nextLineIndex": 420
         },
         {
-          "responseText": "Bye (Good Outcome)",
+          "responseText": "Bye",
           "nextLineIndex": 470
         },
         {
-          "responseText": "More info (Shady Outcome)",
+          "responseText": "More info",
           "nextLineIndex": 700
         }
       ]
@@ -442,14 +452,14 @@
     {
       "editorIndex": 520,
       "speaker": "Clerk",
-      "text": "Good thing I pay attention to SSI then, ok all good now! (ID Verified)",
+      "text": "Good thing I pay attention to SSI then, ok all good now!",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_520",
       "responses": []
     },
     {
       "editorIndex": 530,
       "speaker": "Clerk",
-      "text": "There you go (Brings goods)",
+      "text": "There you go",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_530",
       "responses": []
     },
@@ -460,11 +470,11 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_540",
       "responses": [
         {
-          "responseText": "Accept (Great/Good/Shady Outcome)",
+          "responseText": "Accept",
           "nextLineIndex": 360
         },
         {
-          "responseText": "Reject (Bad Outcome)",
+          "responseText": "Reject",
           "nextLineIndex": 180
         }
       ]
@@ -486,7 +496,7 @@
     {
       "editorIndex": 620,
       "speaker": "Clerk",
-      "text": "Yes, again I am sorry. It won't happen again. Yes sir, I normally check everything by the book, today I slipped, only today",
+      "text": "Yes, again I am sorry. It won't happen again.",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
       "responses": []
     },
@@ -495,21 +505,84 @@
       "speaker": "Larry Beige",
       "text": "Clerk, this time I close my eyes but be careful, next time I wont be so forgiving. You are lucky today I am in my good mood. Will see you again. By then take care, and be more careful…",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_630",
+      "responses": []
+    },
+    {
+      "editorIndex": 631,
+      "speaker": "Clerk",
+      "text": "Yes sir, I normally check everything by the book, today I slipped, only today",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
+      "responses": []
+    },
+    {
+      "editorIndex": 632,
+      "speaker": "Larry Beige",
+      "text": "Time will show, I will keep an eye on you…",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
+      "responses": []
+    },
+    {
+      "editorIndex": 633,
+      "speaker": "Larry Beige",
+      "text": "Will see you again. By then take care, and be more careful...",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
+      "responses": []
+    },
+    {
+      "editorIndex": 634,
+      "speaker": "Clerk",
+      "text": "Yes sir, good luck on your promotion!",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
+      "responses": []
+    },
+    {
+      "editorIndex": 635,
+      "speaker": "Clerk",
+      "text": "You take care too...",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
       "endConversationHere": true,
-      "scoreScreenIndex": 3,
+      "scoreScreenIndex": 5,
       "responses": []
     },
     {
       "editorIndex": 700,
       "speaker": "Clerk",
-      "text": "Sorry, I don't know how it slipped, can I have some of your information. I missed up but I want to do it by the book, I am sorry for the inconvenience",
+      "text": "Sorry, I don't know how it slipped, can I have some of your information. ",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_700",
+      "responses": []
+    },
+{
+      "editorIndex": 701,
+      "speaker": "Larry Beige",
+      "text": "And why is that?",
+      "voiceOverPath": "VoiceOvers/Clerk_Intro_700",
+      "responses": []
+    },
+{
+      "editorIndex": 702,
+      "speaker": "Clerk",
+      "text": "I messed up but I want to do it by the book, I am sorry for the inconvenience",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_700",
       "responses": []
     },
     {
       "editorIndex": 710,
       "speaker": "Larry Beige",
-      "text": "Sure if this is the legal way I consent. Can I have my card again, clerk?",
+      "text": "Sure if this is the legal way I consent.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Intro_710",
+      "responses": []
+    },
+    {
+      "editorIndex": 711,
+      "speaker": "Clerk",
+      "text": "Thank you and...here we are done",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Intro_710",
+      "responses": []
+    },
+    {
+      "editorIndex": 712,
+      "speaker": "Larry Beige",
+      "text": "Can I have my card again, clerk?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_710",
       "responses": []
     },
@@ -528,9 +601,22 @@
       "responses": []
     },
     {
+      "editorIndex": 731,
+      "speaker": "Clerk",
+      "text": "HA, well take care Larry!",
+      "responses": []
+    },
+    {
+      "editorIndex": 732,
+      "speaker": "Larry Beige",
+      "text": "You too clerk, please call me Beige or mr Beige.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Intro_730",
+      "responses": []
+    },
+    {
       "editorIndex": 740,
       "speaker": "Clerk",
-      "text": "HA, well take care Larry! Oh ok…mr Beige",
+      "text": "Oh ok…mr Beige",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_740",
       "endConversationHere": true,
       "scoreScreenIndex": 5,
