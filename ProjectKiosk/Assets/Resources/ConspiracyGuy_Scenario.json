@@ -11,10 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": false,
-  "requestedItems": [
-    "chicken jerky",
-    "sproingles"
-  ],
+  "requestedItems": [ 15 ],
   "lines": [
     {
       "editorIndex": 10,
@@ -32,19 +29,7 @@
     {
       "editorIndex": 30,
       "speaker": "Theorist",
-      "text": "Could you grab me a pack of chicken jerky and sproingles but the better ones really have strong craving dont judge..",
-      "responses": []
-    },
-    {
-      "editorIndex": 40,
-      "speaker": "Clerk",
-      "text": "Sure just which sprongles…",
-      "responses": []
-    },
-    {
-      "editorIndex": 50,
-      "speaker": "Theorist",
-      "text": "With onion of course! What they are not your favorite? Weird guy...",
+      "text": "Could you grab me a pack of chicken jerky but the better ones really have strong craving dont judge..",
       "responses": []
     },
     {
@@ -54,15 +39,68 @@
       "responses": []
     },
     {
+      "editorIndex": 60,
+      "speaker": "Clerk",
+      "text": "Before we continue,",
+      "responses": [
+        {
+          "responseText": "Make Sale",
+          "nextLineIndex": 70
+        },
+        {
+          "responseText": "Could I get your ID ?",
+          "nextLineIndex": 81
+        }
+      ]
+    },
+    {
       "editorIndex": 70,
       "speaker": "Clerk",
       "text": "There you go it will be 9 NEUROS",
+      "responses": [
+        {
+          "responseText": "Make Sale",
+          "nextLineIndex": 86,
+          "isMakeSaleResponse": true
+        }
+      ]
+    },
+    {
+      "editorIndex": 81,
+      "speaker": "Clerk",
+      "text": "Can I get your ID?",
       "responses": []
     },
     {
-      "editorIndex": 80,
+      "editorIndex": 82,
+      "speaker": "Theorist",
+      "text": "Yes, here you go!",
+      "askForID": true,
+      "responses": []
+    },
+    {
+      "editorIndex": 83,
+      "speaker": "Clerk",
+      "text": "Thank you!",
+      "responses": []
+    },
+    {
+      "editorIndex": 84,
+      "speaker": "Theorist",
+      "text": "Now, can I get my Jerky?",
+      "responses": []
+    },
+    {
+      "editorIndex": 85,
+      "speaker": "Clerk",
+      "text": "Here you go!",
+      "responses": []
+    },
+    {
+      "editorIndex": 86,
       "speaker": "Theorist",
       "text": "Nice, thanks dude. At least small shops like yours aren’t bleeding people dry yet. The monopolies… man, they try to suck every last cent they can out of us.",
+      "nextLineIndex": 90,
       "responses": []
     },
     {

@@ -3058,8 +3058,8 @@ MonoBehaviour:
   businessCardImage: {fileID: 0}
   customers: []
   jsonCustomerFileNames:
-  - HossScenario
-  - ShaunBakersScenario
+  - Hoss_Scenario
+  - ShadyGuy_Intro_Scenario
   - PoliceGuy_Intro_Scenario
   scenarioManager: {fileID: 0}
   scoreScreens:

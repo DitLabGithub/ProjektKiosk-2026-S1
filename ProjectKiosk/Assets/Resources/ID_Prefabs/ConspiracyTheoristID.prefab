@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProfileImage: {fileID: 21300000, guid: b9cafe44cc0e1a84194b41801f8eb7c6, type: 3}
   Name: Shuan, Bakers
-  DOB: 'Is over 18: Yes'
+  DOB: Over 18
   Address: N/A
   Issuer: Groningen
   allowDOBAccess: 0

@@ -6,11 +6,12 @@
   "idDOB": "Over 18",
   "idAddress": "N/A",
   "idIssuer": "Police Department",
-  "idAllowNameAccess": true,
+  "idAllowNameAccess": false,
   "idAllowDOBAccess": false,
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
-  "idAllowPictureAccess": true,
+  "idAllowPictureAccess": false,
+  "requestedItems": [ 11 ],
   "lines": [
     {
       "editorIndex": 10,
@@ -92,7 +93,7 @@
         }
       ]
     },
-    
+
     {
       "editorIndex": 110,
       "speaker": "Larry Beige",
@@ -121,12 +122,18 @@
       "voiceOverPath": "VoiceOvers/Clerk_Intro_140",
       "responses": []
     },
-     {
+    {
       "editorIndex": 141,
       "speaker": "Clerk",
       "text": "There you go ",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_160",
-      "responses": []
+      "responses": [
+        {
+          "responseText": "Make the sale",
+          "nextLineIndex": 150,
+          "isMakeSaleResponse": true
+        }
+      ]
     },
     {
       "editorIndex": 150,
@@ -135,7 +142,7 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_150",
       "responses": []
     },
-   
+
     {
       "editorIndex": 170,
       "speaker": "Larry Beige",
@@ -152,7 +159,7 @@
         }
       ]
     },
-    
+
     {
       "editorIndex": 180,
       "speaker": "Clerk",
@@ -198,7 +205,7 @@
     {
       "editorIndex": 231,
       "speaker": "Larry Beige",
-      "text": "Good luck, kid" ,
+      "text": "Good luck, kid",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_231",
       "endConversationHere": true,
       "scoreScreenIndex": 4,
@@ -255,7 +262,7 @@
         }
       ]
     },
-    
+
     {
       "editorIndex": 300,
       "speaker": "Larry Beige",
@@ -324,7 +331,7 @@
         }
       ]
     },
-    
+
     {
       "editorIndex": 360,
       "speaker": "Clerk",
@@ -380,7 +387,7 @@
         }
       ]
     },
-    
+
     {
       "editorIndex": 420,
       "speaker": "Clerk",
@@ -418,7 +425,7 @@
       "scoreScreenIndex": 1,
       "responses": []
     },
-    
+
     {
       "editorIndex": 470,
       "speaker": "Clerk",
@@ -447,21 +454,43 @@
       "speaker": "Larry Beige",
       "text": "Haha…sorry I was testing you, an old habit of mine, here is the ID",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_510",
+      "askForID": true,
       "responses": []
     },
     {
       "editorIndex": 520,
       "speaker": "Clerk",
-      "text": "Good thing I pay attention to SSI then, ok all good now!",
+      "text": "Good thing I pay attention to SSI then",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_520",
       "responses": []
     },
     {
-      "editorIndex": 530,
+      "editorIndex": 521,
       "speaker": "Clerk",
+      "text":  "All good now! Can I get your basic info?"
+
+    },
+    {
+      "editorIndex": 530,
+      "speaker": "Larry Beige",
       "text": "There you go",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_530",
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true,
       "responses": []
+    },
+    {
+      "editorIndex": 531,
+      "speaker": "Clerk",
+      "text": "Nice, here is your HotShot Ciggies!",
+      "responses": [
+        {
+          "responseText": "Make the sale",
+          "nextLineIndex": 540,
+          "isMakeSaleResponse": true
+        }
+      ]
     },
     {
       "editorIndex": 540,
@@ -551,14 +580,14 @@
       "voiceOverPath": "VoiceOvers/Clerk_Intro_700",
       "responses": []
     },
-{
+    {
       "editorIndex": 701,
       "speaker": "Larry Beige",
       "text": "And why is that?",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_700",
       "responses": []
     },
-{
+    {
       "editorIndex": 702,
       "speaker": "Clerk",
       "text": "I messed up but I want to do it by the book, I am sorry for the inconvenience",

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7076823828228385413}
   - component: {fileID: -333591280753198792}
   m_Layer: 3
-  m_Name: PoliceGuy
+  m_Name: LarryBeigeID
   m_TagString: ID
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,15 +93,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ProfileImage: {fileID: 21300000, guid: 47e6f56403d5d464da5dd846f31a9bbc, type: 3}
-  Name: Shuan, Bakers
-  DOB: 'Is over 18: Yes'
+  Name: Beige, Larry
+  DOB: Over 18
   Address: N/A
-  Issuer: Groningen
+  Issuer: Police Department
   allowDOBAccess: 0
   allowAddressAccess: 0
   allowPictureAccess: 0
   allowNameAccess: 0
   allowIssuerAccess: 1
+  isAuthorizationID: 0
+  authorizationStatus: Pending
 --- !u!114 &3692143535233236181
 MonoBehaviour:
   m_ObjectHideFlags: 0
