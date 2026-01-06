@@ -227,6 +227,13 @@ public class ItemPickupManager : MonoBehaviour {
         fundsText.text = $"Funds: €{totalFunds:0.00}";
     }
 
+    // Add money from shady/illicit activities (like data leaks, bribes, etc.)
+    public void AddShadyFunds(float amount) {
+        totalFunds += amount;
+        UpdateFundsUI();
+        Debug.Log($"[ItemPickupManager] Added €{amount:0.00} shady money. Total funds: €{totalFunds:0.00}");
+    }
+
     private IEnumerator DelayedCheckoutTotalUpdate() {
         yield return null; // Wait one frame
         UpdateCheckoutTotal();

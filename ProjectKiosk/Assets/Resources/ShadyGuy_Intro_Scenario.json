@@ -208,7 +208,8 @@
         },
         {
           "responseText": "Sell Data",
-          "nextLineIndex": 260
+          "nextLineIndex": 260,
+          "shadyMoneyReward": 1000
         },
         {
           "responseText": "Buy data",

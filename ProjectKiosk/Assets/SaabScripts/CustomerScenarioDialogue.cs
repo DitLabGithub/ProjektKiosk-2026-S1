@@ -15,6 +15,9 @@ public class DialogueResponseData
 
     // Score System - corruption points awarded when this response is chosen
     public int scoreValue = 0;
+
+    // Shady Money System - money reward for illicit/shady choices
+    public float shadyMoneyReward = 0f;
 }
 
 [Serializable]

@@ -381,12 +381,14 @@
         {
           "responseText": "Listen more",
           "nextLineIndex": 600,
-          "scoreValue": 5
+          "scoreValue": 5,
+          "shadyMoneyReward": 75
         },
         {
           "responseText": "Shady",
           "nextLineIndex": 700,
-          "scoreValue": 15
+          "scoreValue": 15,
+          "shadyMoneyReward": 250
         }
       ]
     },
@@ -434,12 +436,14 @@
         {
           "responseText": "Learn more",
           "nextLineIndex": 650,
-          "scoreValue": 10
+          "scoreValue": 10,
+          "shadyMoneyReward": 150
         },
         {
           "responseText": "I need your information",
           "nextLineIndex": 700,
-          "scoreValue": 10
+          "scoreValue": 10,
+          "shadyMoneyReward": 300
         }
       ]
     },

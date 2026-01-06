@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
 
         // Score System
         public int scoreValue = 0; // Points to add to morality score when this response is chosen
+
+        // Shady Money System
+        public float shadyMoneyReward = 0f; // Money reward for illicit/shady choices
     }
 
 
@@ -854,7 +857,8 @@ public class DialogueManager : MonoBehaviour
                         returnAfterResponse = r.returnAfterResponse,
                         activateContinueAfterChoice = r.activateContinueAfterChoice,
                         isMakeSaleResponse = r.isMakeSaleResponse,
-                        scoreValue = r.scoreValue // Copy score value from JSON data
+                        scoreValue = r.scoreValue, // Copy score value from JSON data
+                        shadyMoneyReward = r.shadyMoneyReward // Copy shady money reward from JSON data
                     }).ToList(),
                     askForID = jsonLineData.askForID,
                     showGoBackButton = jsonLineData.showGoBackButton,
@@ -974,6 +978,18 @@ public class DialogueManager : MonoBehaviour
                     {
                         ScoreManager.Instance.AddScore(currentResponse.scoreValue);
                         Debug.Log($"[DialogueManager] Added {currentResponse.scoreValue} points for response: '{currentResponse.responseText}'");
+                    }
+
+                    // Shady Money System: Add money if this response has a shadyMoneyReward
+                    if (currentResponse.shadyMoneyReward > 0 && itemPickupManager != null)
+                    {
+                        itemPickupManager.AddShadyFunds(currentResponse.shadyMoneyReward);
+                        // Play sound effect for shady money (reuse sale success sound)
+                        if (SoundManager.Instance != null)
+                        {
+                            SoundManager.Instance.PlaySound(saleSuccessClip);
+                        }
+                        Debug.Log($"[DialogueManager] Added €{currentResponse.shadyMoneyReward:0.00} shady money for response: '{currentResponse.responseText}'");
                     }
 
                     if (currentResponse.nextLineIndex >= 0)
