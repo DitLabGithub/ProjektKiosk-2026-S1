@@ -1,7 +1,7 @@
 {
   "customerName": "Larry Beige",
   "npcPrefabPath": "NPC_Prefabs/PoliceGuy2",
-  "idPrefabPath": "ID_Prefabs/PoliceGuy",
+  "idPrefabPath": "ID_Prefabs/LarryBeigeID",
   "idName": "Larry Beige",
   "idDOB": "Over 18",
   "idAddress": "N/A",
@@ -17,7 +17,7 @@
 
   ],
   "lines": [
-   {
+    {
       "editorIndex": 10,
       "speaker": "Larry Beige",
       "text": "Afternoon, Clerk.",
@@ -60,7 +60,6 @@
       "text": "Very well…of course",
       "responses": [],
       "askForID": true,
-      "idPrefabToSpawn": "ID_Prefabs/PoliceGuy"
     },
     {
       "editorIndex": 80,
@@ -92,10 +91,10 @@
       "text": "Mhmm interesting. I heard there have been many irregularities and all point to your small Kiosk",
       "responses": [
 
-           {
+        {
           "responseText": "Who told you that?",
           "nextLineIndex": 130
-           }
+        }
 
       ]
     },

@@ -256,7 +256,7 @@
       "text": "I trust you on that kid. Shall see you soon, take care",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line28_5",
       "endConversationHere": true,
-      "scoreScreenIndex": 2,
+      "scoreScreenIndex": 1,
       "responses": []
     },
     {
@@ -328,7 +328,7 @@
       "text": "It better not, see you soon",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line39",
       "endConversationHere": true,
-      "scoreScreenIndex": 3,
+      "scoreScreenIndex": 2,
       "responses": []
     },
     {
@@ -393,7 +393,7 @@
       "text": "Will do sir! Take care",
       "voiceOverPath": "VoiceOvers/Clerk_Line48",
       "endConversationHere": true,
-      "scoreScreenIndex": 1,
+      "scoreScreenIndex": 0,
       "responses": []
     }
   ]

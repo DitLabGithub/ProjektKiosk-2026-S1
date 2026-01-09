@@ -1,4 +1,4 @@
-{
+ {
   "customerName": "Theorist",
   "npcPrefabPath": "NPC_Prefabs/ConspiracyGuy",
   "idPrefabPath": "ID_Prefabs/ConspiracyTheoristID",
@@ -44,24 +44,8 @@
       "text": "Before we continue,",
       "responses": [
         {
-          "responseText": "Make Sale",
-          "nextLineIndex": 70
-        },
-        {
           "responseText": "Could I get your ID ?",
           "nextLineIndex": 81
-        }
-      ]
-    },
-    {
-      "editorIndex": 70,
-      "speaker": "Clerk",
-      "text": "There you go it will be 9 NEUROS",
-      "responses": [
-        {
-          "responseText": "Make Sale",
-          "nextLineIndex": 86,
-          "isMakeSaleResponse": true
         }
       ]
     },
@@ -93,7 +77,7 @@
     {
       "editorIndex": 85,
       "speaker": "Clerk",
-      "text": "Here you go!",
+      "text": "Here you go! It will be 9 NEUROS",
       "responses": []
     },
     {
@@ -342,22 +326,9 @@
       "responses": []
     },
     {
-      "editorIndex": 380,
+      "editorIndex": 371,
       "speaker": "Clerk",
-      "text": "I know it man… just please give me your ID so I can verify",
-      "responses": []
-    },
-    {
-      "editorIndex": 390,
-      "speaker": "Theorist",
-      "text": "Here mate be careful with that thing",
-      "responses": []
-    },
-    {
-      "editorIndex": 400,
-      "speaker": "Clerk",
-      "text": "Cool just give me a second… Yes, it is verified you can have your package",
-      "responses": []
+       "text": "Yeah, yeah sure whatever. Take your Jerky and get going..."
     },
     {
       "editorIndex": 410,
@@ -368,7 +339,7 @@
     {
       "editorIndex": 420,
       "speaker": "Clerk",
-      "text": "Sure sounds good, I really wanted to start something on my own, need some more cash",
+      "text": "Hmmmms..., I really wanted to start something on my own, need some more cash",
       "responses": []
     },
     {
@@ -380,7 +351,7 @@
     {
       "editorIndex": 440,
       "speaker": "Clerk",
-      "text": "What is it about?",
+      "text": "Okay...Speak..",
       "responses": []
     },
     {
@@ -459,7 +430,7 @@
       "speaker": "Clerk",
       "text": "What the hell was that...",
       "endConversationHere": true,
-      "scoreScreenIndex": 1,
+      "scoreScreenIndex": 3,
       "responses": []
     },
     {
@@ -480,8 +451,7 @@
         {
           "responseText": "I need your information",
           "nextLineIndex": 700,
-          "scoreValue": 10,
-          "shadyMoneyReward": 300
+          "scoreValue": 10
         }
       ]
     },
@@ -502,7 +472,7 @@
       "speaker": "Clerk",
       "text": "No enough of your crazy talk bye. Pss…so scared",
       "endConversationHere": true,
-      "scoreScreenIndex": 2,
+      "scoreScreenIndex": 4,
       "responses": []
     },
     {
@@ -539,8 +509,6 @@
       "editorIndex": 695,
       "speaker": "Theorist",
       "text": "You’re actually one of those “facts don’t matter” people, huh? You’re part of the problem, clerk-man. I’d have to defend myself with knowledge. Dangerous knowledge.",
-      "endConversationHere": true,
-      "scoreScreenIndex": 3,
       "responses": []
     },
     {
@@ -553,13 +521,16 @@
       "editorIndex": 710,
       "speaker": "Theorist",
       "text": "Yeah sure man I trust you",
-      "responses": []
+      "responses": [],
+      "grantAddressAccess": true,
+      "grantNameAccess": true
     },
     {
       "editorIndex": 720,
       "speaker": "Clerk",
       "text": "Thank you, business partner. Mmmm and…here…we…go. Perfect all good now in the system you made me a lot…I mean, made my life way easier",
-      "responses": []
+      "responses": [],
+      "shadyMoneyReward": 300
     },
     {
       "editorIndex": 730,
@@ -572,7 +543,7 @@
       "speaker": "Clerk",
       "text": "For sure bye! Loser…",
       "endConversationHere": true,
-      "scoreScreenIndex": 4,
+      "scoreScreenIndex": 5,
       "responses": []
     }
   ]

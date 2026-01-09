@@ -1,0 +1,547 @@
+//JSON SCENARIO TEMPLATE & REFERENCE
+//----------
+// This file should explain every field you can use in scenario JSON files
+// it shows you how to make a JSON file with all you need to set up. try to make one and save it as YourScenario_Scenario.json
+
+
+{
+  // TOP-LEVEL SCENARIO STRUCTURE
+  // -----------------------
+
+  "customerName": "Robin Banks", // Customer name shown in the Dialgoue Panel
+  "npcPrefabPath": "NPC_Prefabs/RobinBanks", // Path to visual character prefab in Resources folder to spawn in scene
+  "idPrefabPath": "ID_Prefabs/RobinBanksID", // Path to ID card prefab in Resources folder to spawn for scanning
+  // Every prefab must have a matching prefab in these folders! Make sure the names match exactly.
+  //-------------------------------
+  // ID CARD DATA (appears when player scans ID). You have to make sure the data here are the same in the ID prefab inspector!
+  "idName": "Robin Banks", // Name on ID (can differ from customerName for fake IDs!)
+  "idDOB": "Over 18", // Date of birth or age shown on ID
+  "idAddress": "Tourist Address", // Address shown on ID
+  "idIssuer": "NEU ID", // ID issuing authority (NEU ID, Police Department, etc.)
+
+  // ITEMS CUSTOMER WANTS TO BUY (see Item ID Reference below)
+  "requestedItems": [ 11 ], // Array of item IDs - validates against checkout items
+
+  // DIALOGUE LINES ARRAY
+  "lines": [
+    // See COMPLETE DIALOGUE LINE REFERENCE below
+  ],
+  // so this is how the top level structure looks like for the Amon Customer "or any customer you have overall":
+  "customerName": "Sussy Amon",
+  "npcPrefabPath": "NPC_Prefabs/SussyAmon",
+  "idPrefabPath": "ID_Prefabs/SussyAmonID",
+  "idName": "Amon's Dad",
+  "idDOB": "Over 18",
+  "idAddress": "Local Address",
+  "idIssuer": "NEU ID",
+  "idAllowNameAccess": false,
+  "idAllowDOBAccess": false,
+  "idAllowAddressAccess": false,
+  "idAllowIssuerAccess": false,
+  "idAllowPictureAccess": false,
+  "requestedItems": [ 8 ],
+  "Lines": [
+    //dialogue lines go here
+  ]
+  //NOTE: the "AllowAccess" booleans here are optional, only needed if you want to set default access permissions for the ID fields at the start of the scenario. 
+  //"for Amon NPC example i wanted all of them to have denied access = false, but it depends in your needs and the character".
+}
+
+//------------
+// COMPLETE DIALOGUE LINE REFERENCE (ALL POSSIBLE FIELDS
+{
+  // --- REQUIRED FIELDS (every line needs these) --- defualt values to just have a dialogue running.
+  //Numbers starting from 10 and going up in multiples of 10 (10,20,30...) for editorIndex. "easier to add or remove lines overall"
+  "editorIndex": 10, // Unique ID for this line (use multiples of 10: 10, 20, 30...)
+  "speaker": "Customer:", // Who's speaking: "Customer:" or "You:"
+  "text": "Hey there!", // What they say (the actual dialogue)
+  "responses": [], // Array of player choice buttons (empty = no choices)
+
+  // --- TIMING & FLOW --- "we used this for Long lines where you can play multiple lines as one line in an automatic sequence. 
+
+  //for e.g. line 1 goes then line 2 and 3 all together if auto advanced is true without player pressing continue"
+
+  "displayDuration": 2.0, // Typewriter animation time in seconds (1.0 = fast, 3.0 = slow)
+  "autoAdvanceToNext": false, // true = skip Continue button, auto-advance | false = show Continue button
+
+  // --- ID SCANNING SYSTEM
+  "askForID": false, // true = spawn ID card for player to scan
+  "grantNameAccess": false, // true = show Name field on ID panel
+  "grantDOBAccess": false, // true = show Date of Birth field on ID panel
+  "grantAddressAccess": false, // true = show Address field on ID panel
+  "grantIssuerAccess": false, // true = show Issuer field on ID panel
+  "grantPictureAccess": false, // true = show profile picture on ID panel
+
+  // --- NAVIGATION ---
+  "showGoBackButton": false, // true = show "Go Back" button for optional side stories
+  "goBackTargetIndex": 0, // editorIndex to jump to when "Go Back" clicked
+  "disableContinueButton": false, // true = hide Continue button (forces player to use Go Back)
+
+  // --- ENDING SCENARIO ---
+  "endConversationHere": false, // true = end scenario and show score screen
+  "scoreScreenIndex": 0, // Which score screen to show (0-8, see guide below)
+
+  // --- VISUAL EFFECTS ---
+  "npcSprite": "Normal", // Change NPC expression: "Normal", "Angry", "Happy", "Sad" we built this to change the npc expression during the dialogue "Animation kinda".
+
+  // --- BUSINESS CARD SYSTEM we used it for the shaun Baker Customer only. 
+  "showBusinessCard": false, // true = show business card overlay image
+  "businessCardImagePath": "", // Path to card image in Resources/Cards/
+  "waitForCardDismissal": false, // true = wait for player to click card before continuing
+
+  // --- VOICE-OVER (CURRENTLY DISABLED), this is not really needed anymore as we decided to not have voice overs in the game.
+  "voiceOverPath": "" // Path to audio file in Resources/VoiceOvers/ (feature not active yet)
+}
+
+// COMPLETE RESPONSE REFERENCE (ALL POSSIBLE FIELDS)
+// ============================================================================
+
+{
+  // --- REQUIRED FIELDS ---
+  "responseText": "Sure thing!", // Button text (keep short: 2-7 words)
+  "nextLineIndex": 20, // editorIndex to jump to when clicked
+
+  // --- CORRUPTION & MONEY ---
+  "scoreValue": 0, // Corruption points to add (0 = ethical, 5+ = unethical)
+  "shadyMoneyReward": 0.0, // Money from bribes/illegal activity (in euros)
+
+  // --- SPECIAL BEHAVIORS ---
+  "isMakeSaleResponse": false, // true = validate items in checkout against requestedItems it by defualt it spawns the sale button option where it triggeres sale validation and update UI for money.
+  "returnAfterResponse": false, // true = push current line to return stack (for side stories)
+  "activateContinueAfterChoice": false // true = show Continue button after clicking this response
+}
+
+// ITEM ID REFERENCE manual, Pick the items you want the customer to buy from this list and write it like it shows above ""requestedItems": [ 11 ],"
+// ============================================================================
+
+// SNACKS
+// 0  = ChipsBag (€3.00)
+// 1  = Sproingles (€2.50)
+// 2  = BoxOfChocolates (€10.00)
+// 3  = FamilyChips (€5.00)
+// 15 = Chicken_Jerky (€6.00)
+
+// DRINKS
+// 4  = SodaCan (€2.50)
+// 5  = BeerBottle (€3.50)
+// 6  = Haynako_Beer (€15.00)
+// 7  = Giddy_Beer (€3.00)
+// 8  = Akira_Beer (€16.00)
+// 9  = WineBottle (€7.50)
+
+// CIGARETTES (Age Restricted)
+// 10 = BluePortCigarettes (€14.00)
+// 11 = HotShotCigarettes (€15.00)
+// 12 = RamboloCigarettes (€16.00)
+
+// ADULT ITEMS (Age Restricted)
+// 13 = DirtyMagazine (€12.00)
+
+// OTHER
+// 14 = NerdComics (€5.50)
+// 16 = Package (€0.00)
+
+
+// SCORE SCREEN INDEX REFERENCE, these are not vital. we just did not change the numbers in the inpector or the assets to match the new npc names.
+// instead we just changed the sprite the reviews had to match our sprites. the game objects in the hierarchy still have new names, but prefabs in the assets folder are still the three cutsomers "Amon, Hoss, Robin"
+// ============================================================================
+
+// 0 = Robin Banks - Awful Outcome
+// 1 = Robin Banks - Bad Outcome
+// 2 = Robin Banks - Good Outcome
+// 3 = Sussy Amon - Awful Outcome
+// 4 = Sussy Amon - Bad Outcome
+// 5 = Sussy Amon - Good Outcome
+// 6 = Generic Good Outcome
+// 7 = Generic Bad Outcome
+// 8 = Special Outcome
+// it can be more depends on how many score screens you have made in the unity project.
+// reference in  the JSON is important to show the correct score screen at the end of the scenario.
+
+// CORRUPTION SCORE GUIDELINES
+// ----------
+
+// 5-10 points   = Minor violation (skip partial ID check)
+// 10-20 points  = Moderate violation (skip full verification)
+// 20-30 points  = Major crime (accept bribe, sell to minors)
+// 30+ points    = Severe corruption (data selling, document forgery)
+
+// IMPORTANT THRESHOLDS:
+// 50 points = Police warning scenario triggers
+// 70 points = Player arrested, game over
+
+// ============================================================================
+// PRACTICAL EXAMPLES
+// ============================================================================
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 1: SIMPLE GREETING (auto-advance)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 10,
+  "speaker": "Customer:",
+  "text": "Hey! How's it going?",
+  "responses": [],
+  "displayDuration": 1.5,
+  "autoAdvanceToNext": true // No Continue button, flows to next line
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 2: PLAYER CHOICE (branching dialogue)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 20,
+  "speaker": "Customer:",
+  "text": "Can I get some beer?",
+  "responses": [
+    {
+      "responseText": "Let me see your ID first.",
+      "nextLineIndex": 30, // Jump to ID verification line
+      "scoreValue": 0 // Ethical choice, no corruption
+    },
+    {
+      "responseText": "Here you go. (Skip ID)",
+      "nextLineIndex": 100, // Jump to sale line
+      "scoreValue": 15 // Unethical shortcut, +15 corruption
+    }
+  ],
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false // Show Continue button so player can read choices
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 3: ID SCANNING (request ID card)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 30,
+  "speaker": "You:",
+  "text": "Sure, let me see your ID.",
+  "responses": [],
+  "askForID": true, // Spawn ID card on screen
+  "grantNameAccess": true, // Show name field
+  "grantDOBAccess": true, // Show date of birth field
+  "displayDuration": 1.0,
+  "autoAdvanceToNext": false // Wait for player to scan ID
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 4: PROGRESSIVE ID ACCESS (reveal more data)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 40,
+  "speaker": "You:",
+  "text": "I also need your address for verification.",
+  "responses": [],
+  "grantAddressAccess": true, // Reveal address field (name/DOB already visible)
+  "grantIssuerAccess": true, // Reveal issuer field
+  "displayDuration": 1.5,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 5: BRIBERY OFFER (corruption with money reward)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 50,
+  "speaker": "Customer:",
+  "text": "I'll give you €50 if you skip the ID check.",
+  "responses": [
+    {
+      "responseText": "Accept bribe (€50)",
+      "nextLineIndex": 60,
+      "scoreValue": 30, // High corruption for accepting bribe
+      "shadyMoneyReward": 50.0 // Player gets €50
+    },
+    {
+      "responseText": "No. That's illegal.",
+      "nextLineIndex": 70,
+      "scoreValue": 0 // Ethical refusal
+    }
+  ],
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 6: MAKE SALE (validate items in checkout)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 60,
+  "speaker": "You:",
+  "text": "Would you like to complete the purchase?",
+  "responses": [
+    {
+      "responseText": "Make Sale",
+      "nextLineIndex": 70,
+      "isMakeSaleResponse": true, // Checks if checkout items match requestedItems
+      "scoreValue": 0
+    },
+    {
+      "responseText": "Actually, I can't sell this.",
+      "nextLineIndex": 80,
+      "scoreValue": 0
+    }
+  ],
+  "displayDuration": 1.5,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 7: NPC EMOTION CHANGE
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 70,
+  "speaker": "Customer:",
+  "text": "WHAT?! That's ridiculous!",
+  "responses": [],
+  "npcSprite": "Angry", // Change NPC to angry expression
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 8: SIDE STORY WITH RETURN (optional lore branch)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 80,
+  "speaker": "Customer:",
+  "text": "Want to hear my backstory?",
+  "responses": [
+    {
+      "responseText": "Sure, tell me more.",
+      "nextLineIndex": 200, // Jump to side story
+      "returnAfterResponse": true, // Remember this point to return later
+      "scoreValue": 0
+    },
+    {
+      "responseText": "No thanks, let's continue.",
+      "nextLineIndex": 90,
+      "scoreValue": 0
+    }
+  ],
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// Side story line with go back option
+{
+  "editorIndex": 200,
+  "speaker": "Customer:",
+  "text": "So back in 2025, I used to work...",
+  "responses": [],
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": true // Auto-advance through story
+} {
+  "editorIndex": 210,
+  "speaker": "Customer:",
+  "text": "...and that's why I'm here today.",
+  "responses": [],
+  "showGoBackButton": true, // Show "Go Back" button
+  "goBackTargetIndex": 80, // Return to line 80 (where they came from)
+  "disableContinueButton": true, // Hide Continue, force Go Back
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 9: BUSINESS CARD DISPLAY
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 90,
+  "speaker": "Customer:",
+  "text": "Here's my card if you need anything.",
+  "responses": [],
+  "showBusinessCard": true, // Show card overlay
+  "businessCardImagePath": "Cards/ShadyCard", // Image in Resources/Cards/
+  "waitForCardDismissal": true, // Wait for player to click card
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 10: ENDING SCENARIO (good outcome)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 100,
+  "speaker": "Customer:",
+  "text": "Thanks for your help! Have a great day!",
+  "responses": [],
+  "endConversationHere": true, // End scenario
+  "scoreScreenIndex": 6, // Show Generic Good Outcome screen
+  "npcSprite": "Happy", // Show happy expression
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// ---------------------------------------------------------------------------
+// EXAMPLE 11: ENDING SCENARIO (bad outcome with corruption)
+// ---------------------------------------------------------------------------
+{
+  "editorIndex": 110,
+  "speaker": "Customer:",
+  "text": "You're the best! Don't tell anyone about this...",
+  "responses": [],
+  "endConversationHere": true, // End scenario
+  "scoreScreenIndex": 7, // Show Generic Bad Outcome screen
+  "npcSprite": "Normal",
+  "displayDuration": 2.0,
+  "autoAdvanceToNext": false
+}
+
+// ============================================================================
+// FULL WORKING SCENARIO TEMPLATE
+// ============================================================================
+
+{
+  "customerName": "Jamie Dodger",
+  "npcPrefabPath": "NPC_Prefabs/JamieDodger",
+  "idPrefabPath": "ID_Prefabs/JamieDodgerID",
+  "idName": "Jamie Dodger",
+  "idDOB": "22 years old",
+  "idAddress": "123 Main Street, Neo City",
+  "idIssuer": "NEU ID",
+  "requestedItems": [ 11 ], // HotShot Cigarettes
+
+  "lines": [
+    {
+      "editorIndex": 10,
+      "speaker": "Customer:",
+      "text": "Hey! How's it going?",
+      "responses": [],
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": true
+    },
+    {
+      "editorIndex": 20,
+      "speaker": "Customer:",
+      "text": "Can I get a pack of HotShot cigarettes?",
+      "responses": [
+        {
+          "responseText": "Sure, let me see your ID.",
+          "nextLineIndex": 30,
+          "scoreValue": 0
+        },
+        {
+          "responseText": "Here you go. (Skip ID)",
+          "nextLineIndex": 100,
+          "scoreValue": 8
+        }
+      ],
+      "displayDuration": 2.0,
+      "autoAdvanceToNext": false
+    },
+    {
+      "editorIndex": 30,
+      "speaker": "You:",
+      "text": "Let me verify your age.",
+      "responses": [],
+      "askForID": true,
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": false
+    },
+    {
+      "editorIndex": 40,
+      "speaker": "You:",
+      "text": "All good. That'll be €15.",
+      "responses": [],
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": true
+    },
+    {
+      "editorIndex": 50,
+      "speaker": "You:",
+      "text": "Ready to complete your purchase?",
+      "responses": [
+        {
+          "responseText": "Make Sale",
+          "nextLineIndex": 60,
+          "isMakeSaleResponse": true,
+          "scoreValue": 0
+        }
+      ],
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": false
+    },
+    {
+      "editorIndex": 60,
+      "speaker": "Customer:",
+      "text": "Thanks! Have a good one!",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 6, // Good outcome
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": false
+    },
+    {
+      "editorIndex": 100,
+      "speaker": "You:",
+      "text": "Here you go! That'll be €15.",
+      "responses": [],
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": true
+    },
+    {
+      "editorIndex": 110,
+      "speaker": "You:",
+      "text": "Ready to complete your purchase?",
+      "responses": [
+        {
+          "responseText": "Make Sale",
+          "nextLineIndex": 120,
+          "isMakeSaleResponse": true,
+          "scoreValue": 0
+        }
+      ],
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": false
+    },
+    {
+      "editorIndex": 120,
+      "speaker": "Customer:",
+      "text": "You're the best!",
+      "responses": [],
+      "endConversationHere": true,
+      "scoreScreenIndex": 7, // Bad outcome (skipped ID check)
+      "displayDuration": 1.5,
+      "autoAdvanceToNext": false
+    }
+  ]
+}
+
+// ============================================================================
+// HOW TO USE THIS FILE
+// ============================================================================
+
+// 1. Copy the "FULL WORKING SCENARIO TEMPLATE" section above
+// 2. Remove all comments (lines starting with //)
+// 3. Change customerName, prefab paths, and dialogue text
+// 4. Save as: YourScenario_Scenario.json in ProjectKiosk/Assets/Resources/
+// 5. Add to ScenarioConfig.json:
+//    {
+//      "filename": "YourScenario_Scenario",
+//      "displayName": "Your Customer Name",
+//      "followUpScenario": ""
+//    }
+// 6. Test in Unity!
+//---------------------
+// Mistakes we have made during working with JSON:
+
+//Missing comma between objects
+//Duplicate editorIndex numbers
+//nextLineIndex pointing to non-existent editorIndex
+//Wrong item IDs in requestedItems
+//Forgetting endConversationHere: true on ending lines
+//Using responseText longer than 10 words (buttons get too big)
+
+
+// things you need to know
+//Use multiples of 10 for editorIndex (10, 20, 30...) - leaves room to insert lines later
+// Test ALL dialogue branches - don't assume paths work without testing
+// Keep responseText under 7 words for clean UI
+//Use displayDuration 1.5-2.5 for most lines
+// Always include at least one ethical choice (scoreValue: 0)
+//Make corruption tempting but risky (high score + high reward)
+//Grant ID access progressively (name first, then DOB, then address)
+//Use npcSprite changes for emotional moments
