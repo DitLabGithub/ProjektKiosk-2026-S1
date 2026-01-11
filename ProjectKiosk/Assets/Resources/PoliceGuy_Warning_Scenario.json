@@ -75,7 +75,10 @@
       "text": "That is great, congrats! Could I just check your ID before we continue?",
       "voiceOverPath": "VoiceOvers/Clerk_Line9",
       "responses": [],
-      "askForID": true
+      "askForID": true,
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true
     },
     {
       "editorIndex": 100,

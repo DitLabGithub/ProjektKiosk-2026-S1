@@ -2,9 +2,9 @@
   "shuffleEnabled": true,
   "scenarios": [
   
-    {
-      "filename": "PoliceGuy_Warning_Scenario",
-      "displayName": "Police Guy",
+      {
+      "filename": "ConspiracyGuy_Scenario",
+      "displayName": "Conspiracy Guy",
       "followUpScenario": ""
     }
   ]

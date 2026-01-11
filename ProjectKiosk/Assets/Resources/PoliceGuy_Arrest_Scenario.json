@@ -55,7 +55,10 @@
       "speaker": "Larry Beige",
       "text": "Very well…of course",
       "responses": [],
-      "askForID": true
+      "askForID": true,
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true
     },
     {
       "editorIndex": 80,

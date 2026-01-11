@@ -29,7 +29,7 @@
     {
       "editorIndex": 30,
       "speaker": "Theorist",
-      "text": "Could you grab me a pack of chicken jerky but the better ones really have strong craving dont judge..",
+      "text": "Could you grab me a pack of RamboloCigarettes. I really have a strong craving don't judge...",
       "responses": []
     },
     {
@@ -44,7 +44,7 @@
       "text": "Before we continue,",
       "responses": [
         {
-          "responseText": "Could I get your ID ?",
+          "responseText": "ID?",
           "nextLineIndex": 81
         }
       ]
@@ -58,9 +58,18 @@
     {
       "editorIndex": 82,
       "speaker": "Theorist",
-      "text": "Yes, here you go!",
+      "text": "Yeah man sure, here you go!",
       "askForID": true,
-      "responses": []
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true,
+      "responses": [ 
+        {
+          "responseText": "Make the sale",
+          "nextLineIndex": 83,
+          "isMakeSaleResponse": true
+        }
+      ]
     },
     {
       "editorIndex": 83,
@@ -71,7 +80,7 @@
     {
       "editorIndex": 84,
       "speaker": "Theorist",
-      "text": "Now, can I get my Jerky?",
+      "text": "Now, can I get my ciggies?",
       "responses": []
     },
     {
