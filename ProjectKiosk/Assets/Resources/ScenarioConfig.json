@@ -3,24 +3,8 @@
   "scenarios": [
   
     {
-      "filename": "ConspiracyGuy_Scenario",
-      "displayName": "Conspiracy Guy",
-      "followUpScenario": ""
-    },
-    {
-      "filename": "Fridgy_Scenario",
-      "displayName": "Fridgy",
-      "followUpScenario": ""
-    },
-    
-    {
-      "filename": "Amon_Scenario",
-      "displayName": "Amon",
-      "followUpScenario": ""
-    },
-    {
-      "filename": "Robin_Scenario",
-      "displayName": "Robin",
+      "filename": "PoliceGuy_Warning_Scenario",
+      "displayName": "Police Guy",
       "followUpScenario": ""
     }
   ]
