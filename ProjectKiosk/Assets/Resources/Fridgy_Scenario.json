@@ -579,7 +579,7 @@
     {
       "editorIndex": 1060,
       "speaker": "Clerk",
-      "text": "I hope your owner enjoys the beers, Fridgy",
+      "text": "I hope your owner enjoys the beers, Fridgy.",
       "responses": []
     },
     {
@@ -591,7 +591,7 @@
     {
       "editorIndex": 1080,
       "speaker": "Clerk",
-      "text": "Awesome, thank you, buddy. I appreciate it\n\nI guess your owner is waiting for the beer",
+      "text": "Awesome, thank you, buddy. I appreciate it.\n\nI guess your owner is waiting for the beer.",
       "responses": []
     },
     {
@@ -600,7 +600,7 @@
       "text": "Owner thirsty Fridge see human friend Clerk soon",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 6
+      "scoreScreenIndex": 20
     },
     {
       "editorIndex": 1100,
@@ -751,7 +751,7 @@
       "text": "Bye!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 4
+      "scoreScreenIndex": 21
     },
     {
       "editorIndex": 810,
@@ -793,7 +793,7 @@
     {
       "editorIndex": 870,
       "speaker": "Clerk",
-      "text": "I would say two more beers\n\nI think he will be happy, we will see if he confirms on the technology",
+      "text": "I would say two more beers.\n\nI think he will be happy, we will see if he confirms on the technology.",
       "responses": []
     },
     {
@@ -814,7 +814,7 @@
       "text": "Human makes sense…sometimes",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 5
+      "scoreScreenIndex": 24
     },
     {
       "editorIndex": 910,
@@ -850,7 +850,7 @@
     {
       "editorIndex": 960,
       "speaker": "Fridgy",
-      "text": "Data glitch no wine, yes give beer now!\n\nHuman annoys",
+      "text": "Data glitch no wine, give beer now!\n\nHuman annoys.",
       "responses": []
     },
     {
@@ -859,7 +859,7 @@
       "text": "Sorry my bad, was trying to be helpful Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 8
+      "scoreScreenIndex": 22
     },
 
     {
@@ -868,7 +868,7 @@
       "text": "Thank you human Clerk, Fridge will see you soon… beep boop",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 4
+      "scoreScreenIndex": 23
     },
     {
       "editorIndex": 1300,
@@ -929,7 +929,7 @@
       "text": "I sure hope so, see ya!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 7
+      "scoreScreenIndex": 23
     },
     {
       "editorIndex": 1400,
@@ -961,7 +961,7 @@
     {
       "editorIndex": 1450,
       "speaker": "Fridgy",
-      "text": "Human bad liar, he wants Fridge's information\n\nClerk a thief, Fridge leaving…find some place better…better beer, better friend.",
+      "text": "Human bad liar, he wants Fridge's information.\n\nClerk a thief, Fridge leaving…find some place better…better beer, better friend.",
       "responses": []
     },
     {
@@ -970,7 +970,7 @@
       "text": "No Fridgy wait…",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 8
+      "scoreScreenIndex": 25
     },
     {
       "editorIndex": 1500,
@@ -1023,10 +1023,10 @@
     {
       "editorIndex": 1580,
       "speaker": "Clerk",
-      "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh.....",
+      "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh...",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 9
+      "scoreScreenIndex": 25
     },
     {
       "editorIndex": 1600,
@@ -1052,7 +1052,7 @@
       "text": "Glad to be of help, bye Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 6
+      "scoreScreenIndex": 22
     },
     {
       "editorIndex": 1800,
@@ -1197,7 +1197,7 @@
       "text": "Thank you, human Clerk! Best service! Best friend!\n\nFridge will return soon! Beep boop!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 5
+      "scoreScreenIndex": 24
     }
   ]
 }
