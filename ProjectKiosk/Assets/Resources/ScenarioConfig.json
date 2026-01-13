@@ -1,8 +1,8 @@
 {
-  "shuffleEnabled": true,
+  "shuffleEnabled": false,
   "scenarios": [
-  
-      {
+
+    {
       "filename": "ConspiracyGuy_Scenario",
       "displayName": "Conspiracy Guy",
       "followUpScenario": ""

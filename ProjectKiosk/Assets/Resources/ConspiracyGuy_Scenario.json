@@ -11,7 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": false,
-  "requestedItems": [ 15 ],
+  "requestedItems": [ 10 ],
   "lines": [
     {
       "editorIndex": 10,
@@ -63,13 +63,7 @@
       "grantNameAccess": true,
       "grantDOBAccess": true,
       "grantPictureAccess": true,
-      "responses": [ 
-        {
-          "responseText": "Make the sale",
-          "nextLineIndex": 83,
-          "isMakeSaleResponse": true
-        }
-      ]
+      "responses": []
     },
     {
       "editorIndex": 83,
@@ -87,7 +81,14 @@
       "editorIndex": 85,
       "speaker": "Clerk",
       "text": "Here you go! It will be 9 NEUROS",
-      "responses": []
+      "responses": [
+        {
+          "responseText": "Make the sale",
+          "isMakeSaleResponse": true,
+          "nextLineIndex": 83
+        }
+      
+      ]
     },
     {
       "editorIndex": 86,
