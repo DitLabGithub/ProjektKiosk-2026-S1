@@ -3772,7 +3772,8 @@ MonoBehaviour:
   - {fileID: 1582999514}
   - {fileID: 66071585}
   - {fileID: 1991810277}
-  - {fileID: 8761246022347718123}
+  - {fileID: 6875064990506140432, guid: 42972c1e55578c34fac339528cb8620e, type: 3}
+  - {fileID: 8922748859579661305, guid: 39e5af3f64c640f4ca85b1eef8b7ff8c, type: 3}
   endCreditScreen: {fileID: 810853016}
   scoreContinueButtons: []
 --- !u!4 &756885555
@@ -9061,11 +9062,6 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5676511305543631955, guid: 7cd1ebc330b4a7b44bfb7e5ca1905465, type: 3}
   m_PrefabInstance: {fileID: 1016594761384412211}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8761246022347718123 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8751857750772896252, guid: 9fd6cc54de82b2a439a250e0a9c06008, type: 3}
-  m_PrefabInstance: {fileID: 3508820380142136518}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8761246022480521856 stripped
 GameObject:
