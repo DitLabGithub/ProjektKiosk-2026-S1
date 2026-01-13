@@ -73,14 +73,14 @@
     {
       "editorIndex": 90,
       "speaker": "Larry Beige",
-      "text": "Could I get a pack of hotshots… And I would also like Chicken Jerky, please.",
+      "text": "Could I get a pack of hotshots, please.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_90",
       "responses": []
     },
     {
       "editorIndex": 100,
       "speaker": "Clerk",
-      "text": "Gotchu, gimme a second ...",
+      "text": "I got you, gimme a second ...",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_100",
       "responses": [
         {
@@ -473,7 +473,7 @@
     {
       "editorIndex": 530,
       "speaker": "Larry Beige",
-      "text": "There you go",
+      "text": "There you go.",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_530",
       "grantNameAccess": true,
       "grantDOBAccess": true,
@@ -483,7 +483,7 @@
     {
       "editorIndex": 531,
       "speaker": "Clerk",
-      "text": "Nice, here is your HotShot Ciggies!",
+      "text": "Nice, here are your HotShot ciggies!",
       "responses": [
         {
           "responseText": "Make the sale",

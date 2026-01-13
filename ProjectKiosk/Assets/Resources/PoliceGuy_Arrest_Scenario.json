@@ -11,11 +11,7 @@
   "idAllowAddressAccess": false,
   "idAllowIssuerAccess": true,
   "idAllowPictureAccess": true,
-  "requestedItems": [
-    "pack of hotshots",
-    "Sprongles"
-
-  ],
+  
   "lines": [
     {
       "editorIndex": 10,
@@ -33,19 +29,19 @@
     {
       "editorIndex": 30,
       "speaker": "Larry Beige",
-      "text": "Can’t I just come to buy stuff from the nearest Kiosk shop, why the prejudice.",
+      "text": "Can’t I just come to visit the nearest Kiosk shop, why the prejudice?",
       "responses": []
     },
     {
       "editorIndex": 40,
       "speaker": "Clerk",
-      "text": "No, I am sorry if I sound annoyed I was just surprised. Most people just go to the big stores like HyperMart.",
+      "text": "No, I am sorry if I sound annoyed, I was just surprised. Most people just go to the big stores like HyperMart.",
       "responses": []
     },
     {
       "editorIndex": 50,
       "speaker": "Larry Beige",
-      "text": "Their mistake. I would like the usual Hotshots and Chicken Jerky. Or not, today I would like Sprongles.",
+      "text": "Their mistake. ",
       "responses": []
     },
     {
@@ -60,11 +56,14 @@
       "text": "Very well…of course",
       "responses": [],
       "askForID": true,
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true
     },
     {
       "editorIndex": 80,
       "speaker": "Larry Beige",
-      "text": "Thank you, clerk. Always by the book. And now for your information the investigation is never truly done, always someone to catch down the line…",
+      "text": "Good job clerk. Always by the book. And now for your information the investigation is never truly done. There is always someone to catch down the line…",
       "responses": []
     },
     {
@@ -82,18 +81,22 @@
     {
       "editorIndex": 110,
       "speaker": "Clerk",
-      "text": "Of course…but it is just…",
+      "text": "Of course not…but it is just…",
       "responses": []
     },
     {
       "editorIndex": 120,
       "speaker": "Larry Beige",
-      "text": "Mhmm interesting. I heard there have been many irregularities and all point to your small Kiosk",
+      "text": "It is interesting. I have found that there have been many irregularities and all point to your small Kiosk shop.\nVery curious right?",
       "responses": [
 
         {
           "responseText": "Who told you that?",
           "nextLineIndex": 130
+        },
+        {
+          "responseText": "I have to confess",
+          "nextLineIndex": 220
         }
 
       ]
@@ -107,7 +110,7 @@
     {
       "editorIndex": 140,
       "speaker": "Clerk",
-      "text": "Come on man, dont twist things, It was just some innocent question.",
+      "text": "Come on man, don't twist things, just an innocent question. I am trying to get to the bottom of things, like you",
       "responses": []
     },
     {
@@ -125,7 +128,7 @@
     {
       "editorIndex": 180,
       "speaker": "Larry Beige",
-      "text": "HA…the mask fell off very quickly, cashier. I wanted to assess for myself if the information was correct. But because of your actions there is no more doubt. Thank you for your valuable cooperation on the investigation. You made my job way easier.",
+      "text": "The mask fell off very quickly, cashier. I wanted to assess for myself if the information was correct and if you would confess. Thank you for your valuable cooperation on the investigation. You made my job much easier.",
       "responses": []
     },
     {
@@ -137,7 +140,7 @@
     {
       "editorIndex": 200,
       "speaker": "Larry Beige",
-      "text": "I will stop you spilling more lies…you are arrested",
+      "text": "I will stop you spilling more lies…you are arrested!",
       "responses": []
     },
     {
@@ -147,6 +150,69 @@
       "endConversationHere": true,
       "scoreScreenIndex": 5,
       "responses": []
+    },
+    {
+      "editorIndex": 220,
+      "speaker": "Larry Beige",
+      "text": "What? OK, tell me everything you know",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Clerk",
+      "text": "Yes I did it..I gave information to the shady guy, got a lot of it for money. ",
+      "responses": []
+    },
+     {
+      "editorIndex": 220,
+      "speaker": "Larry Beige",
+      "text": "You confess pretty early, that is surprising, continue.",
+      "responses": []
+    },
+    {
+      "editorIndex": 230,
+      "speaker": "Clerk",
+      "text": "Yes I did a stupid thing no point in hiding it anymore, I am sorry for what I have done. I really needed money but that was just wrong…",
+      "responses": []
+    },
+    {
+      "editorIndex": 240,
+      "speaker": "Larry Beige",
+      "text": "Well your sorriness cannot make up for  your wrong doings\nBut I can give you another option…",
+      "responses": []
+    },
+    {
+      "editorIndex": 250,
+      "speaker": "Larry Beige",
+      "text": "Work with me kid, lets bring him down together",
+      "responses": []
+    },
+    {
+      "editorIndex": 260,
+      "speaker": "Larry Beige",
+      "text": "If you are able to that, maybe there is way out, and you will prove that you deserve a second chance, but I cannot promise\nThis is the best I can offer",
+      "responses": []
+    },
+    
+    {
+      "editorIndex": 280,
+      "speaker": "Clerk",
+      "text": "I understand I did something really bad, I want to correct my mistakes, I will work with you and help you anyway I can to bring the shady guy down!",
+      "responses": []
+    },
+    {
+      "editorIndex": 290,
+      "speaker": "Larry Beige",
+      "text": "We have a lot of work to do",
+      "responses": []
+    },
+    {
+      "editorIndex": 300,
+      "speaker": "Clerk",
+      "text": "Well done kid, that was the right answer.",
+      "responses": []
     }
+    
+    
   ]
 }

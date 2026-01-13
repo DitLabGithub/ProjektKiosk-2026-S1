@@ -1,6 +1,6 @@
 {
   "customerName": "Larry Beige",
-  "npcPrefabPath": "NPC_Prefabs/PoliceGuy",
+  "npcPrefabPath": "NPC_Prefabs/PoliceGuy2",
   "idPrefabPath": "ID_Prefabs/LarryBeigeID",
   "idName": "Larry Beige",
   "idDOB": "N/A",
@@ -16,21 +16,21 @@
     {
       "editorIndex": 10,
       "speaker": "Larry Beige",
-      "text": "Hello again cashier, how are you doing",
+      "text": "Hello again cashier. How are you doing?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line1",
       "responses": []
     },
     {
       "editorIndex": 20,
       "speaker": "Clerk",
-      "text": "Hello mr police man, nice to meet you again",
+      "text": "Hello, mr police man, nice to meet you again! Doing good.",
       "voiceOverPath": "VoiceOvers/Clerk_Line2",
       "responses": []
     },
     {
       "editorIndex": 30,
       "speaker": "Larry Beige",
-      "text": "Please just call me Larry",
+      "text": "Please just call me Larry.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line3",
       "responses": []
     },
@@ -51,7 +51,7 @@
     {
       "editorIndex": 60,
       "speaker": "Clerk",
-      "text": "Oh, no then why?",
+      "text": "Oh, no then for what?",
       "voiceOverPath": "VoiceOvers/Clerk_Line6",
       "responses": []
     },
@@ -65,42 +65,53 @@
     {
       "editorIndex": 80,
       "speaker": "Larry Beige",
-      "text": "Yes, something like this. See I was just promoted to lead investigator and I am responsible for this town security.",
+      "text": "Yes, something like that. See I was just promoted to lead investigator and I am responsible for this town security.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line8",
       "responses": []
     },
     {
       "editorIndex": 90,
       "speaker": "Clerk",
-      "text": "That is great congrats!",
+      "text": "That is great, congrats! Could I just check your ID before we continue?",
       "voiceOverPath": "VoiceOvers/Clerk_Line9",
-      "responses": []
+      "responses": [],
+      "askForID": true,
+      "grantNameAccess": true,
+      "grantDOBAccess": true,
+      "grantPictureAccess": true
     },
     {
       "editorIndex": 100,
       "speaker": "Larry Beige",
-      "text": "Thank you clerk, but that also means I need to carry the investigations myself, we are very understaffed, which complicates everything. That is why there has been a surge of crime recently in this town.",
+      "text": "Oh yeah, that is the correct way. Good job.",
+      "voiceOverPath": "VoiceOvers/LarryBeige_Line10",
+      "responses": []
+    },
+    {
+      "editorIndex": 101,
+      "speaker": "Larry Beige",
+      "text": "And thank you for the nice words clerk, but that also means I need to carry the investigations myself. We are very understaffed, which complicates everything.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line10",
       "responses": []
     },
     {
       "editorIndex": 110,
       "speaker": "Clerk",
-      "text": "Oh, yes that explains the news… Everyone in the town is worried, there is too much crime.",
+      "text": "Oh, yes that explains the news… Everyone in the town is worried.",
       "voiceOverPath": "VoiceOvers/Clerk_Line11",
       "responses": []
     },
     {
       "editorIndex": 120,
       "speaker": "Larry Beige",
-      "text": "Exactly which is why I cannot let it continue anymore. The previous administration let it happen for too long. Not under me, rules are now different.",
+      "text": "Exactly, which is why I cannot let it continue anymore. The previous administration let it happen for too long. But not under me.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line12",
       "responses": []
     },
     {
       "editorIndex": 130,
       "speaker": "Clerk",
-      "text": "Understandable. And it is great what you are doing, I will help in any way possible.",
+      "text": "Understandable. And what you are doing is great, I will help in any way possible.",
       "voiceOverPath": "VoiceOvers/Clerk_Line13",
       "responses": []
     },
@@ -114,17 +125,11 @@
     {
       "editorIndex": 150,
       "speaker": "Larry Beige",
-      "text": "Well, you see clerk, I was recently promoted to this position, so I didn't have time to look in depth in this particular case but…",
+      "text": "Well, you see clerk, I didn't have time to look in depth in this particular case. But your shop was in the middle of a lot of data breaches in this town.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line15",
       "responses": []
     },
-    {
-      "editorIndex": 160,
-      "speaker": "Larry Beige",
-      "text": "Your shop was in the middle of all data breaches in the town.",
-      "voiceOverPath": "VoiceOvers/LarryBeige_Line16",
-      "responses": []
-    },
+    
     {
       "editorIndex": 170,
       "speaker": "Clerk",
@@ -135,7 +140,7 @@
     {
       "editorIndex": 180,
       "speaker": "Larry Beige",
-      "text": "All the suspicious activities in the town are revolving around here. Could you care to explain how that is possible, all the facts are pointing me to here.",
+      "text": "No need to worry I am not juumping to concluions here, it is too early. Could you care to explain how is that possible, all the facts are pointing me to here.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line18",
       "responses": []
     },
@@ -153,15 +158,15 @@
       "voiceOverPath": "VoiceOvers/LarryBeige_Line20",
       "responses": [
         {
-          "responseText": "I can explain everything/Mention Shady - Neutral",
+          "responseText": "I can explain",
           "nextLineIndex": 210
         },
         {
-          "responseText": "Deny - You have come here to interrogate me? - Very Bad",
+          "responseText": "No interrogation",
           "nextLineIndex": 300
         },
         {
-          "responseText": "Say Nothing - Good(for now)",
+          "responseText": "Say nothing",
           "nextLineIndex": 400
         }
       ]
@@ -176,28 +181,22 @@
     {
       "editorIndex": 220,
       "speaker": "Clerk",
-      "text": "I can explain everything! I only had one encounter.",
+      "text": "I only had one encounter with him.",
       "voiceOverPath": "VoiceOvers/Clerk_Line22",
       "responses": []
     },
-    {
-      "editorIndex": 230,
-      "speaker": "Larry Beige",
-      "text": "Yes come on tell me more. The more you speak the better for you and town",
-      "voiceOverPath": "VoiceOvers/LarryBeige_Line23",
-      "responses": []
-    },
+    
     {
       "editorIndex": 240,
       "speaker": "Clerk",
-      "text": "There was a shady guy that came to the Kiosk and demanded information. I didn't get a lot of information because I immediately sent him away.",
+      "text": "There was a shady guy that came to the Kiosk and demanded information. I didn't get a lot of from him because I immediately sent him away.",
       "voiceOverPath": "VoiceOvers/Clerk_Line24",
       "responses": []
     },
     {
       "editorIndex": 250,
       "speaker": "Larry Beige",
-      "text": "He didn't mention anything? Or anything you noticed?",
+      "text": "He didn't mention anything? Or anything that you noticed?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line25",
       "responses": []
     },
@@ -239,7 +238,7 @@
     {
       "editorIndex": 283,
       "speaker": "Larry Beige",
-      "text": "I certainly cannot conclude anything with this information but I have my suspicions",
+      "text": "I certainly cannot conclude anything with this information but I am very close now",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line28_3",
       "responses": []
     },
@@ -262,7 +261,14 @@
     {
       "editorIndex": 300,
       "speaker": "Clerk",
-      "text": "I don’t want to answer such questions, I am innocent. I have the right to stay silent… And this is not a good look for you… You have come here to interrogate me?",
+      "text": "You have come here to interrogate me?",
+      "voiceOverPath": "VoiceOvers/Clerk_Line30",
+      "responses": []
+    },
+    {
+      "editorIndex": 301,
+      "speaker": "Clerk",
+      "text": "I deny to answer such questions, I am innocent. I have the right to stay silent…",
       "voiceOverPath": "VoiceOvers/Clerk_Line30",
       "responses": []
     },
@@ -283,7 +289,7 @@
     {
       "editorIndex": 330,
       "speaker": "Larry Beige",
-      "text": "It doesn't matter anymore, it is too late and you are delaying the investigation. I cannot allow that. I will issue you a fine",
+      "text": "This is no way to speak to a police officer. But It doesn't matter anymore, you are delaying the investigation. I cannot allow that. I will issue you a fine",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line33",
       "responses": []
     },
@@ -311,7 +317,7 @@
     {
       "editorIndex": 370,
       "speaker": "Larry Beige",
-      "text": "As I said too late for that. Watch it next time, I don’t be stupid",
+      "text": "As I said too late for that. Watch it next time. And don’t be stupid",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line37",
       "responses": []
     },
@@ -334,42 +340,42 @@
     {
       "editorIndex": 400,
       "speaker": "Larry Beige",
-      "text": "You sure that you know nothing about the illegal dealings of data around this town, your shop seems to pop up every single time",
+      "text": "Silence won't help you kid. Are you sure that you know nothing about the illegal dealings?",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line40",
       "responses": []
     },
     {
       "editorIndex": 410,
       "speaker": "Clerk",
-      "text": "I know nothing. Yes, there probably has been a mistake",
+      "text": "I am sorry but I can't think of anything. Yes, there probably has been a mistake",
       "voiceOverPath": "VoiceOvers/Clerk_Line41",
       "responses": []
     },
     {
       "editorIndex": 420,
       "speaker": "Larry Beige",
-      "text": "A mistake is one thing but your shop seems to be in the middle of these deals",
+      "text": "A mistake is one thing but in your case it seems to be a pattern...",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line42",
       "responses": []
     },
     {
       "editorIndex": 430,
       "speaker": "Clerk",
-      "text": "What deals are you talking about? Stealing data? As I said there is nothing I know…",
+      "text": "Stealing data? As I said there is nothing I know…",
       "voiceOverPath": "VoiceOvers/Clerk_Line43",
       "responses": []
     },
     {
       "editorIndex": 440,
       "speaker": "Larry Beige",
-      "text": "Well for now my hands seem to be tied, I don't have the evidence to prove or disprove your innocence.",
+      "text": "Well, for now my hands seem to be tied, I don't have the evidence to prove or disprove your innocence.",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line44",
       "responses": []
     },
     {
       "editorIndex": 450,
       "speaker": "Clerk",
-      "text": "I will be awaiting a new return to help the investigation. I would like to catch criminals as much as you…",
+      "text": "I will be glad to help the investigation. I would like to catch the criminal as much as you…",
       "voiceOverPath": "VoiceOvers/Clerk_Line45",
       "responses": []
     },
@@ -383,7 +389,7 @@
     {
       "editorIndex": 470,
       "speaker": "Larry Beige",
-      "text": "I will be going take care and make sure to keep an eye out",
+      "text": "I will be going, kid. Take care and make sure to keep an eye out!",
       "voiceOverPath": "VoiceOvers/LarryBeige_Line47",
       "responses": []
     },
