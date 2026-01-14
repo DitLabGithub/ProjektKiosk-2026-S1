@@ -232,37 +232,25 @@
     {
       "editorIndex": 330,
       "speaker": "Bossman:",
-      "text": "Great. Just so you know, I need more money to run the place, and sales are a bit down recently.",
+      "text": "Great. Just so you know, customers are starting to leave reviews on the service they get here.",
       "responses": []
     },
     {
       "editorIndex": 340,
       "speaker": "Bossman:",
-      "text": "So you're gonna have to make a 1000 Neuros today as your target. otherwise, you are going to be FIRED!",
-      "responses": []
-    },
-    {
-       "editorIndex": 350,
-      "speaker": "Clerk:",
-      "text": "Understood, boss.",
-      "responses": []
-    },
-    {
-      "editorIndex": 340,
-      "speaker": "Bossman:",
-      "text": "So be sure to get sales today. Also, keep an eye on the inbox, you may have some important messages.",
+      "text": "So be sure to make them feel welcome. Give 'em a little small talk. If they leave you a tip, feel free to keep 'em. Good luck!",
       "responses": []
     },
     {
       "editorIndex": 350,
       "speaker": "Bossman:",
-      "text": "That's about it. Happy huyonting Clerk!",
+      "text": "...",
       "responses": []
     },
     {
       "editorIndex": 360,
-      "speaker": "Clerk",
-      "text": "Will do boss.",
+      "speaker": "Bossman:",
+      "text": "...",
       "endConversationHere": true,
       "scoreScreenIndex": 26,
       "responses": []
