@@ -148,7 +148,7 @@
       "speaker": "Clerk",
       "text": "Fuck",
       "endConversationHere": true,
-      "scoreScreenIndex": 5,
+      "scoreScreenIndex": 9,
       "responses": []
     },
     {
@@ -208,8 +208,10 @@
     },
     {
       "editorIndex": 300,
-      "speaker": "Clerk",
+      "speaker": "Larry Beige",
       "text": "Well done kid, that was the right answer.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 10,
       "responses": []
     }
     

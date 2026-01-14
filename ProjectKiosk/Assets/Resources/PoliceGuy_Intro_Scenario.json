@@ -208,7 +208,7 @@
       "text": "Good luck, kid",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_231",
       "endConversationHere": true,
-      "scoreScreenIndex": 4,
+      "scoreScreenIndex": 11,
       "responses": []
     },
     {
@@ -419,10 +419,10 @@
     {
       "editorIndex": 460,
       "speaker": "Clerk",
-      "text": "It was nice chatting with you Larry! A tip? Thanks Larry!",
+      "text": "It was nice chatting with you! A tip? Thanks Larry!",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_460",
       "endConversationHere": true,
-      "scoreScreenIndex": 1,
+      "scoreScreenIndex": 12,
       "responses": []
     },
 
@@ -439,7 +439,7 @@
       "text": "Totally understandable, I don't want to take from your time. Likewise, clerk. Take care, will see you soon!",
       "voiceOverPath": "VoiceOvers/LarryBeige_Intro_480",
       "endConversationHere": true,
-      "scoreScreenIndex": 2,
+      "scoreScreenIndex": 13,
       "responses": []
     },
     {
@@ -570,7 +570,7 @@
       "text": "You take care too...",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_620",
       "endConversationHere": true,
-      "scoreScreenIndex": 5,
+      "scoreScreenIndex": 14,
       "responses": []
     },
     {
@@ -648,7 +648,7 @@
       "text": "Oh ok…mr Beige",
       "voiceOverPath": "VoiceOvers/Clerk_Intro_740",
       "endConversationHere": true,
-      "scoreScreenIndex": 5,
+      "scoreScreenIndex": 15,
       "responses": []
     }
   ]
