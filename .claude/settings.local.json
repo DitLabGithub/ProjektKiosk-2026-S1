@@ -20,7 +20,14 @@
       "Bash(git branch:*)",
       "Bash(git reflog:*)",
       "Bash(git fsck:*)",
-      "WebFetch(domain:ditlab.nl)"
+      "WebFetch(domain:ditlab.nl)",
+      "Bash(ls:*)",
+      "Bash(winget install:*)",
+      "Bash(choco install:*)",
+      "Bash(curl:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(/c/Users/salma/Downloads/pandoc-3.8.3/pandoc.exe:*)",
+      "Bash(unzip:*)"
     ],
     "deny": [],
     "ask": []
