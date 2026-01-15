@@ -245,14 +245,8 @@
       "editorIndex": 350,
       "speaker": "Bossman:",
       "text": "...",
-      "responses": []
-    },
-    {
-      "editorIndex": 360,
-      "speaker": "Bossman:",
-      "text": "...",
       "endConversationHere": true,
-      "scoreScreenIndex": 26,
+      "scoreScreenIndex": 1,
       "responses": []
     }
   ]

@@ -27,7 +27,10 @@
       "Bash(curl:*)",
       "Bash(powershell -Command:*)",
       "Bash(/c/Users/salma/Downloads/pandoc-3.8.3/pandoc.exe:*)",
-      "Bash(unzip:*)"
+      "Bash(unzip:*)",
+      "Bash(git show:*)",
+      "Bash(git reset:*)",
+      "Bash(git show-ref:*)"
     ],
     "deny": [],
     "ask": []

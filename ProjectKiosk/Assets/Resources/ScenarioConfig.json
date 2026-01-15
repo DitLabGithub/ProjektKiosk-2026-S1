@@ -18,16 +18,6 @@
       "filename": "Robin_Scenario",
       "displayName": "Robin",
       "followUpScenario": ""
-    },
-    {
-      "filename": "PoliceGuy_Warning_Scenario",
-      "displayName": "Police Guy",
-      "followUpScenario": ""
-    },
-    {
-      "filename": "PoliceGuy_Arrest_Scenario",
-      "displayName": "Police Guy",
-      "followUpScenario": ""
     }
   ]
 }

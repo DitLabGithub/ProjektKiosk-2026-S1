@@ -126,7 +126,7 @@
       "speaker": "Clerk:",
       "text": "...\n\n",
       "endConversationHere": true,
-      "scoreScreenIndex": 28,
+      "scoreScreenIndex": 12,
       "responses": []
     },
     {
@@ -230,7 +230,7 @@
       "speaker": "Clerk:",
       "text": "...",
       "endConversationHere": true,
-      "scoreScreenIndex": 27,
+      "scoreScreenIndex": 11,
       "responses": []
     },
     {
@@ -329,7 +329,7 @@
       "speaker": "Clerk:",
       "text": "...\n\n",
       "endConversationHere": true,
-      "scoreScreenIndex": 30,
+      "scoreScreenIndex": 14,
       "responses": []
     },
     {
@@ -439,7 +439,7 @@
       "speaker": "Clerk:",
       "text": "...\n\n",
       "endConversationHere": true,
-      "scoreScreenIndex": 29,
+      "scoreScreenIndex": 13,
       "responses": []
     }
   ]
