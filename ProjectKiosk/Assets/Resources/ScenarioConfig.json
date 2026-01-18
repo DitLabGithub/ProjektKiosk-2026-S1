@@ -18,6 +18,11 @@
       "filename": "Robin_Scenario",
       "displayName": "Robin",
       "followUpScenario": ""
+    },
+    {
+      "filename": "ConspiracyGuy_Scenario",
+      "displayName": "Theorist",
+      "followUpScenario": ""
     }
   ]
 }

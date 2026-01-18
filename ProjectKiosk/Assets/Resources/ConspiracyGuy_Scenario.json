@@ -85,7 +85,7 @@
         {
           "responseText": "Make the sale",
           "isMakeSaleResponse": true,
-          "nextLineIndex": 83
+          "nextLineIndex": 86
         }
       
       ]
@@ -94,7 +94,6 @@
       "editorIndex": 86,
       "speaker": "Theorist",
       "text": "Nice, thanks dude. At least small shops like yours aren’t bleeding people dry yet. The monopolies… man, they try to suck every last cent they can out of us.",
-      "nextLineIndex": 90,
       "responses": []
     },
     {
