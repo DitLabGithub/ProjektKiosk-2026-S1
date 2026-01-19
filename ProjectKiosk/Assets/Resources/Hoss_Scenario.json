@@ -238,15 +238,40 @@
     {
       "editorIndex": 340,
       "speaker": "Bossman:",
-      "text": "So be sure to make them feel welcome. Give 'em a little small talk. If they leave you a tip, feel free to keep 'em. Good luck!",
+      "text": "Make sure you treat them well.",
       "responses": []
     },
     {
+      "editorIndex": 345,
+      "speaker": "Bossman:",
+      "text": "Also be aware that we need to close our target which is 1000 neuros, if you did not do it you may get into trouble!",
+      "disableContinueButton": true,
+      "responses": []
+    },
+    {
+      "editorIndex": 348,
+      "speaker": "Clerk:",
+      "text": "Understood, boss.",
+      "responses": []
+    },
+    {
+      "editorIndex": 349,
+      "speaker": "Bossman:",
+      "text": "Last thing, keep an eye on your mailbox it is on your topleft",
+      "responses": []
+    },
+    {
+      "editorIndex": 351,
+      "speaker": "Clerk:",
+      "text": "Will do, boss.",
+      "responses": []"
+    }
+    {
       "editorIndex": 350,
       "speaker": "Bossman:",
-      "text": "...",
+      "text": "Alright, See you!",
       "endConversationHere": true,
-      "scoreScreenIndex": 1,
+      "scoreScreenIndex": 0,
       "responses": []
     }
   ]
