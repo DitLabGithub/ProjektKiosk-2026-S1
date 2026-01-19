@@ -261,13 +261,13 @@
       "responses": []
     },
     {
-      "editorIndex": 351,
+      "editorIndex": 350,
       "speaker": "Clerk:",
       "text": "Will do, boss.",
       "responses": []"
     }
     {
-      "editorIndex": 350,
+      "editorIndex": 351,
       "speaker": "Bossman:",
       "text": "Alright, See you!",
       "endConversationHere": true,
