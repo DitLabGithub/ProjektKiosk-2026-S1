@@ -87,7 +87,7 @@ public class SoundManager : MonoBehaviour {
         if (bgMusicSource != null && mainBackgroundMusic != null) {
             bgMusicSource.clip = mainBackgroundMusic;
             bgMusicSource.loop = true;
-            bgMusicSource.volume = 1.0f;
+            bgMusicSource.volume = 2.5f;
             bgMusicSource.priority = 0;
             bgMusicSource.spatialBlend = 0f;
             bgMusicSource.enabled = true;
