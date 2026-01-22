@@ -553,7 +553,7 @@
           "isMakeSaleResponse": true
         },
         {
-          "responseText": "Owner ID?",
+          "responseText": "Ask Owner ID?",
           "nextLineIndex": 1100
         },
         {
@@ -1043,7 +1043,7 @@
       "text": "Glad to be of help, bye Fridgy",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 6
+      "scoreScreenIndex": 15
     },
     {
       "editorIndex": 1800,

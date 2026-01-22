@@ -46,6 +46,10 @@
         {
           "responseText": "ID?",
           "nextLineIndex": 81
+        },
+        {
+          "responseText": "No need for ID?",
+          "nextLineIndex": 750
         }
       ]
     },
@@ -554,6 +558,56 @@
       "endConversationHere": true,
       "scoreScreenIndex": 5,
       "responses": []
+    },
+    {
+      "editorIndex": 750,
+      "speaker": "Theorist",
+      "text": "Now, can I get my ciggies?",
+      "responses": []
+    },
+    {
+      "editorIndex": 760,
+      "speaker": "Clerk",
+      "text": "Here you go! It will be 9 NEUROS",
+      "responses": [
+        {
+          "responseText": "Make the sale",
+          "isMakeSaleResponse": true,
+          "nextLineIndex": 770
+        }
+      
+      ]
+    },
+    {
+      "editorIndex": 770,
+      "speaker": "Theorist",
+      "text": "Damn, no ID, that is suspicious...",
+      "responses": []
+    },
+    {
+      "editorIndex": 771,
+      "speaker": "Clerk",
+      "text": "Why is that?",
+      "responses": []
+    },
+    {
+      "editorIndex": 780,
+      "speaker": "Theorist",
+      "text": "Well, I will be going now.",
+      "responses": []
+    },
+    {
+      "editorIndex": 790,
+      "speaker": "Theorist",
+      "text": "Bye.",
+      "endConversationHere": true,
+      "scoreScreenIndex": 4,
+      "responses": []
     }
+
+
+
+
+
   ]
 }

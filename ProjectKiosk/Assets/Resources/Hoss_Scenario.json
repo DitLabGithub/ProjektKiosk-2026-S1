@@ -245,7 +245,6 @@
       "editorIndex": 345,
       "speaker": "Bossman:",
       "text": "Also be aware that we need to close our target which is 1000 neuros, if you did not do it you may get into trouble!",
-      "disableContinueButton": true,
       "responses": []
     },
     {
@@ -264,8 +263,8 @@
       "editorIndex": 350,
       "speaker": "Clerk:",
       "text": "Will do, boss.",
-      "responses": []"
-    }
+      "responses": []
+    },
     {
       "editorIndex": 351,
       "speaker": "Bossman:",
