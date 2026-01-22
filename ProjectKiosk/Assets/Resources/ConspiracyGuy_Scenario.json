@@ -49,7 +49,8 @@
         },
         {
           "responseText": "No need for ID?",
-          "nextLineIndex": 750
+          "nextLineIndex": 750,
+          "scoreValue": 10
         }
       ]
     },
@@ -573,41 +574,10 @@
         {
           "responseText": "Make the sale",
           "isMakeSaleResponse": true,
-          "nextLineIndex": 770
+          "nextLineIndex": 86
         }
       
       ]
-    },
-    {
-      "editorIndex": 770,
-      "speaker": "Theorist",
-      "text": "Damn, no ID, that is suspicious...",
-      "responses": []
-    },
-    {
-      "editorIndex": 771,
-      "speaker": "Clerk",
-      "text": "Why is that?",
-      "responses": []
-    },
-    {
-      "editorIndex": 780,
-      "speaker": "Theorist",
-      "text": "Well, I will be going now.",
-      "responses": []
-    },
-    {
-      "editorIndex": 790,
-      "speaker": "Theorist",
-      "text": "Bye.",
-      "endConversationHere": true,
-      "scoreScreenIndex": 4,
-      "responses": []
     }
-
-
-
-
-
   ]
 }

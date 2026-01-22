@@ -64,7 +64,7 @@ public class SoundManager : MonoBehaviour {
     }
     public void PlayPickupSound() {
         if (sfxSource != null && pickupSound != null) {
-            sfxSource.PlayOneShot(pickupSound, 1f); // quieter sound for pickup cause it's fucking earrape
+            sfxSource.PlayOneShot(pickupSound, 0.2f); // quieter sound for pickup cause it's fucking earrape
         }
     }
     public void PlayPlaceSound() => PlaySound(placeSound);
@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour {
     public void PlayIDScanned()
     {
         if (sfxSource != null && idScanned != null) {
-            sfxSource.PlayOneShot(idScanned, 0.3f); // these sounds are loud as shit bruv
+            sfxSource.PlayOneShot(idScanned, 0.01f); // these sounds are loud as shit bruv
         }
     }
     public void PlayContinueButtonClick()
