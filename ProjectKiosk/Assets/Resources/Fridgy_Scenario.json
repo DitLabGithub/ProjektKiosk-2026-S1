@@ -691,7 +691,7 @@
       "text": "Bye!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 4
+      "scoreScreenIndex": 18
     },
     {
       "editorIndex": 810,
@@ -715,8 +715,7 @@
       "editorIndex": 840,
       "speaker": "Fridgy",
       "text": "Human asks Fridgy what I think?\n\nYes owner cold beverage like a lot beep\n\nLove even! Great idea Clerk human",
-      "responses": [],
-      "displayDuration": 4.0
+      "responses": []
     },
     {
       "editorIndex": 850,
@@ -754,7 +753,7 @@
       "text": "Human makes sense…sometimes",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 5
+      "scoreScreenIndex": 18
     },
     {
       "editorIndex": 910,
@@ -798,7 +797,7 @@
       "text": "Sorry my bad, was trying to be helpful, Fridgy.",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 8
+      "scoreScreenIndex": 18
     },
 
     {
@@ -868,14 +867,13 @@
       "text": "I hope so, see ya!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 7
+      "scoreScreenIndex": 16
     },
     {
       "editorIndex": 1400,
       "speaker": "Clerk",
       "text": "It might be hard, I know, but these are the last things I need, I promise. Can I get your serial number and activation code?",
-      "responses": [],
-      "displayDuration": 1.5
+      "responses": []
     },
     
     {
@@ -909,7 +907,7 @@
       "text": "No Fridgy wait…",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 8
+      "scoreScreenIndex": 20
     },
     {
       "editorIndex": 1500,
@@ -965,7 +963,7 @@
       "text": "Bye, Fridgy, hopefully your owner is happy\n\nOhh.....",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 9
+      "scoreScreenIndex": 20
     },
     {
       "editorIndex": 1600,
@@ -1127,8 +1125,7 @@
       "editorIndex": 1970,
       "speaker": "Clerk",
       "text": "I'm sure he will! You did great, Fridgy. You got the beer AND the extra ones. Tell your owner he's lucky to have such a helpful fridge!",
-      "responses": [],
-      "displayDuration": 4.5
+      "responses": []
     },
     {
       "editorIndex": 1980,
@@ -1136,7 +1133,7 @@
       "text": "Thank you, human Clerk! Best service! Best friend!\n\nFridge will return soon! Beep boop!",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 5
+      "scoreScreenIndex": 17
     }
   ]
 }
