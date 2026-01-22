@@ -1,6 +1,12 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
+/// <summary>
+/// Manages all game audio including button clicks, sound effects, and background music.
+/// For best button click responsiveness, ensure Unity's Audio Settings have:
+/// - DSP Buffer Size: Best Latency (Edit > Project Settings > Audio)
+/// - Button click audio clips should have no leading silence
+/// </summary>
 public class SoundManager : MonoBehaviour {
     public static SoundManager Instance;
 
@@ -36,6 +42,9 @@ public class SoundManager : MonoBehaviour {
             buttonClickSource.volume = 1f;
             buttonClickSource.spatialBlend = 0f; // 2D sound
             buttonClickSource.playOnAwake = false;
+            buttonClickSource.bypassEffects = true; // Skip audio processing for instant playback
+            buttonClickSource.bypassListenerEffects = true;
+            buttonClickSource.bypassReverbZones = true;
         }
 
         PlayKioskBackgroundMusic();
@@ -61,7 +70,8 @@ public class SoundManager : MonoBehaviour {
     public void PlayPlaceSound() => PlaySound(placeSound);
     public void PlayButtonSellSound() {
         if (buttonClickSource != null && buttonSellSound != null) {
-            buttonClickSource.PlayOneShot(buttonSellSound, 1f);
+            buttonClickSource.clip = buttonSellSound;
+            buttonClickSource.Play();
         }
     }
     public void PlayIDScanned()
@@ -73,13 +83,15 @@ public class SoundManager : MonoBehaviour {
     public void PlayContinueButtonClick()
     {
         if (buttonClickSource != null && continueButtonClick != null) {
-            buttonClickSource.PlayOneShot(continueButtonClick, 1f);
+            buttonClickSource.clip = continueButtonClick;
+            buttonClickSource.Play();
         }
     }
     public void PlayGenericButtonClick()
     {
         if (buttonClickSource != null && genericButtonClick != null) {
-            buttonClickSource.PlayOneShot(genericButtonClick, 1f);
+            buttonClickSource.clip = genericButtonClick;
+            buttonClickSource.Play();
         }
     }
     public void PlayKioskBackgroundMusic()
@@ -87,7 +99,9 @@ public class SoundManager : MonoBehaviour {
         if (bgMusicSource != null && mainBackgroundMusic != null) {
             bgMusicSource.clip = mainBackgroundMusic;
             bgMusicSource.loop = true;
-            bgMusicSource.volume = 1.5f;
+            bgMusicSource.volume = 2.5f;
+            bgMusicSource.priority = 0;
+            bgMusicSource.spatialBlend = 0f;
             bgMusicSource.enabled = true;
             bgMusicSource.Play();
         }

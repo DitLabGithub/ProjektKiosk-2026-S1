@@ -8,6 +8,9 @@ using System.Collections;
 
 
 public class ItemPickupManager : MonoBehaviour {
+    // Static field to persist ONLY the money amount across scenes
+    private static float persistentTotalFunds = 0f;
+
     public TextMeshProUGUI checkoutTotalText;
     public Transform leftHandSlot;
     public Transform rightHandSlot;
@@ -15,12 +18,20 @@ public class ItemPickupManager : MonoBehaviour {
     public float totalFunds = 0f;
     public TextMeshProUGUI fundsText; // UI for total funds
     public ReturnItemConfirmationUI returnConfirmationUI; // UI for when returning items that are already in-hand to the shelf
+    public CheckoutArrowIndicator checkoutArrow; // Arrow indicator for checkout zone
 
     private List<GameObject> carriedItems = new List<GameObject>();
     private List<int> availableSlots = new List<int>(); // Reusable slots
     private List<int> usedSlots = new List<int>(); // Currently occupied slots
 
     private float slotSpacing = 1f; // Distance between items in the checkout zone
+
+    void Start() {
+        // Load persistent funds when scene starts
+        totalFunds = persistentTotalFunds;
+        UpdateFundsUI();
+        Debug.Log("[ItemPickupManager] Scene loaded. Total Funds: €" + totalFunds);
+    }
 
     void Update() {
 
@@ -94,6 +105,11 @@ public class ItemPickupManager : MonoBehaviour {
         carriedItems.Add(item);
         SoundManager.Instance.PlayPickupSound();
 
+        // Show arrow when carrying items
+        if (checkoutArrow != null && carriedItems.Count > 0) {
+            checkoutArrow.Show();
+        }
+
         // Apply scaling and rotation based on which hand
         ItemSlotData data = item.GetComponent<ItemSlotData>();
         if (data != null) {
@@ -119,14 +135,18 @@ public class ItemPickupManager : MonoBehaviour {
     void UpdateCheckoutTotal() {
         float total = 0f;
 
-        foreach (Transform item in checkoutDropZone) {
-            ItemSlotData itemScript = item.GetComponent<ItemSlotData>();
-            if (itemScript != null) {
-                total += itemScript.Value;
+        if (checkoutDropZone != null) {
+            foreach (Transform item in checkoutDropZone) {
+                ItemSlotData itemScript = item.GetComponent<ItemSlotData>();
+                if (itemScript != null) {
+                    total += itemScript.Value;
+                }
             }
         }
 
-        checkoutTotalText.text = $"Total: €{total:0.00}";
+        if (checkoutTotalText != null) {
+            checkoutTotalText.text = $"Total: €{total:0.00}";
+        }
     }
 
     void DropItemAtCheckout() {
@@ -166,6 +186,11 @@ public class ItemPickupManager : MonoBehaviour {
 
         // Update total price
         UpdateCheckoutTotal();
+
+        // Hide arrow when no more items to carry
+        if (checkoutArrow != null && carriedItems.Count == 0) {
+            checkoutArrow.Hide();
+        }
     }
 
     void ReturnItemsToShelf() {
@@ -182,6 +207,11 @@ public class ItemPickupManager : MonoBehaviour {
         }
 
         carriedItems.Clear();
+
+        // Hide arrow when returning items
+        if (checkoutArrow != null) {
+            checkoutArrow.Hide();
+        }
     }
 
 
@@ -218,18 +248,22 @@ public class ItemPickupManager : MonoBehaviour {
 
         // Add value to player's funds
         totalFunds += saleTotal;
+        persistentTotalFunds = totalFunds; // Update persistent value
 
         // Update UI
         UpdateFundsUI();
         StartCoroutine(DelayedCheckoutTotalUpdate()); //This is a coroutine so that the checkout value doesn't bug out when selling stuff
     }
     void UpdateFundsUI() {
-        fundsText.text = $"Funds: €{totalFunds:0.00}";
+        if (fundsText != null) {
+            fundsText.text = $"Funds: €{totalFunds:0.00}";
+        }
     }
 
     // Add money from shady/illicit activities (like data leaks, bribes, etc.)
     public void AddShadyFunds(float amount) {
         totalFunds += amount;
+        persistentTotalFunds = totalFunds; // Update persistent value
         UpdateFundsUI();
         Debug.Log($"[ItemPickupManager] Added €{amount:0.00} shady money. Total funds: €{totalFunds:0.00}");
     }
@@ -241,6 +275,16 @@ public class ItemPickupManager : MonoBehaviour {
 
     public void ReturnCarriedItemsToShelf() {
         ReturnItemsToShelf();
+    }
+
+    /// <summary>
+    /// Resets the total funds to zero. Call this when starting a completely new game.
+    /// </summary>
+    public void ResetFunds() {
+        totalFunds = 0f;
+        persistentTotalFunds = 0f;
+        UpdateFundsUI();
+        Debug.Log("[ItemPickupManager] Funds reset to €0.00");
     }
 
 }
