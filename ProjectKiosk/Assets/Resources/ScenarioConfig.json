@@ -2,26 +2,24 @@
   "shuffleEnabled": false,
   "scenarios": [
 
-    
     {
-      "filename": "Fridgy_Scenario",
-      "displayName": "Fridgy",
+      "filename": "ConspiracyGuy_Scenario",
+      "displayName": "Theorist",
       "followUpScenario": ""
     },
-    
     {
       "filename": "Amon_Scenario",
       "displayName": "Amon",
       "followUpScenario": ""
     },
     {
-      "filename": "Robin_Scenario",
-      "displayName": "Robin",
+      "filename": "Fridgy_Scenario",
+      "displayName": "Fridgy",
       "followUpScenario": ""
     },
     {
-      "filename": "ConspiracyGuy_Scenario",
-      "displayName": "Theorist",
+      "filename": "Robin_Scenario",
+      "displayName": "Robin",
       "followUpScenario": ""
     }
   ]
