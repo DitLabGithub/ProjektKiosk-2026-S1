@@ -18,28 +18,24 @@
       "speaker": "Clerk",
       "text": "Hello, how can I help you?",
       "voiceOverPath": "VoiceOvers/ShaunBaker_Line1",
-      "npcSprite": "ShaunBaker_Normal",
       "responses": []
     },
     {
       "editorIndex": 20,
       "speaker": "Shady Guy",
       "text": "Hello mister I would like to have your attention…I think what I offer will intrigue you",
-      "voiceOverPath": "VoiceOvers/ShaunBaker_Line2",
       "responses": []
     },
     {
       "editorIndex": 30,
       "speaker": "Clerk",
       "text": "And what is that?",
-      "voiceOverPath": "VoiceOvers/ShaunBaker_Line3",
       "responses": []
     },
     {
       "editorIndex": 40,
       "speaker": "Shady Guy",
       "text": "Information…my business runs on it and I think yours will thrive from it!",
-      "voiceOverPath": "VoiceOvers/ShaunBaker_Line4",
       "responses": []
     },
     {
@@ -124,7 +120,6 @@
       "editorIndex": 131,
       "speaker": "Clerk",
       "text": "Piss off…",
-      "npcSprite": "ShaunBaker_Angry",
       "responses": []
     },
     {
@@ -293,7 +288,6 @@
       "editorIndex": 340,
       "speaker": "Clerk",
       "text": "Best scenario in this age...Bullshit...You are lying to yourself to feel less worthless.",
-      "npcSprite": "ShaunBaker_Angry",
       "responses": []
     },
     {
@@ -422,6 +416,12 @@
       "editorIndex": 510,
       "speaker": "Shady Guy",
       "text": "We will do more business in the future, Mr Clerk",
+      "responses": []
+    },
+    {
+      "editorIndex": 512,
+      "speaker": "Shady Guy",
+      "text": "Contact me when you have something for me",
       "businessCardImagePath": "Cards/ShadyCard",
       "showBusinessCard": true,
       "responses": []
