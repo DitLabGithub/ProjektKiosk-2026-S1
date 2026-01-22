@@ -148,6 +148,26 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;
     private string currentFullText = ""; // Store full text for skip functionality
 
+    void Awake()
+    {
+        // Ensure continue button is properly initialized
+        if (continueButton != null)
+        {
+            continueButton.interactable = true;
+        }
+    }
+
+    /// <summary>
+    /// Helper method to show continue button and ensure it's interactable
+    /// </summary>
+    private void ShowContinueButton()
+    {
+        if (continueButton != null)
+        {
+            continueButton.interactable = true;
+            continueButton.gameObject.SetActive(true);
+        }
+    }
 
     private System.Collections.IEnumerator ReturnToPreviousSlideAfterDelay(float delay)
     {
@@ -176,7 +196,7 @@ public class DialogueManager : MonoBehaviour
 
             if (shouldEnableContinue)
             {
-                continueButton.gameObject.SetActive(true);
+                ShowContinueButton();
             }
         }
     }
@@ -185,7 +205,7 @@ public class DialogueManager : MonoBehaviour
     private System.Collections.IEnumerator ShowContinueButtonAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        continueButton.gameObject.SetActive(true);
+        ShowContinueButton();
     }
 
     // NEW: Typewriter effect coroutine with auto-advance support
@@ -225,7 +245,7 @@ public class DialogueManager : MonoBehaviour
         else if (showContinueAfter)
         {
             // Show Continue button after typing is complete
-            continueButton.gameObject.SetActive(true);
+            ShowContinueButton();
         }
     }
 
@@ -447,7 +467,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = currentFullText;
         currentFullText = "";
         // Show Continue button
-        continueButton.gameObject.SetActive(true);
+        ShowContinueButton();
 
         Debug.Log("[DialogueManager] Skip complete. Text should now be visible.");
     }
@@ -457,6 +477,12 @@ public class DialogueManager : MonoBehaviour
         if (!dialogueStarted)
         {
             dialogueStarted = true;
+
+            // Clear tracking dictionaries when starting a new dialogue
+            chosenResponses.Clear();
+            dialogueReturnStack.Clear();
+            continueFlagPerLine.Clear();
+
             ShowNextLine();
         }
     }
@@ -513,7 +539,7 @@ public class DialogueManager : MonoBehaviour
             // Regular ID - show Continue button immediately
             if (!choicePanel.activeSelf)
             {
-                continueButton.gameObject.SetActive(true);
+                ShowContinueButton();
             }
 
             dialogueText.text = "ID scanned. Thank you!";
@@ -530,7 +556,7 @@ public class DialogueManager : MonoBehaviour
         // Now show the Continue button
         if (!choicePanel.activeSelf)
         {
-            continueButton.gameObject.SetActive(true);
+            ShowContinueButton();
         }
 
         // Text removed per user request - authorization UI shows checkmark only
@@ -784,7 +810,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentFullText;
             currentFullText = "";
             // Show Continue button
-            continueButton.gameObject.SetActive(true);
+            ShowContinueButton();
             return;
         }
 
@@ -923,10 +949,12 @@ public class DialogueManager : MonoBehaviour
 
                 Button buttonComponent = btn.GetComponent<Button>();
 
+                // Always ensure button is interactable and in correct visual state
+                buttonComponent.interactable = true;
+
                 if (chosenResponses[currentLineIndex].Contains(i))
                 {
-                    buttonComponent.interactable = true; // ✅ Let player click again
-                    txt.color = Color.gray;
+                    txt.color = Color.gray; // Visual indicator for already-chosen responses
                 }
                 else
                 {
@@ -1036,7 +1064,7 @@ public class DialogueManager : MonoBehaviour
             // (typewriter effect handles showing the button after typing completes)
             if (!line.disableContinueButton && line.displayDuration <= 0)
             {
-                continueButton.gameObject.SetActive(true);
+                ShowContinueButton();
             }
         }
 
@@ -1321,6 +1349,15 @@ public class DialogueManager : MonoBehaviour
         AllowPictureAccess = false;
         infoDisplay.HideInfo();
         waitingForAction = false;
+
+        // Clear tracking dictionaries when starting a new customer
+        chosenResponses.Clear();
+        dialogueReturnStack.Clear();
+        continueFlagPerLine.Clear();
+
+        // Reset dialogue state flags
+        currentLineIndex = 0;
+        dialogueStarted = false;
 
         // Hide authorization UI when resetting for new scenario
         if (AuthorizationUIManager.Instance != null)

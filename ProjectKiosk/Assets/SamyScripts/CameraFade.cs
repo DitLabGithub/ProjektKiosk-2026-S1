@@ -20,7 +20,9 @@ public class CameraFade : MonoBehaviour {
         texture = new Texture2D(1, 1);
         UpdateTextureAlpha();
         // Make sure camera starts at correct position
-        Camera.main.transform.position = roomPositions[currentRoomIndex];
+        if (Camera.main != null) {
+            Camera.main.transform.position = roomPositions[currentRoomIndex];
+        }
     }
 
     private void Update() {
@@ -54,7 +56,9 @@ public class CameraFade : MonoBehaviour {
 
         // Move camera
         currentRoomIndex = newIndex;
-        Camera.main.transform.position = roomPositions[currentRoomIndex];
+        if (Camera.main != null) {
+            Camera.main.transform.position = roomPositions[currentRoomIndex];
+        }
 
         // Optional short pause
         yield return new WaitForSeconds(0.05f);
