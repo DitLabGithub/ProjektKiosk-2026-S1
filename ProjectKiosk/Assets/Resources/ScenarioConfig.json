@@ -2,6 +2,12 @@
   "shuffleEnabled": false,
   "scenarios": [
 
+    
+    {
+      "filename": "Fridgy_Scenario",
+      "displayName": "Fridgy",
+      "followUpScenario": ""
+    },
     {
       "filename": "ConspiracyGuy_Scenario",
       "displayName": "Theorist",
@@ -10,11 +16,6 @@
     {
       "filename": "Amon_Scenario",
       "displayName": "Amon",
-      "followUpScenario": ""
-    },
-    {
-      "filename": "Fridgy_Scenario",
-      "displayName": "Fridgy",
       "followUpScenario": ""
     },
     {

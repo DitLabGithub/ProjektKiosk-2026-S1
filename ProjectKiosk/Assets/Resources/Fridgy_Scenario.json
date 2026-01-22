@@ -605,18 +605,6 @@
       "responses": []
     },
     {
-      "editorIndex": 1120,
-      "speaker": "Clerk",
-      "text": "Sorry, Fridgy, I need to get some info from you to be finished",
-      "responses": []
-    },
-    {
-      "editorIndex": 1130,
-      "speaker": "Fridgy",
-      "text": "Fridge fine, but owner… cannot wait",
-      "responses": []
-    },
-    {
       "editorIndex": 1140,
       "speaker": "Clerk",
       "text": "I promise it is going to be quick\n\nCan I get your owner's ID?",
@@ -625,39 +613,19 @@
     {
       "editorIndex": 1150,
       "speaker": "Fridgy",
-      "text": "What ID… what….\n\nOwner wants…Fridge gets",
-      "responses": []
-    },
-    {
-      "editorIndex": 1160,
-      "speaker": "Clerk",
-      "text": "In your case, we need to ask for double confirmation as I mentioned. So I will need your owner's ID too, to check if you are authorised\n\nThen I need to wait for your owner to confirm the request for the purchase.\n\nIs that OK with you, Fridgy?",
-      "responses": [],
-      "displayDuration": 3.0
-    },
-    {
-      "editorIndex": 1170,
-      "speaker": "Fridgy",
-      "text": "Fridge more confused..Fridge not a human, yes but why not receive beer?",
+      "text": "What ID…\nOwner wants…Fridge gets",
       "responses": []
     },
     {
       "editorIndex": 1180,
       "speaker": "Clerk",
       "text": "Well, you have your own ID, but since the laws of SSI in the NEU, prohibit robots, androids, and non-humanoid creatures from buying products with a security layer, special information like a package or alcoholic beverages requires a human of age to buy them on their own.\n\nSorry to fry your chip with so much detail...",
-      "responses": [],
-      "displayDuration": 3.0
+      "responses": []
     },
     {
       "editorIndex": 1190,
       "speaker": "Fridgy",
       "text": "Whatever human say…Fridge will wait...",
-      "responses": []
-    },
-    {
-      "editorIndex": 1200,
-      "speaker": "Clerk",
-      "text": "Great, thanks Fridgy!",
       "responses": []
     },
     {
@@ -688,32 +656,12 @@
       "editorIndex": 1240,
       "speaker": "Clerk",
       "text": "Dammit, Fridges are very impatient...\n\nWaiting for the Credentials to be verified by your owner. It will take a while\n\nHe cannot blame you...",
-      "responses": [],
-      "displayDuration": 2.5
-    },
-    {
-      "editorIndex": 1250,
-      "speaker": "Clerk",
-      "text": "Gotcha, sorry for that Fridgy, your owner is over 18 indeed, thank you",
       "responses": []
-    },
-    {
-      "editorIndex": 1260,
-      "speaker": "Fridgy",
-      "text": "Fridge go home with beer then?",
-      "responses": []
-    },
-    {
-      "editorIndex": 1270,
-      "speaker": "Clerk",
-      "text": "I need to check if you are authorised to represent the person on the ID…Let me check the system\n\n————————\nValidating…\n————————\nAuthorization Check completed successfully…\n————————",
-      "responses": [],
-      "displayDuration": 1.5
     },
     {
       "editorIndex": 1271,
       "speaker": "Clerk",
-      "text": "Yes, all good now!",
+      "text": "Gotcha, sorry for that Fridgy, your owner is over 18 indeed, thank yous, all good now!",
       "responses": [
         {
           "responseText": "Make Sale",
@@ -859,7 +807,7 @@
       "text": "Thank you human Clerk, Fridge will see you soon… beep boop",
       "responses": [],
       "endConversationHere": true,
-      "scoreScreenIndex": 4
+      "scoreScreenIndex": 16
     },
     {
       "editorIndex": 1300,
