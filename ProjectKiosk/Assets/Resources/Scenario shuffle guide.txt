@@ -1,0 +1,154 @@
+================================================================================
+                    SCENARIO SYSTEM - QUICK REFERENCE
+================================================================================
+
+WHAT THIS IS:
+-------------
+This file controls which customer scenarios play and in what order.
+The system is already set up and working. You just need to understand how
+to add or modify scenarios.
+
+
+WHERE IT LIVES:
+---------------
+File: Assets/Resources/ScenarioConfig.json
+Script: Assets/SaabScripts/ScenarioManager.cs
+
+
+CURRENT SCENARIOS:
+------------------
+The game currently has these customer scenarios:
+1. Fridgy (AI fridge)
+2. ConspiracyGuy (Conspiracy theorist)
+3. Amon (Regular customer)
+4. Robin (Tourist)
+
+These shuffle randomly each playthrough (so Robin might appear before Fridgy).
+
+NOTE: Police scenarios are NOT in this list. They're triggered automatically
+when your corruption score reaches 50 or 70 points. See ScoreManager for that.
+
+
+HOW TO ADD A NEW SCENARIO:
+--------------------------
+1. Create your scenario JSON file in Assets/Resources/
+   Example: "NewCustomer_Scenario.json"
+
+2. Create the NPC prefab in Assets/Resources/NPC_Prefabs/
+
+3. Create the ID prefab in Assets/Resources/ID_Prefabs/
+
+4. Open ScenarioConfig.json and add your scenario:
+
+   {
+     "filename": "NewCustomer_Scenario",
+     "displayName": "New Customer",
+     "followUpScenario": ""
+   }
+
+5. Save and test. Your scenario will now appear in the rotation.
+
+
+SCENARIO ORDER OPTIONS:
+-----------------------
+Shuffle ON (current setting):
+  - "shuffleEnabled": true
+  - Scenarios play in random order each time
+  - Good for replayability
+
+Shuffle OFF:
+  - "shuffleEnabled": false
+  - Scenarios play in the order listed
+  - Good for testing specific sequences
+
+
+FOLLOW-UP SCENARIOS:
+--------------------
+A follow-up scenario plays IMMEDIATELY after another scenario, ignoring shuffle.
+
+Example:
+{
+  "filename": "ShadyGuy_Scenario",
+  "displayName": "Shady Guy",
+  "followUpScenario": "PoliceGuy_Intro_Scenario"
+}
+
+Result: Whenever Shady Guy finishes, Police Intro plays next (even if shuffle
+is on). Police Intro is NOT added to the shuffle pool.
+
+Current setup: No follow-ups are used. Police scenarios trigger via corruption
+score instead.
+
+
+EXAMPLE CONFIG FILE:
+--------------------
+{
+  "shuffleEnabled": true,
+  "scenarios": [
+    {
+      "filename": "Fridgy_Scenario",
+      "displayName": "Fridgy",
+      "followUpScenario": ""
+    },
+    {
+      "filename": "Robin_Scenario",
+      "displayName": "Robin",
+      "followUpScenario": ""
+    }
+  ]
+}
+
+
+HOW IT WORKS BEHIND THE SCENES:
+--------------------------------
+1. GameplayScene loads
+2. ScenarioManager reads ScenarioConfig.json
+3. Builds a list of scenarios
+4. If shuffleEnabled is true, randomizes the list
+5. Converts to a queue (first-in-first-out)
+6. DialogueManager asks "what's next?"
+7. ScenarioManager returns the next filename
+8. DialogueManager loads that JSON and runs it
+9. When done, asks for the next one
+10. Repeat until queue is empty
+11. Show end credits
+
+
+TESTING YOUR CHANGES:
+---------------------
+1. Edit ScenarioConfig.json
+2. Save the file
+3. Press Play in Unity
+4. Your changes take effect immediately (no rebuild needed)
+
+Check Console for logs:
+- "Loaded ScenarioConfig with X scenarios. Shuffle: True"
+- "Shuffled scenario order: [list]"
+- "Next scenario: [name]"
+
+
+COMMON ISSUES:
+--------------
+Problem: "JSON file not found in Resources"
+Solution: Check the filename matches exactly (case-sensitive, no .json extension)
+
+Problem: Scenarios don't shuffle
+Solution: Check "shuffleEnabled": true in ScenarioConfig.json
+
+Problem: Scenario appears twice
+Solution: Check you didn't add it to the list twice
+
+Problem: Police scenarios don't trigger
+Solution: Police scenarios are triggered by ScoreManager, not ScenarioConfig.
+         Check your corruption score thresholds in ScoreManager Inspector.
+
+
+WHERE TO GET HELP:
+------------------
+- Read PROJEKTKIOSK_COMPLETE_GUIDE.md (main documentation)
+- Check Unity Console for error messages
+- Look at existing scenario JSON files for examples
+- Ask your supervisor with specific error messages
+
+
+================================================================================
