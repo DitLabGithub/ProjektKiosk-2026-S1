@@ -23,8 +23,10 @@ public class NPCManager : MonoBehaviour
         CharacterData character =
             JsonUtility.FromJson<CharacterData>(jsonFile.text);
 
-        characters.Add(character);
+        character.avatarSprite =
+            Resources.Load<Sprite>(character.avatarPath);
 
+        characters.Add(character);
 
         Debug.Log("Loaded: " + character.name);
     }

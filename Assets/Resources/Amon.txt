@@ -1,6 +1,6 @@
 {
   "name": "Amon",
-  "avatarPath": "Sprites/Avatars/Amon.png",
+  "avatarPath": "Sprites/Avatars/Amon",
   "favouriteItem": ["Rambolos", "Hotshot", "BluePort"],
   "details": [
     {
