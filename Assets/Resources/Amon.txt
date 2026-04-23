@@ -52,7 +52,9 @@
           "options": [
             {
               "text": "Can I see your ID first?",
-              "effects": [{ "open_id_tab": true }],
+              "effects": [
+                { "variable": "open_id_tab", "value": "true" }
+              ],
               "requirements": [],
               "nextNodes": ["Day_1_Teen_Cig_ID_Check"]
             }
@@ -66,16 +68,18 @@
             {
               "text": "Here are your ciggies, Amon!",
               "effects": [
-                { "friendship": 1 },
-                { "SoldCig1": true },
-                { "open_wares_tab": true }
+                { "variable": "friendship", "value": "1" },
+                { "variable": "SoldCig1", "value": "true" },
+                { "variable": "open_wares_tab", "value": "true" }
               ],
               "requirements": [],
               "nextNodes": ["Day_1_Teen_Positive_End"]
             },
             {
               "text": "Hell no! This ID is fake!",
-              "effects": [{ "friendship": -1 }],
+              "effects": [
+                { "variable": "friendship", "value": "-1" }
+              ],
               "requirements": [],
               "nextNodes": ["Day_1_Teen_Negative_End"]
             }
@@ -84,7 +88,9 @@
         {
           "id": "Day_1_Teen_Negative_End",
           "text": "Sorry this was a mistake! *Leaves the store*",
-          "requirements": [{ "SoldCig1": false }],
+          "requirements": [
+            { "variable": "SoldCig1", "value": "false" }
+          ],
           "options": [
             {
               "text": "*Continue*",
@@ -97,7 +103,9 @@
         {
           "id": "Day_1_Teen_Positive_End",
           "text": "Thank you, mate! See you, around! *Leaves the store*",
-          "requirements": [{ "SoldCig1": true }],
+          "requirements": [
+            { "variable": "SoldCig1", "value": "true" }
+          ],
           "options": [
             {
               "text": "*Continue*",
@@ -133,7 +141,9 @@
           "options": [
             {
               "text": "Of course, let's just see your SSI first",
-              "effects": [{ "open_ssi_tab": true }],
+              "effects": [
+                { "variable": "open_ssi_tab", "value": "true" }
+              ],
               "requirements": [],
               "nextNodes": ["Day_3_Teen_Cig_SSI_Check"]
             }
@@ -147,7 +157,9 @@
             {
               "text": "Did you get more fat, kiddo?",
               "effects": [],
-              "requirements": [{ "friendship": -1 }],
+              "requirements": [
+                { "variable": "friendship", "value": "-1" }
+              ],
               "nextNodes": ["Day_3_Teen_Bad_Ending"]
             },
             {
@@ -159,8 +171,8 @@
             {
               "text": "*Say nothing but sell*",
               "effects": [
-                { "open_wares_tab": true },
-                { "SoldCig2": true }
+                { "variable": "open_wares_tab", "value": "true" },
+                { "variable": "SoldCig2", "value": "true" }
               ],
               "requirements": [],
               "nextNodes": ["Day_3_Teen_Good_Ending"]
@@ -168,9 +180,9 @@
             {
               "text": "You know kid, you'd better stop smoking",
               "effects": [
-                { "open_wares_tab": true },
-                { "friendship": 1 },
-                { "SoldCig2": true }
+                { "variable": "open_wares_tab", "value": "true" },
+                { "variable": "friendship", "value": "1" },
+                { "variable": "SoldCig2", "value": "true" }
               ],
               "requirements": [],
               "nextNodes": ["Day_3_Teen_Good_Ending"]
@@ -178,11 +190,13 @@
             {
               "text": "We've all been teenagers, there you go!",
               "effects": [
-                { "open_wares_tab": true },
-                { "friendship": 1 },
-                { "SoldCig2": true }
+                { "variable": "open_wares_tab", "value": "true" },
+                { "variable": "friendship", "value": "1" },
+                { "variable": "SoldCig2", "value": "true" }
               ],
-              "requirements": [{ "friendship": 1 }],
+              "requirements": [
+                { "variable": "friendship", "value": "1" }
+              ],
               "nextNodes": ["Day_3_Teen_Good_Ending"]
             }
           ]
@@ -190,7 +204,9 @@
         {
           "id": "Day_3_Teen_Bad_Ending",
           "text": "Wooooow, well better luck next time, I guess... *Leaves store*",
-          "requirements": [{ "SoldCig2": false }],
+          "requirements": [
+            { "variable": "SoldCig2", "value": "false" }
+          ],
           "options": [
             {
               "text": "*Continue*",
@@ -203,7 +219,9 @@
         {
           "id": "Day_3_Teen_Good_Ending",
           "text": "Yeah, thank you man, you know how it is with the ciggies!",
-          "requirements": [{ "SoldCig2": true }],
+          "requirements": [
+            { "variable": "SoldCig2", "value": "true" }
+          ],
           "options": [
             {
               "text": "Yeah, we've all been there, just don't go overboard with it!",

@@ -3,31 +3,28 @@ using UnityEngine;
 
 public class NPCManager : MonoBehaviour
 {
-    public List<CharacterData> characters = new List<CharacterData>();
+    public static NPCManager Instance;
+
+    public List<NPC> npcs = new List<NPC>();
+
+    private DataLoader dataLoader;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
-        LoadCharacter("Amon");
-    }
+        dataLoader = GetComponent<DataLoader>();
 
-    private void LoadCharacter(string fileName)
-    {
-        TextAsset jsonFile = Resources.Load<TextAsset>(fileName);
+        NPC amon = dataLoader.LoadNPC("Amon");
 
-        if (jsonFile == null)
+        if (amon != null)
         {
-            Debug.LogError("Could not find JSON: " + fileName);
-            return;
+            npcs.Add(amon);
+
+            Debug.Log("Loaded NPC in the manager: " + amon.data.name);
         }
-
-        CharacterData character =
-            JsonUtility.FromJson<CharacterData>(jsonFile.text);
-
-        character.avatarSprite =
-            Resources.Load<Sprite>(character.avatarPath);
-
-        characters.Add(character);
-
-        Debug.Log("Loaded: " + character.name);
     }
 }
