@@ -1,0 +1,219 @@
+{
+  "name": "Amon",
+  "avatarPath": "Sprites/Avatars/Amon.png",
+  "favouriteItem": ["Rambolos", "Hotshot", "BluePort"],
+  "details": [
+    {
+      "key": "likes_smoking",
+      "text": "Amon likes cigarettes"
+    },
+    {
+      "key": "addicted",
+      "text": "Amon is addicted"
+    }
+  ],
+
+  "variables": [
+  {
+    "name": "friendship",
+    "value": "0"
+  },
+  {
+    "name": "SoldCig1",
+    "value": "false"
+  },
+  {
+    "name": "SoldCig2",
+    "value": "false"
+  }
+],
+
+  "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Day_1_Teen_Start",
+          "text": "Good morning!",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Good morning!",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Day_1_Teen_Order_Cig"]
+            }
+          ]
+        },
+        {
+          "id": "Day_1_Teen_Order_Cig",
+          "text": "Can I get a pack of Rambolo?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Can I see your ID first?",
+              "effects": [{ "open_id_tab": true }],
+              "requirements": [],
+              "nextNodes": ["Day_1_Teen_Cig_ID_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Day_1_Teen_Cig_ID_Check",
+          "text": "Of course, here you go!",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Here are your ciggies, Amon!",
+              "effects": [
+                { "friendship": 1 },
+                { "SoldCig1": true },
+                { "open_wares_tab": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Day_1_Teen_Positive_End"]
+            },
+            {
+              "text": "Hell no! This ID is fake!",
+              "effects": [{ "friendship": -1 }],
+              "requirements": [],
+              "nextNodes": ["Day_1_Teen_Negative_End"]
+            }
+          ]
+        },
+        {
+          "id": "Day_1_Teen_Negative_End",
+          "text": "Sorry this was a mistake! *Leaves the store*",
+          "requirements": [{ "SoldCig1": false }],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Day_1_Teen_Positive_End",
+          "text": "Thank you, mate! See you, around! *Leaves the store*",
+          "requirements": [{ "SoldCig1": true }],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "day": 3,
+      "nodes": [
+        {
+          "id": "Day_3_Teen_Start",
+          "text": "Hey...",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hey",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Day_3_Teen_Order_Cigs"]
+            }
+          ]
+        },
+        {
+          "id": "Day_3_Teen_Order_Cigs",
+          "text": "I'd like to buy some Hotshots, today?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Of course, let's just see your SSI first",
+              "effects": [{ "open_ssi_tab": true }],
+              "requirements": [],
+              "nextNodes": ["Day_3_Teen_Cig_SSI_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Day_3_Teen_Cig_SSI_Check",
+          "text": "Of course, here you go!",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Did you get more fat, kiddo?",
+              "effects": [],
+              "requirements": [{ "friendship": -1 }],
+              "nextNodes": ["Day_3_Teen_Bad_Ending"]
+            },
+            {
+              "text": "If you come here again, I'm reporting you!",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Day_3_Teen_Bad_Ending"]
+            },
+            {
+              "text": "*Say nothing but sell*",
+              "effects": [
+                { "open_wares_tab": true },
+                { "SoldCig2": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Day_3_Teen_Good_Ending"]
+            },
+            {
+              "text": "You know kid, you'd better stop smoking",
+              "effects": [
+                { "open_wares_tab": true },
+                { "friendship": 1 },
+                { "SoldCig2": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Day_3_Teen_Good_Ending"]
+            },
+            {
+              "text": "We've all been teenagers, there you go!",
+              "effects": [
+                { "open_wares_tab": true },
+                { "friendship": 1 },
+                { "SoldCig2": true }
+              ],
+              "requirements": [{ "friendship": 1 }],
+              "nextNodes": ["Day_3_Teen_Good_Ending"]
+            }
+          ]
+        },
+        {
+          "id": "Day_3_Teen_Bad_Ending",
+          "text": "Wooooow, well better luck next time, I guess... *Leaves store*",
+          "requirements": [{ "SoldCig2": false }],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Day_3_Teen_Good_Ending",
+          "text": "Yeah, thank you man, you know how it is with the ciggies!",
+          "requirements": [{ "SoldCig2": true }],
+          "options": [
+            {
+              "text": "Yeah, we've all been there, just don't go overboard with it!",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
