@@ -24,7 +24,27 @@ public class NPCManager : MonoBehaviour
         {
             npcs.Add(amon);
 
-            Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+           // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
         }
+        NPC mira = dataLoader.LoadNPC("Mira");
+
+        if (mira != null)
+        {
+            npcs.Add(mira);
+
+           // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+        }
+        NPC gregor = dataLoader.LoadNPC("Gregor");
+
+        if (gregor != null)
+        {
+            npcs.Add(gregor);
+
+           // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+        }
+    }
+    public NPC GetNPC(string npcName)
+    {
+        return npcs.Find(npc => npc.data.name == npcName);
     }
 }

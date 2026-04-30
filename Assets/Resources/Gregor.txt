@@ -1,0 +1,196 @@
+{
+  "name": "Gregor",
+  "avatarPath": "Sprites/Avatars/Gregor",
+
+  "favouriteItems": [
+    {
+      "name": "Beer Nuts",
+      "price": 4
+    },
+    {
+      "name": "Black Coffee",
+      "price": 2
+    }
+  ],
+
+  "details": [
+    {
+      "key": "retired_guard",
+      "text": "Gregor used to work as a prison guard."
+    },
+    {
+      "key": "angry",
+      "text": "Gregor gets irritated easily."
+    }
+  ],
+
+  "variables": [
+    {
+      "name": "friendship",
+      "value": "0"
+    },
+    {
+      "name": "gaveCoffee",
+      "value": "false"
+    },
+    {
+      "name": "insultedGregor",
+      "value": "false"
+    }
+  ],
+
+  "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Gregor_D2_Start",
+          "text": "Coffee. Black.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Coming right up.",
+              "effects": [
+                {
+                  "variable": "gaveCoffee",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Gregor_D2_End"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D2_End",
+          "text": "Finally someone competent.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "day": 4,
+      "nodes": [
+        {
+          "id": "Gregor_D4_Start",
+          "text": "You look tired.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Look who's talking.",
+              "effects": [
+                {
+                  "variable": "insultedGregor",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-2"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Gregor_D4_Bad"]
+            },
+            {
+              "text": "Long day.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Gregor_D4_Good"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D4_Bad",
+          "text": "Watch your mouth.",
+          "requirements": [
+            {
+              "variable": "insultedGregor",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D4_Good",
+          "text": "Yeah. Same here.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "day": 5,
+      "nodes": [
+        {
+          "id": "Gregor_D5_Start",
+          "text": "Got my usual?",
+          "requirements": [
+            {
+              "variable": "gaveCoffee",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "Already prepared.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "2"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Gregor_D5_End"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D5_End",
+          "text": "Good. You remember things.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

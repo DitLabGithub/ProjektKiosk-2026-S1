@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0bbc838b595f9ee4098ea0a4a1cd2096
+guid: cbed5c5654671d54690ffb9b93847a85
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7783813424544337531
-    second: main_0
+      213: 5290114426254103178
+    second: cart_teal_color_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_0
+      name: cart_teal_color_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 6
+        y: 11
+        width: 154
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5813e184ee65af390800000000000000
-      internalID: -7783813424544337531
+      spriteID: a829b0eda034a6940800000000000000
+      internalID: 5290114426254103178
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      main_0: -7783813424544337531
+      cart_teal_color_0: 5290114426254103178
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -7,3 +7,15 @@ public class DialogueDayData
 
     public List<NodeData> nodes;
 }
+[System.Serializable]
+public class DayOrderWrapper
+{
+    public List<DayOrderData> days;
+}
+
+[System.Serializable]
+public class DayOrderData
+{
+    public int day;
+    public List<string> npcOrder;
+}

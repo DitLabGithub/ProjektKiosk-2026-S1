@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 0bbc838b595f9ee4098ea0a4a1cd2096
+guid: 62fdb827c545b584ab136119eb560374
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7783813424544337531
-    second: main_0
+      213: 7449504920741624267
+    second: calendar_teal_color_0
+  - first:
+      213: 8594966542693291081
+    second: calendar_teal_color_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: main_0
+      name: calendar_teal_color_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        x: 5
+        y: 7
+        width: 145
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5813e184ee65af390800000000000000
-      internalID: -7783813424544337531
+      spriteID: bc934599145f16760800000000000000
+      internalID: 7449504920741624267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calendar_teal_color_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 108
+        width: 144
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 944d9915884774770800000000000000
+      internalID: 8594966542693291081
       vertices: []
       indices: 
       edges: []
@@ -161,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      main_0: -7783813424544337531
+      calendar_teal_color_0: 7449504920741624267
+      calendar_teal_color_1: 8594966542693291081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

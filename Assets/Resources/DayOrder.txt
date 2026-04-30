@@ -1,0 +1,16 @@
+{
+  "days": [
+    {
+      "day": 1,
+      "npcOrder": ["Amon", "Gregor"]
+    },
+    {
+      "day": 2,
+      "npcOrder": ["Mira"]
+    },
+    {
+      "day": 3,
+      "npcOrder": ["Amon", "Mira", "Gregor"]
+    }
+  ]
+}

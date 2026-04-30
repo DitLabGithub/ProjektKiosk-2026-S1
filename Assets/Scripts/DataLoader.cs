@@ -40,7 +40,7 @@ public class DataLoader : MonoBehaviour
             }
         }
 
-        Debug.Log("Loaded NPC: " + data.name);
+        //Debug.Log("Loaded NPC: " + data.name);
 
         return npc;
     }

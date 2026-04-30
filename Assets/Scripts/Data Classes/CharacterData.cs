@@ -11,7 +11,7 @@ public class CharacterData
     public Sprite avatar;
 
     public List<ItemData> favouriteItems;
-    public List<DetailData> details;
+    public List<Detail> details;
 
     public List<VariableData> variables;
 
