@@ -108,6 +108,16 @@ public class DialogueManager : MonoBehaviour
             {
                 variable.value = effect.value;
             }
+
+            switch (effect.variable)
+            {
+                case "open_id_tab" when effect.value == "true":
+                    UIManager.Instance.ToggleIDentification_ID();
+                    break;
+                case "open_id_tab" when effect.value == "false":
+                    UIManager.Instance.ToggleIDentification_ID();
+                    break;
+            }
         }
     }
     public bool MeetsRequirements(List<RequirementData> requirements)

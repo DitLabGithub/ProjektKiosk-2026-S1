@@ -13,11 +13,11 @@ public class DataLoader : MonoBehaviour
             return null;
         }
 
-        // 2. Parse into CharacterData
+        // 2. Parse JSON → CharacterData
         CharacterData data =
             JsonUtility.FromJson<CharacterData>(jsonFile.text);
 
-        // 3. Convert sprite path → Sprite
+        // 3. Load runtime sprite
         data.avatar = Resources.Load<Sprite>(data.avatarPath);
 
         if (data.avatar == null)
@@ -25,22 +25,8 @@ public class DataLoader : MonoBehaviour
             Debug.LogWarning("Sprite not found at: " + data.avatarPath);
         }
 
-        // 4. Create NPC runtime object
+        // 4. Create runtime NPC (constructor handles variables)
         NPC npc = new NPC(data);
-
-        // 5. Ensure variables exist in runtime dictionary
-        // (NPC constructor already copies them, but this is safe fallback)
-        if (npc.variables == null || npc.variables.Count == 0)
-        {
-            npc.variables = new System.Collections.Generic.Dictionary<string, string>();
-
-            foreach (var v in data.variables)
-            {
-                npc.variables[v.name] = v.value;
-            }
-        }
-
-        //Debug.Log("Loaded NPC: " + data.name);
 
         return npc;
     }

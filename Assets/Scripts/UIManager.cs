@@ -9,11 +9,13 @@ public class UIManager : MonoBehaviour
     public Canvas mainCanvas;
     public MainMenu Ref_MainMenu;
     public LevelSelect Ref_LevelSelect;
+    public UI_ID Ref_ID;
 
     [Header("Prefabs")]
     public GameObject PF_MainMenu;
     public GameObject PF_LevelSelect;
     public GameObject PF_DialogueOption;
+    public GameObject PF_ID;
 
     [Header("Dialogue")]
     public TMP_Text npcText;
@@ -55,7 +57,27 @@ public class UIManager : MonoBehaviour
             Ref_LevelSelect.Day5.onClick.AddListener(() => InitiateDay(5));
             Ref_LevelSelect.gameObject.SetActive(false);
         }
+        if (PF_ID != null)
+        {
+            Ref_ID = Instantiate(PF_ID, mainCanvas.transform).GetComponent<UI_ID>();
+            Ref_ID.gameObject.SetActive(false);
         }
+    }
+
+    public void ToggleIDentification_ID()
+    {
+        if (Ref_ID.gameObject.activeSelf)
+        {
+            Ref_ID.gameObject.SetActive(false);
+        }
+        else
+        {
+            Ref_ID.gameObject.SetActive(true);
+            Ref_ID.container.gameObject.SetActive(true);
+            var currentNPC = DialogueManager.Instance.currentNPC;
+            Ref_ID.Init(currentNPC.data.avatar, currentNPC.data.name, currentNPC.data.age, currentNPC.data.height, currentNPC.data.eyeColor, currentNPC.data.gender);
+        }
+    }
 
     public void ShowLevelSelect()
     {

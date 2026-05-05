@@ -2,16 +2,16 @@
   "name": "Mira",
   "avatarPath": "Sprites/Avatars/Mira",
 
-  "favouriteItems": [
-    {
-      "name": "Energy Drink",
-      "price": 5
-    },
-    {
-      "name": "Instant Noodles",
-      "price": 3
-    }
-  ],
+  "age": 26,
+  "above18": true,
+  "address": "North Industrial Block 3",
+  "expiryDate": "2026-11-02",
+  "gender": "Female",
+  "heightCm": 165,
+  "hairColor": "Black",
+  "eyeColor": "Brown",
+
+  "favouriteItems": ["Energy Drink", "Instant Noodles"],
 
   "details": [
     {
@@ -51,10 +51,7 @@
             {
               "text": "Rough shift?",
               "effects": [
-                {
-                  "variable": "friendship",
-                  "value": "1"
-                }
+                { "variable": "friendship", "value": "1" }
               ],
               "requirements": [],
               "nextNodes": ["Mira_D1_End"]
@@ -88,21 +85,15 @@
             {
               "text": "Sure.",
               "effects": [
-                {
-                  "variable": "helpedMira",
-                  "value": "true"
-                }
+                { "variable": "helpedMira", "value": "true" }
               ],
               "requirements": [],
-              "nextNodes": ["Mira_D3_Good"]
+              "nextNodes": ["Mira_D3_SSI_TRIGGER"]
             },
             {
               "text": "No money no food.",
               "effects": [
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                }
+                { "variable": "friendship", "value": "-1" }
               ],
               "requirements": [],
               "nextNodes": ["Mira_D3_Bad"]
@@ -111,18 +102,35 @@
         },
 
         {
+          "id": "Mira_D3_SSI_TRIGGER",
+          "text": "Before I take it... I need to show something.",
+          "requirements": [
+            { "variable": "helpedMira", "value": "true" }
+          ],
+          "options": [
+            {
+              "text": "Proceed with SSI check",
+              "effects": [
+                { "variable": "open_ssi_tab", "value": "true" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Mira_D3_Good"]
+            }
+          ]
+        },
+
+        {
           "id": "Mira_D3_Good",
           "text": "You're a lifesaver.",
           "requirements": [
-            {
-              "variable": "helpedMira",
-              "value": "true"
-            }
+            { "variable": "helpedMira", "value": "true" }
           ],
           "options": [
             {
               "text": "*Continue*",
-              "effects": [],
+              "effects": [
+                { "variable": "friendship", "value": "2" }
+              ],
               "requirements": [],
               "nextNodes": ["End_Dialogue"]
             }
@@ -152,19 +160,13 @@
           "id": "Mira_D5_Start",
           "text": "You helped me before.",
           "requirements": [
-            {
-              "variable": "helpedMira",
-              "value": "true"
-            }
+            { "variable": "helpedMira", "value": "true" }
           ],
           "options": [
             {
               "text": "How are things?",
               "effects": [
-                {
-                  "variable": "friendship",
-                  "value": "2"
-                }
+                { "variable": "friendship", "value": "2" }
               ],
               "requirements": [],
               "nextNodes": ["Mira_D5_End"]
