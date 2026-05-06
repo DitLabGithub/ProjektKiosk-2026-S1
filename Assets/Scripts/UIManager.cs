@@ -10,12 +10,14 @@ public class UIManager : MonoBehaviour
     public MainMenu Ref_MainMenu;
     public LevelSelect Ref_LevelSelect;
     public UI_ID Ref_ID;
+    public SSIManager Ref_SSI;
 
     [Header("Prefabs")]
     public GameObject PF_MainMenu;
     public GameObject PF_LevelSelect;
     public GameObject PF_DialogueOption;
     public GameObject PF_ID;
+    public GameObject PF_SSI;
 
     [Header("Dialogue")]
     public TMP_Text npcText;
@@ -75,7 +77,17 @@ public class UIManager : MonoBehaviour
             Ref_ID.gameObject.SetActive(true);
             Ref_ID.container.gameObject.SetActive(true);
             var currentNPC = DialogueManager.Instance.currentNPC;
-            Ref_ID.Init(currentNPC.data.avatar, currentNPC.data.name, currentNPC.data.age, currentNPC.data.height, currentNPC.data.eyeColor, currentNPC.data.gender);
+            Ref_ID.Init(currentNPC.data.avatar, currentNPC.data.name, currentNPC.data.age, currentNPC.data.height, currentNPC.data.eyeColor, currentNPC.data.gender, currentNPC.data.address, currentNPC.data.expiryDate);
+        }
+    }
+
+    public void ToggleIdentification_SSI()
+    {
+        if (Ref_SSI == null)
+        { Ref_SSI = Instantiate(PF_SSI, mainCanvas.transform).GetComponent<SSIManager>(); }
+        else
+        {
+            Destroy(Ref_SSI.gameObject);
         }
     }
 

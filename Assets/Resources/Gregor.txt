@@ -36,22 +36,91 @@
             {
               "text": "Coming right up.",
               "effects": [
-                { "variable": "open_ssi_tab", "value": "true" }
+                { "variable": "open_ssi_tab", "value": "food" }
               ],
               "requirements": [],
               "nextNodes": ["Gregor_D1_SSI_Check"]
             }
           ]
         },
+
         {
           "id": "Gregor_D1_SSI_Check",
-          "text": "Show me your SSI.",
+          "text": "You actually checking properly, or just pretending?",
           "requirements": [],
           "options": [
             {
-              "text": "Proceed with SSI check",
+              "text": "Done with SSI check, perfect",
               "effects": [
                 { "variable": "gaveCoffee", "value": "true" }
+              ],
+              "requirements": [
+                { "variable": "SSI_Result", "value": "perfect" }
+              ],
+              "nextNodes": ["Gregor_D1_Perfect"]
+            },
+            {
+              "text": "Done with SSI check, good",
+              "effects": [
+                { "variable": "gaveCoffee", "value": "true" }
+              ],
+              "requirements": [
+                { "variable": "SSI_Result", "value": "good" }
+              ],
+              "nextNodes": ["Gregor_D1_Good"]
+            },
+            {
+              "text": "Done with SSI check, bad",
+              "effects": [
+                { "variable": "gaveCoffee", "value": "false" }
+              ],
+              "requirements": [
+                { "variable": "SSI_Result", "value": "bad" }
+              ],
+              "nextNodes": ["Gregor_D1_Bad"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D1_Perfect",
+          "text": "Hmph. At least someone here does their job properly.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [
+                { "variable": "friendship", "value": "1" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D1_Good",
+          "text": "You missed a thing or two... but fine.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+
+        {
+          "id": "Gregor_D1_Bad",
+          "text": "Pathetic. You'd fail inspection instantly.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "*Continue*",
+              "effects": [
+                { "variable": "friendship", "value": "-1" }
               ],
               "requirements": [],
               "nextNodes": ["End_Dialogue"]

@@ -7,7 +7,7 @@
   "address": "North Industrial Block 3",
   "expiryDate": "2026-11-02",
   "gender": "Female",
-  "heightCm": 165,
+  "height": 165,
   "hairColor": "Black",
   "eyeColor": "Brown",
 

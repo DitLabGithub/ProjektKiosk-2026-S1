@@ -15,7 +15,7 @@ public class UI_ID : MonoBehaviour
     public Transform container;
     public Button hideButton;
 
-    public void Init(Sprite photo, string name, int age, int height, string eyeColor, string gender)
+    public void Init(Sprite photo, string name, int age, int height, string eyeColor, string gender, string address, string expiryDate)
     {
         this.photo.sprite = photo;
         this.name.text = "Name: " + name;
@@ -23,6 +23,8 @@ public class UI_ID : MonoBehaviour
         this.height.text = "Height: " + height + "cm";
         this.eyeColor.text = "Eye Color: " + eyeColor;
         this.gender.text = "Gender: " + gender;
+        this.address.text = "Address: " + address;
+        this.expiryDate.text = "Expiry Date: " + expiryDate;
     }
 
     public void ToggleContainer()

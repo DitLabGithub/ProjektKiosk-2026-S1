@@ -3913,10 +3913,12 @@ MonoBehaviour:
   Ref_MainMenu: {fileID: 0}
   Ref_LevelSelect: {fileID: 0}
   Ref_ID: {fileID: 0}
+  Ref_SSI: {fileID: 0}
   PF_MainMenu: {fileID: 7261170346331468913, guid: 8dcedaf12386c9d4fb6e59d575886b89, type: 3}
   PF_LevelSelect: {fileID: 7261170346331468913, guid: b6052202ffeb70846a3b8c2369a60f16, type: 3}
   PF_DialogueOption: {fileID: 7261170346331468913, guid: ad7cb28e3268061428cdc0618a395348, type: 3}
   PF_ID: {fileID: 8462816281762819062, guid: afad97980e1ed0b4fba037968bf62d8d, type: 3}
+  PF_SSI: {fileID: 1315660581579274640, guid: ff2cbe3dc215e5c46a495162eabddf78, type: 3}
   npcText: {fileID: 2040101410}
   npcNameText: {fileID: 584817271}
   optionContainer: {fileID: 161245198}

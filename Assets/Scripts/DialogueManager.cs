@@ -117,6 +117,12 @@ public class DialogueManager : MonoBehaviour
                 case "open_id_tab" when effect.value == "false":
                     UIManager.Instance.ToggleIDentification_ID();
                     break;
+                case "open_ssi_tab":
+                    UIManager.Instance.ToggleIdentification_SSI();
+
+                    SSIManager.Instance.SetupOrders(effect.value);
+
+                    break;
             }
         }
     }
@@ -127,15 +133,12 @@ public class DialogueManager : MonoBehaviour
 
         foreach (var requirement in requirements)
         {
-            VariableData variable =
-                currentNPC.data.variables.Find(
-                    v => v.name == requirement.variable
-                );
-
-            if (variable == null)
+            // Variable missing
+            if (!currentNPC.variables.ContainsKey(requirement.variable))
                 return false;
 
-            if (variable.value != requirement.value)
+            // Wrong value
+            if (currentNPC.variables[requirement.variable] != requirement.value)
                 return false;
         }
 
