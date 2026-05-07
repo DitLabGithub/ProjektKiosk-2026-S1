@@ -99,47 +99,72 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (var effect in effects)
         {
-            VariableData variable =
-                currentNPC.data.variables.Find(
-                    v => v.name == effect.variable
-                );
-
-            if (variable != null)
-            {
-                variable.value = effect.value;
-            }
-
             switch (effect.variable)
             {
-                case "open_id_tab" when effect.value == "true":
+                case "open_id_tab":
+
                     UIManager.Instance.ToggleIDentification_ID();
+
                     break;
-                case "open_id_tab" when effect.value == "false":
-                    UIManager.Instance.ToggleIDentification_ID();
-                    break;
+
                 case "open_ssi_tab":
+
                     UIManager.Instance.ToggleIdentification_SSI();
 
                     SSIManager.Instance.SetupOrders(effect.value);
 
                     break;
+
+                case "unlock_detail":
+
+                    Detail detail =
+                        currentNPC.data.details.Find(
+                            d => d.key == effect.value
+                        );
+
+                    if (detail != null)
+                    {
+                        detail.unlocked = true;
+
+                        Debug.Log(
+                            "Unlocked detail: " + detail.key
+                        );
+                    }
+
+                    break;
+
+                default:
+
+                    // Normal runtime variable
+                    currentNPC.SetVariable(
+                        effect.variable,
+                        effect.value
+                    );
+
+                    break;
             }
         }
     }
-    public bool MeetsRequirements(List<RequirementData> requirements)
+    public bool MeetsRequirements(
+    List<RequirementData> requirements)
     {
-        if (requirements == null || requirements.Count == 0)
+        if (requirements == null
+            || requirements.Count == 0)
+        {
             return true;
+        }
 
         foreach (var requirement in requirements)
         {
-            // Variable missing
-            if (!currentNPC.variables.ContainsKey(requirement.variable))
-                return false;
+            string value =
+                currentNPC.GetVariable(
+                    requirement.variable
+                );
 
-            // Wrong value
-            if (currentNPC.variables[requirement.variable] != requirement.value)
+            if (value != requirement.value)
+            {
                 return false;
+            }
         }
 
         return true;

@@ -693,25 +693,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -24370
-      - m_Data: -23826
-      - m_Data: -23208
-      - m_Data: -22924
-      - m_Data: -22612
-      - m_Data: -21746
-      - m_Data: -15552
-      - m_Data: -14234
-      - m_Data: -14076
-      - m_Data: -13788
-      - m_Data: -12696
-      - m_Data: -11940
-      - m_Data: -10262
-      - m_Data: -10066
-      - m_Data: -8928
-      - m_Data: -8318
       - m_Data: -1284
-      - m_Data: 23456
-      - m_Data: 23530
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1455,7 +1437,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Resources
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1465,21 +1447,21 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Resources
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Git Repositories\ProjektKiosk-2026-S1
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
+    scrollPos: {x: 0, y: 64.66669}
     m_SelectedIDs:
-    - m_Data: 24724
+    - m_Data: 24996
     m_LastClickedID:
-      m_Data: 24724
+      m_Data: 24996
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 24908
+    - m_Data: 24934
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1512,7 +1494,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 24908
+    - m_Data: 24934
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1540,8 +1522,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 23768
-    m_LastClickedInstanceID: 23768
+    - m_Data: 23648
+    m_LastClickedInstanceID: 23648
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 20666

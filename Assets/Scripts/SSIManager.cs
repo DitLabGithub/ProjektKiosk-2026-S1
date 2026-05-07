@@ -94,7 +94,9 @@ public class SSIManager : MonoBehaviour
         Debug.Log("SSI Result: " + result);
 
         // Store in NPC
-        DialogueManager.Instance.currentNPC.variables["SSI_Result"] = result;
+        DialogueManager.Instance.currentNPC.SetVariable(
+     "SSI_Result",
+     result);
     }
 
     public void FinishSSI()

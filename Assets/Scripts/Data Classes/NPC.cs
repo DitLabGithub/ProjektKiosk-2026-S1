@@ -4,34 +4,88 @@ using System.Collections.Generic;
 public class NPC
 {
     public CharacterData data;
-    public Dictionary<string, string> variables;
+
+    // Runtime variables
+    public List<VariableData> variables =
+        new List<VariableData>();
 
     public NPC(CharacterData data)
     {
         this.data = data;
-        variables = new Dictionary<string, string>();
 
-        LoadVariables();
+        CopyVariablesFromData();
+
         InjectRuntimeDefaults();
     }
 
-    private void LoadVariables()
+    private void CopyVariablesFromData()
     {
-        if (data.variables == null) return;
+        if (data.variables == null)
+            return;
 
         foreach (var v in data.variables)
         {
-            variables[v.name] = v.value;
+            variables.Add(new VariableData
+            {
+                name = v.name,
+                value = v.value
+            });
         }
     }
 
     private void InjectRuntimeDefaults()
     {
-        // ID system runtime state
-        if (!variables.ContainsKey("ID_Result"))
-            variables["ID_Result"] = "none";
+        AddVariableIfMissing("ID_Result", "none");
+        AddVariableIfMissing("ID_Checked", "false");
 
-        if (!variables.ContainsKey("ID_Checked"))
-            variables["ID_Checked"] = "false";
+        AddVariableIfMissing("SSI_Result", "none");
+
+        AddVariableIfMissing("open_id_tab", "false");
+        AddVariableIfMissing("open_ssi_tab", "false");
+    }
+
+    public void AddVariableIfMissing(string name, string value)
+    {
+        VariableData existing =
+            variables.Find(v => v.name == name);
+
+        if (existing == null)
+        {
+            variables.Add(new VariableData
+            {
+                name = name,
+                value = value
+            });
+        }
+    }
+
+    public string GetVariable(string variableName)
+    {
+        VariableData variable =
+            variables.Find(v => v.name == variableName);
+
+        if (variable == null)
+            return "";
+
+        return variable.value;
+    }
+
+    public void SetVariable(string variableName, string value)
+    {
+        VariableData variable =
+            variables.Find(v => v.name == variableName);
+
+        if (variable != null)
+        {
+            variable.value = value;
+        }
+        else
+        {
+            variables.Add(new VariableData
+            {
+                name = variableName,
+                value = value
+            });
+        }
     }
 }

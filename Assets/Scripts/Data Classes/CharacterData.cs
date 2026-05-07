@@ -22,6 +22,7 @@ public class CharacterData
     public List<ItemData> favouriteItems;
     public List<Detail> details;
 
+    [System.NonSerialized]
     public List<VariableData> variables;
     public List<DialogueDayData> dialogues;
 }

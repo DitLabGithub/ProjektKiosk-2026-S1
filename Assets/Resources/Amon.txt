@@ -66,6 +66,7 @@
               "effects": [
                 { "variable": "friendship", "value": "1" },
                 { "variable": "SoldCig1", "value": "true" },
+                { "variable": "unlock_detail", "value": "likes_smoking" },
                 { "variable": "open_id_tab", "value": "false" }
               ],
               "requirements": [],
@@ -75,7 +76,8 @@
               "text": "This ID looks fake.",
               "effects": [
                 { "variable": "friendship", "value": "-1" },
-                { "variable": "open_id_tab", "value": "false" }
+                { "variable": "open_id_tab", "value": "false" },
+                { "variable": "unlock_detail", "value": "addicted" }
               ],
               "requirements": [],
               "nextNodes": ["End_Dialogue"]
