@@ -76,6 +76,7 @@
               "text": "This ID looks fake.",
               "effects": [
                 { "variable": "friendship", "value": "-1" },
+                { "variable": "SoldCig1", "value": "false" },
                 { "variable": "open_id_tab", "value": "false" },
                 { "variable": "unlock_detail", "value": "addicted" }
               ],

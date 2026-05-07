@@ -19,7 +19,7 @@ public class CharacterData
     public string hairColor;
     public string eyeColor;
 
-    public List<ItemData> favouriteItems;
+    public List<Item> favouriteItems;
     public List<Detail> details;
 
     [System.NonSerialized]
