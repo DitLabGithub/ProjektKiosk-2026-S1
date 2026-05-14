@@ -7,6 +7,7 @@ public class DialogueDayData
 
     public List<NodeData> nodes;
 }
+
 [System.Serializable]
 public class DayOrderWrapper
 {
@@ -17,5 +18,18 @@ public class DayOrderWrapper
 public class DayOrderData
 {
     public int day;
+
+    public int moneyGoal;
+
+    public List<string> npcOrder;
+}
+
+[System.Serializable]
+public class DaySchedule
+{
+    public int day;
+
+    public int moneyGoal;
+
     public List<string> npcOrder;
 }

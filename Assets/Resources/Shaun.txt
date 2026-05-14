@@ -1,0 +1,102 @@
+{
+  "name": "Shaun",
+  "avatarPath": "Sprites/Avatars/Shaun",
+
+  "age": 19,
+  "above18": true,
+  "address": "Dormitory Block C",
+  "expiryDate": "2025-12-09",
+  "gender": "Male",
+  "height": 183,
+  "hairColor": "Brown",
+  "eyeColor": "Hazel",
+
+  "favouriteItems": ["Hotshot", "EnergyDrink"],
+
+  "details": [
+    { "key": "gym_rat", "text": "Shaun goes to the gym every day." },
+    { "key": "broke", "text": "Shaun is constantly out of money." }
+  ],
+
+  "variables": [
+    { "name": "friendship", "value": "0" },
+    { "name": "UpsoldNumber", "value": "0" }
+  ],
+
+  "dialogues": [{
+  "day": 1,
+  "nodes": [
+    {
+      "id": "Shaun_D1_Start",
+      "text": "Need an EnergyDrink. Fast.",
+      "requirements": [],
+      "options": [
+        {
+          "text": "Rough workout?",
+          "effects": [],
+          "requirements": [],
+          "nextNodes": ["Shaun_D1_Explain"]
+        }
+      ]
+    },
+
+    {
+      "id": "Shaun_D1_Explain",
+      "text": "Third gym session today. Haven't slept either.",
+      "requirements": [],
+      "options": [
+        {
+          "text": "You should probably slow down.",
+          "effects": [
+            {
+              "keyMomentText": "Tried to convince Shaun to take care of himself.",
+              "keyMomentPositive": true
+            }
+          ],
+          "requirements": [],
+          "nextNodes": ["Shaun_D1_Positive"]
+        },
+        {
+          "text": "Respect the grind.",
+          "effects": [
+            {
+              "keyMomentText": "Encouraged Shaun's unhealthy habits.",
+              "keyMomentPositive": false
+            }
+          ],
+          "requirements": [],
+          "nextNodes": ["Shaun_D1_Negative"]
+        }
+      ]
+    },
+
+    {
+      "id": "Shaun_D1_Positive",
+      "text": "Yeah... maybe you're right.",
+      "requirements": [],
+      "options": [
+        {
+          "text": "*Continue*",
+          "effects": [],
+          "requirements": [],
+          "nextNodes": ["End_Dialogue"]
+        }
+      ]
+    },
+
+    {
+      "id": "Shaun_D1_Negative",
+      "text": "Exactly. Sleep is temporary.",
+      "requirements": [],
+      "options": [
+        {
+          "text": "*Continue*",
+          "effects": [],
+          "requirements": [],
+          "nextNodes": ["End_Dialogue"]
+        }
+      ]
+    }
+  ]
+}]
+}

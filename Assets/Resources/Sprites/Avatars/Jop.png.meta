@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d971ca3b2d0159648be676db85a3cb0f
+guid: 3bf2e24044d74504385a5338f515e241
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8123234448553170104
-    second: Hoss Sprite_0
+      213: 1421872905212994637
+    second: Jop_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hoss Sprite_0
+      name: Jop_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 462
-        height: 510
+        width: 605
+        height: 752
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b45a3531b68bb070800000000000000
-      internalID: 8123234448553170104
+      spriteID: d4429f6bfd18bb310800000000000000
+      internalID: 1421872905212994637
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hoss Sprite_0: 8123234448553170104
+      Jop_0: 1421872905212994637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

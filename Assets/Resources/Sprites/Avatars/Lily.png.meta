@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d971ca3b2d0159648be676db85a3cb0f
+guid: 64f540a85f22f554386ca94ffb39b416
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8123234448553170104
-    second: Hoss Sprite_0
+      213: -1250542065175253887
+    second: Lily_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hoss Sprite_0
+      name: Lily_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 462
-        height: 510
+        width: 4288
+        height: 5184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b45a3531b68bb070800000000000000
-      internalID: 8123234448553170104
+      spriteID: 18cab8c0e9e25aee0800000000000000
+      internalID: -1250542065175253887
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hoss Sprite_0: 8123234448553170104
+      Lily_0: -1250542065175253887
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

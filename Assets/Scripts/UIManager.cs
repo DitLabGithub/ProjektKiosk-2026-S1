@@ -1,9 +1,14 @@
 using TMPro;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
+
+    public  Color ColorPositive;
+    public  Color ColorNegative;
 
     [Header("References")]
     public Canvas mainCanvas;
@@ -11,6 +16,12 @@ public class UIManager : MonoBehaviour
     public LevelSelect Ref_LevelSelect;
     public UI_ID Ref_ID;
     public SSIManager Ref_SSI;
+    public GameObject Ref_Wares;
+    public GameObject Ref_CounterButton;
+    public GameObject Ref_SellButton;
+    public Image AvatarImage;
+    public TMP_Text Ref_Money;
+    public UI_FriendshipTab Ref_FriendshipTab;
 
     [Header("Prefabs")]
     public GameObject PF_MainMenu;
@@ -18,6 +29,7 @@ public class UIManager : MonoBehaviour
     public GameObject PF_DialogueOption;
     public GameObject PF_ID;
     public GameObject PF_SSI;
+    public GameObject PF_FriendshipTab;
 
     [Header("Dialogue")]
     public TMP_Text npcText;
@@ -64,6 +76,11 @@ public class UIManager : MonoBehaviour
             Ref_ID = Instantiate(PF_ID, mainCanvas.transform).GetComponent<UI_ID>();
             Ref_ID.gameObject.SetActive(false);
         }
+        if (PF_FriendshipTab != null)
+        {
+            Ref_FriendshipTab = Instantiate(PF_FriendshipTab, mainCanvas.transform).GetComponent<UI_FriendshipTab>();
+            Ref_FriendshipTab.gameObject.SetActive(false);
+        }
     }
 
     public void ToggleIDentification_ID()
@@ -91,6 +108,34 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void ToggleWares()
+    {
+        if (Ref_Wares.activeSelf)
+        {
+            Ref_Wares.SetActive(false);
+            Ref_CounterButton.SetActive(false);
+        }
+        else
+        {
+            Ref_Wares.SetActive(true);
+            Ref_CounterButton.SetActive(true);
+        }
+    }
+
+    public void ToggleFriendshipTab()
+    {
+        if (Ref_FriendshipTab.gameObject.activeSelf)
+        {
+            Ref_FriendshipTab.gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Toggling Friendship Tab ON");
+            Ref_FriendshipTab.gameObject.SetActive(true);
+            Ref_FriendshipTab.currentFriend = Ref_FriendshipTab.friends[0];
+            Ref_FriendshipTab.PopulateFriend(Ref_FriendshipTab.currentFriend);
+        }
+    }
     public void ShowLevelSelect()
     {
         Ref_MainMenu.gameObject.SetActive(false);
@@ -116,6 +161,8 @@ public class UIManager : MonoBehaviour
     public void ShowNode(NodeData node)
     {
         npcText.text = node.text;
+
+        AvatarImage.sprite = DialogueManager.Instance.currentNPC.data.avatar;
 
         npcNameText.text = DialogueManager.Instance.currentNPC.data.name;
 
@@ -147,5 +194,9 @@ public class UIManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+    public void UpdateMoney(int amount)
+    {
+        Ref_Money.text = amount.ToString();
     }
 }

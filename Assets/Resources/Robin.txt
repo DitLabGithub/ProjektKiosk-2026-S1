@@ -1,0 +1,27 @@
+{
+  "name": "Robin",
+  "avatarPath": "Sprites/Avatars/Robin",
+
+  "age": 43,
+  "above18": true,
+  "address": "19 Market District",
+  "expiryDate": "2028-01-02",
+  "gender": "Male",
+  "height": 176,
+  "hairColor": "Black",
+  "eyeColor": "Brown",
+
+  "favouriteItems": ["PackOfGiddy", "BlackCoffee"],
+
+  "details": [
+    { "key": "divorced", "text": "Robin recently got divorced." },
+    { "key": "mechanic", "text": "Robin owns a small garage." }
+  ],
+
+  "variables": [
+    { "name": "friendship", "value": "0" },
+    { "name": "UpsoldNumber", "value": "0" }
+  ],
+
+  "dialogues": []
+}

@@ -5,87 +5,68 @@ public class NPC
 {
     public CharacterData data;
 
-    // Runtime variables
-    public List<VariableData> variables =
-        new List<VariableData>();
-
     public NPC(CharacterData data)
     {
         this.data = data;
 
-        CopyVariablesFromData();
-
         InjectRuntimeDefaults();
     }
 
-    private void CopyVariablesFromData()
+    // GET
+    public string GetVariable(string key)
     {
         if (data.variables == null)
-            return;
-
-        foreach (var v in data.variables)
-        {
-            variables.Add(new VariableData
-            {
-                name = v.name,
-                value = v.value
-            });
-        }
-    }
-
-    private void InjectRuntimeDefaults()
-    {
-        AddVariableIfMissing("ID_Result", "none");
-        AddVariableIfMissing("ID_Checked", "false");
-
-        AddVariableIfMissing("SSI_Result", "none");
-
-        AddVariableIfMissing("open_id_tab", "false");
-        AddVariableIfMissing("open_ssi_tab", "false");
-    }
-
-    public void AddVariableIfMissing(string name, string value)
-    {
-        VariableData existing =
-            variables.Find(v => v.name == name);
-
-        if (existing == null)
-        {
-            variables.Add(new VariableData
-            {
-                name = name,
-                value = value
-            });
-        }
-    }
-
-    public string GetVariable(string variableName)
-    {
-        VariableData variable =
-            variables.Find(v => v.name == variableName);
-
-        if (variable == null)
             return "";
 
-        return variable.value;
+        VariableData v = data.variables.Find(x => x.name == key);
+
+        return v != null ? v.value : "";
     }
 
-    public void SetVariable(string variableName, string value)
+    // SET
+    public void SetVariable(string key, string value)
     {
-        VariableData variable =
-            variables.Find(v => v.name == variableName);
+        if (data.variables == null)
+            data.variables = new List<VariableData>();
 
-        if (variable != null)
+        VariableData v = data.variables.Find(x => x.name == key);
+
+        if (v != null)
         {
-            variable.value = value;
+            v.value = value;
         }
         else
         {
-            variables.Add(new VariableData
+            data.variables.Add(new VariableData
             {
-                name = variableName,
+                name = key,
                 value = value
             });
         }
+    }
+
+    // HAS
+    public bool HasVariable(string key)
+    {
+        if (data.variables == null)
+            return false;
+
+        return data.variables.Exists(x => x.name == key);
+    }
+
+    // DEFAULTS
+    private void InjectRuntimeDefaults()
+    {
+        if (data.variables == null)
+            data.variables = new List<VariableData>();
+
+        if (!HasVariable("ID_Result"))
+            SetVariable("ID_Result", "none");
+
+        if (!HasVariable("ID_Checked"))
+            SetVariable("ID_Checked", "false");
+
+        if (!HasVariable("UpsoldNumber"))
+            SetVariable("UpsoldNumber", "0");
     }
 }

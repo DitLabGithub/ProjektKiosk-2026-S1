@@ -67,7 +67,8 @@
                 { "variable": "friendship", "value": "1" },
                 { "variable": "SoldCig1", "value": "true" },
                 { "variable": "unlock_detail", "value": "likes_smoking" },
-                { "variable": "open_id_tab", "value": "false" }
+                { "variable": "open_id_tab", "value": "false" },
+                { "keyMomentText": "Sold him a pack of ciggs, just cause I felt like it.","keyMomentPositive": true }
               ],
               "requirements": [],
               "nextNodes": ["End_Dialogue"]
@@ -77,6 +78,7 @@
               "effects": [
                 { "variable": "friendship", "value": "-1" },
                 { "variable": "SoldCig1", "value": "false" },
+                { "keyMomentText": "I refused to sell him ciggs, why are kinds like this these days...","keyMomentPositive": false },
                 { "variable": "open_id_tab", "value": "false" },
                 { "variable": "unlock_detail", "value": "addicted" }
               ],

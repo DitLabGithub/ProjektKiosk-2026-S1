@@ -26,22 +26,42 @@ public class NPCManager : MonoBehaviour
 
            // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
         }
-        NPC mira = dataLoader.LoadNPC("Mira");
+        NPC fridgy = dataLoader.LoadNPC("Fridgy");
 
-        if (mira != null)
+        if (fridgy != null)
         {
-            npcs.Add(mira);
-
-           // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+            npcs.Add(fridgy);
+            // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
         }
-        NPC gregor = dataLoader.LoadNPC("Gregor");
+        NPC Lily = dataLoader.LoadNPC("Lily");
 
-        if (gregor != null)
+        if (Lily != null)
         {
-            npcs.Add(gregor);
-
-           // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+            npcs.Add(Lily);
+            // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
         }
+        NPC Robin = dataLoader.LoadNPC("Robin");
+
+        if (Robin != null)
+        {
+            npcs.Add(Robin);
+            // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+        }
+        NPC Shaun = dataLoader.LoadNPC("Shaun");
+
+        if (Shaun != null)
+        {
+            npcs.Add(Shaun);
+            // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+        }
+        NPC Jop = dataLoader.LoadNPC("Jop");
+
+        if (Jop != null)
+        {
+            npcs.Add(Jop);
+            // Debug.Log("Loaded NPC in the manager: " + amon.data.name);
+        }
+
     }
     public NPC GetNPC(string npcName)
     {

@@ -99,6 +99,23 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (var effect in effects)
         {
+            // KEY MOMENT EFFECT
+            if (!string.IsNullOrEmpty(effect.keyMomentText))
+            {
+                currentNPC.data.keyMoments.Add(
+                    new KeyMomentData
+                    {
+                        text = effect.keyMomentText,
+                        isPositive = effect.keyMomentPositive
+                    }
+                );
+
+                Debug.Log(
+                    "Key moment added: "
+                    + effect.keyMomentText
+                );
+            }
+
             switch (effect.variable)
             {
                 case "open_id_tab":
@@ -127,9 +144,18 @@ public class DialogueManager : MonoBehaviour
                         detail.unlocked = true;
 
                         Debug.Log(
-                            "Unlocked detail: " + detail.key
+                            "Unlocked detail: "
+                            + detail.key
                         );
                     }
+
+                    break;
+
+                case "open_wares_tab":
+
+                    UIManager.Instance.ToggleWares();
+
+                    Counter.Instance.SetupRequestedItems(effect.value);
 
                     break;
 

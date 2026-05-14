@@ -19,10 +19,11 @@ public class CharacterData
     public string hairColor;
     public string eyeColor;
 
-    public List<Item> favouriteItems;
+    public List<string> favouriteItems;
     public List<Detail> details;
 
-    [System.NonSerialized]
+    
     public List<VariableData> variables;
     public List<DialogueDayData> dialogues;
+    public List<KeyMomentData> keyMoments = new List<KeyMomentData>();
 }

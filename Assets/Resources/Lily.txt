@@ -1,0 +1,27 @@
+{
+  "name": "Lily",
+  "avatarPath": "Sprites/Avatars/Lily",
+
+  "age": 22,
+  "above18": true,
+  "address": "88 Willow Apartments",
+  "expiryDate": "2026-08-20",
+  "gender": "Female",
+  "height": 167,
+  "hairColor": "Red",
+  "eyeColor": "Blue",
+
+  "favouriteItems": ["BluePort", "InstantNoodles"],
+
+  "details": [
+    { "key": "student", "text": "Lily studies architecture." },
+    { "key": "caffeine_addict", "text": "Lily drinks way too much coffee." }
+  ],
+
+  "variables": [
+    { "name": "friendship", "value": "0" },
+    { "name": "UpsoldNumber", "value": "0" }
+  ],
+
+  "dialogues": []
+}

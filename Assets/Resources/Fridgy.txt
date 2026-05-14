@@ -1,0 +1,90 @@
+{
+  "name": "Fridgy",
+  "avatarPath": "Sprites/Avatars/Fridgy",
+
+  "age": 31,
+  "above18": true,
+  "address": "4 Riverside Alley",
+  "expiryDate": "2027-03-11",
+  "gender": "Male",
+  "height": 181,
+  "hairColor": "Blonde",
+  "eyeColor": "Gray",
+
+  "favouriteItems": ["MintFizz", "SproingelsGreen"],
+
+  "details": [
+    { "key": "gambler", "text": "Fridgy spends too much money gambling." },
+    { "key": "loud", "text": "Fridgy speaks way too loudly." }
+  ],
+
+  "variables": [
+    { "name": "friendship", "value": "0" },
+    { "name": "UpsoldNumber", "value": "0" }
+  ],
+
+  "dialogues": [
+  {
+  "day": 1,
+  "nodes": [
+    {
+      "id": "Fridgy_D1_Start",
+      "text": "Yo. You still got those MintFizz cans?",
+      "requirements": [],
+      "options": [
+        {
+          "text": "Yeah, what's with the obsession?",
+          "effects": [
+            {
+              "variable": "unlock_detail",
+              "value": "gambler"
+            }
+          ],
+          "requirements": [],
+          "nextNodes": ["Fridgy_D1_Gambler"]
+        },
+        {
+          "text": "Depends who's asking.",
+          "effects": [],
+          "requirements": [],
+          "nextNodes": ["Fridgy_D1_Loud"]
+        }
+      ]
+    },
+
+    {
+      "id": "Fridgy_D1_Gambler",
+      "text": "Lost another paycheck last night. Machines hate me.",
+      "requirements": [],
+      "options": [
+        {
+          "text": "Sounds rough.",
+          "effects": [],
+          "requirements": [],
+          "nextNodes": ["End_Dialogue"]
+        }
+      ]
+    },
+
+    {
+      "id": "Fridgy_D1_Loud",
+      "text": "OI DON'T ACT LIKE YOU DON'T KNOW ME!",
+      "requirements": [],
+      "options": [
+        {
+          "text": "No need to scream.",
+          "effects": [
+            {
+              "variable": "unlock_detail",
+              "value": "loud"
+            }
+          ],
+          "requirements": [],
+          "nextNodes": ["End_Dialogue"]
+        }
+      ]
+    }
+  ]
+}
+]
+}

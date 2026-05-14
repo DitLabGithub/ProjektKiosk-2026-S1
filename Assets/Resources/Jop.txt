@@ -1,0 +1,27 @@
+{
+  "name": "Jop",
+  "avatarPath": "Sprites/Avatars/Jop",
+
+  "age": 64,
+  "above18": true,
+  "address": "2 Old Harbor Street",
+  "expiryDate": "2029-05-16",
+  "gender": "Male",
+  "height": 170,
+  "hairColor": "White",
+  "eyeColor": "Green",
+
+  "favouriteItems": ["SproingelsBlue", "BeerNuts"],
+
+  "details": [
+    { "key": "fisherman", "text": "Jop used to work as a fisherman." },
+    { "key": "superstitious", "text": "Jop believes in bizarre superstitions." }
+  ],
+
+  "variables": [
+    { "name": "friendship", "value": "0" },
+    { "name": "UpsoldNumber", "value": "0" }
+  ],
+
+  "dialogues": []
+}
