@@ -15,13 +15,894 @@
 
   "details": [
     { "key": "fisherman", "text": "Jop used to work as a fisherman." },
-    { "key": "superstitious", "text": "Jop believes in bizarre superstitions." }
+    { "key": "superstitious", "text": "Jop believes in bizarre superstitions." },
+    { "key": "new_district", "text": "Jop recently started working in this district." },
+    { "key": "investigating_shaun", "text": "Jop is investigating suspicious identity data activity." },
+    { "key": "gave_recorder", "text": "Jop gave the clerk a small recording device." },
+    { "key": "warned_player", "text": "Jop warned the clerk that helping Shaun could have consequences." }
   ],
 
   "variables": [
     { "name": "friendship", "value": "0" },
-    { "name": "UpsoldNumber", "value": "0" }
+    { "name": "lawfulness", "value": "0" },
+    { "name": "competence", "value": "0" },
+    { "name": "UpsoldNumber", "value": "0" },
+
+    { "name": "HelpedJop", "value": "false" },
+    { "name": "HelpedShaun", "value": "false" },
+    { "name": "HasRecordingDevice", "value": "false" },
+    { "name": "MadeRecording", "value": "false" },
+    { "name": "SharedRecordingWithJop", "value": "false" },
+    { "name": "ShaunEvidence", "value": "0" },
+    { "name": "SuspiciousActivity", "value": "0" },
+
+    { "name": "CommittedToShaun_D4", "value": "false" },
+    { "name": "BackedOut_D4", "value": "false" },
+    { "name": "TookIDPhotos_D1", "value": "false" },
+    { "name": "TookIDPhotos_D3", "value": "false" },
+    { "name": "RecordedShaun_D3", "value": "false" },
+    { "name": "RecordedShaun_D4", "value": "false" }
   ],
 
-  "dialogues": []
+  "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Jop_D1_Start",
+          "text": "Morning.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Morning, officer.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Weird_Activity"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Weird_Activity",
+          "text": "New system coming in, new habits forming. Always brings a few rats out of the walls.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What kind of rats?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Wants_Cigarettes"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Wants_Cigarettes",
+          "text": "The kind that smell opportunity before honest people even know there is one. Anyway, pack of cigarettes, please.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Sure, I'll need to check your ID.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Check_ID"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Check_ID",
+          "text": "Good. Always check. A shortcut is just a trap with better manners.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Would you like anything with that?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Upsell"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Upsell",
+          "text": "Depends what you're offering.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Some BeerNuts would go well with that.",
+              "effects": [
+                { "variable": "UpsoldNumber", "value": "1" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_District_Question"]
+            },
+            {
+              "text": "Just the cigarettes then.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_District_Question"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_District_Question",
+          "text": "I just started working this district. Quiet place, at first glance. You been here long?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I don't talk to pigs.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "lawfulness", "value": "-1" },
+                { "variable": "unlock_detail", "value": "new_district" },
+                { "keyMomentText": "Refused to speak with Jop during his first visit.", "keyMomentPositive": false }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Negative_Response"]
+            },
+            {
+              "text": "I'm just here to earn a living.",
+              "effects": [
+                { "variable": "unlock_detail", "value": "new_district" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Neutral_Response"]
+            },
+            {
+              "text": "Yes, definitely, officer.",
+              "effects": [
+                { "variable": "friendship", "value": "1" },
+                { "variable": "unlock_detail", "value": "new_district" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D1_Positive_Response"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Negative_Response",
+          "text": "Bold choice. Keep that same energy when trouble comes knocking.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Neutral_Response",
+          "text": "Understandable. Just keep your eyes open. Some people test a shop before they rob it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_Positive_Response",
+          "text": "Good. Then you'll notice if something starts smelling wrong.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "day": 2,
+      "nodes": [
+        {
+          "id": "Jop_D2_Start",
+          "text": "Morning again.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Morning, officer.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Cigarettes"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Cigarettes",
+          "text": "Same as yesterday. Cigarettes, please.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll check your ID first.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Upsell"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Upsell",
+          "text": "Still doing things properly. Good.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Want some BeerNuts with that?",
+              "effects": [
+                { "variable": "UpsoldNumber", "value": "1" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Reveal_Investigation"]
+            },
+            {
+              "text": "Just the cigarettes?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Reveal_Investigation"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Reveal_Investigation",
+          "text": "I'm not only here for smokes today. I'm looking into someone who has been sniffing around old IDs and customer data.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Who?",
+              "effects": [
+                { "variable": "unlock_detail", "value": "investigating_shaun" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Asks_For_Help"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Asks_For_Help",
+          "text": "No names yet. Names make people nervous. But if someone offers you money for ID photos, recordings, or anything like that, I want to know.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Oink oink.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "lawfulness", "value": "-1" },
+                { "variable": "HelpedJop", "value": "false" },
+                { "keyMomentText": "Mocked Jop when he asked for help with suspicious identity activity.", "keyMomentPositive": false }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Extreme_Negative"]
+            },
+            {
+              "text": "You're getting nothing from me.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "HelpedJop", "value": "false" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Negative"]
+            },
+            {
+              "text": "I don't want to risk my life and job over this.",
+              "effects": [
+                { "variable": "HelpedJop", "value": "false" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Neutral"]
+            },
+            {
+              "text": "Yes, definitely, officer.",
+              "effects": [
+                { "variable": "friendship", "value": "1" },
+                { "variable": "HelpedJop", "value": "true" },
+                { "variable": "HasRecordingDevice", "value": "true" },
+                { "variable": "unlock_detail", "value": "gave_recorder" },
+                { "keyMomentText": "Agreed to help Jop investigate suspicious identity data activity.", "keyMomentPositive": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Gives_Recorder"]
+            },
+            {
+              "text": "Yes, sir. Anything I can do to help the good guys.",
+              "effects": [
+                { "variable": "friendship", "value": "1" },
+                { "variable": "HelpedJop", "value": "true" },
+                { "variable": "HasRecordingDevice", "value": "true" },
+                { "variable": "unlock_detail", "value": "gave_recorder" },
+                { "keyMomentText": "Strongly agreed to help Jop investigate suspicious identity data activity.", "keyMomentPositive": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Gives_Recorder"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Extreme_Negative",
+          "text": "Funny. If I were you, I'd save the jokes for someone who can't make paperwork appear.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Negative",
+          "text": "Then I hope nothing interesting happens in front of you.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Neutral",
+          "text": "Fair. Still, take this. Use it or don't. But if someone starts talking too freely, you may want proof.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Take the recorder.",
+              "effects": [
+                { "variable": "HasRecordingDevice", "value": "true" },
+                { "variable": "unlock_detail", "value": "gave_recorder" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Gives_Recorder"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Gives_Recorder",
+          "text": "Small recorder. Simple button. Keep it quiet. Evidence is cleaner when people don't know they're making it.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Understood.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D2_Approval"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D2_Approval",
+          "text": "Good. And don't play hero. Heroes make terrible witnesses.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "day": 4,
+      "nodes": [
+        {
+          "id": "Jop_D4_Start",
+          "text": "Afternoon.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Afternoon, officer.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Cigarettes"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Cigarettes",
+          "text": "Cigarettes again. Bad habit, useful excuse.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "I'll check your ID.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Upsell"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Upsell",
+          "text": "Go on then.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Want some BeerNuts with that?",
+              "effects": [
+                { "variable": "UpsoldNumber", "value": "1" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Check_Recorder"]
+            },
+            {
+              "text": "Just the cigarettes.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Check_Recorder"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Check_Recorder",
+          "text": "Any updates you'd like to share?",
+          "requirements": [
+            { "variable": "HasRecordingDevice", "value": "true" }
+          ],
+          "options": [
+            {
+              "text": "Share the recording.",
+              "effects": [
+                { "variable": "SharedRecordingWithJop", "value": "true" },
+                { "variable": "HelpedJop", "value": "true" },
+                { "variable": "ShaunEvidence", "value": "2" },
+                { "variable": "competence", "value": "1" },
+                { "variable": "friendship", "value": "1" },
+                { "keyMomentText": "Shared evidence with Jop about Shaun's suspicious activity.", "keyMomentPositive": true }
+              ],
+              "requirements": [
+                { "variable": "MadeRecording", "value": "true" }
+              ],
+              "nextNodes": ["Jop_D4_Recording_Response"]
+            },
+            {
+              "text": "Nothing useful yet.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_No_Update"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_No_Recorder",
+          "text": "Still keeping your head down?",
+          "requirements": [
+            { "variable": "HasRecordingDevice", "value": "false" }
+          ],
+          "options": [
+            {
+              "text": "I don't know what you're talking about.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Questioning"]
+            },
+            {
+              "text": "I'm not a police officer.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Neutral"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_No_Update",
+          "text": "Then get some. If he's circling this place, he'll come back. People like that always do.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Yes, definitely, officer.",
+              "effects": [
+                { "variable": "friendship", "value": "1" },
+                { "variable": "HelpedJop", "value": "true" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Positive_End"]
+            },
+            {
+              "text": "I'm not a police officer.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Neutral"]
+            },
+            {
+              "text": "I don't know what you're talking about.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Questioning"]
+            },
+            {
+              "text": "I'm not answering anything without a lawyer.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "SuspiciousActivity", "value": "1" },
+                { "variable": "unlock_detail", "value": "warned_player" },
+                { "keyMomentText": "Refused to answer Jop's questions and raised suspicion.", "keyMomentPositive": false }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Extreme_Negative"]
+            },
+            {
+              "text": "Yes, sir. Anything I can do to help the good guys.",
+              "effects": [
+                { "variable": "friendship", "value": "1" },
+                { "variable": "HelpedJop", "value": "true" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Positive_End"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Recording_Response",
+          "text": "That's useful. Keep your hands clean and your mouth cleaner. If he pushes again, get more.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Yes, officer.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D4_Positive_End"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Questioning",
+          "text": "Careful. People who don't know anything usually don't sound that rehearsed.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Neutral",
+          "text": "No. You're not. So get your money for the cigarettes and stay out of the mud if you can.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Extreme_Negative",
+          "text": "Interesting answer for a simple question. Remember that line if someone else asks it later.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D4_Positive_End",
+          "text": "Good. If the net tightens, don't stand where the fish are thrashing.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "day": 5,
+      "nodes": [
+        {
+          "id": "Jop_D5_Start",
+          "text": "Morning. Keep this short.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Morning, officer.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Relationship_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Relationship_Check",
+          "text": "Something is about to happen. When it does, don't improvise.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "What do you mean?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Jop_D5_Good_Relationship",
+                "Jop_D5_Bad_Relationship"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Good_Relationship",
+          "text": "You helped more than most people would. Stay calm and let me do the talking.",
+          "requirements": [
+            { "variable": "HelpedJop", "value": "true" }
+          ],
+          "options": [
+            {
+              "text": "Understood.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Shaun_Approaches"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Bad_Relationship",
+          "text": "You've been difficult. Fine. Still, when I move, you stay out of the way.",
+          "requirements": [
+            { "variable": "HelpedJop", "value": "false" }
+          ],
+          "options": [
+            {
+              "text": "Fine.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Shaun_Approaches"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Shaun_Approaches",
+          "text": "There he is. Don't look at him too long.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Wait.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Evidence_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Evidence_Check",
+          "text": "Did you get anything I can use?",
+          "requirements": [
+            { "variable": "HasRecordingDevice", "value": "true" }
+          ],
+          "options": [
+            {
+              "text": "Give him the recording.",
+              "effects": [
+                { "variable": "SharedRecordingWithJop", "value": "true" },
+                { "variable": "ShaunEvidence", "value": "3" },
+                { "variable": "HelpedJop", "value": "true" },
+                { "variable": "competence", "value": "1" },
+                { "keyMomentText": "Gave Jop the recording before Shaun was arrested.", "keyMomentPositive": true }
+              ],
+              "requirements": [
+                { "variable": "MadeRecording", "value": "true" }
+              ],
+              "nextNodes": ["Jop_D5_Enough_Evidence"]
+            },
+            {
+              "text": "No recording.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_No_Recording"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_No_Device_Check",
+          "text": "No recorder, no witness statement, no clean trail. Great.",
+          "requirements": [
+            { "variable": "HasRecordingDevice", "value": "false" }
+          ],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Competence_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Enough_Evidence",
+          "text": "Good. That should be enough.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Shaun_Arrested"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_No_Recording",
+          "text": "Fine. We have enough without you. Would've been cleaner with proof.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Competence_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Shaun_Arrested",
+          "text": "Shaun. Hands where I can see them. You and I are going for a walk.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [
+                { "variable": "competence", "value": "1" },
+                { "keyMomentText": "Shaun was arrested after Jop's investigation.", "keyMomentPositive": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Outcome_Check"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Competence_Check",
+          "text": "Now about you.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Jop_D5_Player_Clean",
+                "Jop_D5_Player_Suspicious",
+                "Jop_D5_Player_Guilty"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Player_Clean",
+          "text": "You kept your hands clean. Next time you see something rotten, report it sooner.",
+          "requirements": [
+            { "variable": "HelpedShaun", "value": "false" },
+            { "variable": "TookIDPhotos_D1", "value": "false" },
+            { "variable": "TookIDPhotos_D3", "value": "false" },
+            { "variable": "CommittedToShaun_D4", "value": "false" }
+          ],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "keyMomentText": "Stayed out of Shaun's scheme and avoided punishment.", "keyMomentPositive": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Player_Suspicious",
+          "text": "You got close to the mud, but not enough to sink. Your workplace is getting a warning.",
+          "requirements": [
+            { "variable": "HelpedShaun", "value": "false" },
+            { "variable": "CommittedToShaun_D4", "value": "true" }
+          ],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "competence", "value": "-1" },
+                { "keyMomentText": "Received a workplace warning because of suspicious involvement with Shaun.", "keyMomentPositive": false }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Player_Guilty",
+          "text": "You helped him collect identity data. That's not a mistake. That's a choice.",
+          "requirements": [
+            { "variable": "HelpedShaun", "value": "true" }
+          ],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Jop_D5_Jail_Outcome"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Jail_Outcome",
+          "text": "You'll explain the rest at the station.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [
+                { "variable": "competence", "value": "-2" },
+                { "variable": "lawfulness", "value": "-2" },
+                { "keyMomentText": "Was taken in by Jop after helping Shaun collect identity data.", "keyMomentPositive": false }
+              ],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D5_Outcome_Check",
+          "text": "And you? Let's see where you stand.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Jop_D5_Player_Clean",
+                "Jop_D5_Player_Suspicious",
+                "Jop_D5_Player_Guilty"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
