@@ -30,6 +30,9 @@ public class DialogueManager : MonoBehaviour
 
         currentNPCIndex = 0;
 
+        UIManager.Instance.SetMoneyGoal(Counter.Instance.MoneyGoal);
+        UIManager.Instance.SetDay(day);
+
         StartNextNPCDialogue();
     }
 
@@ -99,36 +102,78 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (var effect in effects)
         {
-            // KEY MOMENT EFFECT
+            // =========================
+            // KEY MOMENTS
+            // =========================
+
             if (!string.IsNullOrEmpty(effect.keyMomentText))
             {
-                currentNPC.data.keyMoments.Add(
-                    new KeyMomentData
-                    {
-                        text = effect.keyMomentText,
-                        isPositive = effect.keyMomentPositive
-                    }
-                );
+                KeyMomentData moment =
+                    new KeyMomentData();
+
+                moment.text =
+                    effect.keyMomentText;
+
+                moment.isPositive =
+                    effect.keyMomentPositive;
+
+                currentNPC.data.keyMoments.Add(moment);
 
                 Debug.Log(
-                    "Key moment added: "
-                    + effect.keyMomentText
+                    "Added key moment: "
+                    + moment.text
                 );
             }
+
+            // =========================
+            // MESSAGES
+            // =========================
+
+            if (!string.IsNullOrEmpty(effect.messageTitle))
+            {
+                MessageData message =
+                    new MessageData();
+
+                message.title =
+                    effect.messageTitle;
+
+                message.sender =
+                    effect.messageSender;
+
+                message.content =
+                    effect.messageContent;
+
+                message.read = false;
+
+                MessagesManager.Instance.messages
+                    .Add(message);
+
+                Debug.Log(
+                    "Added message: "
+                    + message.title
+                );
+            }
+
+            // =========================
+            // SPECIAL EFFECTS
+            // =========================
 
             switch (effect.variable)
             {
                 case "open_id_tab":
 
-                    UIManager.Instance.ToggleIDentification_ID();
+                    UIManager.Instance
+                        .ToggleIDentification_ID();
 
                     break;
 
                 case "open_ssi_tab":
 
-                    UIManager.Instance.ToggleIdentification_SSI();
+                    UIManager.Instance
+                        .ToggleIdentification_SSI();
 
-                    SSIManager.Instance.SetupOrders(effect.value);
+                    SSIManager.Instance
+                        .SetupOrders(effect.value);
 
                     break;
 
@@ -153,19 +198,26 @@ public class DialogueManager : MonoBehaviour
 
                 case "open_wares_tab":
 
-                    UIManager.Instance.ToggleWares();
+                    UIManager.Instance
+                        .ToggleWares();
 
-                    Counter.Instance.SetupRequestedItems(effect.value);
+                    Counter.Instance
+                        .SetupRequestedItems(
+                            effect.value
+                        );
 
                     break;
 
                 default:
 
                     // Normal runtime variable
-                    currentNPC.SetVariable(
-                        effect.variable,
-                        effect.value
-                    );
+                    if (!string.IsNullOrEmpty(effect.variable))
+                    {
+                        currentNPC.SetVariable(
+                            effect.variable,
+                            effect.value
+                        );
+                    }
 
                     break;
             }

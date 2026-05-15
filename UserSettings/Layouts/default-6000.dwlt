@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 976
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -693,21 +693,28 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -43450
-      - m_Data: -34104
-      - m_Data: -33902
-      - m_Data: -17908
-      - m_Data: -17564
-      - m_Data: -7604
-      - m_Data: -7548
+      - m_Data: -26840
+      - m_Data: -26760
+      - m_Data: -26754
+      - m_Data: -24828
+      - m_Data: -24812
+      - m_Data: -24732
+      - m_Data: -24726
+      - m_Data: -21244
+      - m_Data: -21228
+      - m_Data: -21148
+      - m_Data: -21142
+      - m_Data: -16984
+      - m_Data: -16974
+      - m_Data: -16968
+      - m_Data: -16888
+      - m_Data: -16882
+      - m_Data: -15404
+      - m_Data: -15388
+      - m_Data: -15308
+      - m_Data: -15302
       - m_Data: -1284
-      - m_Data: -12
-      - m_Data: 23494
-      - m_Data: 23564
-      - m_Data: 23698
-      - m_Data: 23784
-      - m_Data: 23928
-      - m_Data: 23934
+      - m_Data: 23502
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1314,9 +1321,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1068.8551, y: 623.1487, z: -5.1165485}
+    m_Target: {x: 1397.6763, y: 628.4229, z: -4.307996}
     speed: 2
-    m_Value: {x: 1068.8551, y: 623.1487, z: -5.1165485}
+    m_Value: {x: 1397.6763, y: 628.4229, z: -4.307996}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1366,9 +1373,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 833.10266
+    m_Target: 471.0043
     speed: 2
-    m_Value: 833.10266
+    m_Value: 471.0043
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1451,7 +1458,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1461,21 +1468,21 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Git Repositories\ProjektKiosk-2026-S1
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
+    scrollPos: {x: 0, y: 65.33331}
     m_SelectedIDs:
-    - m_Data: 25354
+    - m_Data: 25526
     m_LastClickedID:
-      m_Data: 25354
+      m_Data: 25526
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 25438
+    - m_Data: 25440
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1508,7 +1515,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 25438
+    - m_Data: 25440
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1536,8 +1543,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 24922
-    m_LastClickedInstanceID: 24922
+    - m_Data: 23440
+    m_LastClickedInstanceID: 23440
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 20666

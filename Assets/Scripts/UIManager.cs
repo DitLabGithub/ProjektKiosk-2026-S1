@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 
     public  Color ColorPositive;
     public  Color ColorNegative;
+    public  Color ColorRead;
 
     [Header("References")]
     public Canvas mainCanvas;
@@ -22,6 +23,9 @@ public class UIManager : MonoBehaviour
     public Image AvatarImage;
     public TMP_Text Ref_Money;
     public UI_FriendshipTab Ref_FriendshipTab;
+    public TMP_Text Ref_MoneyGoal;
+    public TMP_Text Ref_Day;
+    public UI_MessagesBox MessagesBox;
 
     [Header("Prefabs")]
     public GameObject PF_MainMenu;
@@ -30,6 +34,7 @@ public class UIManager : MonoBehaviour
     public GameObject PF_ID;
     public GameObject PF_SSI;
     public GameObject PF_FriendshipTab;
+    public GameObject PF_MessagesBox;
 
     [Header("Dialogue")]
     public TMP_Text npcText;
@@ -80,6 +85,11 @@ public class UIManager : MonoBehaviour
         {
             Ref_FriendshipTab = Instantiate(PF_FriendshipTab, mainCanvas.transform).GetComponent<UI_FriendshipTab>();
             Ref_FriendshipTab.gameObject.SetActive(false);
+        }
+            if (PF_MessagesBox != null)
+            {
+                MessagesBox = Instantiate(PF_MessagesBox, mainCanvas.transform).GetComponent<UI_MessagesBox>();
+                MessagesBox.gameObject.SetActive(false);
         }
     }
 
@@ -136,6 +146,19 @@ public class UIManager : MonoBehaviour
             Ref_FriendshipTab.PopulateFriend(Ref_FriendshipTab.currentFriend);
         }
     }
+
+    public void ToggleMessagesBox()
+    {
+        if (MessagesBox.gameObject.activeSelf)
+        {
+            MessagesBox.gameObject.SetActive(false);
+        }
+        else
+        {
+            MessagesBox.gameObject.SetActive(true);
+            MessagesBox.PopulateMessages();
+        }
+    }
     public void ShowLevelSelect()
     {
         Ref_MainMenu.gameObject.SetActive(false);
@@ -158,6 +181,15 @@ public class UIManager : MonoBehaviour
         // Additional logic to start the day can be added here
     }
 
+    public void SetMoneyGoal(int goal)
+    {
+        Ref_MoneyGoal.text = goal.ToString();
+    }
+
+    public void SetDay(int day)
+    {
+        Ref_Day.text = day.ToString();
+    }
     public void ShowNode(NodeData node)
     {
         npcText.text = node.text;
