@@ -4,10 +4,9 @@
       "day": 1,
       "moneyGoal": 150,
       "npcOrder": [
-        "Fridgy",
         "Shaun",
-        "Jop",
-        "Amon"
+        "Amon",
+        "Robin"
       ]
     },
     {
@@ -15,39 +14,8 @@
       "moneyGoal": 200,
       "npcOrder": [
         "Lily",
-        "Fridgy",
-        "Robin",
-        "Jop"
-      ]
-    },
-    {
-      "day": 3,
-      "moneyGoal": 150,
-      "npcOrder": [
-        "Shaun",
-        "Amon",
+        "Jop",
         "Robin"
-      ]
-    },
-    {
-      "day": 4,
-      "moneyGoal": 250,
-      "npcOrder": [
-        "Lily",
-        "Fridgy",
-        "Robin",
-        "Shaun",
-        "Jop"
-      ]
-    },
-    {
-      "day": 5,
-      "moneyGoal": 500,
-      "npcOrder": [
-        "Amon",
-        "Lily",
-        "Fridgy",
-        "Shaun"
       ]
     }
   ]

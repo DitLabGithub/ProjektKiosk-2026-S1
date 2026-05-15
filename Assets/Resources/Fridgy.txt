@@ -14,80 +14,14 @@
   "favouriteItems": ["MintFizz", "SproingelsGreen"],
 
   "details": [
-  { "key": "gambler", "text": "Fridgy spends too much money gambling." },
-  { "key": "loud", "text": "Fridgy speaks way too loudly." },
-  { "key": "warehouse_worker", "text": "Fridgy used to work at a shipping warehouse." }
-],
+    { "key": "gambler", "text": "Fridgy spends too much money gambling." },
+    { "key": "loud", "text": "Fridgy speaks way too loudly." }
+  ],
 
   "variables": [
     { "name": "friendship", "value": "0" },
     { "name": "UpsoldNumber", "value": "0" }
   ],
 
-  "dialogues": [
-  {
-  "day": 1,
-  "nodes": [
-    {
-  "id": "Fridgy_D1_Start",
-  "text": "Yo. Busy day already?",
-  "requirements": [],
-  "options": [
-    {
-      "text": "Trying to survive it.",
-      "effects": [
-        {
-          "messageTitle": "Daily Reminder",
-          "messageSender": "Management",
-          "messageContent": "Customer satisfaction affects store reputation. Be polite."
-        }
-      ],
-      "requirements": [],
-      "nextNodes": ["Fridgy_D1_Detail1"]
-    }
-  ]
-},
-{
-  "id": "Fridgy_D1_Detail1",
-  "text": "Heh. Better than my old warehouse job at least.",
-  "requirements": [],
-  "options": [
-    {
-      "text": "Warehouse?",
-      "effects": [
-        { "variable": "unlock_detail", "value": "warehouse_worker" },
-
-        {
-          "messageTitle": "New Contact Info",
-          "messageSender": "Unknown Number",
-          "messageContent": "Fridgy used to work industrial shipping near the harbor."
-        }
-      ],
-      "requirements": [],
-      "nextNodes": ["Fridgy_D1_Loud"]
-    }
-  ]
-},
-
-    {
-      "id": "Fridgy_D1_Loud",
-      "text": "OI DON'T ACT LIKE YOU DON'T KNOW ME!",
-      "requirements": [],
-      "options": [
-        {
-          "text": "No need to scream.",
-          "effects": [
-            {
-              "variable": "unlock_detail",
-              "value": "loud"
-            }
-          ],
-          "requirements": [],
-          "nextNodes": ["End_Dialogue"]
-        }
-      ]
-    }
-  ]
-}
-]
+  "dialogues": []
 }

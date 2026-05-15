@@ -1,7 +1,6 @@
 {
   "name": "Robin",
   "avatarPath": "Sprites/Avatars/Robin",
-
   "age": 29,
   "above18": true,
   "address": "19 Market District",
@@ -10,812 +9,155 @@
   "height": 176,
   "hairColor": "Black",
   "eyeColor": "Brown",
-
   "favouriteItems": ["PackOfGiddy", "BlackCoffee"],
-
   "details": [
     { "key": "pregnant", "text": "Robin is pregnant." },
-    { "key": "divorced", "text": "Robin recently got divorced." },
-    { "key": "mechanic", "text": "Robin owns a small garage." },
     { "key": "buying_for_husband", "text": "Robin says the cigarettes are for her husband." },
-    { "key": "worried_about_ssi", "text": "Robin is worried about how SSI changes everyday life." },
-    { "key": "triangle_of_trust", "text": "Robin learned that SSI is based on a triangle of trust between the issuer, holder, and verifier." },
-    { "key": "husband_smoker", "text": "Robin's husband is the one who smokes." }
+    { "key": "worried_about_ssi", "text": "Robin is worried about how SSI changes everyday life." }
   ],
-
   "variables": [
     { "name": "friendship", "value": "0" },
     { "name": "lawfulness", "value": "0" },
     { "name": "UpsoldNumber", "value": "0" },
-
-    { "name": "SoldCigarettes_D2", "value": "false" },
-    { "name": "RefusedCigarettes_D2", "value": "false" },
-
-    { "name": "SoldCigarettes_D3", "value": "false" },
-    { "name": "RefusedCigarettes_D3", "value": "false" },
-
-    { "name": "SoldCigarettes_D4", "value": "false" },
-    { "name": "RefusedCigarettes_D4", "value": "false" },
-
-    { "name": "RobinExplainedTriangleOfTrust_D3", "value": "false" },
-    { "name": "RobinArrivedWithHusband_D4", "value": "false" },
-    { "name": "ComplaintEmail_D4", "value": "false" }
+    { "name": "SoldCigarettes_D1", "value": "false" }
   ],
-
   "dialogues": [
+    {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Robin_D1_Start",
+          "text": "Hi, could I please get a pack of cigarettes?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Sure, I need to check your ID first.",
+              "effects": [
+                { "variable": "open_id_tab", "value": "true" }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_ID"]
+            }
+          ]
+        },
+        {
+          "id": "Robin_D1_ID",
+          "text": "Of course. They're for my husband, by the way.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Everything checks out. Want a BlackCoffee with that?",
+              "effects": [
+                { "variable": "open_id_tab", "value": "false" },
+                { "variable": "friendship", "value": "1" },
+                { "variable": "UpsoldNumber", "value": "1" },
+                { "variable": "SoldCigarettes_D1", "value": "true" },
+                { "variable": "unlock_detail", "value": "buying_for_husband" },
+                { "variable": "open_wares_tab", "value": "PackOfGiddy,BlackCoffee" },
+                { "keyMomentText": "Checked Robin's regular ID, sold cigarettes, and successfully upsold BlackCoffee.", "keyMomentPositive": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_Friendly"]
+            },
+            {
+              "text": "Everything checks out. Just the cigarettes.",
+              "effects": [
+                { "variable": "open_id_tab", "value": "false" },
+                { "variable": "SoldCigarettes_D1", "value": "true" },
+                { "variable": "unlock_detail", "value": "buying_for_husband" },
+                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
+                { "keyMomentText": "Checked Robin's regular ID and completed the cigarette sale.", "keyMomentPositive": true }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_Neutral"]
+            }
+          ]
+        },
+        {
+          "id": "Robin_D1_Friendly",
+          "text": "Actually, yes. Thanks for being thoughtful.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Take care.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Robin_D1_Neutral",
+          "text": "Thank you.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Take care.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
     {
       "day": 2,
       "nodes": [
         {
           "id": "Robin_D2_Start",
-          "text": "Hi, sir.",
+          "text": "Hi again.",
           "requirements": [],
           "options": [
             {
-              "text": "Good day, miss.",
+              "text": "Good to see you again.",
               "effects": [],
               "requirements": [],
-              "nextNodes": ["Robin_D2_Request_Cigarettes"]
+              "nextNodes": ["Robin_D2_Positive", "Robin_D2_Neutral"]
             }
           ]
         },
         {
-          "id": "Robin_D2_Request_Cigarettes",
-          "text": "Could I please have a pack of cigarettes?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Well, hopefully the cigarettes aren't for you?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_For_Partner"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_For_Partner",
-          "text": "No, they're for my partner...",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I will need to check your ID regardless.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_ID_Comment"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_ID_Comment",
-          "text": "Okay, there you go. Speaking of which, I can't wait for the SSI system to come live... It's going to make things so much easier.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I'll check your ID.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_Selling_Choice"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Selling_Choice",
-          "text": "Past few days have been so stressful... I'm expecting and the sooner it's coming, the more stuff I need to do...",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Neither you nor your partner should be smoking. I can't sell these.",
-              "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "RefusedCigarettes_D2", "value": "true" },
-                { "keyMomentText": "Refused to sell cigarettes to Robin because she is pregnant.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_Refused_Response"]
-            },
-            {
-              "text": "There you go, take it easy.",
-              "effects": [
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D2", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Sold cigarettes to Robin after she said they were for her partner.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_Sold_Response"]
-            },
-            {
-              "text": "Your husband should be healthier for the baby.",
-              "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D2", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Sold cigarettes to Robin while encouraging her husband to quit.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_Upsell_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Refused_Response",
-          "text": "What? Are you serious?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Yeah, no way a pregnant person is buying cigarettes from me.",
-              "effects": [
-                { "variable": "friendship", "value": "-1" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D2_Leaves_Angry"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Leaves_Angry",
-          "text": "Unbelievable.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End conversation.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Sold_Response",
-          "text": "Thank you, have a good day.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "See ya around.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Upsell_Response",
-          "text": "Right! That's what I'm saying.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "See ya around.",
-              "effects": [
-                { "variable": "UpsoldNumber", "value": "1" }
-              ],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        }
-      ]
-    },
-
-    {
-      "day": 3,
-      "nodes": [
-        {
-          "id": "Robin_D3_Start",
-          "text": "Hi again, sir.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Oh, hi. Hopefully it's been less stressful recently?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Previous_Sale_Yes", "Robin_D3_Previous_Sale_No"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Previous_Sale_Yes",
-          "text": "Yes, taking small wins every chance I can.",
-          "requirements": [
-            { "variable": "SoldCigarettes_D2", "value": "true" }
-          ],
-          "options": [
-            {
-              "text": "How have you been enjoying the new system?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_System_Thoughts"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Previous_Sale_No",
-          "text": "Well, it's not like you made it any easier.",
-          "requirements": [
-            { "variable": "SoldCigarettes_D2", "value": "false" }
-          ],
-          "options": [
-            {
-              "text": "How have you been enjoying the new system?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_System_Thoughts"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_System_Thoughts",
-          "text": "The new system is finally here. How have you been enjoying it?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "It's alright, taking it step by step.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Triangle_Trust_1"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Triangle_Trust_1",
-          "text": "You know, it's actually really interesting. I was watching a video the other day...",
-          "requirements": [],
-          "options": [
-            {
-              "text": "What did it say?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Triangle_Trust_2"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Triangle_Trust_2",
-          "text": "It said the whole system is based on a triangle. It's me, you, and whoever confirmed my identity.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "That sounds smarter than the video we got here.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Triangle_Trust_3"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Triangle_Trust_3",
-          "text": "And the point is, you don't just trust me, but also whoever verified my data.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "So you don't have to show everything anymore?",
-              "effects": [
-                { "variable": "RobinExplainedTriangleOfTrust_D3", "value": "true" },
-                { "variable": "unlock_detail", "value": "triangle_of_trust" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Triangle_Trust_4"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Triangle_Trust_4",
-          "text": "Exactly. I just prove that someone legit checked it already.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Good to know. Alright, let's see your SSI.",
-              "effects": [
-                { "variable": "open_ssi_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Request_Cigarettes"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Request_Cigarettes",
-          "text": "Anyway, I'm here again for cigarettes.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I told you I'm not selling cigarettes to pregnant people.",
-              "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "RefusedCigarettes_D3", "value": "true" },
-                { "keyMomentText": "Refused Robin again because she is pregnant.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Refused_Again"]
-            },
-            {
-              "text": "Yeah, I totally despise everything about this new system. It's stupid.",
-              "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "RefusedCigarettes_D3", "value": "true" },
-                { "keyMomentText": "Dismissed SSI while speaking to Robin about the new system.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_System_Negative"]
-            },
-            {
-              "text": "Pack of cigarettes, there you go.",
-              "effects": [
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D3", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Sold cigarettes to Robin on her second visit.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Sold_Response"]
-            },
-            {
-              "text": "I'd feel more comfortable if your husband would get them himself.",
-              "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D3", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Sold cigarettes but told Robin her husband should buy them himself.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Husband_Should_Buy"]
-            },
-            {
-              "text": "You should insist on your husband quitting cigarettes.",
-              "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D3", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Sold cigarettes while encouraging Robin to talk to her husband about quitting.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Husband_Quit"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Refused_Again",
-          "text": "How are you so self-absorbed? I need to talk to the manager.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Good luck.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_System_Negative",
-          "text": "I hope you appreciate the new system. We put in a lot of work for the change. Anyway, thank you.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Alright, take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Sold_Response",
-          "text": "I hope you appreciate the new system. We put in a lot of work for the change. Anyway, thank you.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Alright, take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Husband_Should_Buy",
-          "text": "Yeah, that's the plan. We got some prenatal classes tomorrow.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "So that'll be a great time to discuss it.",
-              "effects": [
-                { "variable": "UpsoldNumber", "value": "1" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Husband_Response_End"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Husband_Quit",
-          "text": "Yeah, that's the plan. We got some prenatal classes tomorrow.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "So that'll be a great time to discuss it.",
-              "effects": [
-                { "variable": "UpsoldNumber", "value": "1" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D3_Husband_Response_End"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Husband_Response_End",
-          "text": "Thank you. I think you're right.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Alright, take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        }
-      ]
-    },
-
-    {
-      "day": 4,
-      "nodes": [
-        {
-          "id": "Robin_D4_Start",
-          "text": "Good day, sir.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Hi, Ms. Robin.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Relationship_Positive", "Robin_D4_Relationship_Negative"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Relationship_Negative",
-          "text": "Ugh, so I have this extremely ignorant co-worker...",
-          "requirements": [
-            { "variable": "friendship", "value": "-1" }
-          ],
-          "options": [
-            {
-              "text": "What happened?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Coworker_Story"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Coworker_Story",
-          "text": "And he kept talking about how pointless this new system is... it really pissed me off.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "That sounds annoying.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Coworker_Story_2"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Coworker_Story_2",
-          "text": "Because me and my husband were very active for this change to come. It's much safer now.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I guess some people don't appreciate social activism.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Social_Activism_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Social_Activism_Response",
-          "text": "That aside, could I have another pack of cigarettes, please?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I'll need your SSI.",
-              "effects": [
-                { "variable": "open_ssi_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Selling_Choice"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Relationship_Positive",
-          "text": "Hi. My husband is with me today.",
+          "id": "Robin_D2_Positive",
+          "text": "You remembered me. That's nice. I've been nervous about all this SSI stuff, honestly.",
           "requirements": [
             { "variable": "friendship", "value": "1" }
           ],
           "options": [
             {
-              "text": "Did you already have your prenatal class?",
+              "text": "It's okay to be careful with your data.",
               "effects": [
-                { "variable": "RobinArrivedWithHusband_D4", "value": "true" },
-                { "variable": "unlock_detail", "value": "husband_smoker" }
+                { "variable": "friendship", "value": "2" },
+                { "variable": "unlock_detail", "value": "worried_about_ssi" },
+                { "keyMomentText": "Robin opened up because the player had built friendship with her.", "keyMomentPositive": true }
               ],
               "requirements": [],
-              "nextNodes": ["Robin_D4_Prenatal_Class"]
+              "nextNodes": ["Robin_D2_End"]
             }
           ]
         },
         {
-          "id": "Robin_D4_Prenatal_Class",
-          "text": "Oh, not yet, we're actually on our way to it.",
-          "requirements": [],
+          "id": "Robin_D2_Neutral",
+          "text": "Hi. I just need to grab something quickly.",
+          "requirements": [
+            { "variable": "friendship", "value": "0" }
+          ],
           "options": [
             {
-              "text": "You better not buy cigarettes today.",
+              "text": "Of course.",
               "effects": [],
               "requirements": [],
-              "nextNodes": ["Robin_D4_Better_Not"]
-            },
-            {
-              "text": "Oh, happy to hear. Socks for the business though, I guess.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Happy_To_Hear"]
+              "nextNodes": ["Robin_D2_End"]
             }
           ]
         },
         {
-          "id": "Robin_D4_Better_Not",
-          "text": "This guy is something...",
+          "id": "Robin_D2_End",
+          "text": "Thanks. Have a good day.",
           "requirements": [],
           "options": [
             {
-              "text": "Yeah, I can't sell cigarettes to a pregnant lady in clean conscience.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Conscience_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Conscience_Response",
-          "text": "Anyway, I'm here to buy myself some cigarettes.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "You do realize there's nothing illegal about a pregnant lady buying cigarettes, right?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Legal_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Legal_Response",
-          "text": "Could I please have my last pack?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I'll need your SSI.",
-              "effects": [
-                { "variable": "open_ssi_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Selling_Choice"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Happy_To_Hear",
-          "text": "Yeah, sometimes it's just about doing the right thing.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Agreed. Years ago and half my personal info leaked in a huge data leak.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Data_Leak_Response"]
-            },
-            {
-              "text": "All that seems so small now that we have a child on the way.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Child_Response"]
-            },
-            {
-              "text": "Definitely, but still taking part for a change matters.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Change_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Data_Leak_Response",
-          "text": "And we joined all possible protests to force a change...",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Could I please have my last pack?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Last_Pack"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Child_Response",
-          "text": "Well, I'm happy to be a part of a better change.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Could I please have my last pack?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Last_Pack"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Change_Response",
-          "text": "Well, I'm happy to be a part of a better change.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Could I please have my last pack?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Last_Pack"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Last_Pack",
-          "text": "This is my husband. See, I'm not the one smoking.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I'll need your SSI.",
-              "effects": [
-                { "variable": "open_ssi_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Husband_Comment_1"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Husband_Comment_1",
-          "text": "Hi, this time it's me getting the cigarettes.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Alright, let's check it.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Husband_Comment_2"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Husband_Comment_2",
-          "text": "We talked about me having my last pack of cigarettes today...",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Oh, I'm happy to hear. Socks for the business though, I guess.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Selling_Choice"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Selling_Choice",
-          "text": "Could I have a pack of cigarettes, please?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Anyone associated with the change should be ashamed. The new system is stupid.",
-              "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "ComplaintEmail_D4", "value": "true" },
-                { "variable": "RefusedCigarettes_D4", "value": "true" },
-                { "keyMomentText": "Insulted Robin's support for SSI and triggered a complaint.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Complaint_Response"]
-            },
-            {
-              "text": "What did you need?",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Clarify_Item"]
-            },
-            {
-              "text": "Pack of cigarettes, there you go.",
-              "effects": [
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D4", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Sold cigarettes to Robin on her final visit.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Sold_Response"]
-            },
-            {
-              "text": "Thank you for the work you and your husband put in.",
-              "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D4", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Acknowledged Robin's activism and sold the cigarettes.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Robin_D4_Thanked_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Complaint_Response",
-          "text": "People like you disgust me.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End conversation.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Clarify_Item",
-          "text": "Cigarettes.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Alright, a pack of cigarettes, there you go.",
-              "effects": [
-                { "variable": "money", "value": "1" },
-                { "variable": "SoldCigarettes_D4", "value": "true" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" }
-              ],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Sold_Response",
-          "text": "Thank you.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End conversation.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Thanked_Response",
-          "text": "Thank you. That means a lot.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Alright, a pack of cigarettes, there you go.",
+              "text": "End interaction.",
               "effects": [],
               "requirements": [],
               "nextNodes": ["End_Dialogue"]

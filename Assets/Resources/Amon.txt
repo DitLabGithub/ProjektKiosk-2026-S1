@@ -1,7 +1,6 @@
 {
   "name": "Amon",
   "avatarPath": "Sprites/Avatars/Amon",
-
   "age": 17,
   "above18": false,
   "address": "12 East Hollow Street",
@@ -10,140 +9,72 @@
   "height": 172,
   "hairColor": "Brown",
   "eyeColor": "Green",
-
   "favouriteItems": ["Rambolos", "Hotshot", "BluePort"],
-
   "details": [
-    { "key": "likes_smoking", "text": "Amon likes cigarettes" },
-    { "key": "addicted", "text": "Amon is addicted" },
-    { "key": "underage", "text": "Amon is not old enough to legally buy cigarettes" },
-    { "key": "sneaker_money", "text": "Amon was supposed to spend his money on new sneakers" }
+    { "key": "likes_smoking", "text": "Amon likes cigarettes." },
+    { "key": "underage", "text": "Amon is not old enough to legally buy cigarettes." }
   ],
-
   "variables": [
     { "name": "friendship", "value": "0" },
     { "name": "lawfulness", "value": "0" },
-    { "name": "SoldCig1", "value": "false" },
-    { "name": "SoldCig2", "value": "false" },
-    { "name": "SoldCig3", "value": "false" }
+    { "name": "SoldCig1", "value": "false" }
   ],
-
   "dialogues": [
     {
       "day": 1,
       "nodes": [
         {
           "id": "Amon_D1_Start",
-          "text": "Hi, man.",
+          "text": "Hey, could I get some cigarettes?",
           "requirements": [],
           "options": [
             {
-              "text": "Hello.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Order"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D1_Order",
-          "text": "Could I please have, uh, cigarettes?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "ID, please?",
+              "text": "I need to check your ID first.",
               "effects": [
                 { "variable": "open_id_tab", "value": "true" }
               ],
               "requirements": [],
-              "nextNodes": ["Amon_D1_ID_Response"]
+              "nextNodes": ["Amon_D1_Check"]
             }
           ]
         },
         {
-          "id": "Amon_D1_ID_Response",
-          "text": "Oh, right, yeah. People don't usually ask me for ID...",
+          "id": "Amon_D1_Check",
+          "text": "Yeah, sure. Here.",
           "requirements": [],
           "options": [
             {
-              "text": "Yeah, there's no way I'm accepting this.",
+              "text": "You're under 18. I can't sell these.",
               "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "SoldCig1", "value": "false" },
-                { "variable": "unlock_detail", "value": "underage" },
                 { "variable": "open_id_tab", "value": "false" },
-                { "keyMomentText": "Refused to sell cigarettes to Amon because he was underage.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Reject_Harsh"]
-            },
-            {
-              "text": "I got all I need.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Sell_Check"]
-            },
-            {
-              "text": "Don't sweat it, boss.",
-              "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Sell_Check"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D1_Reject_Harsh",
-          "text": "Come on, man. I just want my smoke... No need to be an asshole.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D1_Sell_Check",
-          "text": "So... are we good?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Sell the cigarettes.",
-              "effects": [
-                { "variable": "SoldCig1", "value": "true" },
-                { "variable": "friendship", "value": "1" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "open_wares_tab", "value": "Rambolos" },
-                { "variable": "unlock_detail", "value": "likes_smoking" },
-                { "keyMomentText": "Sold cigarettes to Amon even though he was underage.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Sold"]
-            },
-            {
-              "text": "Refuse the sale.",
-              "effects": [
-                { "variable": "SoldCig1", "value": "false" },
                 { "variable": "lawfulness", "value": "1" },
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "SoldCig1", "value": "false" },
                 { "variable": "unlock_detail", "value": "underage" },
-                { "keyMomentText": "Refused to sell cigarettes to Amon after checking his ID.", "keyMomentPositive": true }
+                { "keyMomentText": "Checked Amon's regular ID and refused the cigarette sale because he was underage.", "keyMomentPositive": true }
               ],
               "requirements": [],
               "nextNodes": ["Amon_D1_Refused"]
+            },
+            {
+              "text": "Looks fine. I'll sell them.",
+              "effects": [
+                { "variable": "open_id_tab", "value": "false" },
+                { "variable": "lawfulness", "value": "-1" },
+                { "variable": "friendship", "value": "1" },
+                { "variable": "SoldCig1", "value": "true" },
+                { "variable": "unlock_detail", "value": "likes_smoking" },
+                { "variable": "open_wares_tab", "value": "Rambolos" },
+                { "keyMomentText": "Sold cigarettes to Amon even though his regular ID showed he was underage.", "keyMomentPositive": false }
+              ],
+              "requirements": [],
+              "nextNodes": ["Amon_D1_Sold"]
             }
           ]
         },
         {
           "id": "Amon_D1_Refused",
-          "text": "That's just a mistake on my part. I took my dad's wallet hehe.",
+          "text": "Come on, man. That's harsh.",
           "requirements": [],
           "options": [
             {
@@ -156,463 +87,7 @@
         },
         {
           "id": "Amon_D1_Sold",
-          "text": "Oh nice, you seem cool. I will for sure come back to this place!",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "day": 3,
-      "nodes": [
-        {
-          "id": "Amon_D3_Start",
-          "text": "Hey, man.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Hello.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Returning_Customer", "Amon_D3_Not_Sold_Before"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Returning_Customer",
-          "text": "Could I have some cigarettes again, please?",
-          "requirements": [
-            { "variable": "SoldCig1", "value": "true" }
-          ],
-          "options": [
-            {
-              "text": "I'll need your ID this time.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Check_ID"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Not_Sold_Before",
-          "text": "Oh, could I get some cigarettes?",
-          "requirements": [
-            { "variable": "SoldCig1", "value": "false" }
-          ],
-          "options": [
-            {
-              "text": "Hope you sorted your ID this time.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Check_ID"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Check_ID",
-          "text": "So... is everything fine?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Get lost.",
-              "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "SoldCig2", "value": "false" },
-                { "variable": "open_id_tab", "value": "false" },
-                { "keyMomentText": "Told Amon to leave instead of selling him cigarettes.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Leave_Angry"]
-            },
-            {
-              "text": "I can't accept this.",
-              "effects": [
-                { "variable": "friendship", "value": "0" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "SoldCig2", "value": "false" },
-                { "variable": "open_id_tab", "value": "false" },
-                { "variable": "unlock_detail", "value": "underage" },
-                { "keyMomentText": "Refused Amon's second attempt to buy cigarettes.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Reject"]
-            },
-            {
-              "text": "I got all I need.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Sell_Check"]
-            },
-            {
-              "text": "Smoking is not food for you, kid.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Smoking_Response"]
-            },
-            {
-              "text": "Actually, I already identified you, no need to ID you.",
-              "effects": [
-                { "variable": "friendship", "value": "2" },
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [
-                { "variable": "friendship", "value": "1" }
-              ],
-              "nextNodes": ["Amon_D3_Sell_Check"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Leave_Angry",
-          "text": "I'm totally 18. I just messed up my ID again.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Reject",
-          "text": "Ughh, I just need to get some cigarettes, man. You're such a nerd.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Smoking_Response",
-          "text": "Everyone does it though. I like the flavor anyways.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Refuse the sale.",
-              "effects": [
-                { "variable": "SoldCig2", "value": "false" },
-                { "variable": "lawfulness", "value": "1" },
-                { "keyMomentText": "Warned Amon about smoking and refused the sale.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Refused"]
-            },
-            {
-              "text": "Fine, sell the cigarettes.",
-              "effects": [
-                { "variable": "SoldCig2", "value": "true" },
-                { "variable": "friendship", "value": "2" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "open_wares_tab", "value": "Rambolos" },
-                { "variable": "unlock_detail", "value": "addicted" },
-                { "keyMomentText": "Sold cigarettes to Amon again after warning him.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Sold"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Sell_Check",
-          "text": "So... can I get them?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Sell the cigarettes.",
-              "effects": [
-                { "variable": "SoldCig2", "value": "true" },
-                { "variable": "friendship", "value": "2" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "open_wares_tab", "value": "Rambolos" },
-                { "variable": "unlock_detail", "value": "addicted" },
-                { "keyMomentText": "Sold cigarettes to Amon for a second time.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Sold"]
-            },
-            {
-              "text": "Refuse the sale.",
-              "effects": [
-                { "variable": "SoldCig2", "value": "false" },
-                { "variable": "lawfulness", "value": "1" },
-                { "keyMomentText": "Refused to sell cigarettes to Amon after checking his ID again.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D3_Refused"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Refused",
-          "text": "It doesn't look like it's matching up, unfortunately.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D3_Sold",
-          "text": "My mom wants me to buy myself some new sneakers... but I have other plans, haha!",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [
-                { "variable": "unlock_detail", "value": "sneaker_money" }
-              ],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "day": 5,
-      "nodes": [
-        {
-          "id": "Amon_D5_Start",
-          "text": "Morning.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Hello.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Returning_Customer", "Amon_D5_Not_Sold_Before"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Returning_Customer",
-          "text": "I've come here for some more cigarettes.",
-          "requirements": [
-            { "variable": "SoldCig2", "value": "true" }
-          ],
-          "options": [
-            {
-              "text": "I'll need your ID again.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Returning_Response"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Returning_Response",
-          "text": "There you go, man. I got some extra cash for those sneakers I might've mentioned before. Gotta bulk up on ciggies.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "I'll check your ID.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Check_ID"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Not_Sold_Before",
-          "text": "Could I please get some cigarettes? I got my ID straight.",
-          "requirements": [
-            { "variable": "SoldCig2", "value": "false" }
-          ],
-          "options": [
-            {
-              "text": "Okay, let's have a look.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Check_ID"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Check_ID",
-          "text": "So... are we good this time?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Kid, get lost!",
-              "effects": [
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "SoldCig3", "value": "false" },
-                { "variable": "open_id_tab", "value": "false" },
-                { "keyMomentText": "Told Amon to leave during his final visit.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Leave_Angry"]
-            },
-            {
-              "text": "I still can't accept this.",
-              "effects": [
-                { "variable": "friendship", "value": "0" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "SoldCig3", "value": "false" },
-                { "variable": "open_id_tab", "value": "false" },
-                { "keyMomentText": "Refused Amon's final attempt to buy cigarettes.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Reject"]
-            },
-            {
-              "text": "I got all I need.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Sell_Check"]
-            },
-            {
-              "text": "Seriously, don't waste your money on smoke. You'll regret it later.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Warning_Response"]
-            },
-            {
-              "text": "You're a friend, forget about the ID.",
-              "effects": [
-                { "variable": "friendship", "value": "2" },
-                { "variable": "open_id_tab", "value": "false" }
-              ],
-              "requirements": [
-                { "variable": "friendship", "value": "2" }
-              ],
-              "nextNodes": ["Amon_D5_Sell_Check"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Leave_Angry",
-          "text": "Whatever, man.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Reject",
-          "text": "What a loser. I'm spending my money elsewhere.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Warning_Response",
-          "text": "Don't know man, I live for the moment.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Refuse the sale.",
-              "effects": [
-                { "variable": "SoldCig3", "value": "false" },
-                { "variable": "lawfulness", "value": "1" },
-                { "keyMomentText": "Warned Amon again and refused the cigarette sale.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Refused"]
-            },
-            {
-              "text": "Sell the cigarettes anyway.",
-              "effects": [
-                { "variable": "SoldCig3", "value": "true" },
-                { "variable": "friendship", "value": "2" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "open_wares_tab", "value": "Rambolos" },
-                { "keyMomentText": "Sold cigarettes to Amon after he said he lives for the moment.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Sold"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Sell_Check",
-          "text": "So... can I get them?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Sell the cigarettes.",
-              "effects": [
-                { "variable": "SoldCig3", "value": "true" },
-                { "variable": "friendship", "value": "2" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "open_wares_tab", "value": "Rambolos" },
-                { "keyMomentText": "Sold cigarettes to Amon for a final time.", "keyMomentPositive": false }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Sold"]
-            },
-            {
-              "text": "Refuse the sale.",
-              "effects": [
-                { "variable": "SoldCig3", "value": "false" },
-                { "variable": "lawfulness", "value": "1" },
-                { "keyMomentText": "Refused Amon's final attempt to buy cigarettes.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Amon_D5_Refused"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Refused",
-          "text": "You're not 18...",
-          "requirements": [],
-          "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
-          ]
-        },
-        {
-          "id": "Amon_D5_Sold",
-          "text": "You're a lifesaver. The other places around suck.",
+          "text": "Nice. You're cool.",
           "requirements": [],
           "options": [
             {

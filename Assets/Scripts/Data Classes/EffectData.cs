@@ -10,4 +10,8 @@ public class EffectData
     public string messageTitle;
     public string messageSender;
     public string messageContent;
+
+    public string perfectNode;
+    public string goodNode;
+    public string badNode;
 }

@@ -19,12 +19,18 @@ public class SSIManager : MonoBehaviour
     private HashSet<string> askedFields = new HashSet<string>();
     private HashSet<string> requiredFields = new HashSet<string>();
 
+    private string perfectNode;
+    private string goodNode;
+    private string badNode;
+
     private void Awake()
     {
         Instance = this;
     }
     public void SetupOrders(string orderString)
     {
+        ResetSSI();
+
         requiredFields.Clear();
 
         string[] orders = orderString.Split(',');
@@ -93,6 +99,11 @@ public class SSIManager : MonoBehaviour
 
         Debug.Log("SSI Result: " + result);
 
+        DialogueManager.Instance.currentNode =
+    DialogueManager.Instance.currentDialogue.nodes.Find(
+        n => n.id == (result == "perfect" ? perfectNode : result == "good" ? goodNode : badNode)
+    );
+
         // Store in NPC
         DialogueManager.Instance.currentNPC.SetVariable(
      "SSI_Result",
@@ -152,4 +163,30 @@ public class SSIManager : MonoBehaviour
         askedFields.Add("photo");
     }
 
+    public void SetupResultNodes(
+    string perfect,
+    string good,
+    string bad
+)
+    {
+        perfectNode = perfect;
+        goodNode = good;
+        badNode = bad;
+    }
+
+    public void ResetSSI()
+    {
+        askedFields.Clear();
+
+        photo.sprite = null;
+
+        name.text = "Request";
+        age.text = "Request";
+        above18.text = "Request";
+        above21.text = "Request";
+        address.text = "Request";
+        expiryDate.text = "Request";
+
+        buttonToHideForPhoto.SetActive(true);
+    }
 }

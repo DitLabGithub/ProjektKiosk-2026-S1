@@ -169,11 +169,15 @@ public class DialogueManager : MonoBehaviour
 
                 case "open_ssi_tab":
 
-                    UIManager.Instance
-                        .ToggleIdentification_SSI();
+                    UIManager.Instance.ToggleIdentification_SSI();
 
-                    SSIManager.Instance
-                        .SetupOrders(effect.value);
+                    SSIManager.Instance.SetupOrders(effect.value);
+
+                    SSIManager.Instance.SetupResultNodes(
+                        effect.perfectNode,
+                        effect.goodNode,
+                        effect.badNode
+                    );
 
                     break;
 
@@ -198,8 +202,8 @@ public class DialogueManager : MonoBehaviour
 
                 case "open_wares_tab":
 
-                    UIManager.Instance
-                        .ToggleWares();
+                   // UIManager.Instance
+                      //  .ToggleWares();
 
                     Counter.Instance
                         .SetupRequestedItems(
