@@ -25,7 +25,7 @@
       "nodes": [
         {
           "id": "Amon_D1_Start",
-          "text": "Hey, could I get some cigarettes?",
+          "text": "Hey, could I get a pack of Rambolos?",
           "requirements": [],
           "options": [
             {
@@ -44,28 +44,38 @@
           "requirements": [],
           "options": [
             {
-              "text": "You're under 18. I can't sell these.",
+              "text": "You're under 18. I can't sell you Rambolos.",
               "effects": [
                 { "variable": "open_id_tab", "value": "false" },
                 { "variable": "lawfulness", "value": "1" },
                 { "variable": "friendship", "value": "-1" },
                 { "variable": "SoldCig1", "value": "false" },
                 { "variable": "unlock_detail", "value": "underage" },
-                { "keyMomentText": "Checked Amon's regular ID and refused the cigarette sale because he was underage.", "keyMomentPositive": true }
+                {
+                  "keyMomentText": "Checked Amon's regular ID and refused the Rambolos sale because he was underage.",
+                  "keyMomentPositive": true
+                }
               ],
               "requirements": [],
               "nextNodes": ["Amon_D1_Refused"]
             },
             {
-              "text": "Looks fine. I'll sell them.",
+              "text": "Looks fine. I'll sell you the Rambolos.",
               "effects": [
                 { "variable": "open_id_tab", "value": "false" },
                 { "variable": "lawfulness", "value": "-1" },
                 { "variable": "friendship", "value": "1" },
                 { "variable": "SoldCig1", "value": "true" },
                 { "variable": "unlock_detail", "value": "likes_smoking" },
-                { "variable": "open_wares_tab", "value": "Rambolos" },
-                { "keyMomentText": "Sold cigarettes to Amon even though his regular ID showed he was underage.", "keyMomentPositive": false }
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Sold Rambolos to Amon even though his regular ID showed he was underage.",
+                  "keyMomentPositive": false
+                }
               ],
               "requirements": [],
               "nextNodes": ["Amon_D1_Sold"]
@@ -74,7 +84,7 @@
         },
         {
           "id": "Amon_D1_Refused",
-          "text": "Come on, man. That's harsh.",
+          "text": "Come on, man. It's just Rambolos.",
           "requirements": [],
           "options": [
             {

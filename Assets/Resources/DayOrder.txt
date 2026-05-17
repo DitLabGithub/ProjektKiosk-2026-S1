@@ -13,9 +13,9 @@
       "day": 2,
       "moneyGoal": 200,
       "npcOrder": [
-        "Lily",
         "Jop",
-        "Robin"
+        "Robin",
+        "Lily"
       ]
     }
   ]

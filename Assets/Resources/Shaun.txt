@@ -9,7 +9,7 @@
   "height": 183,
   "hairColor": "Brown",
   "eyeColor": "Hazel",
-  "favouriteItems": ["Hotshot", "EnergyDrink"],
+  "favouriteItems": ["Giddys", "BluePort"],
   "details": [
     { "key": "former_employee", "text": "Shaun used to work at the kiosk." },
     { "key": "customer_preferences", "text": "Shaun is interested in customer preferences and buying habits." },
@@ -26,14 +26,13 @@
       "nodes": [
         {
           "id": "Shaun_D1_Start",
-          "text": "Hey, you must be the new clerk. I used to work here, so I can give you one useful tip.",
+          "text": "Hey, could I get a pack of Giddys? Also, you must be the new clerk. I used to work here, so I can give you one useful tip.",
           "requirements": [],
           "options": [
             {
-              "text": "Alright, what's the tip?",
+              "text": "Sure. What's the tip?",
               "effects": [
-                { "variable": "unlock_detail", "value": "former_employee" },
-                { "variable": "open_wares_tab", "value": "SproingelsBlue" }
+                { "variable": "unlock_detail", "value": "former_employee" }
               ],
               "requirements": [],
               "nextNodes": ["Shaun_D1_Tip"]
@@ -46,31 +45,44 @@
           "requirements": [],
           "options": [
             {
-              "text": "So, like offering an EnergyDrink with your Hotshot?",
+              "text": "So, like offering BluePort with your Giddys?",
               "effects": [
                 { "variable": "friendship", "value": "1" },
                 { "variable": "UpsoldNumber", "value": "1" },
                 { "variable": "unlock_detail", "value": "customer_preferences" },
                 { "variable": "unlock_detail", "value": "upsell_tip" },
-                { "variable": "open_wares_tab", "value": "Hotshot,EnergyDrink" },
-                { "keyMomentText": "Learned upselling from Shaun and successfully recommended a favourite item.", "keyMomentPositive": true }
+                {
+                  "keyMomentText": "Learned upselling from Shaun and recommended BluePort with his Giddys.",
+                  "keyMomentPositive": true
+                }
               ],
-              "requirements": [{ "variable": "SoldSproingelsBlue1", "value": "true" }],
-              "nextNodes": ["Shaun_D1_End"]
+              "requirements": [],
+              "nextNodes": ["Shaun_D1_Upsold"]
             },
             {
-              "text": "I'll just sell the Hotshot.",
-              "effects": [
-                { "variable": "open_wares_tab", "value": "Hotshot" }
-              ],
-              "requirements": [{ "variable": "SoldSproingelsBlue1", "value": "true" }],
-              "nextNodes": ["Shaun_D1_End"]
+              "text": "I'll just get you the Giddys.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Shaun_D1_Normal"]
             }
           ]
         },
         {
-          "id": "Shaun_D1_End",
-          "text": "See? Easy. Be friendly, sell smart, hit the target.",
+          "id": "Shaun_D1_Upsold",
+          "text": "Exactly. That's the idea. Now you still have to sell the items yourself from the wares tab.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Shaun_D1_Normal",
+          "text": "That works too, just less money. You still have to sell the Giddys yourself from the wares tab.",
           "requirements": [],
           "options": [
             {

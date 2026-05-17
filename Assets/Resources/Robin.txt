@@ -9,17 +9,22 @@
   "height": 176,
   "hairColor": "Black",
   "eyeColor": "Brown",
-  "favouriteItems": ["PackOfGiddy", "BlackCoffee"],
+  "favouriteItems": ["Rambolos", "BluePort"],
   "details": [
     { "key": "pregnant", "text": "Robin is pregnant." },
     { "key": "buying_for_husband", "text": "Robin says the cigarettes are for her husband." },
-    { "key": "worried_about_ssi", "text": "Robin is worried about how SSI changes everyday life." }
+    { "key": "worried_about_ssi", "text": "Robin is worried about how SSI changes everyday life." },
+    { "key": "ssi_age_check", "text": "Robin used SSI to prove she is over 18 without showing her full identity." },
+    { "key": "data_curiosity", "text": "Robin is unsure how much data a clerk should actually need during SSI checks." }
   ],
   "variables": [
     { "name": "friendship", "value": "0" },
     { "name": "lawfulness", "value": "0" },
     { "name": "UpsoldNumber", "value": "0" },
-    { "name": "SoldCigarettes_D1", "value": "false" }
+    { "name": "SoldCigarettes_D1", "value": "false" },
+    { "name": "RefusedCigarettes_D1", "value": "false" },
+    { "name": "ComplaintEmail_D1", "value": "false" },
+    { "name": "AskedTooMuch_D1", "value": "false" }
   ],
   "dialogues": [
     {
@@ -27,46 +32,83 @@
       "nodes": [
         {
           "id": "Robin_D1_Start",
-          "text": "Hi, could I please get a pack of cigarettes?",
+          "text": "Hi, could I please get a pack of Rambolos? I can use SSI to prove I'm over 18.",
           "requirements": [],
           "options": [
             {
-              "text": "Sure, I need to check your ID first.",
+              "text": "Sure, I'll open the SSI check.",
               "effects": [
-                { "variable": "open_id_tab", "value": "true" }
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "age_check",
+                  "perfectNode": "Robin_D1_SSI_Correct",
+                  "goodNode": "Robin_D1_SSI_Close",
+                  "badNode": "Robin_D1_SSI_TooMuch"
+                },
+                { "variable": "unlock_detail", "value": "ssi_age_check" }
               ],
               "requirements": [],
-              "nextNodes": ["Robin_D1_ID"]
+              "nextNodes": ["Robin_D1_WaitForSSI"]
+            },
+            {
+              "text": "I can't sell cigarettes to someone who's pregnant.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "RefusedCigarettes_D1", "value": "true" },
+                { "variable": "ComplaintEmail_D1", "value": "true" },
+                { "variable": "unlock_detail", "value": "pregnant" },
+                {
+                  "messageTitle": "Customer Complaint",
+                  "messageSender": "Kiosk Management",
+                  "messageContent": "A customer submitted a complaint after being refused service. Please avoid denying legal purchases based on personal assumptions."
+                },
+                {
+                  "keyMomentText": "Refused to sell Rambolos to Robin because she is pregnant, even though the purchase was legal.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_Refused"]
             }
           ]
         },
         {
-          "id": "Robin_D1_ID",
-          "text": "Of course. They're for my husband, by the way.",
+          "id": "Robin_D1_WaitForSSI",
+          "text": "I'll wait while you finish the SSI check.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Robin_D1_SSI_Correct",
+          "text": "Oh, that was simple. So you only needed to know I'm over 18? That feels less invasive than showing everything.",
           "requirements": [],
           "options": [
             {
-              "text": "Everything checks out. Want a BlackCoffee with that?",
+              "text": "Everything checks out. I can also recommend BluePort with that.",
               "effects": [
-                { "variable": "open_id_tab", "value": "false" },
                 { "variable": "friendship", "value": "1" },
+                { "variable": "lawfulness", "value": "1" },
                 { "variable": "UpsoldNumber", "value": "1" },
                 { "variable": "SoldCigarettes_D1", "value": "true" },
                 { "variable": "unlock_detail", "value": "buying_for_husband" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy,BlackCoffee" },
-                { "keyMomentText": "Checked Robin's regular ID, sold cigarettes, and successfully upsold BlackCoffee.", "keyMomentPositive": true }
+                {
+                  "keyMomentText": "Used SSI correctly to confirm Robin was over 18 and recommended BluePort with Rambolos.",
+                  "keyMomentPositive": true
+                }
               ],
               "requirements": [],
               "nextNodes": ["Robin_D1_Friendly"]
             },
             {
-              "text": "Everything checks out. Just the cigarettes.",
+              "text": "Everything checks out. Just the Rambolos.",
               "effects": [
-                { "variable": "open_id_tab", "value": "false" },
+                { "variable": "lawfulness", "value": "1" },
                 { "variable": "SoldCigarettes_D1", "value": "true" },
                 { "variable": "unlock_detail", "value": "buying_for_husband" },
-                { "variable": "open_wares_tab", "value": "PackOfGiddy" },
-                { "keyMomentText": "Checked Robin's regular ID and completed the cigarette sale.", "keyMomentPositive": true }
+                {
+                  "keyMomentText": "Used SSI correctly to confirm Robin was over 18 before selling Rambolos.",
+                  "keyMomentPositive": true
+                }
               ],
               "requirements": [],
               "nextNodes": ["Robin_D1_Neutral"]
@@ -74,8 +116,78 @@
           ]
         },
         {
+          "id": "Robin_D1_SSI_Close",
+          "text": "Wait, did you need all that info just to check my age? I'm not fully sure how this works yet.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Everything checks out. I can also recommend BluePort with that.",
+              "effects": [
+                { "variable": "friendship", "value": "1" },
+                { "variable": "lawfulness", "value": "1" },
+                { "variable": "UpsoldNumber", "value": "1" },
+                { "variable": "SoldCigarettes_D1", "value": "true" },
+                { "variable": "AskedTooMuch_D1", "value": "true" },
+                { "variable": "unlock_detail", "value": "buying_for_husband" },
+                { "variable": "unlock_detail", "value": "data_curiosity" },
+                {
+                  "keyMomentText": "Verified Robin with SSI, but asked for slightly more data than necessary.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_Friendly"]
+            },
+            {
+              "text": "Everything checks out. Just the Rambolos.",
+              "effects": [
+                { "variable": "lawfulness", "value": "1" },
+                { "variable": "SoldCigarettes_D1", "value": "true" },
+                { "variable": "AskedTooMuch_D1", "value": "true" },
+                { "variable": "unlock_detail", "value": "buying_for_husband" },
+                { "variable": "unlock_detail", "value": "data_curiosity" },
+                {
+                  "keyMomentText": "Verified Robin with SSI, but asked for slightly more data than necessary.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_Neutral"]
+            }
+          ]
+        },
+        {
+          "id": "Robin_D1_SSI_TooMuch",
+          "text": "Are you sure you needed all of that? I only wanted to prove I'm old enough. This makes me a bit nervous.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Sorry. Everything checks out. I can still sell the Rambolos.",
+              "effects": [
+                { "variable": "friendship", "value": "-1" },
+                { "variable": "lawfulness", "value": "-1" },
+                { "variable": "SoldCigarettes_D1", "value": "true" },
+                { "variable": "AskedTooMuch_D1", "value": "true" },
+                { "variable": "unlock_detail", "value": "worried_about_ssi" },
+                { "variable": "unlock_detail", "value": "data_curiosity" },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "keyMomentText": "Over-requested Robin's SSI data during an age check for cigarettes.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": ["Robin_D1_TooMuch_End"]
+            }
+          ]
+        },
+        {
           "id": "Robin_D1_Friendly",
-          "text": "Actually, yes. Thanks for being thoughtful.",
+          "text": "Actually, yes. BluePort sounds good. Thanks for asking.",
           "requirements": [],
           "options": [
             {
@@ -98,6 +210,32 @@
               "nextNodes": ["End_Dialogue"]
             }
           ]
+        },
+        {
+          "id": "Robin_D1_TooMuch_End",
+          "text": "Okay. I still need them, but I hope this system gets clearer for people.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        },
+        {
+          "id": "Robin_D1_Refused",
+          "text": "What? They're not for me. That's completely unfair.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
         }
       ]
     },
@@ -106,14 +244,14 @@
       "nodes": [
         {
           "id": "Robin_D2_Start",
-          "text": "Hi again.",
+          "text": "Hi again. Could I get a BluePort today?",
           "requirements": [],
           "options": [
             {
               "text": "Good to see you again.",
               "effects": [],
               "requirements": [],
-              "nextNodes": ["Robin_D2_Positive", "Robin_D2_Neutral"]
+              "nextNodes": ["Robin_D2_Positive", "Robin_D2_Negative", "Robin_D2_Neutral"]
             }
           ]
         },
@@ -129,7 +267,10 @@
               "effects": [
                 { "variable": "friendship", "value": "2" },
                 { "variable": "unlock_detail", "value": "worried_about_ssi" },
-                { "keyMomentText": "Robin opened up because the player had built friendship with her.", "keyMomentPositive": true }
+                {
+                  "keyMomentText": "Robin opened up because the player had built friendship with her.",
+                  "keyMomentPositive": true
+                }
               ],
               "requirements": [],
               "nextNodes": ["Robin_D2_End"]
@@ -137,8 +278,23 @@
           ]
         },
         {
+          "id": "Robin_D2_Negative",
+          "text": "I hope today goes smoother than last time.",
+          "requirements": [
+            { "variable": "friendship", "value": "-1" }
+          ],
+          "options": [
+            {
+              "text": "Of course.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": ["Robin_D2_End"]
+            }
+          ]
+        },
+        {
           "id": "Robin_D2_Neutral",
-          "text": "Hi. I just need to grab something quickly.",
+          "text": "I just need the BluePort quickly, please.",
           "requirements": [
             { "variable": "friendship", "value": "0" }
           ],

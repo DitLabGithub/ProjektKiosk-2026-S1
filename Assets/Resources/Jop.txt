@@ -9,7 +9,7 @@
   "height": 170,
   "hairColor": "White",
   "eyeColor": "Green",
-  "favouriteItems": ["SproingelsBlue", "BeerNuts"],
+  "favouriteItems": ["SproingelsBlue"],
   "details": [
     { "key": "new_district", "text": "Jop recently started working in this district." },
     { "key": "values_procedure", "text": "Jop respects clerks who check ID properly." }
@@ -17,8 +17,7 @@
   "variables": [
     { "name": "friendship", "value": "0" },
     { "name": "lawfulness", "value": "0" },
-    { "name": "competence", "value": "0" },
-    { "name": "UpsoldNumber", "value": "0" }
+    { "name": "competence", "value": "0" }
   ],
   "dialogues": [
     {
@@ -26,7 +25,7 @@
       "nodes": [
         {
           "id": "Jop_D2_Start",
-          "text": "Morning. Pack of cigarettes.",
+          "text": "Morning. I need a pack of SproingelsBlue.",
           "requirements": [],
           "options": [
             {
@@ -45,47 +44,19 @@
           "requirements": [],
           "options": [
             {
-              "text": "Everything checks out. Want BeerNuts with that?",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" },
-                { "variable": "friendship", "value": "1" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "competence", "value": "1" },
-                { "variable": "UpsoldNumber", "value": "1" },
-                { "variable": "unlock_detail", "value": "values_procedure" },
-                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER,BeerNuts" },
-                { "keyMomentText": "Checked Jop's regular ID correctly and successfully upsold BeerNuts.", "keyMomentPositive": true }
-              ],
-              "requirements": [],
-              "nextNodes": ["Jop_D2_Upsold"]
-            },
-            {
-              "text": "Everything checks out. Just the cigarettes.",
+              "text": "Everything checks out. Just the SproingelsBlue.",
               "effects": [
                 { "variable": "open_id_tab", "value": "false" },
                 { "variable": "lawfulness", "value": "1" },
                 { "variable": "competence", "value": "1" },
                 { "variable": "unlock_detail", "value": "values_procedure" },
-                { "variable": "open_wares_tab", "value": "CIGARETTES_PLACEHOLDER" },
-                { "keyMomentText": "Checked Jop's regular ID correctly before selling cigarettes.", "keyMomentPositive": true }
+                {
+                  "keyMomentText": "Checked Jop's regular ID correctly before selling SproingelsBlue.",
+                  "keyMomentPositive": true
+                }
               ],
               "requirements": [],
               "nextNodes": ["Jop_D2_Normal"]
-            }
-          ]
-        },
-        {
-          "id": "Jop_D2_Upsold",
-          "text": "BeerNuts, hm? Fine. Good eye.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Have a good day, officer.",
-              "effects": [
-                { "variable": "unlock_detail", "value": "new_district" }
-              ],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
             }
           ]
         },
