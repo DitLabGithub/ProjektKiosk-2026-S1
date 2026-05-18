@@ -14,6 +14,8 @@ public class Counter : MonoBehaviour
     public List<Item> requestedItems = new List<Item>();
     public List<Item> itemsInCart = new List<Item>();
 
+    public bool hasActiveRequest = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -141,6 +143,9 @@ public class Counter : MonoBehaviour
         Clear();
         DialogueManager.Instance.ShowCurrentNode();
         UIManager.Instance.UpdateMoney(Money);
+        requestedItems.Clear();
+        hasActiveRequest = false;
+        CheckForSaleButton();
         Debug.Log("Transaction successful");
     }
     public void SetupRequestedItems(string items)
@@ -170,17 +175,17 @@ public class Counter : MonoBehaviour
                 }
             }
         }
+        if (requestedItems.Count > 0)
+        {
+            hasActiveRequest = true;
+        }
+        CheckForSaleButton();
     }
     public void CheckForSaleButton()
     {
-               if (itemsInCart.Count > 0)
-        {
-            UIManager.Instance.Ref_SellButton.SetActive(true);
-        }
-        else
-        {
-            UIManager.Instance.Ref_SellButton.SetActive(false);
-        }
+        bool shouldShow = hasActiveRequest && requestedItems.Count > 0;
+
+        UIManager.Instance.Ref_SellButton.SetActive(shouldShow);
     }
     private void RegisterSale(string prefix, string baseName)
     {

@@ -32,7 +32,8 @@
             {
               "text": "Sure. What's the tip?",
               "effects": [
-                { "variable": "unlock_detail", "value": "former_employee" }
+                { "variable": "unlock_detail", "value": "former_employee" },
+                { "variable": "open_wares_tab", "value": "PackOfGiddy" }
               ],
               "requirements": [],
               "nextNodes": ["Shaun_D1_Tip"]

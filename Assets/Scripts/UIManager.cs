@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using System.Collections;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -37,10 +37,23 @@ public class UIManager : MonoBehaviour
     public GameObject PF_MessagesBox;
 
     [Header("Dialogue")]
-    public TMP_Text npcText;
-    public TMP_Text npcNameText;
+    public TextMeshProUGUI npcText;
+    public TextMeshProUGUI npcNameText;
     public Transform optionContainer;
     public GameObject NPCTextBox;
+
+    private string lastNPCName = "";
+
+    [SerializeField]
+    private CanvasGroup avatarCanvasGroup;
+
+    [SerializeField]
+    private float avatarFadeSpeed = 0.7f;
+
+    [SerializeField]
+    private float nameTypingSpeed = 0.003f;
+
+    private Coroutine nameCoroutine;
 
 
 
@@ -194,32 +207,134 @@ public class UIManager : MonoBehaviour
     {
         npcText.text = node.text;
 
-        AvatarImage.sprite = DialogueManager.Instance.currentNPC.data.avatar;
+        string currentNPCName =
+    DialogueManager.Instance.currentNPC.data.name;
 
-        npcNameText.text = DialogueManager.Instance.currentNPC.data.name;
+        AvatarImage.sprite =
+            DialogueManager.Instance.currentNPC.data.avatar;
+        AvatarImage.preserveAspect = true;
+
+        // New character transition
+        if (lastNPCName != currentNPCName)
+        {
+            lastNPCName = currentNPCName;
+
+            if (nameCoroutine != null)
+            {
+                StopCoroutine(nameCoroutine);
+            }
+
+            StartCoroutine(
+                FadeInCharacter()
+            );
+
+            nameCoroutine =
+                StartCoroutine(
+                    TypeNPCName(currentNPCName)
+                );
+        }
+        else
+        {
+            npcNameText.text = currentNPCName;
+        }
 
         ClearOptions();
 
         foreach (OptionData option in node.options)
         {
-
-            if (!DialogueManager.Instance.MeetsRequirements(option.requirements))
+            if (!DialogueManager.Instance
+                .MeetsRequirements(option.requirements))
                 continue;
 
             GameObject obj =
-                Instantiate(PF_DialogueOption, optionContainer);
+                Instantiate(
+                    PF_DialogueOption,
+                    optionContainer
+                );
 
             DialogueOption dialogueOption =
                 obj.GetComponent<DialogueOption>();
 
-            dialogueOption.optionText.text = option.text;
+            dialogueOption.optionText.text =
+                option.text;
 
-            dialogueOption.button.onClick.AddListener(() =>
+            bool foundFriendshipEffect = false;
+
+            foreach (EffectData effect in option.effects)
             {
-                DialogueManager.Instance.SelectOption(option);
-            });
+                if (effect.variable == "friendship")
+                {
+                    foundFriendshipEffect = true;
+
+                    int value =
+                        int.Parse(effect.value);
+
+                    if (value > 0)
+                    {
+                        dialogueOption.ToggleImage(
+                            "positive"
+                        );
+                    }
+                    else if (value < 0)
+                    {
+                        dialogueOption.ToggleImage(
+                            "negative"
+                        );
+                    }
+                    else
+                    {
+                        dialogueOption.ToggleImage(
+                            "neutral"
+                        );
+                    }
+
+                    break;
+                }
+            }
+
+            if (!foundFriendshipEffect)
+            {
+                dialogueOption.ToggleImage(
+                    "neutral"
+                );
+            }
+
+            dialogueOption.button.onClick
+                .AddListener(() =>
+                {
+                    DialogueManager.Instance
+                .SelectOption(option);
+                });
         }
     }
+    IEnumerator TypeNPCName(string npcName)
+    {
+        npcNameText.text = "";
+
+        foreach (char c in npcName)
+        {
+            npcNameText.text += c;
+
+            yield return new WaitForSeconds(
+                nameTypingSpeed
+            );
+        }
+    }
+    IEnumerator FadeInCharacter()
+    {
+        avatarCanvasGroup.alpha = 0f;
+
+        while (avatarCanvasGroup.alpha < 1f)
+        {
+            avatarCanvasGroup.alpha +=
+                Time.deltaTime * avatarFadeSpeed;
+
+            yield return null;
+        }
+
+        avatarCanvasGroup.alpha = 1f;
+    }
+
     public void ClearOptions()
     {
         foreach (Transform child in optionContainer)

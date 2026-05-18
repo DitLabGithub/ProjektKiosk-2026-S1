@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,15 @@ public class DialogueManager : MonoBehaviour
     public DialogueDayData currentDialogue;
 
     public NodeData currentNode;
+
+    private Coroutine typingCoroutine;
+
+    [SerializeField]
+    private float typingSpeed = 0.03f;
+
+    private bool isTyping;
+
+    private string fullText;
 
     private int currentNPCIndex = 0;
 
@@ -68,20 +78,72 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowCurrentNode()
     {
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+        }
+
         UIManager.Instance.ShowNode(currentNode);
+
+        TextMeshProUGUI dialogueText =
+            UIManager.Instance.npcText;
+
+        typingCoroutine =
+            StartCoroutine(
+                TypeText(
+                    currentNode.text,
+                    dialogueText
+                )
+            );
+    }
+    IEnumerator TypeText(string text,TextMeshProUGUI dialogueText
+)
+    {
+        isTyping = true;
+
+        fullText = text;
+
+        dialogueText.text = "";
+
+        foreach (char c in text)
+        {
+            dialogueText.text += c;
+
+            yield return new WaitForSeconds(
+                typingSpeed
+            );
+        }
+
+        isTyping = false;
     }
     public void SelectOption(OptionData option)
     {
+        if (isTyping)
+        {
+            StopCoroutine(typingCoroutine);
+
+            UIManager.Instance.npcText.text =
+                fullText;
+
+            isTyping = false;
+
+            return;
+        }
+
         ApplyEffects(option.effects);
 
         string nextNodeId = option.nextNodes[0];
 
         if (nextNodeId == "End_Dialogue")
         {
+            if (Counter.Instance.hasActiveRequest)
+            {
+                Debug.Log("Cannot end dialogue: active request not fulfilled yet.");
+                return;
+            }
+
             currentNPCIndex++;
-
             StartNextNPCDialogue();
-
             return;
         }
 
@@ -202,13 +264,7 @@ public class DialogueManager : MonoBehaviour
 
                 case "open_wares_tab":
 
-                   // UIManager.Instance
-                      //  .ToggleWares();
-
-                    Counter.Instance
-                        .SetupRequestedItems(
-                            effect.value
-                        );
+                    Counter.Instance.SetupRequestedItems(effect.value);
 
                     break;
 
