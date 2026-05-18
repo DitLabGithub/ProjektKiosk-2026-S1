@@ -133,6 +133,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleWares()
     {
+        
         if (Ref_Wares.activeSelf)
         {
             Ref_Wares.SetActive(false);
@@ -142,6 +143,8 @@ public class UIManager : MonoBehaviour
         {
             Ref_Wares.SetActive(true);
             Ref_CounterButton.SetActive(true);
+            Ref_Wares.transform.SetAsLastSibling();
+            Ref_CounterButton.transform.SetAsLastSibling();
         }
     }
 

@@ -9,106 +9,864 @@
   "height": 167,
   "hairColor": "Red",
   "eyeColor": "Blue",
-  "favouriteItems": ["RedWine", "InstantNoodles"],
+  "favouriteItems": [
+    "RedWine",
+    "ChickenJerky"
+  ],
   "details": [
-    { "key": "early_ssi_tester", "text": "Lily helped design SSI." },
-    { "key": "data_minimisation", "text": "Only minimal data should be shared." },
-    { "key": "values_procedure", "text": "Proper verification matters." }
+    {
+      "key": "early_ssi_tester",
+      "text": "Lily was one of the early SSI testers."
+    },
+    {
+      "key": "data_minimisation",
+      "text": "Lily believes SSI should only share the data that is necessary."
+    },
+    {
+      "key": "expired_ssi",
+      "text": "Lily's SSI credential expired during one of her visits."
+    },
+    {
+      "key": "values_procedure",
+      "text": "Lily respects careful verification and proper procedure."
+    },
+    {
+      "key": "complaint_threat",
+      "text": "Lily threatened to file a complaint when the process slowed her down."
+    }
   ],
   "variables": [
-    { "name": "friendship", "value": "0" },
-    { "name": "lawfulness", "value": "0" },
-    { "name": "UpsoldNumber", "value": "0" },
-    { "name": "GavePackage_D2", "value": "false" },
-    { "name": "AskedTooMuch_D2", "value": "false" }
+    {
+      "name": "friendship",
+      "value": "0"
+    },
+    {
+      "name": "lawfulness",
+      "value": "0"
+    },
+    {
+      "name": "DepositedID_D4",
+      "value": "false"
+    },
+    {
+      "name": "GavePackage_D2",
+      "value": "false"
+    },
+    {
+      "name": "GavePackage_D4",
+      "value": "false"
+    },
+    {
+      "name": "GavePackage_D5",
+      "value": "false"
+    },
+    {
+      "name": "AskedTooMuch_D2",
+      "value": "false"
+    },
+    {
+      "name": "AskedTooMuch_D5",
+      "value": "false"
+    }
   ],
   "dialogues": [
     {
-      "day": 1,
+      "day": 2,
       "nodes": [
         {
-          "id": "Lily_D1_Start",
-          "text": "Just a standard package pickup.",
+          "id": "Lily_D2_Start",
+          "text": "Hi, I'm here to pick up a package.",
+          "requirements": [],
           "options": [
             {
-              "text": "Sell item only",
+              "text": "Hi, alright. And for whom?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_SSI_Explanation_1"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_SSI_Explanation_1",
+          "text": "You've probably heard of it by now, but I'm one of the few early SSI testers.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
               "effects": [
-                { "keyMomentText": "Correct basic transaction.", "keyMomentPositive": true }
+                {
+                  "variable": "unlock_detail",
+                  "value": "early_ssi_tester"
+                }
               ],
-              "nextNodes": ["End_Dialogue"]
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_SSI_Explanation_2"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_SSI_Explanation_2",
+          "text": "One of the largest upsides of it is being able to control how much data we share.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_SSI_Explanation_3"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_SSI_Explanation_3",
+          "text": "For example, for my package pickup, all you need is my name, address, and postal code. I don't need to share anything else.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "data_minimisation"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_SSI_Explanation_4"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_SSI_Explanation_4",
+          "text": "Of course, it depends on the item or service the customer wants, but it's a good way to avoid data oversharing.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Continue.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_SSI_Explanation_5"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_SSI_Explanation_5",
+          "text": "It's rather simple to do as well. Just scan this card and ask for the necessary information in the SSI tab.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Can you remind me what I need from you?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_Reminder"
+              ]
             },
             {
-              "text": "Upsell RedWine",
+              "text": "Scan her SSI card.",
               "effects": [
-                { "UpsoldNumber": "1" }
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "package",
+                  "perfectNode": "Lily_D2_Correct_Info_Response",
+                  "goodNode": "Lily_D2_Close_Response",
+                  "badNode": "Lily_D2_Too_Much_Response"
+                }
               ],
-              "nextNodes": ["End_Dialogue"]
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_Reminder",
+          "text": "Yes, definitely. After scanning the SSI, check only what is needed for the package.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Scan her SSI card.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "package",
+                  "perfectNode": "Lily_D2_Correct_Info_Response",
+                  "goodNode": "Lily_D2_Close_Response",
+                  "badNode": "Lily_D2_Too_Much_Response"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_WaitForSSI",
+          "text": "I'll wait while you finish the SSI check.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Lily_D2_Close_Response",
+          "text": "Close, but still more than needed. SSI only works if verifiers don't over-ask. Try the check again, but only ask for what the package pickup needs.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Try the SSI check again.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "package",
+                  "perfectNode": "Lily_D2_Correct_Info_Response",
+                  "goodNode": "Lily_D2_Close_Response",
+                  "badNode": "Lily_D2_Too_Much_Response"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_Too_Much_Response",
+          "text": "Careful. You asked for more than you need. For this package, just verify the required package details. Try again.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Try the SSI check again.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "package",
+                  "perfectNode": "Lily_D2_Correct_Info_Response",
+                  "goodNode": "Lily_D2_Close_Response",
+                  "badNode": "Lily_D2_Too_Much_Response"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_WaitForSSI"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_Correct_Info_Response",
+          "text": "Great job! That's exactly the kind of check SSI is meant for.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Give her the package.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "values_procedure"
+                },
+                {
+                  "variable": "GavePackage_D2",
+                  "value": "true"
+                },
+                {
+                  "keyMomentText": "Verified Lily's package pickup using only the necessary information.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_Package_Given"
+              ]
+            },
+            {
+              "text": "Give her the package and recommend RedWine.",
+              "effects": [
+                {
+                  "variable": "GavePackage_D2",
+                  "value": "true"
+                },
+                {
+                  "variable": "UpsoldNumber",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "values_procedure"
+                },
+                {
+                  "keyMomentText": "Verified Lily's package pickup using only the necessary information and recommended RedWine.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D2_Upsell_Response"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_Package_Given",
+          "text": "Nice, finally got my package. I left my lunch jerky at the lab, so I have to get back there. I'm starving.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Bye.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D2_Upsell_Response",
+          "text": "RedWine? Sure, why not. Long day at the lab anyway. I still have to get back there before I eat my lunch jerky.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Bye.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
             }
           ]
         }
       ]
     },
     {
-      "day": 2,
+      "day": 4,
       "nodes": [
         {
-          "id": "Lily_D2_Start",
-          "text": "I’ll use SSI. Only minimal data is needed.",
+          "id": "Lily_D4_Start",
+          "text": "Hello, Mr. Clerk.",
+          "requirements": [],
           "options": [
             {
-              "text": "Open SSI",
+              "text": "Hi there!",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_System_Question"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_System_Question",
+          "text": "So, how's the brand-new SSI system coming along?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "It's fine, adjusting step by step!",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_New_Package"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_New_Package",
+          "text": "Good to hear. The future's here! Anyway, I'm here to pick up another package. Try to be quick, I'm starving again and it's my break time.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Check her SSI.",
+              "effects": [
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_SSI_Expired"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_SSI_Expired",
+          "text": "Wait, what do you mean it didn't go through? Don't tell me it expired already.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Your SSI credential has expired.",
+              "effects": [
+                {
+                  "variable": "unlock_detail",
+                  "value": "expired_ssi"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Request_Solution"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_Request_Solution",
+          "text": "Damn it. I don't have time for this... Is there any way we can solve this quickly?",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Leave now, or I'll call the police.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Threatened Lily with police after her SSI expired.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Extreme_Response"
+              ]
+            },
+            {
+              "text": "Pay me €20 and I'll forget your SSI has expired. One-time deal.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "DepositedID_D4",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Asked Lily for money to ignore her expired SSI.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Bribe_Response"
+              ]
+            },
+            {
+              "text": "There's nothing I can do. You need to renew it first.",
+              "effects": [
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "DepositedID_D4",
+                  "value": "false"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Protocol_Response"
+              ]
+            },
+            {
+              "text": "You can leave your old ID here, and I'll double-check it next time you come around.",
+              "effects": [
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "DepositedID_D4",
+                  "value": "true"
+                },
+                {
+                  "keyMomentText": "Accepted Lily's old ID as a workaround for her expired SSI.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Deposit_ID_Response"
+              ]
+            },
+            {
+              "text": "Just show me your ID and I'll give you the package. Mistakes happen.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "DepositedID_D4",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Gave Lily the package despite the expired SSI issue.",
+                  "keyMomentPositive": false
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D4_Show_ID_Response"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_Extreme_Response",
+          "text": "This is unacceptable... but I do need to get this sorted as soon as possible. Fine.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_Bribe_Response",
+          "text": "This is unacceptable... but I do need to get this sorted as soon as possible. Fine.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Give her the package.",
+              "effects": [
+                {
+                  "variable": "GavePackage_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_Protocol_Response",
+          "text": "This is not my day. Alright, I'll see you another time then.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "End interaction.",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_Deposit_ID_Response",
+          "text": "You're a lifesaver. I'll remind you next time I come around!",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Give her the package.",
+              "effects": [
+                {
+                  "variable": "GavePackage_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D4_Show_ID_Response",
+          "text": "You're a lifesaver.",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Give her the package.",
+              "effects": [
+                {
+                  "variable": "GavePackage_D4",
+                  "value": "true"
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "nodes": [
+        {
+          "id": "Lily_D5_Start",
+          "text": "Good morning!",
+          "requirements": [],
+          "options": [
+            {
+              "text": "Hi, Lily.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "DepositedID_D4",
+                  "value": "true"
+                }
+              ],
+              "nextNodes": [
+                "Lily_D5_Deposit_Reminder"
+              ]
+            },
+            {
+              "text": "Hi, Lily.",
+              "effects": [],
+              "requirements": [
+                {
+                  "variable": "DepositedID_D4",
+                  "value": "false"
+                }
+              ],
+              "nextNodes": [
+                "Lily_D5_No_Deposit"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "Lily_D5_Deposit_Reminder",
+          "text": "Don't forget to double-check my old ID for this one.",
+          "requirements": [
+            {
+              "variable": "DepositedID_D4",
+              "value": "true"
+            }
+          ],
+          "options": [
+            {
+              "text": "Alright, you know the drill. I'll need your SSI.",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
                   "value": "package",
-                  "perfectNode": "Lily_D2_Correct",
-                  "goodNode": "Lily_D2_Close",
-                  "badNode": "Lily_D2_TooMuch"
+                  "perfectNode": "Lily_D5_Correct_Info",
+                  "goodNode": "Lily_D5_Too_Much",
+                  "badNode": "Lily_D5_Far_Too_Much"
                 }
               ],
-              "nextNodes": ["Lily_D2_Check"]
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D5_WaitForSSI"
+              ]
             }
           ]
         },
         {
-          "id": "Lily_D2_Check",
-          "text": "Request only name and address.",
+          "id": "Lily_D5_No_Deposit",
+          "text": "I was so happy when I got home last time, got my snacks ready and all. Anyway, I've come to pick up another package!",
+          "requirements": [
+            {
+              "variable": "DepositedID_D4",
+              "value": "false"
+            }
+          ],
           "options": [
             {
-              "text": "Correct request",
+              "text": "Alright, you know the drill. I'll need your SSI.",
               "effects": [
-                { "lawfulness": "1" }
+                {
+                  "variable": "open_ssi_tab",
+                  "value": "package",
+                  "perfectNode": "Lily_D5_Correct_Info",
+                  "goodNode": "Lily_D5_Too_Much",
+                  "badNode": "Lily_D5_Far_Too_Much"
+                }
               ],
-              "nextNodes": ["Lily_D2_Correct"]
-            },
-            {
-              "text": "Overrequest data",
-              "effects": [
-                { "AskedTooMuch_D2": "true" }
-              ],
-              "nextNodes": ["Lily_D2_TooMuch"]
+              "requirements": [],
+              "nextNodes": [
+                "Lily_D5_WaitForSSI"
+              ]
             }
           ]
         },
         {
-          "id": "Lily_D2_TooMuch",
-          "text": "Too much data requested.",
+          "id": "Lily_D5_WaitForSSI",
+          "text": "I'll wait while you finish the SSI check.",
+          "requirements": [],
+          "options": []
+        },
+        {
+          "id": "Lily_D5_Correct_Info",
+          "text": "Most definitely. I really appreciate your attention to detail!",
+          "requirements": [],
           "options": [
-            { "text": "Retry", "nextNodes": ["Lily_D2_Check"] }
+            {
+              "text": "Give her the package.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "2"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "values_procedure"
+                },
+                {
+                  "variable": "GavePackage_D5",
+                  "value": "true"
+                },
+                {
+                  "keyMomentText": "Verified Lily carefully by asking only for the required package information.",
+                  "keyMomentPositive": true
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
           ]
         },
         {
-          "id": "Lily_D2_Correct",
-          "text": "Perfect usage of SSI.",
+          "id": "Lily_D5_Too_Much",
+          "text": "Careful. That is a little more than you need. For this, you only need the package details confirmed.",
+          "requirements": [],
           "options": [
-            { "text": "End", "nextNodes": ["End_Dialogue"] }
+            {
+              "text": "My bad. Give her the package.",
+              "effects": [
+                {
+                  "variable": "AskedTooMuch_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "GavePackage_D5",
+                  "value": "true"
+                },
+                {
+                  "keyMomentText": "Asked Lily for slightly more data than necessary during her final package pickup.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
           ]
         },
         {
-          "id": "Lily_D2_Close",
-          "text": "Close but slightly too much.",
+          "id": "Lily_D5_Far_Too_Much",
+          "text": "How have you not learned anything? You asked for far more than this package pickup needs.",
+          "requirements": [],
           "options": [
-            { "text": "End", "nextNodes": ["End_Dialogue"] }
+            {
+              "text": "Give her the package.",
+              "effects": [
+                {
+                  "variable": "AskedTooMuch_D5",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "lawfulness",
+                  "value": "-1"
+                },
+                {
+                  "variable": "GavePackage_D5",
+                  "value": "true"
+                },
+                {
+                  "keyMomentText": "Asked Lily for unnecessary data during her final package pickup.",
+                  "keyMomentPositive": false
+                },
+                {
+                  "messageTitle": "Suspicious Activity",
+                  "messageSender": "Compliance Office",
+                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
+                },
+                {
+                  "variable": "open_wares_tab",
+                  "value": "Package"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "End_Dialogue"
+              ]
+            }
           ]
         }
       ]
