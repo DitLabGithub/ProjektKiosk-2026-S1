@@ -25,87 +25,104 @@
       "nodes": [
         {
           "id": "Amon_D1_Start",
-          "text": "Hey, could I get a pack of Rambolos?",
-          "requirements": [],
+          "text": "Hey, can I get Rambolos?",
           "options": [
             {
-              "text": "I need to check your ID first.",
+              "text": "Check ID",
               "effects": [
                 { "variable": "open_id_tab", "value": "true" }
               ],
-              "requirements": [],
               "nextNodes": ["Amon_D1_Check"]
             }
           ]
         },
         {
           "id": "Amon_D1_Check",
-          "text": "Yeah, sure. Here.",
-          "requirements": [],
+          "text": "ID shows Amon is under 18.",
           "options": [
             {
-              "text": "You're under 18. I can't sell you Rambolos.",
+              "text": "Refuse sale",
               "effects": [
-                { "variable": "open_id_tab", "value": "false" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "SoldCig1", "value": "false" },
-                { "variable": "unlock_detail", "value": "underage" },
+                { "lawfulness": "1" },
                 {
-                  "keyMomentText": "Checked Amon's regular ID and refused the Rambolos sale because he was underage.",
-                  "keyMomentPositive": true
+                  "messageTitle": "Suspicious activity detected",
+                  "messageSender": "Identification Department",
+                  "messageContent": "Correct refusal: underage sale prevented."
                 }
               ],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Refused"]
+              "nextNodes": ["Amon_D1_End"]
             },
             {
-              "text": "Looks fine. I'll sell you the Rambolos.",
+              "text": "Sell anyway",
               "effects": [
-                { "variable": "open_id_tab", "value": "false" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "friendship", "value": "1" },
-                { "variable": "SoldCig1", "value": "true" },
-                { "variable": "unlock_detail", "value": "likes_smoking" },
+                { "lawfulness": "-1" },
                 {
-                  "messageTitle": "Suspicious Activity",
-                  "messageSender": "Compliance Office",
-                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
-                },
-                {
-                  "keyMomentText": "Sold Rambolos to Amon even though his regular ID showed he was underage.",
-                  "keyMomentPositive": false
+                  "messageTitle": "Suspicious activity detected",
+                  "messageSender": "Identification Department",
+                  "messageContent": "Incorrect identification: restricted product sold."
                 }
               ],
-              "requirements": [],
-              "nextNodes": ["Amon_D1_Sold"]
+              "nextNodes": ["Amon_D1_End"]
             }
           ]
         },
         {
-          "id": "Amon_D1_Refused",
-          "text": "Come on, man. It's just Rambolos.",
-          "requirements": [],
+          "id": "Amon_D1_End",
+          "text": "Whatever.",
+          "options": [
+            { "text": "End", "nextNodes": ["End_Dialogue"] }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "nodes": [
+        {
+          "id": "Amon_D2_Start",
+          "text": "Hey, Rambolos again?",
           "options": [
             {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
+              "text": "Open SSI / ID hybrid check",
+              "effects": [
+                { "variable": "open_ssi_tab", "value": "age,name" }
+              ],
+              "nextNodes": ["Amon_D2_Check"]
             }
           ]
         },
         {
-          "id": "Amon_D1_Sold",
-          "text": "Nice. You're cool.",
-          "requirements": [],
+          "id": "Amon_D2_Check",
+          "text": "System requires minimal data: age confirmation only.",
           "options": [
             {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
+              "text": "Request only age confirmation",
+              "effects": [
+                { "lawfulness": "1" }
+              ],
+              "nextNodes": ["Amon_D2_End"]
+            },
+            {
+              "text": "Request full profile",
+              "effects": [
+                { "lawfulness": "-1" }
+              ],
+              "nextNodes": ["Amon_D2_Retry"]
             }
+          ]
+        },
+        {
+          "id": "Amon_D2_Retry",
+          "text": "That’s too much data. Try again.",
+          "options": [
+            { "text": "Retry", "nextNodes": ["Amon_D2_Check"] }
+          ]
+        },
+        {
+          "id": "Amon_D2_End",
+          "text": "Fine.",
+          "options": [
+            { "text": "End", "nextNodes": ["End_Dialogue"] }
           ]
         }
       ]

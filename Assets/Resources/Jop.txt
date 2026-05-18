@@ -12,7 +12,7 @@
   "favouriteItems": ["SproingelsBlue"],
   "details": [
     { "key": "new_district", "text": "Jop recently started working in this district." },
-    { "key": "values_procedure", "text": "Jop respects clerks who check ID properly." }
+    { "key": "values_procedure", "text": "Jop respects proper verification." }
   ],
   "variables": [
     { "name": "friendship", "value": "0" },
@@ -21,58 +21,84 @@
   ],
   "dialogues": [
     {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Jop_D1_Start",
+          "text": "Always follow procedure.",
+          "options": [
+            {
+              "text": "Check ID then sell",
+              "effects": [
+                { "lawfulness": "1" }
+              ],
+              "nextNodes": ["Jop_D1_End"]
+            }
+          ]
+        },
+        {
+          "id": "Jop_D1_End",
+          "text": "Good.",
+          "options": [
+            { "text": "End", "nextNodes": ["End_Dialogue"] }
+          ]
+        }
+      ]
+    },
+    {
       "day": 2,
       "nodes": [
         {
           "id": "Jop_D2_Start",
-          "text": "Morning. I need a pack of SproingelsBlue.",
-          "requirements": [],
+          "text": "SproingelsBlue requires proper verification.",
           "options": [
             {
-              "text": "Sure, I need to check your ID first.",
+              "text": "Open SSI check",
               "effects": [
-                { "variable": "open_id_tab", "value": "true" }
-              ],
-              "requirements": [],
-              "nextNodes": ["Jop_D2_ID"]
-            }
-          ]
-        },
-        {
-          "id": "Jop_D2_ID",
-          "text": "Good. Always check. Shortcuts rot the whole counter.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Everything checks out. Just the SproingelsBlue.",
-              "effects": [
-                { "variable": "open_id_tab", "value": "false" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "competence", "value": "1" },
-                { "variable": "unlock_detail", "value": "values_procedure" },
                 {
-                  "keyMomentText": "Checked Jop's regular ID correctly before selling SproingelsBlue.",
-                  "keyMomentPositive": true
+                  "variable": "open_ssi_tab",
+                  "value": "package",
+                  "perfectNode": "Jop_D2_Correct",
+                  "badNode": "Jop_D2_Retry"
                 }
               ],
-              "requirements": [],
-              "nextNodes": ["Jop_D2_Normal"]
+              "nextNodes": ["Jop_D2_Check"]
             }
           ]
         },
         {
-          "id": "Jop_D2_Normal",
-          "text": "Fine by me. Keep doing things properly.",
-          "requirements": [],
+          "id": "Jop_D2_Check",
+          "text": "System shows required fields only.",
           "options": [
             {
-              "text": "Have a good day, officer.",
+              "text": "Proceed correctly",
               "effects": [
-                { "variable": "unlock_detail", "value": "new_district" }
+                { "lawfulness": "1" },
+                { "competence": "1" }
               ],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
+              "nextNodes": ["Jop_D2_End"]
+            },
+            {
+              "text": "Overrequest data",
+              "effects": [
+                { "lawfulness": "-1" }
+              ],
+              "nextNodes": ["Jop_D2_Retry"]
             }
+          ]
+        },
+        {
+          "id": "Jop_D2_Retry",
+          "text": "Incorrect procedure. Try again.",
+          "options": [
+            { "text": "Retry", "nextNodes": ["Jop_D2_Check"] }
+          ]
+        },
+        {
+          "id": "Jop_D2_End",
+          "text": "Good work.",
+          "options": [
+            { "text": "End", "nextNodes": ["End_Dialogue"] }
           ]
         }
       ]

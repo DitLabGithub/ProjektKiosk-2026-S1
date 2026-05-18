@@ -11,9 +11,9 @@
   "eyeColor": "Blue",
   "favouriteItems": ["RedWine", "InstantNoodles"],
   "details": [
-    { "key": "early_ssi_tester", "text": "Lily was one of the early SSI testers." },
-    { "key": "data_minimisation", "text": "Lily believes SSI should only share the data that is necessary." },
-    { "key": "values_procedure", "text": "Lily respects careful verification and proper procedure." }
+    { "key": "early_ssi_tester", "text": "Lily helped design SSI." },
+    { "key": "data_minimisation", "text": "Only minimal data should be shared." },
+    { "key": "values_procedure", "text": "Proper verification matters." }
   ],
   "variables": [
     { "name": "friendship", "value": "0" },
@@ -24,15 +24,39 @@
   ],
   "dialogues": [
     {
+      "day": 1,
+      "nodes": [
+        {
+          "id": "Lily_D1_Start",
+          "text": "Just a standard package pickup.",
+          "options": [
+            {
+              "text": "Sell item only",
+              "effects": [
+                { "keyMomentText": "Correct basic transaction.", "keyMomentPositive": true }
+              ],
+              "nextNodes": ["End_Dialogue"]
+            },
+            {
+              "text": "Upsell RedWine",
+              "effects": [
+                { "UpsoldNumber": "1" }
+              ],
+              "nextNodes": ["End_Dialogue"]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "day": 2,
       "nodes": [
         {
           "id": "Lily_D2_Start",
-          "text": "Hi, I'm here to pick up a package under Lily. I can use SSI for the verification.",
-          "requirements": [],
+          "text": "I’ll use SSI. Only minimal data is needed.",
           "options": [
             {
-              "text": "Alright, I'll open the SSI check.",
+              "text": "Open SSI",
               "effects": [
                 {
                   "variable": "open_ssi_tab",
@@ -40,148 +64,51 @@
                   "perfectNode": "Lily_D2_Correct",
                   "goodNode": "Lily_D2_Close",
                   "badNode": "Lily_D2_TooMuch"
-                },
-                { "variable": "unlock_detail", "value": "early_ssi_tester" }
+                }
               ],
-              "requirements": [],
-              "nextNodes": ["Lily_D2_WaitForSSI"]
+              "nextNodes": ["Lily_D2_Check"]
             }
           ]
         },
         {
-          "id": "Lily_D2_WaitForSSI",
-          "text": "I'll wait while you finish the SSI check.",
-          "requirements": [],
-          "options": []
-        },
-        {
-          "id": "Lily_D2_Correct",
-          "text": "Perfect. You asked for exactly what you needed, nothing more.",
-          "requirements": [],
+          "id": "Lily_D2_Check",
+          "text": "Request only name and address.",
           "options": [
             {
-              "text": "Give Lily the package.",
+              "text": "Correct request",
               "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "GavePackage_D2", "value": "true" },
-                { "variable": "unlock_detail", "value": "data_minimisation" },
-                { "variable": "unlock_detail", "value": "values_procedure" },
-                {
-                  "keyMomentText": "Verified Lily's package pickup correctly using SSI data minimisation.",
-                  "keyMomentPositive": true
-                }
+                { "lawfulness": "1" }
               ],
-              "requirements": [],
-              "nextNodes": ["Lily_D2_AfterPackage"]
+              "nextNodes": ["Lily_D2_Correct"]
             },
             {
-              "text": "Give Lily the package and recommend RedWine.",
+              "text": "Overrequest data",
               "effects": [
-                { "variable": "friendship", "value": "1" },
-                { "variable": "lawfulness", "value": "1" },
-                { "variable": "UpsoldNumber", "value": "1" },
-                { "variable": "GavePackage_D2", "value": "true" },
-                { "variable": "unlock_detail", "value": "data_minimisation" },
-                { "variable": "unlock_detail", "value": "values_procedure" },
-                {
-                  "keyMomentText": "Verified Lily's package pickup correctly and recommended RedWine.",
-                  "keyMomentPositive": true
-                }
+                { "AskedTooMuch_D2": "true" }
               ],
-              "requirements": [],
-              "nextNodes": ["Lily_D2_Upsell"]
-            }
-          ]
-        },
-        {
-          "id": "Lily_D2_Close",
-          "text": "Close, but still more than needed. SSI only works if verifiers don't over-ask.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Give Lily the package.",
-              "effects": [
-                { "variable": "AskedTooMuch_D2", "value": "true" },
-                { "variable": "GavePackage_D2", "value": "true" },
-                { "variable": "unlock_detail", "value": "data_minimisation" },
-                {
-                  "keyMomentText": "Asked Lily for slightly more SSI data than necessary.",
-                  "keyMomentPositive": false
-                }
-              ],
-              "requirements": [],
-              "nextNodes": ["Lily_D2_AfterPackage"]
-            },
-            {
-              "text": "Give Lily the package and recommend RedWine.",
-              "effects": [
-                { "variable": "AskedTooMuch_D2", "value": "true" },
-                { "variable": "UpsoldNumber", "value": "1" },
-                { "variable": "GavePackage_D2", "value": "true" },
-                { "variable": "unlock_detail", "value": "data_minimisation" },
-                {
-                  "keyMomentText": "Asked Lily for slightly more SSI data than necessary, then recommended RedWine.",
-                  "keyMomentPositive": false
-                }
-              ],
-              "requirements": [],
-              "nextNodes": ["Lily_D2_Upsell"]
+              "nextNodes": ["Lily_D2_TooMuch"]
             }
           ]
         },
         {
           "id": "Lily_D2_TooMuch",
-          "text": "No. That's exactly the problem. You don't need all of that to hand me one package.",
-          "requirements": [],
+          "text": "Too much data requested.",
           "options": [
-            {
-              "text": "Give Lily the package anyway.",
-              "effects": [
-                { "variable": "AskedTooMuch_D2", "value": "true" },
-                { "variable": "friendship", "value": "-1" },
-                { "variable": "lawfulness", "value": "-1" },
-                { "variable": "GavePackage_D2", "value": "true" },
-                { "variable": "unlock_detail", "value": "data_minimisation" },
-                {
-                  "messageTitle": "Suspicious Activity",
-                  "messageSender": "Compliance Office",
-                  "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
-                },
-                {
-                  "keyMomentText": "Over-requested Lily's SSI data during package verification.",
-                  "keyMomentPositive": false
-                }
-              ],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
+            { "text": "Retry", "nextNodes": ["Lily_D2_Check"] }
           ]
         },
         {
-          "id": "Lily_D2_AfterPackage",
-          "text": "Thanks. Finally got it.",
-          "requirements": [],
+          "id": "Lily_D2_Correct",
+          "text": "Perfect usage of SSI.",
           "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
+            { "text": "End", "nextNodes": ["End_Dialogue"] }
           ]
         },
         {
-          "id": "Lily_D2_Upsell",
-          "text": "RedWine? Sure, why not. Long day at the lab anyway.",
-          "requirements": [],
+          "id": "Lily_D2_Close",
+          "text": "Close but slightly too much.",
           "options": [
-            {
-              "text": "End interaction.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": ["End_Dialogue"]
-            }
+            { "text": "End", "nextNodes": ["End_Dialogue"] }
           ]
         }
       ]

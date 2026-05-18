@@ -4,9 +4,9 @@
       "day": 1,
       "moneyGoal": 150,
       "npcOrder": [
-        "Shaun",
         "Amon",
-        "Robin"
+        "Shaun",
+        "Jop"
       ]
     },
     {
@@ -14,7 +14,7 @@
       "moneyGoal": 200,
       "npcOrder": [
         "Jop",
-        "Robin",
+        "Amon",
         "Lily"
       ]
     }

@@ -175,6 +175,7 @@ public class UIManager : MonoBehaviour
     public void ShowLevelSelect()
     {
         Ref_MainMenu.gameObject.SetActive(false);
+        
         Ref_LevelSelect.gameObject.SetActive(true);
         Debug.Log("Level Select menu shown.");
     }

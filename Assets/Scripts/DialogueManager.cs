@@ -51,6 +51,8 @@ public class DialogueManager : MonoBehaviour
         if (currentNPCIndex >= currentSchedule.npcOrder.Count)
         {
             Debug.Log("Day complete");
+            UIManager.Instance.ShowLevelSelect();
+
             return;
         }
 
