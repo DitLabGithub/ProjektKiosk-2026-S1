@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Counter : MonoBehaviour
     public int Money;
     public int MoneyGoal;
     public RectTransform itemContainer;
+    public TextMeshProUGUI requestedItemsText;
     public List<GameObject> ItemPrefabs;
     public List<Item> requestedItems = new List<Item>();
     public List<Item> itemsInCart = new List<Item>();
@@ -279,6 +281,11 @@ public class Counter : MonoBehaviour
         if (requestedItems.Count > 0)
         {
             hasActiveRequest = true;
+            requestedItemsText.text = "";
+            foreach (var item in requestedItems)
+            {
+                requestedItemsText.text += item.name + "\n";
+            }
         }
         CheckForSaleButton();
     }
@@ -287,6 +294,11 @@ public class Counter : MonoBehaviour
         bool shouldShow = hasActiveRequest && requestedItems.Count > 0;
 
         UIManager.Instance.Ref_SellButton.SetActive(shouldShow);
+
+        if(!shouldShow)
+        {
+            requestedItemsText.text = "";
+        }
     }
     private void RegisterSale(string prefix, string baseName)
     {

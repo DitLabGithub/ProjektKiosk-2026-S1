@@ -17,6 +17,15 @@
         "Lily",
         "Robin"
       ]
+    },
+    {
+      "day": 3,
+      "moneyGoal": 300,
+      "npcOrder": [
+        "Shaun",
+        "Robin",
+        "Amon"
+      ]
     }
   ]
 }
