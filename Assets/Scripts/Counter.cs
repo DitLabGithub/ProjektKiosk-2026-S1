@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Counter : MonoBehaviour
     public int Money;
     public int MoneyGoal;
     public RectTransform itemContainer;
+    public TextMeshProUGUI requestedItemsText;
     public List<GameObject> ItemPrefabs;
     public List<Item> requestedItems = new List<Item>();
     public List<Item> itemsInCart = new List<Item>();
@@ -34,17 +36,27 @@ public class Counter : MonoBehaviour
 
         foreach (var itemPrefab in ItemPrefabs)
         {
-            if (itemPrefab.GetComponent<Item>().name == item.name)
+            Item prefabItem =
+                itemPrefab.GetComponent<Item>();
+
+            if (prefabItem.itemName == item.itemName)
             {
                 GameObject newItem =
                     Instantiate(itemPrefab, itemContainer);
 
-                itemsInCart.Add(
-                    newItem.GetComponent<Item>()
-                );
+                Item newItemComponent =
+                    newItem.GetComponent<Item>();
+
+                itemsInCart.Add(newItemComponent);
 
                 newItem.GetComponent<Button>()
-                    .onClick.AddListener(() => RemoveItem(newItem));
+                    .onClick.AddListener(() =>
+                    RemoveItem(newItem));
+
+                Debug.Log(
+                    "Added item to cart: "
+                    + newItemComponent.itemName
+                );
 
                 break;
             }
@@ -55,8 +67,9 @@ public class Counter : MonoBehaviour
     public void RemoveItem(GameObject item)
     {
         itemsInCart.Remove(item.GetComponent<Item>());
-            Destroy(item);
-            CheckForSaleButton();
+        Destroy(item);
+        UIManager.Instance.HideItemHover();
+        CheckForSaleButton();
     }
 
     public void Clear()
@@ -90,23 +103,23 @@ public class Counter : MonoBehaviour
         // Count requested items
         foreach (var requestedItem in requestedItems)
         {
-            if (!requestedCounts.ContainsKey(requestedItem.name))
+            if (!requestedCounts.ContainsKey(requestedItem.itemName))
             {
-                requestedCounts[requestedItem.name] = 0;
+                requestedCounts[requestedItem.itemName] = 0;
             }
 
-            requestedCounts[requestedItem.name]++;
+            requestedCounts[requestedItem.itemName]++;
         }
 
         // Count cart items
         foreach (var item in itemsInCart)
         {
-            if (!cartCounts.ContainsKey(item.name))
+            if (!cartCounts.ContainsKey(item.itemName))
             {
-                cartCounts[item.name] = 0;
+                cartCounts[item.itemName] = 0;
             }
 
-            cartCounts[item.name]++;
+            cartCounts[item.itemName]++;
         }
 
         // 1. Validate exact requested item quantities
@@ -197,21 +210,21 @@ public class Counter : MonoBehaviour
         foreach (var item in itemsInCart)
         {
             bool requested =
-                requestedItems.Exists(r => r.name == item.name);
+                requestedItems.Exists(r => r.itemName == item.itemName);
 
             bool favourite =
                 DialogueManager.Instance.currentNPC
                 .data.favouriteItems
-                .Contains(item.name);
+                .Contains(item.itemName);
 
             Money += item.price;
 
-            string baseName = item.name.Replace(" ", "");
+            string baseName = item.itemName.Replace(" ", "");
 
             // NORMAL SALE
             if (requested)
             {
-                Debug.Log("Sold requested item: " + item.name);
+                Debug.Log("Sold requested item: " + item.itemName);
 
                 RegisterSale("Sold", baseName);
             }
@@ -220,7 +233,7 @@ public class Counter : MonoBehaviour
             {
                 upsoldThisTransaction++;
 
-                Debug.Log("Upsold item: " + item.name);
+                Debug.Log("Upsold item: " + item.itemName);
 
                 RegisterSale("Upsold", baseName);
             }
@@ -263,13 +276,13 @@ public class Counter : MonoBehaviour
             {
                 Item item = prefab.GetComponent<Item>();
 
-                if (item.name == trimmedName)
+                if (item.itemName == trimmedName)
                 {
                     requestedItems.Add(item);
 
                     Debug.Log(
                         "Requested item added: "
-                        + item.name
+                        + item.itemName
                     );
 
                     break;
@@ -279,6 +292,11 @@ public class Counter : MonoBehaviour
         if (requestedItems.Count > 0)
         {
             hasActiveRequest = true;
+            requestedItemsText.text = "";
+            foreach (var item in requestedItems)
+            {
+                requestedItemsText.text += item.itemName + "\n";
+            }
         }
         CheckForSaleButton();
     }
@@ -287,6 +305,11 @@ public class Counter : MonoBehaviour
         bool shouldShow = hasActiveRequest && requestedItems.Count > 0;
 
         UIManager.Instance.Ref_SellButton.SetActive(shouldShow);
+
+        if(!shouldShow)
+        {
+            requestedItemsText.text = "";
+        }
     }
     private void RegisterSale(string prefix, string baseName)
     {
@@ -304,4 +327,6 @@ public class Counter : MonoBehaviour
 
         npc.SetVariable(variableName, "true");
     }
+
+
 }

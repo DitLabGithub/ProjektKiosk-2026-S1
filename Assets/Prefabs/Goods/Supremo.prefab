@@ -145,5 +145,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82126aaff799bcf4dbcc442bc5b41343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  name: Supremo
+  itemName: Supremo
   price: 15

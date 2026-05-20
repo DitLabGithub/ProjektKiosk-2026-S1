@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public  Color ColorPositive;
     public  Color ColorNegative;
     public  Color ColorRead;
+    public Vector2 offset;
 
     [Header("References")]
     public Canvas mainCanvas;
@@ -26,15 +27,19 @@ public class UIManager : MonoBehaviour
     public TMP_Text Ref_MoneyGoal;
     public TMP_Text Ref_Day;
     public UI_MessagesBox MessagesBox;
+    public UI_ItemHover Ref_ItemHover;
 
     [Header("Prefabs")]
     public GameObject PF_MainMenu;
     public GameObject PF_LevelSelect;
     public GameObject PF_DialogueOption;
+    public GameObject PF_DialogueOptionPositive;
+    public GameObject PF_DialogueOptionNegative;
     public GameObject PF_ID;
     public GameObject PF_SSI;
     public GameObject PF_FriendshipTab;
     public GameObject PF_MessagesBox;
+    public GameObject PF_ItemHover;
 
     [Header("Dialogue")]
     public TextMeshProUGUI npcText;
@@ -99,10 +104,24 @@ public class UIManager : MonoBehaviour
             Ref_FriendshipTab = Instantiate(PF_FriendshipTab, mainCanvas.transform).GetComponent<UI_FriendshipTab>();
             Ref_FriendshipTab.gameObject.SetActive(false);
         }
-            if (PF_MessagesBox != null)
+        if (PF_MessagesBox != null)
+        {
+            MessagesBox = Instantiate(PF_MessagesBox, mainCanvas.transform).GetComponent<UI_MessagesBox>();
+            MessagesBox.gameObject.SetActive(false);
+        }
+        if (PF_ItemHover != null)
+        {
+            Ref_ItemHover = Instantiate(PF_ItemHover, mainCanvas.transform).GetComponent<UI_ItemHover>();
+            Ref_ItemHover.gameObject.SetActive(false);
+        }
+    }
+
+    public void Update()
+    {
+        if(Ref_ItemHover.gameObject.activeSelf)
             {
-                MessagesBox = Instantiate(PF_MessagesBox, mainCanvas.transform).GetComponent<UI_MessagesBox>();
-                MessagesBox.gameObject.SetActive(false);
+            Vector2 mousePos = Input.mousePosition;
+            Ref_ItemHover.transform.position = mousePos + offset;
         }
     }
 
@@ -212,10 +231,11 @@ public class UIManager : MonoBehaviour
         npcText.text = node.text;
 
         string currentNPCName =
-    DialogueManager.Instance.currentNPC.data.name;
+            DialogueManager.Instance.currentNPC.data.name;
 
         AvatarImage.sprite =
             DialogueManager.Instance.currentNPC.data.avatar;
+
         AvatarImage.preserveAspect = true;
 
         // New character transition
@@ -228,9 +248,7 @@ public class UIManager : MonoBehaviour
                 StopCoroutine(nameCoroutine);
             }
 
-            StartCoroutine(
-                FadeInCharacter()
-            );
+            StartCoroutine(FadeInCharacter());
 
             nameCoroutine =
                 StartCoroutine(
@@ -250,9 +268,42 @@ public class UIManager : MonoBehaviour
                 .MeetsRequirements(option.requirements))
                 continue;
 
+            GameObject prefabToUse =
+                PF_DialogueOption;
+
+            bool usedSpecialFriendshipPrefab = false;
+
+            // CHECK REQUIREMENTS
+            foreach (RequirementData requirement
+                in option.requirements)
+            {
+                if (requirement.variable == "friendship")
+                {
+                    int value =
+                        int.Parse(requirement.value);
+
+                    if (value > 0)
+                    {
+                        prefabToUse =
+                            PF_DialogueOptionPositive;
+
+                        usedSpecialFriendshipPrefab = true;
+                    }
+                    else if (value < 0)
+                    {
+                        prefabToUse =
+                            PF_DialogueOptionNegative;
+
+                        usedSpecialFriendshipPrefab = true;
+                    }
+
+                    break;
+                }
+            }
+
             GameObject obj =
                 Instantiate(
-                    PF_DialogueOption,
+                    prefabToUse,
                     optionContainer
                 );
 
@@ -307,7 +358,7 @@ public class UIManager : MonoBehaviour
                 .AddListener(() =>
                 {
                     DialogueManager.Instance
-                .SelectOption(option);
+                        .SelectOption(option);
                 });
         }
     }
@@ -349,5 +400,16 @@ public class UIManager : MonoBehaviour
     public void UpdateMoney(int amount)
     {
         Ref_Money.text = amount.ToString();
+    }
+
+    public void ShowItemHover(GameObject item)
+    {
+        Ref_ItemHover.SetItemInfo(item);
+        Ref_ItemHover.gameObject.SetActive(true);
+        Ref_ItemHover.transform.SetAsLastSibling(); 
+    }
+    public void HideItemHover()
+    {
+        Ref_ItemHover.gameObject.SetActive(false);
     }
 }
