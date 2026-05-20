@@ -326,66 +326,32 @@
           ]
         },
         {
-          "id": "Shaun_D1_Offer",
-          "text": "I'll just need something from you in return. A small thing. Take photos of the customers' old IDs. It sounds crazy, but it's for an... art thing.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Go on.",
-              "effects": [
-                {
-                  "variable": "unlock_detail",
-                  "value": "id_photo_offer"
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Shaun_D1_Offer_Explain"
-              ]
-            },
-            {
-              "text": "Keep talking, Shaun.",
-              "effects": [
-                {
-                  "variable": "RecordedShaun_D1",
-                  "value": "true"
-                },
-                {
-                  "variable": "MadeRecording",
-                  "value": "true"
-                },
-                {
-                  "variable": "ShaunEvidence",
-                  "value": "1"
-                },
-                {
-                  "variable": "Incrimination",
-                  "value": "1"
-                },
-                {
-                  "variable": "unlock_detail",
-                  "value": "id_photo_offer"
-                }
-              ],
-              "requirements": [
-                {
-                  "variable": "HasRecordingDevice",
-                  "value": "true"
-                }
-              ],
-              "nextNodes": [
-                "Shaun_D1_Offer_Explain"
-              ]
-            }
-          ]
-        },
+  "id": "Shaun_D1_Offer",
+  "text": "I'll just need something from you in return. A small thing. Take photos of the customers' old IDs. It sounds crazy, but it's for an... art thing.",
+  "requirements": [],
+  "options": [
+    {
+      "text": "Go on.",
+      "effects": [
+        {
+          "variable": "unlock_detail",
+          "value": "id_photo_offer"
+        }
+      ],
+      "requirements": [],
+      "nextNodes": [
+        "Shaun_D1_Offer_Explain"
+      ]
+    }
+  ]
+},
         {
           "id": "Shaun_D1_Offer_Explain",
           "text": "Plus, they will have the new system in place soon, so those old IDs are basically yesterday's news. It is hard to reach the gross goals the boss put for you...",
           "requirements": [],
           "options": [
             {
-              "text": "So, what do you say?",
+              "text": "Hmm... sounds sketchy?",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -540,6 +506,10 @@
             {
               "text": "I need to check your ID first.",
               "effects": [
+                 {
+                  "variable": "ReceivedCopyDevice",
+                  "value": "true"
+                },
                 {
                   "variable": "open_id_tab",
                   "value": "true"
@@ -563,6 +533,10 @@
                 {
                   "variable": "open_wares_tab",
                   "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
                 }
               ],
               "requirements": [],
@@ -576,6 +550,10 @@
                 {
                   "variable": "open_wares_tab",
                   "value": "PackOfGiddy"
+                },
+                {
+                  "variable": "open_id_tab",
+                  "value": "true"
                 }
               ],
               "requirements": [],

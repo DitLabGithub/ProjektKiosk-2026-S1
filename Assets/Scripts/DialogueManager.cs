@@ -270,6 +270,15 @@ public class DialogueManager : MonoBehaviour
 
                     break;
 
+                case "ReceivedCopyDevice":
+
+                    UIManager.Instance.Ref_ID.UnlockCopying();
+                    break;
+
+                case "AddMoney":
+                    Counter.Instance.Money += int.Parse(effect.value);
+                    break;
+
                 default:
 
                     // Normal runtime variable

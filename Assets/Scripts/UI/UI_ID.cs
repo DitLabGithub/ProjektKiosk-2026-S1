@@ -13,7 +13,7 @@ public class UI_ID : MonoBehaviour
     public TextMeshProUGUI address;
     public TextMeshProUGUI expiryDate;
     public Transform container;
-    public Button hideButton;
+    public Button copyButton;
 
     public void Init(Sprite photo, string name, int age, int height, string eyeColor, string gender, string address, string expiryDate)
     {
@@ -30,5 +30,14 @@ public class UI_ID : MonoBehaviour
     public void ToggleContainer()
             {
         container.gameObject.SetActive(!container.gameObject.activeSelf);
+    }
+    public void UnlockCopying()
+            {
+        copyButton.gameObject.SetActive(true);
+        copyButton.onClick.AddListener(() =>
+        {
+            IdentificationCopyManager.Instance.CopyID();
+            Debug.Log("ID copied");
+        });
     }
 }
