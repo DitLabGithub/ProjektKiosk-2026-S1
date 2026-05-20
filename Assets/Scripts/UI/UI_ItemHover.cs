@@ -8,7 +8,12 @@ public class UI_ItemHover : MonoBehaviour
 
     public void SetItemInfo(GameObject item)
     {
-        itemNameText.text = item.name;
-        itemPriceText.text = $"{item.GetComponent<Item>().price} €";
+        string cleanName =
+            item.name.Replace("(Clone)", "").Trim();
+
+        itemNameText.text = cleanName;
+
+        itemPriceText.text =
+            $"{item.GetComponent<Item>().price} €";
     }
 }

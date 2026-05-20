@@ -4,6 +4,7 @@
       "day": 1,
       "moneyGoal": 150,
       "npcOrder": [
+      "Fridgy",
         "Shaun",
         "Amon",
         "Jop"
@@ -14,13 +15,13 @@
       "moneyGoal": 200,
       "npcOrder": [
         "Jop",
-        "Lily",
-        "Robin"
+        "Robin",
+        "Lily"
       ]
     },
     {
       "day": 3,
-      "moneyGoal": 300,
+      "moneyGoal": 200,
       "npcOrder": [
         "Shaun",
         "Robin",

@@ -271,6 +271,8 @@ public class UIManager : MonoBehaviour
             GameObject prefabToUse =
                 PF_DialogueOption;
 
+            bool usedSpecialFriendshipPrefab = false;
+
             // CHECK REQUIREMENTS
             foreach (RequirementData requirement
                 in option.requirements)
@@ -284,11 +286,15 @@ public class UIManager : MonoBehaviour
                     {
                         prefabToUse =
                             PF_DialogueOptionPositive;
+
+                        usedSpecialFriendshipPrefab = true;
                     }
                     else if (value < 0)
                     {
                         prefabToUse =
                             PF_DialogueOptionNegative;
+
+                        usedSpecialFriendshipPrefab = true;
                     }
 
                     break;
@@ -307,13 +313,53 @@ public class UIManager : MonoBehaviour
             dialogueOption.optionText.text =
                 option.text;
 
+            bool foundFriendshipEffect = false;
+
+            foreach (EffectData effect in option.effects)
+            {
+                if (effect.variable == "friendship")
+                {
+                    foundFriendshipEffect = true;
+
+                    int value =
+                        int.Parse(effect.value);
+
+                    if (value > 0)
+                    {
+                        dialogueOption.ToggleImage(
+                            "positive"
+                        );
+                    }
+                    else if (value < 0)
+                    {
+                        dialogueOption.ToggleImage(
+                            "negative"
+                        );
+                    }
+                    else
+                    {
+                        dialogueOption.ToggleImage(
+                            "neutral"
+                        );
+                    }
+
+                    break;
+                }
+            }
+
+            if (!foundFriendshipEffect)
+            {
+                dialogueOption.ToggleImage(
+                    "neutral"
+                );
+            }
+
             dialogueOption.button.onClick
                 .AddListener(() =>
                 {
                     DialogueManager.Instance
                         .SelectOption(option);
                 });
-            dialogueOption.ToggleImage()
         }
     }
     IEnumerator TypeNPCName(string npcName)

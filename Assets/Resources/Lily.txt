@@ -457,7 +457,7 @@
               ]
             },
             {
-              "text": "Pay me €20 and I'll forget your SSI has expired. One-time deal.",
+              "text": "Pay me â‚¬20 and I'll forget your SSI has expired. One-time deal.",
               "effects": [
                 {
                   "variable": "friendship",

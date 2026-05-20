@@ -343,7 +343,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I’ll get the Rambolos.",
+              "text": "Iâ€™ll get the Rambolos.",
               "effects": [
                 {
                   "variable": "open_wares_tab",
@@ -812,7 +812,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I’ll get the Rambolos.",
+              "text": "Iâ€™ll get the Rambolos.",
               "effects": [
                 {
                   "variable": "open_wares_tab",
@@ -1299,7 +1299,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I’ll get the Rambolos.",
+              "text": "Iâ€™ll get the Rambolos.",
               "effects": [
                 {
                   "variable": "open_wares_tab",

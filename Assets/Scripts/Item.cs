@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class Item : MonoBehaviour,
     IPointerEnterHandler,
@@ -37,5 +38,7 @@ public class Item : MonoBehaviour,
     public void RemoveFromCart()
     {
         Counter.Instance.RemoveItem(gameObject);
+
     }
+
 }
