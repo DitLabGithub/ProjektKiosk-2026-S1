@@ -1,6 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -49,6 +50,7 @@ public class UIManager : MonoBehaviour
 
     private string lastNPCName = "";
 
+    [Header("Avatar")]
     [SerializeField]
     private CanvasGroup avatarCanvasGroup;
 
@@ -60,6 +62,24 @@ public class UIManager : MonoBehaviour
 
     private Coroutine nameCoroutine;
 
+    [Header("Blinking")]
+    [SerializeField]
+    private float blinkSpeed = 4f;
+
+    [SerializeField]
+    private float blinkMinAlpha = 0.3f;
+
+    public List<CanvasGroup> blinkingElements;
+
+    private List<BlinkData> activeBlinks =
+        new List<BlinkData>();
+
+    [System.Serializable]
+    public class BlinkData
+    {
+        public CanvasGroup target;
+        public Coroutine coroutine;
+    }
 
 
 
@@ -164,6 +184,7 @@ public class UIManager : MonoBehaviour
             Ref_CounterButton.SetActive(true);
             Ref_Wares.transform.SetAsLastSibling();
             Ref_CounterButton.transform.SetAsLastSibling();
+            StopBlink("WaresButton");
         }
     }
 
@@ -179,6 +200,7 @@ public class UIManager : MonoBehaviour
             Ref_FriendshipTab.gameObject.SetActive(true);
             Ref_FriendshipTab.currentFriend = Ref_FriendshipTab.friends[0];
             Ref_FriendshipTab.PopulateFriend(Ref_FriendshipTab.currentFriend);
+            StopBlink("FriendshipButton");
         }
     }
 
@@ -192,6 +214,7 @@ public class UIManager : MonoBehaviour
         {
             MessagesBox.gameObject.SetActive(true);
             MessagesBox.PopulateMessages();
+                StopBlink("MessagesButton");
         }
     }
     public void ShowLevelSelect()
@@ -411,5 +434,83 @@ public class UIManager : MonoBehaviour
     public void HideItemHover()
     {
         Ref_ItemHover.gameObject.SetActive(false);
+    }
+    public void StartBlink(string elementName)
+    {
+        CanvasGroup element =
+            blinkingElements.Find(
+                e => e.gameObject.name == elementName
+            );
+
+        if (element == null)
+            return;
+
+        bool alreadyBlinking =
+            activeBlinks.Exists(
+                b => b.target == element
+            );
+
+        if (alreadyBlinking)
+            return;
+
+        Coroutine c =
+            StartCoroutine(
+                BlinkElement(element)
+            );
+
+        activeBlinks.Add(
+            new BlinkData
+            {
+                target = element,
+                coroutine = c
+            }
+        );
+    }
+
+    public void StopBlink(string elementName)
+    {
+        BlinkData blink =
+            activeBlinks.Find(
+                b => b.target.gameObject.name
+                == elementName
+            );
+
+        if (blink == null)
+            return;
+
+        StopCoroutine(
+            blink.coroutine
+        );
+
+        blink.target.alpha = 1f;
+
+        activeBlinks.Remove(
+            blink
+        );
+    }
+
+    private IEnumerator BlinkElement(
+    CanvasGroup element
+)
+    {
+        while (true)
+        {
+            float t =
+                Mathf.Abs(
+                    Mathf.Sin(
+                        Time.unscaledTime
+                        * blinkSpeed
+                    )
+                );
+
+            element.alpha =
+                Mathf.Lerp(
+                    blinkMinAlpha,
+                    1f,
+                    t
+                );
+
+            yield return null;
+        }
     }
 }

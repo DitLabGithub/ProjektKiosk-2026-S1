@@ -183,6 +183,8 @@ public class DialogueManager : MonoBehaviour
 
                 currentNPC.data.keyMoments.Add(moment);
 
+                UIManager.Instance.StartBlink("FriendshipButton");
+
                 Debug.Log(
                     "Added key moment: "
                     + moment.text
@@ -261,12 +263,14 @@ public class DialogueManager : MonoBehaviour
                             + detail.key
                         );
                     }
+                    UIManager.Instance.StartBlink("FriendshipButton");
 
                     break;
 
                 case "open_wares_tab":
 
                     Counter.Instance.SetupRequestedItems(effect.value);
+                    UIManager.Instance.StartBlink("WaresButton");
 
                     break;
 
@@ -277,6 +281,16 @@ public class DialogueManager : MonoBehaviour
 
                 case "AddMoney":
                     Counter.Instance.Money += int.Parse(effect.value);
+                    break;
+
+                case "start_blink":
+                    UIManager.Instance
+                        .StartBlink(effect.value);
+                    break;
+
+                case "stop_blink":
+                    UIManager.Instance
+                        .StopBlink(effect.value);
                     break;
 
                 default:

@@ -1119,8 +1119,9 @@ GameObject:
   - component: {fileID: 265633413}
   - component: {fileID: 265633412}
   - component: {fileID: 265633414}
+  - component: {fileID: 265633415}
   m_Layer: 5
-  m_Name: Messages
+  m_Name: MessagesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1241,6 +1242,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &265633415
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265633410}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &278980093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,8 +3524,9 @@ GameObject:
   - component: {fileID: 1089398798}
   - component: {fileID: 1089398800}
   - component: {fileID: 1089398799}
+  - component: {fileID: 1089398801}
   m_Layer: 5
-  m_Name: Wares
+  m_Name: WaresButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3535,8 +3549,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 906, y: -28}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 902, y: 0.00002670288}
+  m_SizeDelta: {x: 78.082, y: 52.743}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1089398799
 MonoBehaviour:
@@ -3602,6 +3616,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089398797}
   m_CullTransparentMesh: 1
+--- !u!225 &1089398801
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089398797}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &1126369564 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3098129175910296477, guid: 00de399fc5bb71d4580159115dc02d97, type: 3}
@@ -4780,8 +4806,9 @@ GameObject:
   - component: {fileID: 1884659668}
   - component: {fileID: 1884659667}
   - component: {fileID: 1884659669}
+  - component: {fileID: 1884659670}
   m_Layer: 5
-  m_Name: Friendships
+  m_Name: FriendshipButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4902,6 +4929,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &1884659670
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884659665}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1922379507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,6 +5040,7 @@ GameObject:
   - component: {fileID: 1925329373}
   - component: {fileID: 1925329375}
   - component: {fileID: 1925329374}
+  - component: {fileID: 1925329376}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -5067,6 +5107,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925329372}
   m_CullTransparentMesh: 1
+--- !u!225 &1925329376
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925329372}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1943948873
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,8 +5760,9 @@ GameObject:
   - component: {fileID: 2057993196}
   - component: {fileID: 2057993195}
   - component: {fileID: 2057993194}
+  - component: {fileID: 2057993197}
   m_Layer: 5
-  m_Name: Sell
+  m_Name: SellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5830,6 +5883,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057993192}
   m_CullTransparentMesh: 1
+--- !u!225 &2057993197
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057993192}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2059155563
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +6006,14 @@ MonoBehaviour:
   avatarCanvasGroup: {fileID: 1922379511}
   avatarFadeSpeed: 1.5
   nameTypingSpeed: 0.08
+  blinkSpeed: 4
+  blinkMinAlpha: 0.3
+  blinkingElements:
+  - {fileID: 1884659670}
+  - {fileID: 1925329376}
+  - {fileID: 265633415}
+  - {fileID: 2057993197}
+  - {fileID: 1089398801}
 --- !u!4 &2102829046
 Transform:
   m_ObjectHideFlags: 0

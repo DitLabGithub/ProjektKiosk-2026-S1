@@ -1,4 +1,5 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -89,7 +90,7 @@ public class Counter : MonoBehaviour
             Debug.Log("No items in cart to sell.");
             return;
         }
-
+            string requestedItemNames = " " + string.Join(", ", requestedItems.Select(i => i.itemName));
         int upsoldThisTransaction = 0;
 
         // VALIDATION PASS
@@ -135,12 +136,9 @@ public class Counter : MonoBehaviour
 
             if (cartAmount != requiredAmount)
             {
-                Debug.Log(
-                    "Transaction failed. Wrong quantity for requested item: "
-                    + itemName
-                );
-
-                DialogueManager.Instance.ShowCurrentNode();
+                UIManager.Instance.npcText.text =
+                    "I didn't ask for this, I asked for"
+                    + requestedItemNames + ".";
                 return;
             }
         }
@@ -162,12 +160,10 @@ public class Counter : MonoBehaviour
             // Item is neither requested nor favourite
             if (!requested && !favourite)
             {
-                Debug.Log(
-                    "Transaction failed. Invalid item: "
-                    + itemName
-                );
+                UIManager.Instance.npcText.text =
+                    "I didn't ask for this, I asked for"
+                    + requestedItemNames + ".";
 
-                DialogueManager.Instance.ShowCurrentNode();
                 return;
             }
 
@@ -179,12 +175,10 @@ public class Counter : MonoBehaviour
 
                 if (amount != requiredAmount)
                 {
-                    Debug.Log(
-                        "Transaction failed. Wrong amount of requested item: "
-                        + itemName
-                    );
+                    UIManager.Instance.npcText.text =
+                    "I didn't ask for this, I asked for"
+                    + requestedItemNames + ".";
 
-                    DialogueManager.Instance.ShowCurrentNode();
                     return;
                 }
             }
@@ -195,12 +189,9 @@ public class Counter : MonoBehaviour
             {
                 if (amount > 1)
                 {
-                    Debug.Log(
-                        "Transaction failed. Too many favourite items: "
-                        + itemName
-                    );
-
-                    DialogueManager.Instance.ShowCurrentNode();
+                    UIManager.Instance.npcText.text =
+                    "I didn't ask for this, I asked for"
+                    + requestedItemNames + ".";
                     return;
                 }
             }
@@ -226,7 +217,7 @@ public class Counter : MonoBehaviour
             {
                 Debug.Log("Sold requested item: " + item.itemName);
 
-                RegisterSale("Sold", baseName);
+                StartCoroutine(RegisterSale("Sold", baseName));
             }
             // UPSELL SALE
             else if (favourite)
@@ -235,7 +226,7 @@ public class Counter : MonoBehaviour
 
                 Debug.Log("Upsold item: " + item.itemName);
 
-                RegisterSale("Upsold", baseName);
+                StartCoroutine(RegisterSale("Upsold", baseName));
             }
         }
 
@@ -302,16 +293,48 @@ public class Counter : MonoBehaviour
     }
     public void CheckForSaleButton()
     {
-        bool shouldShow = hasActiveRequest && requestedItems.Count > 0;
+        bool shouldShow =
+            hasActiveRequest &&
+            requestedItems.Count > 0;
 
         UIManager.Instance.Ref_SellButton.SetActive(shouldShow);
 
-        if(!shouldShow)
+        // No active request → hard reset UI blinking
+        if (!shouldShow)
         {
             requestedItemsText.text = "";
+
+            UIManager.Instance.StopBlink("SellButton");
+            UIManager.Instance.StopBlink("WaresButton");
+
+            return;
+        }
+
+        // Active request exists → show requested items UI
+        if (requestedItemsText != null)
+        {
+            requestedItemsText.text = "";
+
+            foreach (var item in requestedItems)
+            {
+                requestedItemsText.text += item.itemName + "\n";
+            }
+        }
+
+        // CASE 1: Player has items in cart → focus Sell button
+        if (itemsInCart.Count > 0)
+        {
+            UIManager.Instance.StartBlink("SellButton");
+            UIManager.Instance.StopBlink("WaresButton");
+        }
+        // CASE 2: Cart empty but request exists → focus Wares button
+        else
+        {
+            UIManager.Instance.StopBlink("SellButton");
+            UIManager.Instance.StartBlink("WaresButton");
         }
     }
-    private void RegisterSale(string prefix, string baseName)
+    private IEnumerator RegisterSale(string prefix, string baseName)
     {
         int index = 1;
 
@@ -326,6 +349,12 @@ public class Counter : MonoBehaviour
         }
 
         npc.SetVariable(variableName, "true");
+
+        UIManager.Instance.StopBlink("SellButton");
+        UIManager.Instance.StopBlink("WaresButton");
+        UIManager.Instance.StartBlink("Money");
+        yield return new WaitForSeconds(2f);
+        UIManager.Instance.StopBlink("Money");
     }
 
 
