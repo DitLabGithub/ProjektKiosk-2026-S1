@@ -27,3 +27,26 @@ public class CharacterData
     public List<DialogueDayData> dialogues;
     public List<KeyMomentData> keyMoments = new List<KeyMomentData>();
 }
+
+[System.Serializable]
+public class CustomSSIData
+{
+    public string avatarPath;
+
+    public Sprite avatar;
+
+    public string ownerName;
+
+    public int age;
+
+    public string address;
+
+    public string expiryDate;
+}
+[System.Serializable]
+public class CustomSSIEntry
+{
+    public string key;
+
+    public CustomSSIData data;
+}

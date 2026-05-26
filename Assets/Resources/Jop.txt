@@ -14,6 +14,14 @@
   ],
   "details": [
     {
+      "key": "favourite_items",
+      "text": "Favourite item: SproingelsBlue."
+    },
+    {
+      "key": "favorite_items",
+      "text": "Favourite item: SproingelsBlue."
+    },
+    {
       "key": "new_district",
       "text": "Jop recently started working in this district."
     },
@@ -169,7 +177,7 @@
         },
         {
           "id": "Jop_D1_Order",
-          "text": "People asking questions they do not need answers to. People hanging around counters too long. That sort of thing. Also, SproingelsBlue, please.",
+          "text": "People asking questions they do not need answers to. People hanging around counters too long. That sort of thing. Before I go, SproingelsBlue, please.",
           "requirements": [],
           "options": [
             {
@@ -304,22 +312,27 @@
         },
         {
           "id": "Jop_D2_Order",
-          "text": "SproingelsBlue again. And I am not only here for chips today.",
+          "text": "SproingelsBlue again, please. Then I need a word.",
           "requirements": [],
           "options": [
             {
-              "text": "What's going on?",
-              "effects": [],
+              "text": "Sure.",
+              "effects": [
+                {
+                  "variable": "open_wares_tab",
+                  "value": "SproingelsBlue"
+                }
+              ],
               "requirements": [],
               "nextNodes": [
-                "Jop_D2_Reason"
+                "Jop_D2_After_Sale"
               ]
             }
           ]
         },
         {
-          "id": "Jop_D2_Reason",
-          "text": "I'm looking into someone who may be using this kiosk as a convenient stop.",
+          "id": "Jop_D2_After_Sale",
+          "text": "Thanks. I am not only here for chips today. I am looking into someone who may be using this kiosk as a convenient stop.",
           "requirements": [],
           "options": [
             {
@@ -421,12 +434,7 @@
                   "keyMomentPositive": false
                 }
               ],
-              "requirements": [
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                }
-              ],
+              "requirements": [],
               "nextNodes": [
                 "Jop_D2_Extreme_Negative"
               ]
@@ -439,7 +447,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I'll take it.",
+              "text": "Take the recorder.",
               "effects": [
                 {
                   "variable": "HasRecordingDevice",
@@ -467,7 +475,7 @@
               "effects": [],
               "requirements": [],
               "nextNodes": [
-                "Jop_D2_Reminder"
+                "Jop_D2_End"
               ]
             }
           ]
@@ -498,26 +506,6 @@
               "requirements": [],
               "nextNodes": [
                 "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Jop_D2_Reminder",
-          "text": "And I still want the SproingelsBlue before I go.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Sure.",
-              "effects": [
-                {
-                  "variable": "open_wares_tab",
-                  "value": "SproingelsBlue"
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Jop_D2_End"
               ]
             }
           ]
@@ -559,7 +547,7 @@
         },
         {
           "id": "Jop_D4_Order",
-          "text": "SproingelsBlue. And then I need a word.",
+          "text": "SproingelsBlue, please. Then I need an update.",
           "requirements": [],
           "options": [
             {
@@ -602,7 +590,7 @@
         },
         {
           "id": "Jop_D4_Check_Recorder",
-          "text": "Anything I should know about?",
+          "text": "Thanks. Anything I should know about? A recording, a strange offer, anything like that?",
           "requirements": [
             {
               "variable": "HasRecordingDevice",
@@ -689,12 +677,7 @@
                   "keyMomentPositive": false
                 }
               ],
-              "requirements": [
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                }
-              ],
+              "requirements": [],
               "nextNodes": [
                 "Jop_D4_Extreme_Negative"
               ]
@@ -703,7 +686,7 @@
         },
         {
           "id": "Jop_D4_No_Recorder",
-          "text": "Still staying out of it?",
+          "text": "Thanks. Still staying out of it?",
           "requirements": [
             {
               "variable": "HasRecordingDevice",
@@ -797,12 +780,7 @@
                   "keyMomentPositive": false
                 }
               ],
-              "requirements": [
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                }
-              ],
+              "requirements": [],
               "nextNodes": [
                 "Jop_D4_Extreme_Negative"
               ]
@@ -811,7 +789,7 @@
         },
         {
           "id": "Jop_D4_Recording_Response",
-          "text": "Good. This helps. If he pushes again, do not argue. Let him talk.",
+          "text": "Good. This helps. If Shaun pushes again, do not argue. Let him talk.",
           "requirements": [],
           "options": [
             {
@@ -1041,7 +1019,7 @@
           ],
           "options": [
             {
-              "text": "I have the recording.",
+              "text": "Give him the recording.",
               "effects": [
                 {
                   "variable": "SharedRecordingWithJop",
@@ -1197,7 +1175,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I stayed out of it.",
+              "text": "I stayed out of Shaun's scheme.",
               "effects": [],
               "requirements": [
                 {
@@ -1231,7 +1209,7 @@
               ]
             },
             {
-              "text": "I helped him.",
+              "text": "I helped Shaun.",
               "effects": [],
               "requirements": [
                 {

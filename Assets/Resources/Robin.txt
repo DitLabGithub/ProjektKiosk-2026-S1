@@ -9,45 +9,16 @@
   "height": 176,
   "hairColor": "Black",
   "eyeColor": "Brown",
-  "ssiProfiles": {
-    "robin_own_ssi": {
-      "ownerName": "Robin",
-      "ownerSurname": "Vermeer",
-      "relation": "Self",
-      "age": 29,
-      "above18": true,
-      "address": "19 Market District",
-      "expiryDate": "2028-01-02",
-      "gender": "Female",
-      "height": 176,
-      "hairColor": "Black",
-      "eyeColor": "Brown",
-      "belongsToCustomer": true,
-      "presentWithCustomer": true,
-      "note": "This SSI belongs to Robin and proves she is over 18."
-    },
-    "day4_husband_ssi": {
-      "ownerName": "Robin's Husband",
-      "ownerSurname": "Vermeer",
-      "relation": "Husband",
-      "age": 31,
-      "above18": true,
-      "address": "19 Market District",
-      "expiryDate": "2028-06-17",
-      "gender": "Male",
-      "height": 182,
-      "hairColor": "Brown",
-      "eyeColor": "Brown",
-      "belongsToCustomer": false,
-      "presentWithCustomer": true,
-      "note": "This SSI belongs to Robin's husband, who is present with her."
-    }
-  },
+ 
   "favouriteItems": [
     "Rambolos",
     "BluePort"
   ],
   "details": [
+    {
+      "key": "favorite_items",
+      "text": "Favourite items: Rambolos, BluePort."
+    },
     {
       "key": "pregnant",
       "text": "Robin is pregnant."
@@ -70,7 +41,7 @@
     },
     {
       "key": "triangle_of_trust",
-      "text": "Robin learned that SSI is based on a triangle of trust between the issuer, holder, and verifier."
+      "text": "Robin learned that SSI is based on a triangle of trust between the issuer, holder, and issuer."
     },
     {
       "key": "husband_smoker",
@@ -199,7 +170,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I need to check your ID first.",
+              "text": "Check her ID.",
               "effects": [
                 {
                   "variable": "open_id_tab",
@@ -212,19 +183,23 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Robin_D2_After_ID_Check"
+                "Robin_D2_ID_Wait"
               ]
             }
           ]
         },
         {
-          "id": "Robin_D2_After_ID_Check",
-          "text": "Everything alright?",
+          "id": "Robin_D2_ID_Wait",
+          "text": "Of course. Here you go.",
           "requirements": [],
           "options": [
             {
-              "text": "Yes, you're over 18.",
+              "text": "I've checked the ID.",
               "effects": [
+                {
+                  "variable": "open_id_tab",
+                  "value": "false"
+                },
                 {
                   "variable": "lawfulness",
                   "value": "1"
@@ -239,11 +214,11 @@
         },
         {
           "id": "Robin_D2_Selling_Choice",
-          "text": "I still need the Rambolos, please.",
+          "text": "Everything alright? I still need the Rambolos, please.",
           "requirements": [],
           "options": [
             {
-              "text": "Neither you nor your partner should be smoking. I can't sell these.",
+              "text": "I can't sell these. Neither you nor your partner should be smoking right now.",
               "effects": [
                 {
                   "variable": "friendship",
@@ -267,7 +242,7 @@
                   "messageContent": "A customer submitted a complaint after being refused service. Please avoid denying legal purchases based on personal assumptions."
                 },
                 {
-                  "keyMomentText": "Refused to sell cigarettes to Robin because she is pregnant, even though the purchase was legal.",
+                  "keyMomentText": "Refused to sell cigarettes to Robin because she is pregnant, even though the purchase was legal after ID verification.",
                   "keyMomentPositive": false
                 }
               ],
@@ -302,7 +277,7 @@
               ]
             },
             {
-              "text": "I can sell you the Rambolos. I can also recommend BluePort.",
+              "text": "I can sell you the Rambolos. BluePort is one of your favourites too.",
               "effects": [
                 {
                   "variable": "open_wares_tab",
@@ -325,7 +300,7 @@
                   "value": "true"
                 },
                 {
-                  "keyMomentText": "Sold Rambolos to Robin after traditional ID verification and recommended BluePort.",
+                  "keyMomentText": "Used traditional ID to verify Robin was over 18, sold Rambolos, and recommended BluePort as an upsell.",
                   "keyMomentPositive": true
                 }
               ],
@@ -338,27 +313,7 @@
         },
         {
           "id": "Robin_D2_Refused_Response",
-          "text": "What? Are you serious?",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Yeah, no way a pregnant person is buying cigarettes from me.",
-              "effects": [
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Robin_D2_Leaves_Angry"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Leaves_Angry",
-          "text": "Unbelievable.",
+          "text": "What? Are you serious? They're not even for me.",
           "requirements": [],
           "options": [
             {
@@ -373,7 +328,7 @@
         },
         {
           "id": "Robin_D2_Sold_Response",
-          "text": "Thank you. Have a good day.",
+          "text": "Thank you. Rambolos, please.",
           "requirements": [],
           "options": [
             {
@@ -388,26 +343,11 @@
         },
         {
           "id": "Robin_D2_Upsell_Response",
-          "text": "Thank you. BluePort sounds good too.",
+          "text": "Thank you. Rambolos and BluePort sounds good.",
           "requirements": [],
           "options": [
             {
               "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D2_Bye",
-          "text": "Thank you, have a good day.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "See you around.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -456,7 +396,7 @@
         },
         {
           "id": "Robin_D3_Previous_Sale_Yes",
-          "text": "A little, yeah. I’m taking the small wins where I can",
+          "text": "Yes, taking small wins every chance I can.",
           "requirements": [
             {
               "variable": "SoldCigarettes_D2",
@@ -465,7 +405,7 @@
           ],
           "options": [
             {
-              "text": "How have you been finding the new system?",
+              "text": "How have you been enjoying the new system?",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -485,7 +425,7 @@
           ],
           "options": [
             {
-              "text": "How have you been finding the new system?",
+              "text": "How have you been enjoying the new system?",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -496,11 +436,11 @@
         },
         {
           "id": "Robin_D3_System_Thoughts",
-          "text": "Pretty good, actually. I was nervous at first, but the first age check felt simple. I didn't have to show my full ID, just that I'm over 18.",
+          "text": "The new system is finally here. How have you been enjoying it?",
           "requirements": [],
           "options": [
             {
-              "text": "So that's why you like it?",
+              "text": "It's alright, taking it step by step.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -511,11 +451,11 @@
         },
         {
           "id": "Robin_D3_Triangle_Trust_1",
-          "text": "Yeah. And I learned something interesting about why it works. It's not just me saying I'm over 18.",
+          "text": "You know, it's actually really interesting. I was watching a video the other day...",
           "requirements": [],
           "options": [
             {
-              "text": "What do you mean?",
+              "text": "What did it say?",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -526,11 +466,11 @@
         },
         {
           "id": "Robin_D3_Triangle_Trust_2",
-          "text": "It's like a small triangle. I'm the holder, you're checking it, and the issuer is the one that confirmed my details.",
+          "text": "It said the whole system is based on a triangle. It's me, you, and whoever confirmed my identity.",
           "requirements": [],
           "options": [
             {
-              "text": "So I trust the issuer, not just you?",
+              "text": "That sounds smarter than the video we got here.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -541,11 +481,11 @@
         },
         {
           "id": "Robin_D3_Triangle_Trust_3",
-          "text": "Exactly. You don't need to see everything about me. You just need proof that a trusted issuer already checked the part you need.",
+          "text": "And the point is, you don't just trust me, but also whoever verified my data. I didn't know that before, but it's kind of interesting, right?",
           "requirements": [],
           "options": [
             {
-              "text": "So you don't have to show your full ID anymore?",
+              "text": "So you don't have to show everything anymore?",
               "effects": [
                 {
                   "variable": "RobinExplainedTriangleOfTrust_D3",
@@ -569,7 +509,7 @@
         },
         {
           "id": "Robin_D3_Triangle_Trust_4",
-          "text": "Exactly. That's why me and my husband were hopeful about it. The old system never felt safe to us.",
+          "text": "Exactly. I just prove that someone legit checked it already. That's why me and my husband were so hopeful about it. The old system never felt safe to us.",
           "requirements": [],
           "options": [
             {
@@ -603,7 +543,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Continue.",
               "effects": [
                 {
                   "variable": "lawfulness",
@@ -619,15 +559,15 @@
         },
         {
           "id": "Robin_D3_SSI_Close",
-          "text": "Okay, that seemed reasonable. Name and age, right? I'm still learning what should be normal here.",
+          "text": "Wait, did you need all of that? Maybe it's okay, I'm still learning, but I thought this was supposed to be minimal.",
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Continue.",
               "effects": [
                 {
-                  "variable": "lawfulness",
-                  "value": "1"
+                  "variable": "AskedTooMuch_D3",
+                  "value": "true"
                 },
                 {
                   "variable": "unlock_detail",
@@ -647,7 +587,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Continue.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D3",
@@ -680,7 +620,7 @@
         },
         {
           "id": "Robin_D3_Request_Cigarettes",
-          "text": "I still need the Rambolos, please.",
+          "text": "Anyway, I still need a pack of Rambolos, please.",
           "requirements": [],
           "options": [
             {
@@ -760,7 +700,7 @@
               ]
             },
             {
-              "text": "I can sell them, but I still think your husband should buy them himself.",
+              "text": "I'd feel more comfortable if your husband would get them himself.",
               "effects": [
                 {
                   "variable": "open_wares_tab",
@@ -783,12 +723,7 @@
                   "keyMomentPositive": true
                 }
               ],
-              "requirements": [
-                {
-                  "variable": "friendship",
-                  "value": "0"
-                }
-              ],
+              "requirements": [],
               "nextNodes": [
                 "Robin_D3_Husband_Should_Buy"
               ]
@@ -812,7 +747,7 @@
         },
         {
           "id": "Robin_D3_System_Negative",
-          "text": "I hope you learn to appreciate it one day. A lot of people worked hard for this.",
+          "text": "I hope you appreciate the new system. We put in a lot of work for the change. Anyway, thank you.",
           "requirements": [],
           "options": [
             {
@@ -827,7 +762,7 @@
         },
         {
           "id": "Robin_D3_Sold_Response",
-          "text": "Thank you. I hope you appreciate the new system. We put in a lot of work for the change.",
+          "text": "I hope you appreciate the new system. We put in a lot of work for the change. Anyway, thank you.",
           "requirements": [],
           "options": [
             {
@@ -842,11 +777,11 @@
         },
         {
           "id": "Robin_D3_Husband_Should_Buy",
-          "text": "Yeah, that is probably fair. We have prenatal classes tomorrow anyway.",
+          "text": "Yeah, that's the plan. We got some prenatal classes tomorrow.",
           "requirements": [],
           "options": [
             {
-              "text": "Maybe that is a good time to talk about it.",
+              "text": "So that'll be a great time to discuss it.",
               "effects": [
                 {
                   "variable": "UpsoldNumber",
@@ -862,11 +797,11 @@
         },
         {
           "id": "Robin_D3_Husband_Quit",
-          "text": "Yeah, that is probably fair. We have prenatal classes tomorrow anyway.",
+          "text": "Yeah, that's the plan. We got some prenatal classes tomorrow.",
           "requirements": [],
           "options": [
             {
-              "text": "Maybe that is a good time to talk about it.",
+              "text": "So that'll be a great time to discuss it.",
               "effects": [
                 {
                   "variable": "UpsoldNumber",
@@ -882,41 +817,11 @@
         },
         {
           "id": "Robin_D3_Husband_Response_End",
-          "text": "Thank you. I think you are right.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Bye_Positive",
           "text": "Thank you. I think you're right.",
           "requirements": [],
           "options": [
             {
-              "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D3_Bye",
-          "text": "Thank you, take care.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Take care.",
+              "text": "Alright, take care.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -979,7 +884,12 @@
         {
           "id": "Robin_D4_Relationship_Negative",
           "text": "Ugh, so I have this extremely ignorant co-worker...",
-          "requirements": [],
+          "requirements": [
+            {
+              "variable": "friendship",
+              "value": "-1"
+            }
+          ],
           "options": [
             {
               "text": "What happened?",
@@ -1052,7 +962,7 @@
         },
         {
           "id": "Robin_D4_Robin_WaitForSSI",
-          "text": "Of course. Let us do it properly.",
+          "text": "Of course. Let's do it properly.",
           "requirements": [],
           "options": []
         },
@@ -1062,7 +972,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Continue.",
               "effects": [
                 {
                   "variable": "lawfulness",
@@ -1078,15 +988,15 @@
         },
         {
           "id": "Robin_D4_RobinSSI_Close",
-          "text": "Okay, that seemed reasonable. Name and age, right? I'm still learning what should be normal here.",
+          "text": "Are you sure you only needed that much? I don't know, maybe I'm overthinking it.",
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Continue.",
               "effects": [
                 {
-                  "variable": "lawfulness",
-                  "value": "1"
+                  "variable": "AskedTooMuch_D4",
+                  "value": "true"
                 },
                 {
                   "variable": "unlock_detail",
@@ -1106,7 +1016,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Continue.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D4",
@@ -1280,7 +1190,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "So you're here for Rambolos again?",
+              "text": "Could I please have my last pack?",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -1300,7 +1210,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "So you're here for Rambolos again?",
+              "text": "Could I please have my last pack?",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -1320,7 +1230,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "So you're here for Rambolos again?",
+              "text": "Could I please have my last pack?",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -1368,7 +1278,7 @@
         },
         {
           "id": "Robin_D4_Husband_WaitForSSI",
-          "text": "Hi, this time it is me getting the cigarettes.",
+          "text": "Hi, this time it's me getting the cigarettes.",
           "requirements": [],
           "options": []
         },
@@ -1378,7 +1288,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Alright, let's check it.",
               "effects": [
                 {
                   "variable": "lawfulness",
@@ -1394,15 +1304,15 @@
         },
         {
           "id": "Robin_D4_HusbandSSI_Close",
-          "text": "Okay, that seemed reasonable for his purchase. I'm still learning what should be normal here.",
+          "text": "Did you need all of that from him? Maybe you did, I don't know. I'm still learning what should be normal here.",
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Alright, let's check it.",
               "effects": [
                 {
-                  "variable": "lawfulness",
-                  "value": "1"
+                  "variable": "AskedTooMuch_D4",
+                  "value": "true"
                 },
                 {
                   "variable": "unlock_detail",
@@ -1422,7 +1332,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "Alright.",
+              "text": "Alright, let's check it.",
               "effects": [
                 {
                   "variable": "AskedTooMuch_D4",
@@ -1466,7 +1376,7 @@
         },
         {
           "id": "Robin_D4_Selling_Choice",
-          "text": "I still need the Rambolos, please.",
+          "text": "I still need a pack of Rambolos, please.",
           "requirements": [],
           "options": [
             {
@@ -1500,6 +1410,14 @@
               ]
             },
             {
+              "text": "What did you need?",
+              "effects": [],
+              "requirements": [],
+              "nextNodes": [
+                "Robin_D4_Clarify_Item"
+              ]
+            },
+            {
               "text": "I can sell you the Rambolos.",
               "effects": [
                 {
@@ -1525,7 +1443,7 @@
               ]
             },
             {
-              "text": "Thank you for the work you and your husband put in. I can also recommend BluePort.",
+              "text": "Thank you for the work you and your husband put in. BluePort is one of your favourites too.",
               "effects": [
                 {
                   "variable": "open_wares_tab",
@@ -1576,7 +1494,7 @@
         },
         {
           "id": "Robin_D4_Clarify_Item",
-          "text": "Rambolos, please.",
+          "text": "Rambolos.",
           "requirements": [],
           "options": [
             {
@@ -1597,33 +1515,18 @@
               ],
               "requirements": [],
               "nextNodes": [
-                "Robin_D4_Sold_Response"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Sold_Response",
-          "text": "Thank you. Have a good day.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
                 "End_Dialogue"
               ]
             }
           ]
         },
         {
-          "id": "Robin_D4_Bye",
-          "text": "Thank you, have a good day.",
+          "id": "Robin_D4_Sold_Response",
+          "text": "Thank you.",
           "requirements": [],
           "options": [
             {
-              "text": "Take care.",
+              "text": "End conversation.",
               "effects": [],
               "requirements": [],
               "nextNodes": [
@@ -1634,51 +1537,6 @@
         },
         {
           "id": "Robin_D4_Thanked_Response",
-          "text": "Thank you. That means a lot. BluePort sounds good too.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Bye_Positive",
-          "text": "Thank you. That means a lot.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Sold_Bye",
-          "text": "Thank you.",
-          "requirements": [],
-          "options": [
-            {
-              "text": "Take care.",
-              "effects": [],
-              "requirements": [],
-              "nextNodes": [
-                "End_Dialogue"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "Robin_D4_Thanked_Bye",
           "text": "Thank you. That means a lot.",
           "requirements": [],
           "options": [

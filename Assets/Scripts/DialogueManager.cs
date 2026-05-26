@@ -7,6 +7,10 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
 
+
+    public List<VariableData> variables =
+    new List<VariableData>();
+
     public NPC currentNPC;
 
     public DialogueDayData currentDialogue;
@@ -293,15 +297,16 @@ public class DialogueManager : MonoBehaviour
                         .StopBlink(effect.value);
                     break;
 
+
                 default:
 
                     // Normal runtime variable
                     if (!string.IsNullOrEmpty(effect.variable))
                     {
-                        currentNPC.SetVariable(
-                            effect.variable,
-                            effect.value
-                        );
+                        SetVariable(
+    effect.variable,
+    effect.value
+);
                     }
 
                     break;
@@ -320,9 +325,9 @@ public class DialogueManager : MonoBehaviour
         foreach (var requirement in requirements)
         {
             string value =
-                currentNPC.GetVariable(
-                    requirement.variable
-                );
+    GetVariable(
+        requirement.variable
+    );
 
             if (value != requirement.value)
             {
@@ -331,5 +336,64 @@ public class DialogueManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void SetVariable(
+    string variableName,
+    string value
+)
+    {
+        // SPECIAL CASE
+        if (variableName == "friendship")
+        {
+            currentNPC.SetVariable(
+                variableName,
+                value
+            );
+
+            return;
+        }
+
+        VariableData variable =
+            variables.Find(
+                v => v.name == variableName
+            );
+
+        if (variable != null)
+        {
+            variable.value = value;
+        }
+        else
+        {
+            variables.Add(
+                new VariableData
+                {
+                    name = variableName,
+                    value = value
+                }
+            );
+        }
+    }
+
+    public string GetVariable(
+    string variableName
+)
+    {
+        // SPECIAL CASE
+        if (variableName == "friendship")
+        {
+            return currentNPC.GetVariable(
+                variableName
+            );
+        }
+
+        VariableData variable =
+            variables.Find(
+                v => v.name == variableName
+            );
+
+        return variable != null
+            ? variable.value
+            : null;
     }
 }
