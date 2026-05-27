@@ -44,7 +44,7 @@
     },
     {
       "key": "favorite_items_ui",
-      "text": "Shaun explains that customer favourite items appear in the friendship tab and can be added as upsells alongside requested items."
+      "text": "Shaun points out that favourite items can be checked in the friendship tab and used for optional upsells."
     },
     {
       "key": "id_photo_offer",
@@ -202,7 +202,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "That's for sure...",
+              "text": "Oh, hi Shaun. How are you doing?",
               "effects": [
                 {
                   "variable": "unlock_detail",
@@ -283,7 +283,7 @@
         },
         {
           "id": "Shaun_D1_Tips",
-          "text": "One useful thing: regular customers have favourite items. You can see those in the friendship tab. If someone asks for one product, you can also add one of their favourite items as an upsell in the wares tab.",
+          "text": "One useful thing: regular customers have favourite items. You can check those in the friendship tab, then decide if an upsell makes sense.",
           "requirements": [],
           "options": [
             {
@@ -324,7 +324,7 @@
         },
         {
           "id": "Shaun_D1_Offer_Setup",
-          "text": "In the friendship tab. For example, I usually buy a pack of Giddy's, and Blueports is another favourite of mine. So if I ask for Giddy's, you can sell just that, or add Blueports as an upsell. Upsells help with tips and daily goals. Speaking of customer preferences... I can help you with that.",
+          "text": "For me, that's usually a pack of Giddy's, and Blueports is another favourite. So if I ask for Giddy's, you can sell just that, or add Blueports as an upsell. Anyway, speaking of customer preferences... I can help you with that.",
           "requirements": [],
           "options": [
             {
@@ -361,7 +361,7 @@
               ]
             },
             {
-              "text": "Keep talking, Shaun.",
+              "text": "Keep talking, Shaun. [Record audio]",
               "effects": [
                 {
                   "variable": "RecordedShaun_D1",
@@ -417,60 +417,6 @@
           "requirements": [],
           "options": [
             {
-              "text": "No. I'm not doing that.",
-              "effects": [
-                {
-                  "variable": "friendship",
-                  "value": "-1"
-                },
-                {
-                  "variable": "AcceptedPhotoOffer_D1",
-                  "value": "false"
-                },
-                {
-                  "variable": "TookIDPhotos_D1",
-                  "value": "false"
-                },
-                {
-                  "variable": "HelpedShaun",
-                  "value": "false"
-                },
-                {
-                  "keyMomentText": "Refused Shaun's offer to take photos of customer IDs.",
-                  "keyMomentPositive": true
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Shaun_D1_Refuse_Hard"
-              ]
-            },
-            {
-              "text": "I don't want to get involved.",
-              "effects": [
-                {
-                  "variable": "AcceptedPhotoOffer_D1",
-                  "value": "false"
-                },
-                {
-                  "variable": "TookIDPhotos_D1",
-                  "value": "false"
-                },
-                {
-                  "variable": "HelpedShaun",
-                  "value": "false"
-                },
-                {
-                  "keyMomentText": "Politely refused Shaun's offer to take photos of customer IDs.",
-                  "keyMomentPositive": true
-                }
-              ],
-              "requirements": [],
-              "nextNodes": [
-                "Shaun_D1_Refuse_Soft"
-              ]
-            },
-            {
               "text": "I could use the extra money.",
               "effects": [
                 {
@@ -505,6 +451,60 @@
               "requirements": [],
               "nextNodes": [
                 "Shaun_D1_Accept"
+              ]
+            },
+            {
+              "text": "I don't want to get involved.",
+              "effects": [
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Politely refused Shaun's offer to take photos of customer IDs.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Refuse_Soft"
+              ]
+            },
+            {
+              "text": "No. I'm not doing that.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "AcceptedPhotoOffer_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "TookIDPhotos_D1",
+                  "value": "false"
+                },
+                {
+                  "variable": "HelpedShaun",
+                  "value": "false"
+                },
+                {
+                  "keyMomentText": "Refused Shaun's offer to take photos of customer IDs.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Shaun_D1_Refuse_Hard"
               ]
             }
           ]
@@ -885,7 +885,7 @@
         },
         {
           "id": "Shaun_D3_SSI_Offer",
-          "text": "People trust the SSI screen. If you ask for a little extra, most of them will just approve it. Address, issuer, extra credentials, whatever shows up. I can pay you €50 now, then more for every useful screenshot later.",
+          "text": "People trust the SSI screen. If you ask for a little extra, most of them just approve it. Address, issuer, extra credentials, whatever shows up. I can pay you €50 now, then more for useful screenshots later.",
           "requirements": [],
           "options": [
             {
@@ -897,7 +897,7 @@
               ]
             },
             {
-              "text": "Keep talking, Shaun.",
+              "text": "Keep talking, Shaun. [Record audio]",
               "effects": [
                 {
                   "variable": "RecordedShaun_D3",
@@ -934,7 +934,7 @@
         },
         {
           "id": "Shaun_D3_SSI_Explain",
-          "text": "Worse? Come on. You're not stealing their wallet. You're asking, they approve, you screenshot what they gave you. That's how half the data market works.",
+          "text": "Worse? Come on. You're not stealing their wallet. You're asking, they approve, you screenshot what they shared. That is how half the data market works.",
           "requirements": [],
           "options": [
             {
@@ -954,7 +954,7 @@
         },
         {
           "id": "Shaun_D3_SSI_Explain_Recorded",
-          "text": "Careful. If you keep staring like that, people will think you're nervous. I'm just saying: ask extra, screenshot it, send it over.",
+          "text": "Careful. If you keep staring like that, people will think you're nervous. I'm just saying: ask for extra fields, screenshot what gets approved, send it over.",
           "requirements": [],
           "options": [
             {
@@ -980,8 +980,8 @@
             {
               "text": "Fine. I could use the €50.",
               "effects": [
-                {
-                  "variable": "money",
+                                {
+                  "variable": "AddMoney",
                   "value": "50"
                 },
                 {
@@ -1098,7 +1098,7 @@
               ]
             },
             {
-              "text": "Fine. But there's a nosey cop coming here, so watch out.",
+              "text": "Fine. But if anyone asks, this never came from me.",
               "effects": [
                 {
                   "variable": "money",
@@ -1146,7 +1146,7 @@
                   "messageContent": "A suspicious verification or transaction was detected. Please review your recent customer interaction."
                 },
                 {
-                  "keyMomentText": "Warned Shaun about police attention and continued cooperating with SSI data collection.",
+                  "keyMomentText": "Continued cooperating with Shaun's SSI data collection because of their positive relationship.",
                   "keyMomentPositive": false
                 }
               ],
@@ -1248,7 +1248,7 @@
         },
         {
           "id": "Shaun_D3_Neutral_Refuse",
-          "text": "Your loss. Easy money usually scares people the first time. Grab me a pack of Giddy's while I'm here?",
+          "text": "Fair enough. Easy money scares people the first time. Grab me a pack of Giddy's while I'm here?",
           "requirements": [],
           "options": [
             {
@@ -1306,7 +1306,7 @@
         },
         {
           "id": "Shaun_D3_Extreme_Accept",
-          "text": "Good looking out. If anyone asks, we were just talking about gym supplements. Grab me a pack of Giddy's too?",
+          "text": "That's what I like to hear. Quiet, useful, and smart. Now, can I get a pack of Giddy's?",
           "requirements": [],
           "options": [
             {
@@ -1636,7 +1636,7 @@
           ],
           "options": [
             {
-              "text": "Keep talking, Shaun.",
+              "text": "Keep talking, Shaun. [Record audio]",
               "effects": [
                 {
                   "variable": "RecordedShaun_D4",
@@ -1703,7 +1703,7 @@
           ],
           "options": [
             {
-              "text": "Keep talking, Shaun.",
+              "text": "Keep talking, Shaun. [Record audio]",
               "effects": [
                 {
                   "variable": "RecordedShaun_D4",

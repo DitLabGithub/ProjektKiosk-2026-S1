@@ -285,6 +285,7 @@ public class DialogueManager : MonoBehaviour
 
                 case "AddMoney":
                     Counter.Instance.Money += int.Parse(effect.value);
+                    UIManager.Instance.UpdateMoney(Counter.Instance.Money);
                     break;
 
                 case "start_blink":

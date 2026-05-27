@@ -48,6 +48,10 @@ public class UI_FriendshipTab : MonoBehaviour
             {
                 var detailGO = Instantiate(detailAndKeyMomentPrefab, DetailsTR);
                 detailGO.GetComponent<TextMeshProUGUI>().text = "- " + detail.text;
+                if(detail.key == "ssi_request_guidelines")
+                {
+                    detailGO.transform.SetAsFirstSibling();
+                }
             }
         }
     }

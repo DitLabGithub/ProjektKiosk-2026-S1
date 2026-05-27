@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: a detailasdgfdsdfhsdfhsdfhsdfhsdfhsasdfasdfasfasfdhsdfhsdfhsdhsdfhasdfsadfasdf
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9ceffc8d7ce87948bdbbf7b17fb7d05, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 93cd1eb3065d7ad4e8df6991cc76cf36, type: 2}
   m_sharedMaterial: {fileID: 6368156385375846729, guid: d9ceffc8d7ce87948bdbbf7b17fb7d05, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMin: 8
   m_fontSizeMax: 11
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 16
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_margin: {x: -0.714695, y: 3.0118666, z: -0.28771973, w: 0.05269432}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &8671590518674543225

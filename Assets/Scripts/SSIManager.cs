@@ -41,6 +41,7 @@ public class SSIManager : MonoBehaviour
 
             if (o == "package")
             {
+                requiredFields.Add("photo");
                 requiredFields.Add("name");
                 requiredFields.Add("address");
             }
@@ -48,6 +49,7 @@ public class SSIManager : MonoBehaviour
             {
                 requiredFields.Add("above18");
                 requiredFields.Add("photo");
+                requiredFields.Add("expiryDate");
             }
             else if (o == "food")
             {

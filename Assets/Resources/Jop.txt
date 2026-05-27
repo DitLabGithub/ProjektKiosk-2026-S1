@@ -415,6 +415,40 @@
               ]
             },
             {
+              "text": "I'll help. Give me the recorder.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "HelpedJop",
+                  "value": "true"
+                },
+                {
+                  "variable": "HasRecordingDevice",
+                  "value": "true"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "gave_recorder"
+                },
+                {
+                  "keyMomentText": "Actively agreed to help Jop and accepted the recorder.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Jop_D2_Gives_Recorder"
+              ]
+            },
+            {
               "text": "Oink oink.",
               "effects": [
                 {
@@ -434,7 +468,12 @@
                   "keyMomentPositive": false
                 }
               ],
-              "requirements": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
               "nextNodes": [
                 "Jop_D2_Extreme_Negative"
               ]
@@ -658,6 +697,48 @@
               ]
             },
             {
+              "text": "I recorded Shaun. You should hear this.",
+              "effects": [
+                {
+                  "variable": "SharedRecordingWithJop",
+                  "value": "true"
+                },
+                {
+                  "variable": "HelpedJop",
+                  "value": "true"
+                },
+                {
+                  "variable": "ShaunEvidence",
+                  "value": "3"
+                },
+                {
+                  "variable": "competence",
+                  "value": "1"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "keyMomentText": "Confidently shared Shaun evidence with Jop.",
+                  "keyMomentPositive": true
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "MadeRecording",
+                  "value": "true"
+                },
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Jop_D4_Recording_Response"
+              ]
+            },
+            {
               "text": "I'm not answering anything without a lawyer.",
               "effects": [
                 {
@@ -677,7 +758,12 @@
                   "keyMomentPositive": false
                 }
               ],
-              "requirements": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
               "nextNodes": [
                 "Jop_D4_Extreme_Negative"
               ]
@@ -694,6 +780,23 @@
             }
           ],
           "options": [
+            {
+              "text": "I can still keep an eye out.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "HelpedJop",
+                  "value": "true"
+                }
+              ],
+              "requirements": [],
+              "nextNodes": [
+                "Jop_D4_Positive_End"
+              ]
+            },
             {
               "text": "I'm not getting involved.",
               "effects": [],
@@ -713,6 +816,32 @@
               "requirements": [],
               "nextNodes": [
                 "Jop_D4_Questioning"
+              ]
+            },
+            {
+              "text": "You're still getting nothing from me.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                },
+                {
+                  "variable": "SuspiciousActivity",
+                  "value": "1"
+                },
+                {
+                  "variable": "unlock_detail",
+                  "value": "warned_player"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
+              "nextNodes": [
+                "Jop_D4_Extreme_Negative"
               ]
             }
           ]
@@ -761,6 +890,28 @@
               ]
             },
             {
+              "text": "I'll tell you if Shaun says anything strange.",
+              "effects": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                },
+                {
+                  "variable": "HelpedJop",
+                  "value": "true"
+                }
+              ],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "1"
+                }
+              ],
+              "nextNodes": [
+                "Jop_D4_Positive_End"
+              ]
+            },
+            {
               "text": "I'm not answering anything without a lawyer.",
               "effects": [
                 {
@@ -780,7 +931,12 @@
                   "keyMomentPositive": false
                 }
               ],
-              "requirements": [],
+              "requirements": [
+                {
+                  "variable": "friendship",
+                  "value": "-1"
+                }
+              ],
               "nextNodes": [
                 "Jop_D4_Extreme_Negative"
               ]
@@ -1196,11 +1352,7 @@
               "effects": [],
               "requirements": [
                 {
-                  "variable": "HelpedShaun",
-                  "value": "false"
-                },
-                {
-                  "variable": "CommittedToShaun_D4",
+                  "variable": "BackedOut_D4",
                   "value": "true"
                 }
               ],
@@ -1257,11 +1409,7 @@
           "text": "You got close, but not enough to be pulled in. Your workplace is still getting fined for sloppy handling.",
           "requirements": [
             {
-              "variable": "HelpedShaun",
-              "value": "false"
-            },
-            {
-              "variable": "CommittedToShaun_D4",
+              "variable": "BackedOut_D4",
               "value": "true"
             }
           ],
