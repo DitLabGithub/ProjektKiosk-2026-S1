@@ -1210,7 +1210,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
                   "goodNode": "Shaun_D3_SSI_Good",
                   "badNode": "Shaun_D3_SSI_Bad"
@@ -1233,7 +1233,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
                   "goodNode": "Shaun_D3_SSI_Good",
                   "badNode": "Shaun_D3_SSI_Bad"
@@ -1256,7 +1256,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
                   "goodNode": "Shaun_D3_SSI_Good",
                   "badNode": "Shaun_D3_SSI_Bad"
@@ -1291,7 +1291,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
                   "goodNode": "Shaun_D3_SSI_Good",
                   "badNode": "Shaun_D3_SSI_Bad"
@@ -1326,7 +1326,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D3_SSI_Perfect",
                   "goodNode": "Shaun_D3_SSI_Good",
                   "badNode": "Shaun_D3_SSI_Bad"
@@ -2025,7 +2025,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
                   "goodNode": "Shaun_D4_SSI_Good",
                   "badNode": "Shaun_D4_SSI_Bad"
@@ -2048,7 +2048,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
                   "goodNode": "Shaun_D4_SSI_Good",
                   "badNode": "Shaun_D4_SSI_Bad"
@@ -2079,7 +2079,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
                   "goodNode": "Shaun_D4_SSI_Good",
                   "badNode": "Shaun_D4_SSI_Bad"
@@ -2110,7 +2110,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "alcohol/age_check",
+                  "value": "own|alcohol",
                   "perfectNode": "Shaun_D4_SSI_Perfect",
                   "goodNode": "Shaun_D4_SSI_Good",
                   "badNode": "Shaun_D4_SSI_Bad"

@@ -31,27 +31,58 @@ public class DataLoader : MonoBehaviour
                 jsonFile.text
             );
 
+        // Main avatar
         data.avatar =
             Resources.Load<Sprite>(
                 data.avatarPath
             );
-      /*if (data.ssiProfiles != null)
+
+        if (data.avatar == null)
+        {
+            Debug.LogWarning(
+                "Avatar missing: "
+                + data.avatarPath
+            );
+        }
+
+        // Alternate SSI avatars
+        if (data.ssiProfiles != null)
         {
             foreach (
                 CustomSSIEntry profile
                 in data.ssiProfiles
             )
             {
-                profile.data.avatar =
-                    Resources.Load<Sprite>(
+                if (
+                    profile.data != null
+                    && !string.IsNullOrEmpty(
                         profile.data.avatarPath
-                    );
+                    )
+                )
+                {
+                    profile.data.avatar =
+                        Resources.Load<Sprite>(
+                            profile.data.avatarPath
+                        );
+
+                    if (
+                        profile.data.avatar
+                        == null
+                    )
+                    {
+                        Debug.LogWarning(
+                            "SSI avatar missing: "
+                            + profile.data.avatarPath
+                        );
+                    }
+                }
             }
-        } */
+        }
 
         NPC npc =
             new NPC(data);
 
+        // Variables
         foreach (
             VariableData variable
             in data.variables
@@ -71,7 +102,6 @@ public class DataLoader : MonoBehaviour
             }
             else
             {
-                // only create once
                 if (
                     string.IsNullOrEmpty(
                         DialogueManager.Instance

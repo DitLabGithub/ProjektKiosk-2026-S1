@@ -9,7 +9,20 @@
   "height": 172,
   "hairColor": "Brown",
   "eyeColor": "Green",
- 
+
+  "ssiProfiles": [
+    {
+      "key": "day5_stolen_father_ssi",
+      "data": {
+        "avatarPath": "Sprites/Avatars/AmonDad",
+        "ownerName": "Marek Valk",
+        "age": 46,
+        "address": "12 East Hollow Street",
+        "expiryDate": "2028-04-11"
+      }
+    }
+  ],
+
   "favouriteItems": [
     "Rambolos",
     "Hotshot",
@@ -380,8 +393,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "day3_amon_own_ssi",
+                  "value": "own|alcohol",
                   "perfectNode": "Amon_D3_After_SSI",
                   "goodNode": "Amon_D3_After_SSI",
                   "badNode": "Amon_D3_After_SSI"
@@ -421,8 +433,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "day3_amon_own_ssi",
+                  "value": "own|alcohol",
                   "perfectNode": "Amon_D3_After_SSI",
                   "goodNode": "Amon_D3_After_SSI",
                   "badNode": "Amon_D3_After_SSI"
@@ -790,7 +801,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
+                  "value":"day5_stolen_father_ssi|package",
                   "ssiProfile": "day5_stolen_father_ssi",
                   "perfectNode": "Amon_D5_After_SSI",
                   "goodNode": "Amon_D5_After_SSI",
@@ -831,8 +842,7 @@
                 },
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "day5_stolen_father_ssi",
+                  "value":"day5_stolen_father_ssi|package",
                   "perfectNode": "Amon_D5_After_SSI",
                   "goodNode": "Amon_D5_After_SSI",
                   "badNode": "Amon_D5_After_SSI"

@@ -4525,6 +4525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0035b43684164c44f9f6c89695382317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  variables: []
   currentNPC:
     data:
       name: 
@@ -4543,6 +4544,7 @@ MonoBehaviour:
       variables: []
       dialogues: []
       keyMoments: []
+      ssiProfiles: []
   currentDialogue:
     day: 0
     nodes: []
@@ -5745,7 +5747,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 1.2615414, z: -21.446121, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2057993192

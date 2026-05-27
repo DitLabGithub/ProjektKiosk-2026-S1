@@ -26,6 +26,7 @@ public class CharacterData
     public List<VariableData> variables;
     public List<DialogueDayData> dialogues;
     public List<KeyMomentData> keyMoments = new List<KeyMomentData>();
+    public List<CustomSSIEntry> ssiProfiles;
 }
 
 [System.Serializable]

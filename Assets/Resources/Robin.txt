@@ -10,6 +10,19 @@
   "hairColor": "Black",
   "eyeColor": "Brown",
  
+ "ssiProfiles": [
+  {
+    "key": "day4_husband_ssi",
+    "data": {
+      "avatarPath": "Sprites/Avatars/RobinHusband",
+      "ownerName": "Mark Vermeer",
+      "age": 31,
+      "address": "19 Market District",
+      "expiryDate": "2028-06-17"
+    }
+  }
+],
+
   "favouriteItems": [
     "Rambolos",
     "BluePort"
@@ -517,8 +530,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "robin_own_ssi",
+                  "value": "own|alcohol",
                   "perfectNode": "Robin_D3_SSI_Correct",
                   "goodNode": "Robin_D3_SSI_Close",
                   "badNode": "Robin_D3_SSI_TooMuch"
@@ -946,8 +958,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "robin_own_ssi",
+                  "value": "own|alcohol",
                   "perfectNode": "Robin_D4_RobinSSI_Correct",
                   "goodNode": "Robin_D4_RobinSSI_Close",
                   "badNode": "Robin_D4_RobinSSI_TooMuch"
@@ -1139,8 +1150,7 @@
               "effects": [
                 {
                   "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "robin_own_ssi",
+                  "value": "own|alcohol",
                   "perfectNode": "Robin_D4_RobinSSI_Correct",
                   "goodNode": "Robin_D4_RobinSSI_Close",
                   "badNode": "Robin_D4_RobinSSI_TooMuch"
@@ -1253,9 +1263,8 @@
               "text": "I'll need his SSI then.",
               "effects": [
                 {
-                  "variable": "open_ssi_tab",
-                  "value": "age_check",
-                  "ssiProfile": "day4_husband_ssi",
+                   "variable": "open_ssi_tab",
+                  "value": "day4_husband_ssi|alcohol",
                   "perfectNode": "Robin_D4_HusbandSSI_Correct",
                   "goodNode": "Robin_D4_HusbandSSI_Close",
                   "badNode": "Robin_D4_HusbandSSI_TooMuch"

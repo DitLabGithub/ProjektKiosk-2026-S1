@@ -239,15 +239,32 @@ public class DialogueManager : MonoBehaviour
 
                 case "open_ssi_tab":
 
-                    UIManager.Instance.ToggleIdentification_SSI();
+                    UIManager.Instance
+                        .ToggleIdentification_SSI();
 
-                    SSIManager.Instance.SetupOrders(effect.value);
+                    string[] parts =
+                        effect.value.Split('|');
 
-                    SSIManager.Instance.SetupResultNodes(
-                        effect.perfectNode,
-                        effect.goodNode,
-                        effect.badNode
-                    );
+                    string profile =
+                        parts[0];
+
+                    string orders =
+                        parts.Length > 1
+                        ? parts[1]
+                        : "";
+
+                    SSIManager.Instance
+                        .SetSSIProfile(profile);
+
+                    SSIManager.Instance
+                        .SetupOrders(orders);
+
+                    SSIManager.Instance
+                        .SetupResultNodes(
+                            effect.perfectNode,
+                            effect.goodNode,
+                            effect.badNode
+                        );
 
                     break;
 

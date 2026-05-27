@@ -23,9 +23,54 @@ public class SSIManager : MonoBehaviour
     private string goodNode;
     private string badNode;
 
+    private CustomSSIData currentSSI;
+
+    private bool usingOwnProfile;
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    public void SetSSIProfile(
+    string profileName
+)
+    {
+        usingOwnProfile =
+            profileName == "own";
+
+        currentSSI = null;
+
+        if (usingOwnProfile)
+        {
+            return;
+        }
+
+        var profile =
+            DialogueManager
+            .Instance
+            .currentNPC
+            .data
+            .ssiProfiles
+            .Find(
+                s =>
+                s.key
+                ==
+                profileName
+            );
+
+        if (profile != null)
+        {
+            currentSSI =
+                profile.data;
+        }
+        else
+        {
+            Debug.LogWarning(
+                "SSI profile missing: "
+                + profileName
+            );
+        }
     }
     public void SetupOrders(string orderString)
     {
@@ -124,45 +169,125 @@ public class SSIManager : MonoBehaviour
 
     public void RevealName()
     {
-        name.text = DialogueManager.Instance.currentNPC.data.name;
+        name.text =
+            usingOwnProfile
+            ? DialogueManager
+                .Instance
+                .currentNPC
+                .data
+                .name
+            : currentSSI.ownerName;
+
         askedFields.Add("name");
     }
 
     public void RevealAge()
     {
-        age.text = DialogueManager.Instance.currentNPC.data.age.ToString();
+        age.text =
+            (
+                usingOwnProfile
+                ? DialogueManager
+                    .Instance
+                    .currentNPC
+                    .data
+                    .age
+                : currentSSI.age
+            ).ToString();
+
         askedFields.Add("age");
     }
 
     public void RevealAbove18()
     {
-        above18.text = DialogueManager.Instance.currentNPC.data.age >= 18 ? "Yes" : "No";
-        askedFields.Add("above18");
+        int a =
+            usingOwnProfile
+            ? DialogueManager
+                .Instance
+                .currentNPC
+                .data
+                .age
+            : currentSSI.age;
+
+        above18.text =
+            a >= 18
+            ? "Yes"
+            : "No";
+
+        askedFields.Add(
+            "above18"
+        );
     }
 
     public void RevealAbove21()
     {
-        above21.text = DialogueManager.Instance.currentNPC.data.age >= 21 ? "Yes" : "No";
-        askedFields.Add("above21");
+        int a =
+            usingOwnProfile
+            ? DialogueManager
+                .Instance
+                .currentNPC
+                .data
+                .age
+            : currentSSI.age;
+
+        above21.text =
+            a >= 21
+            ? "Yes"
+            : "No";
+
+        askedFields.Add(
+            "above21"
+        );
     }
 
     public void RevealAddress()
     {
-        address.text = DialogueManager.Instance.currentNPC.data.address;
-        askedFields.Add("address");
+        address.text =
+            usingOwnProfile
+            ? DialogueManager
+                .Instance
+                .currentNPC
+                .data
+                .address
+            : currentSSI.address;
+
+        askedFields.Add(
+            "address"
+        );
     }
 
     public void RevealExpiryDate()
     {
-        expiryDate.text = DialogueManager.Instance.currentNPC.data.expiryDate;
-        askedFields.Add("expiryDate");
+        expiryDate.text =
+            usingOwnProfile
+            ? DialogueManager
+                .Instance
+                .currentNPC
+                .data
+                .expiryDate
+            : currentSSI.expiryDate;
+
+        askedFields.Add(
+            "expiryDate"
+        );
     }
 
     public void RevealPhoto()
     {
-        photo.sprite = DialogueManager.Instance.currentNPC.data.avatar;
-        buttonToHideForPhoto.SetActive(false);
-        askedFields.Add("photo");
+        photo.sprite =
+            usingOwnProfile
+            ? DialogueManager
+                .Instance
+                .currentNPC
+                .data
+                .avatar
+            : currentSSI.avatar;
+
+        buttonToHideForPhoto
+            .SetActive(false);
+
+        askedFields.Add(
+            "photo"
+        );
     }
 
     public void SetupResultNodes(
