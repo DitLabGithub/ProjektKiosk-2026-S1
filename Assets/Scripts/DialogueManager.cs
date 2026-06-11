@@ -56,6 +56,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Day complete");
             UIManager.Instance.ShowLevelSelect();
+            Counter.Instance.Money = 0;
 
             return;
         }
@@ -298,6 +299,7 @@ public class DialogueManager : MonoBehaviour
                 case "ReceivedCopyDevice":
 
                     UIManager.Instance.Ref_ID.UnlockCopying();
+                    UIManager.Instance.Ref_SSI.UnlockCopying();
                     break;
 
                 case "AddMoney":
@@ -314,6 +316,18 @@ public class DialogueManager : MonoBehaviour
                     UIManager.Instance
                         .StopBlink(effect.value);
                     break;
+                case "UnlockFavouriteFoods":
+                    foreach (NPC npc in NPCManager.Instance.npcs)
+                    {
+                        if(npc.data.details.Exists(d => d.key == "favorite_items"))
+                        {
+                            Detail foodDetail = npc.data.details.Find(d => d.key == "favorite_items");
+                            foodDetail.unlocked = true;
+                            Debug.Log($"Unlocked favourite food for {npc.data.name}");
+                        }
+                    }
+                    break;
+
 
 
                 default:

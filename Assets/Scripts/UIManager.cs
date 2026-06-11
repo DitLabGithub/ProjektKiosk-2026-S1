@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject Ref_Wares;
     public GameObject Ref_CounterButton;
     public GameObject Ref_SellButton;
+    public GameObject Ref_MenuBackground;
     public Image AvatarImage;
     public TMP_Text Ref_Money;
     public UI_FriendshipTab Ref_FriendshipTab;
@@ -112,6 +113,7 @@ public class UIManager : MonoBehaviour
             Ref_LevelSelect.Day3.onClick.AddListener(() => InitiateDay(3));
             Ref_LevelSelect.Day4.onClick.AddListener(() => InitiateDay(4));
             Ref_LevelSelect.Day5.onClick.AddListener(() => InitiateDay(5));
+            Ref_LevelSelect.Back.onClick.AddListener(ShowMainMenu);
             Ref_LevelSelect.gameObject.SetActive(false);
         }
         if (PF_ID != null)
@@ -220,7 +222,8 @@ public class UIManager : MonoBehaviour
     public void ShowLevelSelect()
     {
         Ref_MainMenu.gameObject.SetActive(false);
-        
+        Ref_MenuBackground.gameObject.SetActive(true);
+
         Ref_LevelSelect.gameObject.SetActive(true);
         Debug.Log("Level Select menu shown.");
     }
@@ -229,6 +232,14 @@ public class UIManager : MonoBehaviour
     {
         Ref_MainMenu.gameObject.SetActive(false);
         Ref_LevelSelect.gameObject.SetActive(false);
+        Ref_MenuBackground.gameObject.SetActive(false);
+    }
+    public void ShowMainMenu()
+    {
+        Ref_MainMenu.gameObject.SetActive(true);
+        Ref_MenuBackground.gameObject.SetActive(true);
+        Ref_LevelSelect.gameObject.SetActive(false);
+        Debug.Log("Main Menu shown.");
     }
 
     public void InitiateDay(int day)

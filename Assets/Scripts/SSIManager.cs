@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
-// Close UI + resume dialogue (you'll hook this next)
 public class SSIManager : MonoBehaviour
 {
     public static SSIManager Instance;
@@ -14,6 +13,7 @@ public class SSIManager : MonoBehaviour
     public TextMeshProUGUI address;
     public TextMeshProUGUI expiryDate;
     public GameObject buttonToHideForPhoto;
+    public GameObject SSICopyButton;
 
 
     private HashSet<string> askedFields = new HashSet<string>();
@@ -103,6 +103,10 @@ public class SSIManager : MonoBehaviour
         }
 
         askedFields.Clear();
+        if (DialogueManager.Instance.variables.Find(v => v.name == "AcceptedSSIDataOffer_D3")?.value == "true" || DialogueManager.Instance.variables.Find(v => v.name == "CommittedToSSIDataScheme_D4")?.value == "true")
+        {
+            UnlockCopying();
+        }
     }
 
     public void Evaluate()
@@ -315,5 +319,15 @@ public class SSIManager : MonoBehaviour
         expiryDate.text = "Request";
 
         buttonToHideForPhoto.SetActive(true);
+    }
+
+    public void UnlockCopying()
+    {
+        SSICopyButton.SetActive(true);
+            SSICopyButton.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                IdentificationCopyManager.Instance.CopySSI();
+                Debug.Log("SSI copied");
+            });
     }
 }

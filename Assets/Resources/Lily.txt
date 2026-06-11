@@ -16,7 +16,7 @@
   "details": [
     {
       "key": "favorite_items",
-      "text": "Favourite items: RedWine, SproingelsBlue. Usually requests parcel/delivery pickup. RedWine can be upsold, but it needs an additional age check."
+      "text": "Favourite items: RedWine, SproingelsBlue."
     },
     {
       "key": "early_ssi_tester",

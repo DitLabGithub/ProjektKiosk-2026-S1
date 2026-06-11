@@ -25,13 +25,13 @@
 
   "favouriteItems": [
     "Rambolos",
-    "Hotshot",
-    "BluePort"
+    "Hotshots",
+    "Blueports"
   ],
   "details": [
     {
       "key": "favorite_items",
-      "text": "Favourite items: Rambolos, Hotshot, BluePort."
+      "text": "Favourite items: Rambolos, Hotshots, Blueports."
     },
     {
       "key": "likes_smoking",

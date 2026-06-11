@@ -10,12 +10,13 @@
   "hairColor": "White",
   "eyeColor": "Green",
   "favouriteItems": [
-    "SproingelsBlue"
+    "SproingelsBlue",
+    "SproingelsGreen"
   ],
   "details": [
     {
-      "key": "favourite_items",
-      "text": "Favourite item: SproingelsBlue."
+      "key": "favorite_items",
+      "text": "Favourite item: SproingelsBlue, SproingelsGreen."
     },
     {
       "key": "favorite_items",
@@ -1331,7 +1332,7 @@
           "requirements": [],
           "options": [
             {
-              "text": "I stayed out of Shaun's scheme.",
+              "text": "I stayed out of Shaun's schemes.",
               "effects": [],
               "requirements": [
                 {

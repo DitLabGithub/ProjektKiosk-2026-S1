@@ -16,7 +16,7 @@
   "details": [
     {
       "key": "favorite_items",
-      "text": "Favourite items: PackOfGiddy, Blueports."
+      "text": "Favourite items: Pack Of Giddy's, Blueports."
     },
     {
       "key": "gym_rat",
@@ -432,6 +432,10 @@
                   "value": "true"
                 },
                 {
+                  "variable": "UnlockFavouriteFoods",
+                  "value": "true"
+                },
+                {
                   "variable": "HelpedShaun",
                   "value": "true"
                 },
@@ -751,10 +755,6 @@
                   "value": "true"
                 },
                 {
-                  "variable": "HelpedShaun",
-                  "value": "true"
-                },
-                {
                   "variable": "SuspiciousActivity",
                   "value": "2"
                 },
@@ -1001,6 +1001,10 @@
                   "value": "true"
                 },
                 {
+                 "variable": "UnlockFavouriteFoods",
+                  "value": "true"
+                },
+                {
                   "variable": "OverAskedSSIData_D3",
                   "value": "true"
                 },
@@ -1098,10 +1102,10 @@
               ]
             },
             {
-              "text": "Fine. But if anyone asks, this never came from me.",
+              "text": "Fine. But if anyone asks, this never came from me. (+50$)",
               "effects": [
                 {
-                  "variable": "money",
+                  "variable": "AddMoney",
                   "value": "50"
                 },
                 {
@@ -1785,6 +1789,10 @@
                 },
                 {
                   "variable": "CommittedToSSIDataScheme_D4",
+                  "value": "true"
+                },
+                {
+                 "variable": "UnlockFavouriteFoods",
                   "value": "true"
                 },
                 {

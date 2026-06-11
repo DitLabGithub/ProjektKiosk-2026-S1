@@ -25,7 +25,7 @@
 
   "favouriteItems": [
     "Rambolos",
-    "BluePort"
+    "Blueports" 
   ],
   "details": [
     {
@@ -290,32 +290,36 @@
               ]
             },
             {
-              "text": "I can sell you the Rambolos. BluePort is one of your favourites too.",
+              "text": "I can sell you the Rambolos. Would you like Blueports too, right?",
               "effects": [
-                {
-                  "variable": "open_wares_tab",
-                  "value": "Rambolos,BluePort"
-                },
-                {
-                  "variable": "friendship",
-                  "value": "1"
-                },
-                {
-                  "variable": "lawfulness",
-                  "value": "1"
-                },
-                {
-                  "variable": "UpsoldNumber",
-                  "value": "1"
-                },
-                {
-                  "variable": "SoldCigarettes_D2",
-                  "value": "true"
-                },
-                {
-                  "keyMomentText": "Used traditional ID to verify Robin was over 18, sold Rambolos, and recommended BluePort as an upsell.",
-                  "keyMomentPositive": true
-                }
+  {
+    "variable": "open_wares_tab",
+    "value": "Rambolos"
+  },
+  {
+    "variable": "friendship",
+    "value": "1"
+  },
+  {
+    "variable": "lawfulness",
+    "value": "1"
+  },
+  {
+    "variable": "UpsoldNumber",
+    "value": "1"
+  },
+  {
+    "variable": "SoldCigarettes_D2",
+    "value": "true"
+  },
+  {
+    "variable": "unlock_detail",
+    "value": "favorite_items"
+  },
+  {
+    "keyMomentText": "Used traditional ID to verify Robin was over 18, sold Rambolos, and recommended Blueport as an upsell.",
+    "keyMomentPositive": true
+  }
               ],
               "requirements": [],
               "nextNodes": [
@@ -356,7 +360,7 @@
         },
         {
           "id": "Robin_D2_Upsell_Response",
-          "text": "Thank you. Rambolos and BluePort sounds good.",
+          "text": "Thank you. Rambolos and Blueports sounds good.",
           "requirements": [],
           "options": [
             {

@@ -52,6 +52,10 @@ public class UI_FriendshipTab : MonoBehaviour
                 {
                     detailGO.transform.SetAsFirstSibling();
                 }
+                Canvas.ForceUpdateCanvases();
+
+                LayoutRebuilder.ForceRebuildLayoutImmediate(DetailsTR.GetComponent<RectTransform>());
+
             }
         }
     }
@@ -76,6 +80,9 @@ public class UI_FriendshipTab : MonoBehaviour
             {
                 keyMomentGO.GetComponent<TextMeshProUGUI>().color = UIManager.Instance.ColorNegative;
             }
+            Canvas.ForceUpdateCanvases();
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(KeyMomentsTR.GetComponent<RectTransform>());
         }
     }
 
