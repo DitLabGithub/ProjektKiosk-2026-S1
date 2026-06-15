@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-KioskRebuild-1.0";
 const contentToCache = [
     "Build/Project Kiosk WebGL Build.loader.js",
-    "Build/Project Kiosk WebGL Build.framework.js.br",
-    "Build/Project Kiosk WebGL Build.data.br",
-    "Build/Project Kiosk WebGL Build.wasm.br",
+    "Build/Project Kiosk WebGL Build.framework.js",
+    "Build/Project Kiosk WebGL Build.data",
+    "Build/Project Kiosk WebGL Build.wasm",
     "TemplateData/style.css"
 
 ];
