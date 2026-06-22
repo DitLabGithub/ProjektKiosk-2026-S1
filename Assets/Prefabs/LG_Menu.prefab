@@ -89,7 +89,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1556821881671095791, guid: ad7cb28e3268061428cdc0618a395348, type: 3}
       propertyPath: m_text
-      value: Level Select
+      value: Start Game
       objectReference: {fileID: 0}
     - target: {fileID: 4535121164555560145, guid: ad7cb28e3268061428cdc0618a395348, type: 3}
       propertyPath: m_Pivot.x

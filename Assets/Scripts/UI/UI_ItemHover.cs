@@ -16,4 +16,13 @@ public class UI_ItemHover : MonoBehaviour
         itemPriceText.text =
             $"{item.GetComponent<Item>().price} €";
     }
+    public void SetCartEntry (Item item)
+    {
+
+
+        itemNameText.text = item.itemName;
+
+        itemPriceText.text =
+            $"{item.price} €  1x";
+    }
 }

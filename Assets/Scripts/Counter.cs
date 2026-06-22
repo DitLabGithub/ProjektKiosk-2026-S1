@@ -62,7 +62,7 @@ public class Counter : MonoBehaviour
                 break;
             }
         }
-
+        UIManager.Instance.UpdateCartList();
         CheckForSaleButton();
     }
     public void RemoveItem(GameObject item)
@@ -70,6 +70,7 @@ public class Counter : MonoBehaviour
         itemsInCart.Remove(item.GetComponent<Item>());
         Destroy(item);
         UIManager.Instance.HideItemHover();
+        UIManager.Instance.UpdateCartList();
         CheckForSaleButton();
     }
 

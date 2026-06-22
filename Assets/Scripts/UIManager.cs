@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text Ref_Day;
     public UI_MessagesBox MessagesBox;
     public UI_ItemHover Ref_ItemHover;
+    public UI_CartList Ref_CartList;
 
     [Header("Prefabs")]
     public GameObject PF_MainMenu;
@@ -523,5 +524,9 @@ public class UIManager : MonoBehaviour
 
             yield return null;
         }
+    }
+    public void UpdateCartList()
+    {
+        Ref_CartList.PopulateList();
     }
 }
